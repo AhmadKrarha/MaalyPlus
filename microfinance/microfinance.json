@@ -1,0 +1,630 @@
+[
+  {
+    "id": "nmb",
+    "name_ar": "الوطني للتمويل الأصغر",
+    "name_en": "National Microfinance Bank",
+    "logo": "../images/microfinance/nmb.png",
+    "logo_fallback_text": "الوطني",
+    "logo_color": "#1E40AF",
+    "website": "https://www.nmb.com.jo",
+    "apply_url": "https://www.nmb.com.jo",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "target_audience": [
+      "أصحاب مشاريع",
+      "ذوو الدخل المحدود",
+      "سيدات أعمال",
+      "قطاع الزراعة"
+    ],
+    "tagline": "أكبر مؤسسة تمويل أصغر في الأردن",
+    "description": "مؤسسة تمويل أصغر أردنية مسجلة كشركة مساهمة خاصة ومرخصة من البنك المركزي، تقدم خدماتها لأكثر من 90 ألف عميل من خلال شبكة 35 فرعاً. تأسست لتوظيف الشمول المالي لتوفير الحلول المثلى لعملائها.",
+    "founded": 1999,
+    "branches": 35,
+    "clients": "90,000+",
+    "products": [
+      {
+        "name": "تمويل المشاريع الصغيرة",
+        "min_amount_jod": 200,
+        "max_amount_jod": 10000,
+        "interest_rate": "18-28% متناقصة",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "أصحاب المشاريع الصغيرة"
+      },
+      {
+        "name": "تمويل الزراعة",
+        "min_amount_jod": 200,
+        "max_amount_jod": 5000,
+        "interest_rate": "18-24% متناقصة",
+        "max_duration_months": 24,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "المزارعون"
+      },
+      {
+        "name": "تمويل الأفراد",
+        "min_amount_jod": 100,
+        "max_amount_jod": 3000,
+        "interest_rate": "24-30% متناقصة",
+        "max_duration_months": 24,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الأفراد"
+      }
+    ],
+    "min_loan_jod": 400,
+    "max_loan_jod": 15000,
+    "no_collateral": true,
+    "key_features": [
+      "35 فرع في جميع أنحاء المملكة",
+      "90,000+ عميل قائم",
+      "تطبيق الوطني للخدمات الرقمية",
+      "برنامج ولاء وطني كوينز",
+      "تقديم طلب إلكتروني عبر الموقع",
+      "محفظة إلكترونية وخدمة eBill"
+    ],
+    "pros": [
+      "أوسع شبكة فروع",
+      "خبرة طويلة في السوق",
+      "يمول قطاع الزراعة"
+    ],
+    "cons": [
+      "يشترط كفيل",
+      "الحد الأقصى 10,000 دينار"
+    ],
+    "approval_speed": "أسبوع",
+    "digital_application": false,
+    "rating": 4.2,
+    "category": "تمويل أصغر",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03",
+    "digital_services": true,
+    "app_available": true
+  },
+  {
+    "id": "tamweelcom",
+    "name_ar": "تمويلكم",
+    "name_en": "Tamweelcom",
+    "logo": "../images/microfinance/tamweelcom.png",
+    "logo_fallback_text": "تمويلكم",
+    "logo_color": "#059669",
+    "website": "https://tamweelcom.org",
+    "apply_url": "https://tamweelcom.org/ar/loan",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "target_audience": [
+      "الأفراد غير الممولين بنكياً",
+      "موظفون",
+      "طلاب",
+      "أصحاب مشاريع منزلية"
+    ],
+    "tagline": "تمويل بسيط للأفراد والمشاريع الصغيرة",
+    "description": "شركة تمويل متخصصة تقدم تمويلات أعمال تصل لـ75,000 دينار وتمويلات أفراد للتعليم والمنزل والمركبات والزواج. تطبيق رقمي متاح. 39 فرعاً في المملكة.",
+    "founded": 2006,
+    "branches": 39,
+    "clients": "30,000+",
+    "products": [
+      {
+        "name": "تمويل الأفراد (راتب)",
+        "min_amount_jod": 200,
+        "max_amount_jod": 5000,
+        "interest_rate": "24-32% متناقصة",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": false,
+        "target": "موظفون براتب"
+      },
+      {
+        "name": "تمويل التعليم",
+        "min_amount_jod": 100,
+        "max_amount_jod": 3000,
+        "interest_rate": "20-26% متناقصة",
+        "max_duration_months": 24,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الطلاب وأولياء الأمور"
+      },
+      {
+        "name": "تمويل الطاقة الشمسية",
+        "min_amount_jod": 500,
+        "max_amount_jod": 5000,
+        "interest_rate": "18-22% متناقصة",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": false,
+        "target": "أصحاب الدخول الثابتة"
+      },
+      {
+        "name": "تمويل المشاريع الصغيرة",
+        "min_amount_jod": 200,
+        "max_amount_jod": 8000,
+        "interest_rate": "22-28% متناقصة",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "أصحاب المشاريع"
+      }
+    ],
+    "min_loan_jod": 100,
+    "max_loan_jod": 75000,
+    "no_collateral": true,
+    "key_features": [
+      "تمويل أعمال حتى 75,000 دينار",
+      "تمويل أفراد حتى 2,000 دينار",
+      "تطبيق موبايل",
+      "تمويل رقمي",
+      "39 فرعاً",
+      "حلول تأمينية مدمجة"
+    ],
+    "pros": [
+      "لا يشترط حساباً بنكياً",
+      "تمويل التعليم والطاقة الشمسية",
+      "مناسب للموظفين"
+    ],
+    "cons": [
+      "فروع أقل من الوطني",
+      "نسب فائدة مرتفعة نسبياً"
+    ],
+    "approval_speed": "3-5 أيام",
+    "digital_application": true,
+    "rating": 4.0,
+    "category": "تمويل أصغر",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "mfw",
+    "name_ar": "صندوق المرأة للتمويل الأصغر",
+    "name_en": "Microfund for Women (MFW)",
+    "logo": "../images/microfinance/mfw.png",
+    "logo_fallback_text": "MFW",
+    "logo_color": "#BE185D",
+    "website": "https://www.microfund.org.jo",
+    "apply_url": "https://www.microfund.org.jo",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "target_audience": [
+      "سيدات الأعمال",
+      "المشاريع النسائية الصغيرة",
+      "ذوات الدخل المحدود"
+    ],
+    "tagline": "تمكين المرأة الاقتصادي منذ 1996",
+    "description": "أكبر شركة تمويل أصغر متخصصة في دعم المرأة في الأردن. تقدم تمويل \"مشروعك معنا\" من 1,000 إلى 25,000 دينار، وتمويل تضامن بدون ضمان، وتمويل تعليمي وأمومة وتحسين منزل. 55 فرعاً.",
+    "founded": 1996,
+    "branches": 55,
+    "clients": "100,900+",
+    "products": [
+      {
+        "name": "قرض المشاريع الصغيرة للمرأة",
+        "min_amount_jod": 100,
+        "max_amount_jod": 5000,
+        "interest_rate": "20-26% متناقصة",
+        "max_duration_months": 24,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "سيدات الأعمال"
+      },
+      {
+        "name": "قرض المجموعة التضامنية",
+        "min_amount_jod": 100,
+        "max_amount_jod": 2000,
+        "interest_rate": "24-28% متناقصة",
+        "max_duration_months": 18,
+        "collateral_required": false,
+        "guarantor_required": false,
+        "target": "مجموعات نسائية 3-5 أشخاص"
+      }
+    ],
+    "min_loan_jod": 1000,
+    "max_loan_jod": 25000,
+    "no_collateral": true,
+    "key_features": [
+      "تمويل حتى 25,000 دينار",
+      "تمويل تضامن بدون ضمان",
+      "فائدة 5% متناقصة",
+      "55 فرعاً",
+      "أكثر من 100,000 عميلة",
+      "تمويل أمومة وتعليمي"
+    ],
+    "pros": [
+      "بدون ضمانات للقروض التضامنية",
+      "غير ربحي — يُعيد الأرباح للعملاء",
+      "تدريب ودعم لصاحبات المشاريع"
+    ],
+    "cons": [
+      "مخصص للمرأة فقط",
+      "حد أقصى 5,000 دينار",
+      "قد يستلزم مجموعة تضامنية"
+    ],
+    "approval_speed": "أسبوع",
+    "digital_application": false,
+    "rating": 4.4,
+    "category": "تمويل أصغر",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "ahli-micro",
+    "name_ar": "أهلي للتمويل الأصغر",
+    "name_en": "Ahli Microfinance Company",
+    "logo": "../images/microfinance/ahli_micro.png",
+    "logo_fallback_text": "أهلي",
+    "logo_color": "#1E40AF",
+    "website": "https://amc.com.jo",
+    "apply_url": "https://amc.com.jo/ar/product/individual",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "target_audience": [
+      "أصحاب المشاريع",
+      "الأفراد",
+      "طلاب"
+    ],
+    "tagline": "مملوك للبنك الأهلي الأردني — منذ 1999",
+    "description": "أول شركة تمويل متخصص للمشاريع الصغرى في القطاع الخاص بالأردن، تأسست 1999 ومملوكة للبنك الأهلي الأردني. قدّمت أكثر من 273 مليون دينار لأكثر من 326,000 عميل عبر 24 فرعاً.",
+    "founded": 1999,
+    "branches": 24,
+    "clients": "326,000+",
+    "products": [
+      {
+        "name": "تمويل الأفراد",
+        "min_amount_jod": 200,
+        "max_amount_jod": 6000,
+        "interest_rate": "36% متناقصة (21% ثابتة تقريباً)",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الأفراد"
+      },
+      {
+        "name": "تمويل التعليم",
+        "min_amount_jod": 100,
+        "max_amount_jod": 3000,
+        "interest_rate": "24-30% متناقصة",
+        "max_duration_months": 24,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الطلاب وأولياء الأمور"
+      },
+      {
+        "name": "تمويل المشاريع الجماعي (للمرأة)",
+        "min_amount_jod": 200,
+        "max_amount_jod": 2000,
+        "interest_rate": "44% متناقصة (26.4% ثابتة)",
+        "max_duration_months": 12,
+        "collateral_required": false,
+        "guarantor_required": false,
+        "target": "مجموعات نسائية 2-4 أشخاص"
+      }
+    ],
+    "min_loan_jod": 100,
+    "max_loan_jod": 25000,
+    "no_collateral": true,
+    "key_features": [
+      "24 فرع + الإدارة العامة",
+      "326,000+ عميل منذ التأسيس",
+      "273 مليون دينار إجمالي قروض",
+      "فائدة 21%–26.4% سنوية ثابتة",
+      "تأسست 1999 — أقدم شركة من نوعها",
+      "تطبيق الأهلي موبايل للخدمات الرقمية",
+      "بازارات سنوية مجانية للعملاء",
+      "عمولة منح: 1% (أقل من 1,000 دينار)"
+    ],
+    "pros": [
+      "أكبر قاعدة عملاء في القطاع",
+      "خلفية بنكية قوية (البنك الأهلي)",
+      "تطبيق موبايل متكامل",
+      "شروط عمر مرنة (18-70 سنة)"
+    ],
+    "cons": [
+      "فائدة مرتفعة نسبياً (26.4% للمبالغ الصغيرة)",
+      "عمولة منح إضافية عند الصرف"
+    ],
+    "approval_speed": "5-7 أيام",
+    "digital_application": false,
+    "rating": 3.9,
+    "category": "تمويل أصغر",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03",
+    "total_loans_jod": "273,000,000+",
+    "interest_rate_note": "21%–26.4% سنوية ثابتة (36%–45% متناقصة) — استرشادي",
+    "interest_rate_min": 21.0,
+    "interest_rate_max": 26.4,
+    "min_age": 18,
+    "max_age": 70,
+    "owner": "مملوكة بالكامل للبنك الأهلي الأردني",
+    "app_available": true,
+    "digital_services": true
+  },
+  {
+    "id": "mifm",
+    "name_ar": "النموذجية الإسلامية للتمويل الأصغر",
+    "name_en": "MIFM",
+    "logo": "../images/microfinance/mifm.png",
+    "logo_fallback_text": "إسلامية",
+    "logo_color": "#065F46",
+    "website": "https://www.mifm.org.jo",
+    "apply_url": "https://www.mifm.org.jo",
+    "type": "microfinance",
+    "sharia_compliant": true,
+    "target_audience": [
+      "أصحاب المشاريع",
+      "الملتزمون بالشريعة الإسلامية",
+      "ذوو الدخل المحدود"
+    ],
+    "tagline": "التمويل الأصغر وفق الشريعة الإسلامية",
+    "description": "ذراع التمويل الأصغر للصندوق الأردني الهاشمي. إسلامية 100% وغير ربحية. تقدم 11 منتجاً متخصصاً: أعمالي، انطلاقتي، مشروعي المنزلي، مزرعتي، سيارتي، ورشتي، عيادتي، طاقتي، صحتي، تطوير منزل، احتياجاتي.",
+    "founded": 2013,
+    "branches": 10,
+    "clients": "4,941",
+    "products": [
+      {
+        "name": "تمويل المرابحة (مشاريع)",
+        "min_amount_jod": 200,
+        "max_amount_jod": 5000,
+        "interest_rate": "متوافق مع الشريعة",
+        "max_duration_months": 30,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "أصحاب المشاريع"
+      },
+      {
+        "name": "تمويل المشاركة",
+        "min_amount_jod": 500,
+        "max_amount_jod": 8000,
+        "interest_rate": "ربح متفق عليه",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "مشاريع ذات عائد"
+      }
+    ],
+    "min_loan_jod": 200,
+    "max_loan_jod": 20000,
+    "no_collateral": true,
+    "key_features": [
+      "تمويل من 200 إلى 20,000 دينار",
+      "إسلامية 100% غير ربحية",
+      "11 منتجاً متخصصاً",
+      "ذراع الصندوق الأردني الهاشمي",
+      "10 فروع ومكاتب",
+      "أكثر من 80 موظف"
+    ],
+    "pros": [
+      "الوحيد المتخصص بالتمويل الأصغر الإسلامي",
+      "غير ربحي — يُعيد الفائض للعملاء",
+      "بدون ربا"
+    ],
+    "cons": [
+      "فروع محدودة (8 فروع)",
+      "أصغر من حيث الحجم",
+      "تأسس حديثاً نسبياً"
+    ],
+    "approval_speed": "أسبوع",
+    "digital_application": false,
+    "rating": 4.3,
+    "category": "تمويل أصغر إسلامي",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "ifh",
+    "name_ar": "دار التمويل الإسلامي",
+    "name_en": "Islamic Finance House (IFH)",
+    "logo": "../images/microfinance/ifh.png",
+    "logo_fallback_text": "IFH",
+    "logo_color": "#1E40AF",
+    "website": "https://www.ifhc.com.jo",
+    "apply_url": "https://www.ifhc.com.jo",
+    "type": "specialized_finance",
+    "sharia_compliant": true,
+    "target_audience": [
+      "أصحاب السيارات",
+      "راغبو تمويل العقارات",
+      "الشركات والأفراد"
+    ],
+    "tagline": "أفضل مؤسسة مالية إسلامية غير بنكية في الأردن 2021",
+    "description": "شركة دار التمويل الإسلامي متخصصة في تمويل المركبات الخصوصية والعمومية والعقارات والأراضي ومواد البناء وتمويل الشركات. مدد من 12 حتى 72 شهراً. 3 فروع: الدوار الثامن، الشميساني، إربد.",
+    "founded": 2005,
+    "branches": 3,
+    "clients": "50,000+",
+    "products": [
+      {
+        "name": "تمويل المركبات الجديدة والمستعملة",
+        "min_amount_jod": 1000,
+        "max_amount_jod": 50000,
+        "interest_rate": "مرابحة — تنافسية",
+        "max_duration_months": 60,
+        "collateral_required": true,
+        "guarantor_required": false,
+        "target": "أصحاب السيارات"
+      },
+      {
+        "name": "تمويل العقارات والأراضي",
+        "min_amount_jod": 5000,
+        "max_amount_jod": 200000,
+        "interest_rate": "مرابحة — تنافسية",
+        "max_duration_months": 120,
+        "collateral_required": true,
+        "guarantor_required": false,
+        "target": "راغبو شراء عقار"
+      },
+      {
+        "name": "تمويل المركبات التجارية",
+        "min_amount_jod": 2000,
+        "max_amount_jod": 100000,
+        "interest_rate": "مرابحة — تنافسية",
+        "max_duration_months": 60,
+        "collateral_required": true,
+        "guarantor_required": false,
+        "target": "الشركات"
+      }
+    ],
+    "min_loan_jod": 1000,
+    "max_loan_jod": 50000,
+    "no_collateral": false,
+    "key_features": [
+      "تمويل مركبات خصوصية وعمومية",
+      "تمويل عقارات وأراضي",
+      "تمويل مواد بناء",
+      "تمويل شركات",
+      "مدد 12-72 شهراً",
+      "3 فروع رئيسية"
+    ],
+    "pros": [
+      "تمويل مبالغ كبيرة للعقارات",
+      "إسلامي 100%",
+      "موافقة سريعة جداً (24 ساعة)",
+      "جوائز دولية"
+    ],
+    "cons": [
+      "يشترط ضمانة (رهن السيارة أو العقار)",
+      "غير مناسب للمبالغ الصغيرة"
+    ],
+    "approval_speed": "24 ساعة",
+    "digital_application": true,
+    "rating": 4.5,
+    "category": "تمويل متخصص",
+    "max_loan_note": "يتحدد عند التقديم",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "vitas",
+    "name_ar": "فيتاس الأردن",
+    "name_en": "Vitas Jordan",
+    "logo": "../images/microfinance/vitas.png",
+    "logo_fallback_text": "Vitas",
+    "logo_color": "#7C3AED",
+    "website": "https://www.vitasjordan.com",
+    "apply_url": "https://www.vitasjordan.com",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "target_audience": [
+      "الأفراد",
+      "الشركات الصغيرة والمتوسطة",
+      "SME"
+    ],
+    "tagline": "حلول مالية للأفراد والشركات الصغيرة",
+    "description": "شركة فيتاس الأردن للتمويل الأصغر. تقدم قروض تطوير أعمال حتى 110,000 دينار، قروض مزرعة حتى 100,000 دينار، قروض بيتي حتى 14,000 دينار، وقروض شفاء وتعليم حتى 10,000 دينار. رصيد قروض أعمال 48 مليون دينار.",
+    "founded": 2000,
+    "branches": 13,
+    "clients": "20,000+",
+    "products": [
+      {
+        "name": "تمويل الأعمال الصغيرة",
+        "min_amount_jod": 500,
+        "max_amount_jod": 15000,
+        "interest_rate": "18-24% متناقصة",
+        "max_duration_months": 36,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الشركات الصغيرة"
+      },
+      {
+        "name": "تمويل الأفراد",
+        "min_amount_jod": 200,
+        "max_amount_jod": 5000,
+        "interest_rate": "22-28% متناقصة",
+        "max_duration_months": 30,
+        "collateral_required": false,
+        "guarantor_required": true,
+        "target": "الأفراد"
+      }
+    ],
+    "min_loan_jod": 500,
+    "max_loan_jod": 110000,
+    "no_collateral": true,
+    "key_features": [
+      "قروض أعمال حتى 110,000 دينار",
+      "قروض مزرعة حتى 100,000 دينار",
+      "قروض بيتي حتى 14,000 دينار",
+      "قروض علاج وتعليم",
+      "13 فرعاً في الأردن",
+      "رصيد 48 مليون دينار"
+    ],
+    "pros": [
+      "أعلى حد للتمويل بين شركات التمويل الأصغر",
+      "معايير دولية",
+      "مناسب لـ SME"
+    ],
+    "cons": [
+      "أقل انتشاراً من المنافسين المحليين",
+      "يشترط كفيل"
+    ],
+    "approval_speed": "أسبوع",
+    "digital_application": false,
+    "rating": 4.0,
+    "category": "تمويل أصغر",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "alameen",
+    "name_ar": "الأمين للتمويل الأصغر",
+    "name_en": "Al Ameen Microfinance",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "founded": 2009,
+    "branches": 8,
+    "min_loan_jod": 50,
+    "max_loan_jod": 15000,
+    "clients": "25,000",
+    "website": "https://www.alameenjo.com",
+    "apply_url": "https://www.alameenjo.com",
+    "phone": "",
+    "address": "دابوق، شارع محمد خير المعاني، عمان",
+    "description": "شركة أردنية ذات مسؤولية محدودة تأسست عام 2009، متخصصة في تمويل الأسر لأغراض المستهلك والتعليم وتمويل المشاريع المرخصة وغير المرخصة. تقدم خدماتها عبر 8 فروع وتخدم أكثر من 25,000 عميل.',",
+    "key_features": [
+      "تمويل 50-15,000 دينار",
+      "تمويل مشاريع منزلية ومرخصة",
+      "8 فروع في الأردن",
+      "تأسست 2009",
+      "25,000+ عميل"
+    ],
+    "pros": [
+      "تمويل صغير يبدأ من 50 دينار",
+      "مناطق الفقر والأقل حظاً",
+      "شروط ميسرة"
+    ],
+    "cons": [
+      "حد أعلى 15,000 دينار",
+      "فروع محدودة"
+    ],
+    "approval_speed": "أسبوع",
+    "max_loan_note": "حتى 15,000 دينار",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  },
+  {
+    "id": "shuraka",
+    "name_ar": "الشركاء للتمويل الأصغر",
+    "name_en": "Al Shuraka Microfinance",
+    "type": "microfinance",
+    "sharia_compliant": false,
+    "founded": null,
+    "branches": 0,
+    "min_loan_jod": 100,
+    "max_loan_jod": 10000,
+    "clients": null,
+    "website": "",
+    "apply_url": "",
+    "phone": "",
+    "address": "الأردن",
+    "description": "شركة الشركاء للتمويل الأصغر مرخصة من البنك المركزي الأردني. تقدم خدمات التمويل الأصغر للأفراد وأصحاب المشاريع الصغيرة.",
+    "key_features": [
+      "مرخصة من البنك المركزي",
+      "تمويل للأفراد والمشاريع الصغيرة"
+    ],
+    "pros": [
+      "مرخصة رسمياً من البنك المركزي"
+    ],
+    "cons": [
+      "بيانات تفصيلية غير متاحة علناً"
+    ],
+    "approval_speed": "يتحدد عند التقديم",
+    "max_loan_note": "يتحدد عند التقديم",
+    "disclaimer": "الشروط والأسعار تُحدد عند التقديم — تحقق من الموقع الرسمي",
+    "last_updated": "2026-03"
+  }
+]

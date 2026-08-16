@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجتمع مالي بلس — قريباً | MaalyPlus Community</title>
+<meta name="description" content="قريباً: أول مجتمع مالي أردني عربي لمناقشة البطاقات، القروض، الاستثمار، والتجارب مع البنوك. سجّل للحصول على دعوة مبكرة.">
+<link rel="canonical" href="https://maalyplus.com/community/index.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0;overflow-x:hidden}
+.cm-hero{background:linear-gradient(135deg,#1E2B3C 0%,#7C3AED 40%,#BE185D 80%,#B45309 100%);color:#fff;padding:4rem 0 5rem;position:relative;overflow:hidden;text-align:center}
+.cm-hero::before{content:'';position:absolute;top:-80px;right:-100px;width:300px;height:300px;background:rgba(255,255,255,.06);border-radius:50%;animation:float 6s ease-in-out infinite}
+.cm-hero::after{content:'';position:absolute;bottom:-100px;left:-80px;width:250px;height:250px;background:rgba(255,255,255,.04);border-radius:50%;animation:float 8s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+
+.cm-container{max-width:900px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2}
+.cm-badge{display:inline-block;background:rgba(245,158,11,.2);color:#FCD34D;padding:6px 18px;border-radius:50px;font-size:.82rem;font-weight:700;margin-bottom:1.25rem;border:1.5px solid rgba(245,158,11,.4);backdrop-filter:blur(10px)}
+.cm-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem;letter-spacing:-.02em}
+.cm-hero h1 .hl{background:linear-gradient(135deg,#FCD34D,#FB923C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cm-hero p{font-size:1.1rem;opacity:.92;line-height:1.8;max-width:620px;margin:0 auto 2rem}
+
+.cm-countdown{display:flex;gap:.75rem;justify-content:center;margin:2rem 0;flex-wrap:wrap}
+.cm-cd-item{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.2);border-radius:14px;padding:.75rem 1.25rem;min-width:80px}
+.cm-cd-num{font-family:var(--font-heading);font-size:2rem;font-weight:700;display:block;line-height:1}
+.cm-cd-label{font-size:.7rem;opacity:.75;margin-top:4px;display:block}
+
+.cm-signup{background:rgba(255,255,255,.12);backdrop-filter:blur(20px);border:1.5px solid rgba(255,255,255,.2);border-radius:16px;padding:1.5rem;max-width:520px;margin:1.5rem auto 0}
+.cm-signup-title{font-weight:700;margin-bottom:.75rem;font-size:1rem}
+.cm-signup-form{display:flex;gap:.5rem;flex-wrap:wrap}
+.cm-signup input{flex:1;min-width:200px;padding:11px 16px;border-radius:50px;border:none;font-family:var(--font-body);font-size:.92rem;color:#1E2B3C;background:#fff;outline:none}
+.cm-signup button{padding:11px 24px;border-radius:50px;border:none;background:linear-gradient(135deg,#FCD34D,#FB923C);color:#1E2B3C;font-weight:800;font-size:.9rem;cursor:pointer;font-family:var(--font-body);transition:transform .2s}
+.cm-signup button:hover{transform:scale(1.03)}
+.cm-signup-note{font-size:.75rem;opacity:.7;margin-top:.75rem}
+
+.cm-body{max-width:1100px;margin:-3rem auto 0;padding:0 1.5rem 5rem;position:relative;z-index:3}
+.cm-card{background:#fff;border-radius:20px;padding:2.5rem 2rem;box-shadow:0 10px 40px rgba(0,0,0,.06);border:1px solid #E5E7EB;margin-bottom:1.5rem}
+
+.cm-section-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.5rem;margin:0 0 .5rem;text-align:center}
+.cm-section-sub{text-align:center;color:#6B7280;font-size:.95rem;margin-bottom:2rem}
+
+.cm-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.cm-feature{background:linear-gradient(135deg,#F9FAFB,#fff);border:1.5px solid #E5E7EB;border-radius:14px;padding:1.25rem;transition:all .25s}
+.cm-feature:hover{transform:translateY(-3px);border-color:#7C3AED;box-shadow:0 10px 25px rgba(124,58,237,.1)}
+.cm-feature-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:.75rem;color:#fff}
+.cm-feature h3{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:#1E2B3C;margin:0 0 .4rem}
+.cm-feature p{font-size:.82rem;color:#6B7280;line-height:1.7;margin:0}
+
+.cm-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+.cm-topic{background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:.85rem 1rem;display:flex;align-items:center;gap:.65rem;transition:all .2s;cursor:default}
+.cm-topic:hover{background:#fff;border-color:#7C3AED}
+.cm-topic-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cm-topic-name{font-size:.82rem;font-weight:700;color:#1E2B3C}
+
+.cm-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1.5rem}
+.cm-stat{text-align:center;padding:1rem;background:linear-gradient(135deg,#F5F3FF,#FAF5FF);border-radius:12px;border:1px solid #E9D5FF}
+.cm-stat-num{font-family:var(--font-heading);font-size:1.75rem;font-weight:700;color:#7C3AED;display:block;line-height:1.1}
+.cm-stat-label{font-size:.75rem;color:#6B21A8;margin-top:4px;font-weight:600}
+
+.cm-cta{text-align:center;padding:2rem 1rem;background:linear-gradient(135deg,#1E2B3C,#7C3AED);border-radius:16px;color:#fff;margin-top:2rem}
+.cm-cta h3{font-family:var(--font-heading);font-size:1.25rem;font-weight:700;margin:0 0 .5rem}
+.cm-cta p{opacity:.85;margin:0 0 1.25rem;font-size:.9rem}
+.cm-cta-btn{display:inline-block;background:#fff;color:#1E2B3C;padding:11px 28px;border-radius:50px;text-decoration:none;font-weight:800;font-size:.95rem;transition:transform .2s}
+.cm-cta-btn:hover{transform:scale(1.05)}
+
+.cm-signup-msg{font-size:.88rem;text-align:center;margin-top:.75rem;padding:.6rem;border-radius:10px;display:none}
+.cm-signup-msg.success{display:block;background:rgba(16,185,129,.2);color:#A7F3D0}
+.cm-signup-msg.error{display:block;background:rgba(239,68,68,.2);color:#FCA5A5}
+
+@media(max-width:640px){
+  .cm-hero{padding:3rem 0 4rem}
+  .cm-card{padding:1.75rem 1.25rem}
+  .cm-signup-form{flex-direction:column}
+  .cm-signup input,.cm-signup button{width:100%}
+}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <meta property="og:title" content="مجتمع MaalyPlus">
+    <meta property="og:description" content="انضم لمجتمع المهتمين بالمنتجات المالية في الأردن.">
+    <meta property="og:url" content="https://maalyplus.com/community/index.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مجتمع MaalyPlus">
+    <meta name="twitter:description" content="انضم لمجتمع المهتمين بالمنتجات المالية في الأردن.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<section class="cm-hero">
+<div class="cm-container">
+<div class="cm-badge">🚀 قريباً — تشرين الثاني (نوفمبر) 2026</div>
+<h1>مجتمع مالي أردني<br><span class="hl">لتبادل التجارب حول البطاقات والقروض والادخار</span></h1>
+<p>قريباً: ستتمكن من مشاركة تجربتك، وطرح أسئلتك، والتعلّم من أعضاء المجتمع. منصة عربية لنقاشات البطاقات والقروض والادخار في الأردن.</p>
+
+<div class="cm-countdown" id="countdown">
+<div class="cm-cd-item"><span class="cm-cd-num" id="cd-days">0</span><span class="cm-cd-label">يوم</span></div>
+<div class="cm-cd-item"><span class="cm-cd-num" id="cd-hours">0</span><span class="cm-cd-label">ساعة</span></div>
+<div class="cm-cd-item"><span class="cm-cd-num" id="cd-mins">0</span><span class="cm-cd-label">دقيقة</span></div>
+<div class="cm-cd-item"><span class="cm-cd-num" id="cd-secs">0</span><span class="cm-cd-label">ثانية</span></div>
+</div>
+
+<div class="cm-signup">
+<div class="cm-signup-title">🎟️ احجز دعوتك المبكرة</div>
+<form class="cm-signup-form" name="community-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSignup(event)">
+<input type="hidden" name="form-name" value="community-waitlist">
+<p style="display:none" aria-hidden="true"><label>لا تملأ هذا الحقل: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<input type="email" id="emailInput" name="email" placeholder="بريدك الإلكتروني" aria-label="بريدك الإلكتروني للانضمام إلى قائمة الانتظار" required>
+<button type="submit">انضم إلى قائمة الانتظار</button>
+</form>
+<div class="cm-signup-msg" id="signupMsg"></div>
+<div class="cm-signup-note">نستخدم بريدك لإشعارك بالإطلاق فقط — بلا رسائل ترويجية، ويمكنك إلغاء الاشتراك في أي وقت. <a href="../legal/privacy-policy.html" style="color:#FCD34D;text-decoration:underline">سياسة الخصوصية</a></div>
+</div>
+</div>
+</section>
+
+<div class="cm-body">
+
+<div class="cm-card">
+<h2 class="cm-section-title">ماذا ستجد في المجتمع؟</h2>
+<p class="cm-section-sub">كل ما تحتاجه لاتخاذ قرارات مالية ذكية — بدعم من مجتمع يفهم السوق الأردني</p>
+
+<div class="cm-features">
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#1E40AF,#3B82F6)">💬</div>
+<h3>نقاشات حقيقية</h3>
+<p>اسأل عن أي منتج مالي واحصل على إجابات من أعضاء المجتمع بتجاربهم الشخصية، لا محتوى مدفوع.</p>
+</div>
+
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#047857,#065F46)">⭐</div>
+<h3>تقييمات موثوقة</h3>
+<p>مراجعات شفافة للبنوك والبطاقات والقروض من عملاء حقيقيين بعد استخدام المنتج.</p>
+</div>
+
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#F59E0B,#D97706)">🎓</div>
+<h3>إجابات تثقيفية عامة</h3>
+<p>خبراء ماليون معتمدون يجيبون على أسئلتك — من CFA وCESF ومستشارين بنكيين.</p>
+</div>
+
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">🔐</div>
+<h3>ضوابط لحماية الخصوصية</h3>
+<p>نشر باسم مستعار، تحقق إجباري من الهوية، وإشراف نشط يضمن جودة النقاش.</p>
+</div>
+
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#EC4899,#BE185D)">🚀</div>
+<h3>شارك تجربتك</h3>
+<p>قصص نجاح وأخطاء يجب تجنبها — تعلّم من تجارب الآخرين قبل اتخاذ قرارك.</p>
+</div>
+
+<div class="cm-feature">
+<div class="cm-feature-icon" style="background:linear-gradient(135deg,#DC2626,#991B1B)">📰</div>
+<h3>أخبار فورية</h3>
+<p>تنبيهات بأي تغيير في أسعار الفائدة، منتجات جديدة، أو تعليمات البنك المركزي.</p>
+</div>
+</div>
+</div>
+
+<div class="cm-card">
+<h2 class="cm-section-title">الأقسام المتاحة قريباً</h2>
+<p class="cm-section-sub">8 أقسام لتغطية كل جانب من جوانب حياتك المالية</p>
+
+<div class="cm-topics">
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#EFF6FF">💳</div><span class="cm-topic-name">البطاقات الائتمانية</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#ECFDF5">💰</div><span class="cm-topic-name">القروض</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#FEF3C7">📈</div><span class="cm-topic-name">الادخار والاستثمار</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#ECFDF5">☪️</div><span class="cm-topic-name">التمويل الإسلامي</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#F5F3FF">💡</div><span class="cm-topic-name">استشارات</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#FCE7F3">⭐</div><span class="cm-topic-name">تجارب وآراء</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#FEE2E2">📰</div><span class="cm-topic-name">أخبار ومستجدات</span></div>
+<div class="cm-topic"><div class="cm-topic-icon" style="background:#E0F2FE">🚀</div><span class="cm-topic-name">رواد أعمال</span></div>
+</div>
+
+<div class="cm-stats">
+<div class="cm-stat"><span class="cm-stat-num">8</span><span class="cm-stat-label">أقسام تخصصية</span></div>
+<div class="cm-stat"><span class="cm-stat-num">500+</span><span class="cm-stat-label">عضو مؤسس</span></div>
+<div class="cm-stat"><span class="cm-stat-num">24/7</span><span class="cm-stat-label">إشراف مستمر</span></div>
+<div class="cm-stat"><span class="cm-stat-num">100%</span><span class="cm-stat-label">مجاني دائماً</span></div>
+</div>
+</div>
+
+<div class="cm-cta">
+<h3>لا تفوّت الإطلاق</h3>
+<p>سجّل بريدك الإلكتروني وستكون أول من يعرف — مع شارة عضو مؤسس حصرية</p>
+<a href="#" onclick="document.getElementById('emailInput').focus();return false" class="cm-cta-btn">احجز دعوتي ←</a>
+</div>
+
+</div>
+
+<script>
+// موعد الإطلاق المستهدف — أُجّل 90 يوماً بقرار 2026-08-07
+const LAUNCH_DATE = new Date('2026-11-05T00:00:00');
+
+function updateCountdown(){
+  const now = new Date();
+  const diff = LAUNCH_DATE - now;
+  if(diff <= 0){
+    /* لا نعلن إطلاقاً آلياً: إن مرّ الموعد قبل الفتح الفعلي تبقى الرسالة صادقة */
+    document.getElementById('countdown').innerHTML = '<div style="font-size:1.05rem;font-weight:700">اقترب الافتتاح — سجّل بريدك ليصلك الإشعار لحظة الفتح</div>';
+    return;
+  }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hours').textContent = h;
+  document.getElementById('cd-mins').textContent = m;
+  document.getElementById('cd-secs').textContent = s;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* الإرسال حقيقي إلى Netlify Forms. لا نعلن نجاحاً إلا بعد رد الخادم. */
+function handleSignup(e){
+  e.preventDefault();
+  const form  = e.target;
+  const input = document.getElementById('emailInput');
+  const btn   = form.querySelector('button[type="submit"]');
+  const msg   = document.getElementById('signupMsg');
+  const email = input.value.trim();
+
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+    msg.className = 'cm-signup-msg error';
+    msg.textContent = '⚠️ أدخل بريداً إلكترونياً صحيحاً';
+    input.focus();
+    return false;
+  }
+
+  const label = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'جارٍ الإرسال…';
+  msg.className = 'cm-signup-msg';
+  msg.textContent = '';
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(res => {
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    msg.className = 'cm-signup-msg success';
+    msg.textContent = '✓ وصلنا بريدك. سنراسلك عند فتح المجتمع — ولن نرسل شيئاً غير ذلك.';
+    input.value = '';
+    btn.textContent = 'تم التسجيل';
+  }).catch(() => {
+    /* فشل الإرسال يُقال كما هو — لا رسالة نجاح كاذبة */
+    btn.disabled = false;
+    btn.textContent = label;
+    msg.className = 'cm-signup-msg error';
+    msg.innerHTML = '⚠️ لم يصلنا بريدك — تعذّر الإرسال. أعد المحاولة، أو راسلنا على ' +
+      '<a href="mailto:info@maalyplus.com?subject=%D9%82%D8%A7%D8%A6%D9%85%D8%A9%20%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9" style="color:inherit;text-decoration:underline">info@maalyplus.com</a>';
+  });
+
+  return false;
+}
+</script>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+</body>
+</html>

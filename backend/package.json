@@ -1,0 +1,32 @@
+{
+  "name": "maalyplus-backend",
+  "version": "1.0.0",
+  "description": "Standalone Node.js Express & SQLite Backend API for MaalyPlus lead generation and finance request capture",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "keywords": [
+    "maalyplus",
+    "express",
+    "sqlite",
+    "lead-generation",
+    "fintech"
+  ],
+  "author": "MaalyPlus Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

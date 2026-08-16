@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مالي بلس — لوحة الإدارة</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E40AF;
+            --primary-dark: #1E2B3C;
+            --success: #10B981;
+            --success-dark: #065F46;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+            --teal: #14B8A6;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-500: #6B7280;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --white: #FFFFFF;
+            --danger: #EF4444;
+            --bg-color: #F9FAFB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--gray-800);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Login Screen */
+        #login-screen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .login-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-box h1 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: right;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.375rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* App Layout */
+        #app {
+            display: none;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Topbar */
+        .topbar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--danger);
+        }
+
+        .dot.connected {
+            background-color: var(--success);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+            padding: 0.5rem 1rem;
+            width: auto;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--gray-100);
+            color: var(--gray-800);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            flex-grow: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border-right: 4px solid var(--primary); /* RTL border */
+        }
+
+        .stat-card:nth-child(2) { border-color: var(--warning); }
+        .stat-card:nth-child(3) { border-color: var(--info); }
+        .stat-card:nth-child(4) { border-color: var(--success); }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* Filters Bar */
+        .filters-bar {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+        }
+
+        .search-box {
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .btn-icon {
+            padding: 0.75rem;
+            width: auto;
+            border-radius: 0.375rem;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+        
+        .btn-icon:hover {
+            background: var(--gray-200);
+        }
+
+        .spinner {
+            display: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-top-color: var(--gray-700);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Table */
+        .table-container {
+            background: var(--white);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        th {
+            background-color: var(--gray-100);
+            padding: 1rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-200);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-800);
+            white-space: nowrap;
+        }
+
+        tbody tr {
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        tbody tr:hover {
+            background-color: var(--gray-100);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .badge-pending { background-color: #FEF3C7; color: #92400E; }
+        .badge-under_review { background-color: #DBEAFE; color: #1E40AF; }
+        .badge-matched { background-color: #D1FAE5; color: #065F46; }
+        .badge-contacted { background-color: #CCFBF1; color: #0F766E; }
+        .badge-closed { background-color: #F3F4F6; color: #374151; }
+
+        .type-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .type-ind { background-color: #E0F2FE; color: #0369A1; }
+        .type-biz { background-color: #FFEDD5; color: #C2410C; }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .pagination-info {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-page {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        .btn-page:hover:not(:disabled) {
+            background: var(--gray-100);
+        }
+        .btn-page:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Drawer / Modal */
+        .drawer-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0; right: 0; /* Changed to slide in from right for RTL? User said slide from left since RTL. Wait, in RTL, start is right, end is left. A left-slide drawer comes from left side. Let's make it slide from left */
+            left: 0; /* Stick to left */
+            right: auto;
+            bottom: 0;
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            z-index: 101;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+        }
+        .drawer.active {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .drawer-title-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .drawer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-500);
+        }
+        .btn-close:hover {
+            color: var(--gray-800);
+        }
+
+        .drawer-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .status-update-box {
+            background: var(--gray-100);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        
+        .status-update-box .btn {
+            width: auto;
+        }
+
+        .detail-group {
+            margin-bottom: 2rem;
+        }
+        .detail-group h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .detail-item {
+            margin-bottom: 0.5rem;
+        }
+        .detail-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 0.25rem;
+        }
+        .detail-value {
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+        .detail-value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .detail-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toasts */
+        .toast-container {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem; /* Left side for RTL */
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .toast {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            color: var(--white);
+            font-weight: 500;
+            transform: translateX(-150%);
+            transition: transform 0.3s;
+        }
+        .toast.show {
+            transform: translateX(0);
+        }
+        .toast.success { background-color: var(--success); }
+        .toast.error { background-color: var(--danger); }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 0.25rem;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .sk-text { height: 1.2rem; margin-bottom: 0.5rem; width: 100%; }
+        .sk-text-short { width: 50%; }
+
+        .empty-state {
+            padding: 3rem;
+            text-align: center;
+            color: var(--gray-500);
+        }
+
+        /* Checkmarks for docs */
+        .doc-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-700);
+        }
+        .doc-check.has-doc::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        .doc-check.no-doc::before {
+            content: '✗';
+            color: var(--danger);
+        }
+
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .filters-bar { flex-direction: column; align-items: stretch; }
+            .search-box { width: 100%; }
+            .drawer { max-width: 85%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Auth Screen -->
+    <div id="login-screen">
+        <div class="login-box" id="login-form-container">
+            <h1>مالي بلس</h1>
+            <p style="margin-bottom: 1.5rem; color: var(--gray-500);">تسجيل الدخول للوحة الإدارة</p>
+            <div class="input-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" id="login-email" placeholder="admin@admin.com" dir="ltr">
+            </div>
+            <div class="input-group">
+                <label>كلمة المرور</label>
+                <input type="password" id="login-password" placeholder="أدخل كلمة المرور" dir="ltr">
+            </div>
+            <button class="btn" id="login-btn" onclick="handleLogin()">تسجيل الدخول</button>
+            <p id="login-error" style="color: var(--danger); margin-top: 1rem; display: none;"></p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--gray-500); border-top: 1px solid var(--gray-200); padding-top: 1rem;">
+                🔒 الوصول مقتصر حصراً على مسؤولي النظام المصرح لهم.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app">
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="topbar-right">
+                <div class="logo">مالي بلس — <span id="topbar-user-name">لوحة الإدارة</span></div>
+                <div class="status-indicator">
+                    <div id="api-dot" class="dot"></div>
+                    <span id="api-status-text">جاري الاتصال...</span>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-outline" onclick="handleLogout()">تسجيل خروج</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-total">-</div>
+                    <div class="stat-label">إجمالي الطلبات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-pending">-</div>
+                    <div class="stat-label">طلبات جديدة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-ind">-</div>
+                    <div class="stat-label">أفراد</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-biz">-</div>
+                    <div class="stat-label">منشآت</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label>حالة الطلب</label>
+                    <select id="filter-status" onchange="resetPaginationAndFetch()">
+                        <option value="">الكل</option>
+                        <option value="pending">جديد</option>
+                        <option value="under_review">قيد المراجعة</option>
+                        <option value="matched">تمت المطابقة</option>
+                        <option value="contacted">تم التواصل</option>
+                        <option value="closed">مغلق</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>نوع المتقدم</label>
+                    <select id="filter-type" onchange="resetPaginationAndFetch()">
+                        <option value="">الكل</option>
+                        <option value="فرد">فرد</option>
+                        <option value="منشأة">منشأة</option>
+                    </select>
+                </div>
+                <div class="filter-group search-box">
+                    <label>بحث</label>
+                    <input type="text" id="filter-search" placeholder="المرجع أو الاسم..." oninput="handleSearch()">
+                </div>
+                <button class="btn-icon" onclick="fetchLeads()" title="تحديث">
+                    <span id="refresh-icon">↻</span>
+                    <div id="refresh-spinner" class="spinner"></div>
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المرجع</th>
+                            <th>النوع</th>
+                            <th>الاسم</th>
+                            <th>الجوال</th>
+                            <th>المحافظة</th>
+                            <th>المبلغ</th>
+                            <th>الحالة</th>
+                            <th>التاريخ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Rows rendered via JS -->
+                    </tbody>
+                </table>
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    لا توجد طلبات مطابقة للبحث
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="pagination-info" id="pagination-info">
+                    عرض 0-0 من أصل 0
+                </div>
+                <div class="pagination-controls">
+                    <button class="btn-page" id="btn-next" onclick="nextPage()">التالي</button>
+                    <button class="btn-page" id="btn-prev" onclick="prevPage()">السابق</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Drawer / Modal -->
+    <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <div class="drawer-title" id="drawer-ref">MP-0000-0000</div>
+                <div id="drawer-status-badge"></div>
+            </div>
+            <button class="btn-close" onclick="closeDrawer()">&times;</button>
+        </div>
+        <div class="drawer-body">
+            
+            <div class="status-update-box">
+                <div class="input-group" style="margin-bottom: 0; flex-grow: 1;">
+                    <label>تحديث الحالة</label>
+                    <select id="drawer-status-select">
+                        <option value="pending">جديد</option>
+                        <option value="under_review">قيد المراجعة</option>
+                        <option value="matched">تمت المطابقة</option>
+                        <option value="contacted">تم التواصل</option>
+                        <option value="closed">مغلق</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="updateStatus()" id="update-status-btn">تحديث</button>
+            </div>
+
+            <div class="detail-group">
+                <h3>بيانات التواصل</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">الاسم الكامل</div>
+                        <div class="detail-value" id="detail-name">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">رقم الجوال</div>
+                        <div class="detail-value" id="detail-phone">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">البريد الإلكتروني</div>
+                        <div class="detail-value" id="detail-email">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">المحافظة</div>
+                        <div class="detail-value" id="detail-gov">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">ملاحظات</div>
+                        <div class="detail-value" id="detail-notes">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-group" id="detail-finance-ind" style="display: none;">
+                <h3>تفاصيل التمويل (فرد)</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">المنتج المطلوب</div>
+                        <div class="detail-value" id="ind-product">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">المبلغ المطلوب</div>
+                        <div class="detail-value" id="ind-amount">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">فترة السداد</div>
+                        <div class="detail-value" id="ind-tenor">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">توافق شرعي؟</div>
+                        <div class="detail-value" id="ind-sharia">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">الدخل الشهري</div>
+                        <div class="detail-value" id="ind-income">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">الالتزامات الشهرية</div>
+                        <div class="detail-value" id="ind-obli">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">جهة العمل</div>
+                        <div class="detail-value" id="ind-emp">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">سنوات العمل</div>
+                        <div class="detail-value" id="ind-years">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">تحويل الراتب؟</div>
+                        <div class="detail-value" id="ind-transfer">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-group" id="detail-finance-biz" style="display: none;">
+                <h3>تفاصيل التمويل (منشأة)</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">اسم المنشأة</div>
+                        <div class="detail-value" id="biz-name">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">الشكل القانوني</div>
+                        <div class="detail-value" id="biz-legal">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">القطاع</div>
+                        <div class="detail-value" id="biz-sector">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">عمر المنشأة</div>
+                        <div class="detail-value" id="biz-age">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">الغرض من التمويل</div>
+                        <div class="detail-value" id="biz-purpose">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">المبلغ المطلوب</div>
+                        <div class="detail-value" id="biz-amount">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">الإيرادات السنوية</div>
+                        <div class="detail-value" id="biz-revenue">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">فترة السداد</div>
+                        <div class="detail-value" id="biz-tenor">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">توافق شرعي؟</div>
+                        <div class="detail-value" id="biz-sharia">-</div>
+                    </div>
+                </div>
+                
+                <h4 style="margin-top: 1.5rem; margin-bottom: 1rem; color: var(--gray-700);">المستندات المتوفرة</h4>
+                <div class="detail-grid" id="biz-docs">
+                    <!-- populated via js -->
+                </div>
+            </div>
+
+            <div class="detail-group">
+                <h3>بيانات فنية</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">تاريخ الإنشاء</div>
+                        <div class="detail-value" id="detail-created">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">آخر تحديث</div>
+                        <div class="detail-value" id="detail-updated">-</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">عنوان IP</div>
+                        <div class="detail-value" id="detail-ip">-</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toasts -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        
+        // State
+        let state = {
+            limit: 15,
+            offset: 0,
+            total: 0,
+            leads: [],
+            filteredLeads: [], // for client-side search
+            searchQuery: '',
+            currentLead: null,
+            refreshInterval: null
+        };
+
+        // Formatters
+        const formatCurrency = (val) => {
+            if (!val) return '-';
+            return new Intl.NumberFormat('ar-JO').format(val) + ' د.أ';
+        };
+
+        const formatDate = (dateStr) => {
+            if (!dateStr) return '-';
+            try {
+                return new Date(dateStr).toLocaleDateString('ar-JO', { 
+                    year: 'numeric', month: 'short', day: 'numeric',
+                    hour: '2-digit', minute:'2-digit'
+                });
+            } catch(e) {
+                return dateStr;
+            }
+        };
+
+        const STATUS_MAP = {
+            'pending': { label: 'جديد', class: 'badge-pending' },
+            'under_review': { label: 'قيد المراجعة', class: 'badge-under_review' },
+            'matched': { label: 'تمت المطابقة', class: 'badge-matched' },
+            'contacted': { label: 'تم التواصل', class: 'badge-contacted' },
+            'closed': { label: 'مغلق', class: 'badge-closed' }
+        };
+
+        const getStatusBadge = (status) => {
+            const mapped = STATUS_MAP[status] || { label: status, class: 'badge-closed' };
+            return `<span class="badge ${mapped.class}">${mapped.label}</span>`;
+        };
+
+        const getTypeBadge = (type) => {
+            if (type === 'فرد') return `<span class="type-badge type-ind">فرد</span>`;
+            if (type === 'منشأة') return `<span class="type-badge type-biz">منشأة</span>`;
+            return type;
+        };
+
+        // Auth
+        const getAuthHeaders = () => {
+            const token = localStorage.getItem('mp_admin_token');
+            return token ? { 'Authorization': `Bearer ${token}` } : {};
+        };
+
+        const handleApiError = (res) => {
+            if (res.status === 401 || res.status === 403) {
+                handleLogout();
+                return true;
+            }
+            return false;
+        };
+
+        const checkAuth = async () => {
+            const token = localStorage.getItem('mp_admin_token');
+            if (!token) {
+                showAuthScreen();
+                return;
+            }
+            try {
+                const res = await fetch(`${API_BASE}/auth/me`, {
+                    headers: getAuthHeaders()
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.success && data.data.role === 'admin') {
+                        localStorage.setItem('mp_admin_user', JSON.stringify(data.data));
+                        showDashboard(data.data.full_name);
+                        return;
+                    }
+                }
+            } catch (err) {
+                console.error('Auth check failed', err);
+            }
+            handleLogout();
+        };
+
+        const showAuthScreen = () => {
+            document.getElementById('login-screen').style.display = 'flex';
+            document.getElementById('app').style.display = 'none';
+        };
+
+        const showDashboard = (fullName) => {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('app').style.display = 'flex';
+            if (fullName) {
+                document.getElementById('topbar-user-name').textContent = fullName;
+            }
+            initApp();
+        };
+
+        const handleLogin = async () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+            const errorEl = document.getElementById('login-error');
+            errorEl.style.display = 'none';
+            
+            if (!email || !password) {
+                errorEl.textContent = 'يرجى إدخال البريد الإلكتروني وكلمة المرور';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await res.json();
+                
+                if (res.ok && data.success) {
+                    // Strict Admin role verification
+                    if (!data.data.user || data.data.user.role !== 'admin') {
+                        errorEl.textContent = 'عذراً، هذا الحساب غير مصرّح له بالدخول كمدير نظام (Admin Only).';
+                        errorEl.style.display = 'block';
+                        localStorage.removeItem('mp_admin_token');
+                        localStorage.removeItem('mp_admin_user');
+                        return;
+                    }
+
+                    localStorage.setItem('mp_admin_token', data.data.token);
+                    localStorage.setItem('mp_admin_user', JSON.stringify(data.data.user));
+                    showDashboard(data.data.user.full_name);
+                } else {
+                    errorEl.textContent = data.error || data.message || 'بيانات الدخول غير صحيحة';
+                    errorEl.style.display = 'block';
+                }
+            } catch (err) {
+                errorEl.textContent = 'حدث خطأ في الاتصال بالسيرفر';
+                errorEl.style.display = 'block';
+            }
+        };
+
+        document.getElementById('login-password').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') handleLogin();
+        });
+        document.getElementById('login-email').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') handleLogin();
+        });
+
+        const handleLogout = () => {
+            localStorage.removeItem('mp_admin_token');
+            localStorage.removeItem('mp_admin_user');
+            location.reload();
+        };
+
+        // Toasts
+        const showToast = (msg, type = 'success') => {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = msg;
+            container.appendChild(toast);
+            
+            // trigger reflow
+            void toast.offsetWidth;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        };
+
+        // API Calls
+        const checkHealth = async () => {
+            const dot = document.getElementById('api-dot');
+            const text = document.getElementById('api-status-text');
+            try {
+                const res = await fetch(`${API_BASE}/health`);
+                if (res.ok) {
+                    dot.classList.add('connected');
+                    text.textContent = 'متصل';
+                    return true;
+                }
+                throw new Error('Not OK');
+            } catch (err) {
+                dot.classList.remove('connected');
+                text.textContent = 'غير متصل';
+                return false;
+            }
+        };
+
+        const fetchLeads = async () => {
+            const icon = document.getElementById('refresh-icon');
+            const spinner = document.getElementById('refresh-spinner');
+            
+            icon.style.display = 'none';
+            spinner.style.display = 'inline-block';
+
+            try {
+                const status = document.getElementById('filter-status').value;
+                const type = document.getElementById('filter-type').value;
+                
+                let url = `${API_BASE}/leads?limit=${state.limit}&offset=${state.offset}`;
+                if (status) url += `&status=${status}`;
+                if (type) url += `&applicant_type=${type}`;
+
+                const res = await fetch(url, { headers: getAuthHeaders() });
+                if (handleApiError(res)) return;
+                const data = await res.json();
+                
+                if (data.success) {
+                    state.leads = data.data;
+                    state.total = data.total;
+                    
+                    // We also need overall stats. If filters are active, total returned might just be for the filter.
+                    // A proper implementation would have a separate stats endpoint, but for now we'll fetch stats if offset=0 and no filters.
+                    if (!status && !type && state.offset === 0) {
+                        updateGlobalStats(data.data, data.total);
+                    }
+                    
+                    applyClientSearch();
+                }
+            } catch (err) {
+                console.error("Failed to fetch leads", err);
+                showToast("فشل جلب البيانات", "error");
+            } finally {
+                icon.style.display = 'inline-block';
+                spinner.style.display = 'none';
+            }
+        };
+        
+        // As requested by stats card, we need accurate total, pending, ind, biz.
+        // Since API pagination limits what we get, we might need a dedicated fetch or approximate.
+        // Let's do a full fetch without limit if possible just for stats, OR assume API provides it.
+        // The prompt says "GET /api/leads ... Returns { success, total, count, data: [...] }"
+        // If we want correct stats, let's fetch without pagination once on load.
+        const fetchStats = async () => {
+            try {
+                const res = await fetch(`${API_BASE}/leads?limit=1000`, { headers: getAuthHeaders() });
+                if (handleApiError(res)) return;
+                const data = await res.json();
+                if (data.success) {
+                    const all = data.data;
+                    const pending = all.filter(l => l.status === 'pending').length;
+                    const ind = all.filter(l => l.applicant_type === 'فرد').length;
+                    const biz = all.filter(l => l.applicant_type === 'منشأة').length;
+                    
+                    document.getElementById('stat-total').textContent = data.total || all.length;
+                    document.getElementById('stat-pending').textContent = pending;
+                    document.getElementById('stat-ind').textContent = ind;
+                    document.getElementById('stat-biz').textContent = biz;
+                }
+            } catch(e) {}
+        };
+
+        const updateGlobalStats = (leads, total) => {
+            // fallback if fetchStats isn't used
+        };
+
+        // Render Table
+        const renderTable = () => {
+            const tbody = document.getElementById('table-body');
+            const emptyState = document.getElementById('empty-state');
+            
+            tbody.innerHTML = '';
+            
+            if (state.filteredLeads.length === 0) {
+                emptyState.style.display = 'block';
+                document.querySelector('table').style.display = 'none';
+            } else {
+                emptyState.style.display = 'none';
+                document.querySelector('table').style.display = 'table';
+                
+                state.filteredLeads.forEach((lead, index) => {
+                    const tr = document.createElement('tr');
+                    tr.onclick = () => openDrawer(lead);
+                    
+                    const amount = lead.applicant_type === 'فرد' ? lead.ind_amount : lead.biz_amount;
+                    
+                    tr.innerHTML = `
+                        <td>${state.offset + index + 1}</td>
+                        <td style="font-weight: 500; font-family: monospace;">${lead.ref}</td>
+                        <td>${getTypeBadge(lead.applicant_type)}</td>
+                        <td>${lead.full_name || '-'}</td>
+                        <td dir="ltr" style="text-align: right;">${lead.phone || '-'}</td>
+                        <td>${lead.governorate || '-'}</td>
+                        <td>${formatCurrency(amount)}</td>
+                        <td>${getStatusBadge(lead.status)}</td>
+                        <td>${formatDate(lead.created_at)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+            
+            updatePaginationInfo();
+        };
+
+        // Filtering & Pagination
+        const handleSearch = () => {
+            state.searchQuery = document.getElementById('filter-search').value.toLowerCase();
+            applyClientSearch();
+        };
+
+        const applyClientSearch = () => {
+            if (!state.searchQuery) {
+                state.filteredLeads = state.leads;
+            } else {
+                state.filteredLeads = state.leads.filter(l => {
+                    return (l.ref && l.ref.toLowerCase().includes(state.searchQuery)) ||
+                           (l.full_name && l.full_name.toLowerCase().includes(state.searchQuery));
+                });
+            }
+            renderTable();
+        };
+
+        const resetPaginationAndFetch = () => {
+            state.offset = 0;
+            fetchLeads();
+        };
+
+        const prevPage = () => {
+            if (state.offset > 0) {
+                state.offset = Math.max(0, state.offset - state.limit);
+                fetchLeads();
+            }
+        };
+
+        const nextPage = () => {
+            if (state.offset + state.limit < state.total) {
+                state.offset += state.limit;
+                fetchLeads();
+            }
+        };
+
+        const updatePaginationInfo = () => {
+            const start = state.total === 0 ? 0 : state.offset + 1;
+            const end = Math.min(state.offset + state.limit, state.total);
+            document.getElementById('pagination-info').textContent = `عرض ${start}-${end} من أصل ${state.total}`;
+            
+            document.getElementById('btn-prev').disabled = state.offset === 0;
+            document.getElementById('btn-next').disabled = end >= state.total;
+        };
+
+        // Drawer
+        const openDrawer = async (lead) => {
+            state.currentLead = lead;
+            
+            // Populate basic
+            document.getElementById('drawer-ref').textContent = lead.ref;
+            document.getElementById('drawer-status-badge').innerHTML = getStatusBadge(lead.status);
+            document.getElementById('drawer-status-select').value = lead.status;
+            
+            document.getElementById('detail-name').textContent = lead.full_name || '-';
+            document.getElementById('detail-phone').innerHTML = lead.phone ? `<a href="tel:${lead.phone}">${lead.phone}</a>` : '-';
+            document.getElementById('detail-email').innerHTML = lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : '-';
+            document.getElementById('detail-gov').textContent = lead.governorate || '-';
+            document.getElementById('detail-notes').textContent = lead.notes || '-';
+            
+            document.getElementById('detail-created').textContent = formatDate(lead.created_at);
+            document.getElementById('detail-updated').textContent = formatDate(lead.updated_at);
+            document.getElementById('detail-ip').textContent = lead.ip_address || '-';
+
+            // Show relevant group
+            if (lead.applicant_type === 'فرد') {
+                document.getElementById('detail-finance-ind').style.display = 'block';
+                document.getElementById('detail-finance-biz').style.display = 'none';
+                
+                document.getElementById('ind-product').textContent = lead.ind_product || '-';
+                document.getElementById('ind-amount').textContent = formatCurrency(lead.ind_amount);
+                document.getElementById('ind-tenor').textContent = lead.ind_tenor ? lead.ind_tenor + ' أشهر' : '-';
+                document.getElementById('ind-sharia').textContent = lead.ind_sharia ? 'نعم' : 'لا';
+                document.getElementById('ind-income').textContent = formatCurrency(lead.ind_income);
+                document.getElementById('ind-obli').textContent = formatCurrency(lead.ind_obligations);
+                document.getElementById('ind-emp').textContent = lead.ind_employment || '-';
+                document.getElementById('ind-years').textContent = lead.ind_job_years || '-';
+                document.getElementById('ind-transfer').textContent = lead.ind_transfer ? 'نعم' : 'لا';
+                
+            } else {
+                document.getElementById('detail-finance-ind').style.display = 'none';
+                document.getElementById('detail-finance-biz').style.display = 'block';
+                
+                document.getElementById('biz-name').textContent = lead.biz_name || '-';
+                document.getElementById('biz-legal').textContent = lead.biz_legal || '-';
+                document.getElementById('biz-sector').textContent = lead.biz_sector || '-';
+                document.getElementById('biz-age').textContent = lead.biz_age || '-';
+                document.getElementById('biz-purpose').textContent = lead.biz_purpose || '-';
+                document.getElementById('biz-amount').textContent = formatCurrency(lead.biz_amount);
+                document.getElementById('biz-revenue').textContent = formatCurrency(lead.biz_revenue);
+                document.getElementById('biz-tenor').textContent = lead.biz_tenor ? lead.biz_tenor + ' أشهر' : '-';
+                document.getElementById('biz-sharia').textContent = lead.biz_sharia ? 'نعم' : 'لا';
+                
+                const docsHtml = [
+                    { key: 'doc_cr', label: 'سجل تجاري' },
+                    { key: 'doc_license', label: 'رخصة مزاولة' },
+                    { key: 'doc_financials', label: 'قوائم مالية' },
+                    { key: 'doc_bank', label: 'كشف حساب' },
+                    { key: 'doc_tax', label: 'شهادة ضريبية' },
+                    { key: 'doc_collateral', label: 'ضمانات' }
+                ].map(d => `<div class="doc-check ${lead[d.key] ? 'has-doc' : 'no-doc'}">${d.label}</div>`).join('');
+                
+                document.getElementById('biz-docs').innerHTML = docsHtml;
+            }
+
+            document.getElementById('drawer-overlay').classList.add('active');
+            document.getElementById('drawer').classList.add('active');
+        };
+
+        const closeDrawer = () => {
+            document.getElementById('drawer-overlay').classList.remove('active');
+            document.getElementById('drawer').classList.remove('active');
+        };
+
+        const updateStatus = async () => {
+            if (!state.currentLead) return;
+            
+            const btn = document.getElementById('update-status-btn');
+            const newStatus = document.getElementById('drawer-status-select').value;
+            const ref = state.currentLead.ref;
+            
+            btn.disabled = true;
+            btn.textContent = 'جاري التحديث...';
+            
+            try {
+                const res = await fetch(`${API_BASE}/leads/${ref}/status`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                
+                if (handleApiError(res)) return;
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    showToast('تم تحديث الحالة بنجاح', 'success');
+                    
+                    // Update local state
+                    state.currentLead.status = newStatus;
+                    document.getElementById('drawer-status-badge').innerHTML = getStatusBadge(newStatus);
+                    
+                    // Re-render table and fetch stats
+                    applyClientSearch();
+                    fetchStats();
+                } else {
+                    throw new Error('Update failed');
+                }
+            } catch (err) {
+                showToast('فشل في تحديث الحالة', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'تحديث';
+            }
+        };
+
+        // Init
+        const initApp = () => {
+            checkHealth();
+            fetchStats();
+            fetchLeads();
+            
+            // Auto refresh
+            if (state.refreshInterval) clearInterval(state.refreshInterval);
+            state.refreshInterval = setInterval(() => {
+                checkHealth();
+                fetchStats();
+                fetchLeads();
+            }, 30000);
+        };
+
+        // Start
+        document.addEventListener('DOMContentLoaded', checkAuth);
+
+    </script>
+</body>
+</html>

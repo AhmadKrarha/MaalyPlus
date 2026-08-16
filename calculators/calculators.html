@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>الحاسبات المالية - قروض وبطاقات ائتمانية | MaalyPlus</title>
+    <meta name="description" content="احسب قسط القرض الشخصي، قرض السيارة، البطاقة الائتمانية والمزيد. حاسبات مالية مجانية ودقيقة من جميع البنوك الأردنية.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    
+    <style>
+        /* Additional styles specific to calculators page */
+        .calc-page-header {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            background: linear-gradient(180deg, #F3F4F6 0%, var(--neutral-white) 100%);
+        }
+        .calc-main-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-blue-dark);
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+            font-weight:700;
+        }
+        .calc-subtitle {
+            color: var(--neutral-dark-gray-1);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .new-badge {
+            background: var(--primary-green);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+            font-weight: 700;
+        }
+        
+        /* الجوال: قائمة قفز بدل 14 تبويبًا */
+        .calc-jump-wrap{display:none;max-width:520px;margin:1.25rem auto 0;padding:0 20px}
+        .calc-jump-label{display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:.35rem}
+        .calc-jump{width:100%;padding:.8rem .9rem;border:1.5px solid #E5E7EB;border-radius:12px;
+          font-family:inherit;font-size:.95rem;background:#fff;color:#1E2B3C}
+        .calc-jump:focus-visible{outline:2px solid #1E40AF;outline-offset:2px}
+
+        .calc-tabs-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 0 20px 1.5rem;
+            border-bottom: 2px solid var(--neutral-light-gray-2);
+        }
+        .calc-tab-link {
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--neutral-light-gray-2);
+            background: var(--neutral-white);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--neutral-dark-gray-1);
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+        .calc-tab-link:hover {
+            background: var(--neutral-light-gray-1);
+            transform: translateY(-2px);
+            border-color: var(--primary-green);
+        }
+        .calc-tab-link.active {
+            color: var(--neutral-white);
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+        
+        .calculator-section {
+            padding: 3rem 0 5rem;
+        }
+        .calculator-content {
+            display: none;
+        }
+        .calculator-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        .calculator-form {
+            background: var(--neutral-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-light-gray-2);
+        }
+        .form-title {
+            font-size: 1.75rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-weight:700;
+        }
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--neutral-dark-gray-2);
+            font-family: var(--font-body);
+        }
+        .form-input, select.form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--neutral-light-gray-2);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: var(--transition);
+            background: var(--neutral-white);
+        }
+        .form-input:focus, select.form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        .range-slider {
+            width: 100%;
+            margin-top: 0.75rem;
+            cursor: pointer;
+        }
+
+        .results-panel {
+            background: var(--neutral-white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 100px;
+            border: 2px solid var(--neutral-light-gray-2);
+        }
+        .result-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            color: white;
+            border-radius: var(--radius-lg);
+        }
+        .result-header h3 {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin: 0 0 0.5rem;
+            color: white;
+            font-weight: 600;
+        }
+        .result-main-value {
+            font-size: 2.75rem;
+            font-weight:700;
+            font-family: var(--font-heading);
+        }
+        .result-details .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+            border-bottom: 2px solid var(--neutral-light-gray-2);
+        }
+        .result-details .detail-item:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            color: var(--neutral-dark-gray-1);
+            font-weight: 500;
+        }
+        .detail-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-blue-dark);
+        }
+        .detail-value.success {
+            color: var(--primary-green);
+        }
+        .detail-value.warning {
+            color: var(--secondary-orange);
+        }
+        .detail-value.danger {
+            color: #dc3545;
+        }
+        
+        .action-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-green-dark));
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        .btn-secondary {
+            background: var(--neutral-light-gray-1);
+            color: var(--neutral-dark-gray-2);
+            border: 2px solid var(--neutral-light-gray-2);
+        }
+        .btn-secondary:hover {
+            background: var(--neutral-white);
+        }
+        
+        .comparison-table {
+            margin-top: 1.5rem;
+        }
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 1.25rem;
+            border-bottom: 2px solid var(--neutral-light-gray-2);
+        }
+        .comparison-row.header {
+            background: linear-gradient(90deg, var(--primary-blue-dark), var(--primary-blue));
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+        }
+        .comparison-cell {
+            text-align: center;
+        }
+        
+        .schedule-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .schedule-modal.show {
+            display: flex;
+        }
+        .schedule-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            max-width: 900px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--neutral-light-gray-2);
+        }
+        .schedule-header h2 {
+            color: var(--primary-blue-dark);
+            font-family: var(--font-heading);
+            font-weight:700;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--neutral-dark-gray-1);
+            transition: var(--transition);
+            line-height: 1;
+        }
+        .close-btn:hover {
+            color: var(--primary-green);
+            transform: rotate(90deg);
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        .schedule-table thead {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(90deg, var(--primary-blue-dark), var(--primary-blue));
+            color: white;
+            z-index: 10;
+        }
+        .schedule-table th {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .schedule-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--neutral-light-gray-2);
+        }
+        .schedule-table tbody tr:nth-child(even) {
+            background: var(--neutral-light-gray-1);
+        }
+        .schedule-table tbody tr:hover {
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .educational-content {
+            background: var(--neutral-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            margin-top: 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-light-gray-2);
+        }
+        .educational-content h3 {
+            color: var(--primary-blue-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+            font-weight:700;
+            font-size: 1.5rem;
+        }
+        .educational-content h3:first-child {
+            margin-top: 0;
+        }
+        .tip-box {
+            background: rgba(16, 185, 129, 0.08);
+            padding: 1.75rem;
+            border-radius: var(--radius-md);
+            border-right: 4px solid var(--primary-green);
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+        .warning-box {
+            background: rgba(245, 158, 11, 0.08);
+            padding: 1.75rem;
+            border-radius: var(--radius-md);
+            border-right: 4px solid var(--secondary-orange);
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+        .example-box {
+            background: var(--neutral-light-gray-1);
+            padding: 1.75rem;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--neutral-light-gray-2);
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+        
+        .note {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--neutral-dark-gray-1);
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 992px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+            .results-panel {
+                position: static;
+                margin-top: 2rem;
+            }
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .calc-main-title {
+                font-size: 2rem;
+            }
+            .calc-tabs-nav {
+                gap: 0.5rem;
+            }
+            .calc-tab-link {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.75rem 0 !important; }
+        .header .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1.5rem !important; }
+        .logo-img img { height: 52px !important; width: auto !important; display: block !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+        
+        .nav-link:hover, 
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563; font-weight: 500; font-size: 12px; padding: 5px 7px; border-radius: 8px; white-space: nowrap; background: none; border: none; cursor: pointer; font-family: var(--font-body); }
+        .nav-drop-btn:hover { color: #10B981; background: rgba(16,185,129,0.06); }
+        .nav-drop-menu { display: none; position: absolute; top: calc(100% + 10px); right: 0; background: #fff; border-radius: 14px; box-shadow: 0 8px 30px rgba(30,64,175,0.12); padding: 8px; min-width: 210px; z-index: 999; border: 1px solid rgba(0,0,0,0.06); }
+        .nav-dropdown:hover .nav-drop-menu, .nav-dropdown:focus-within .nav-drop-menu { display: block; }
+        .nav-drop-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 8px; color: #374151; text-decoration: none; font-size: 13px; font-weight: 500; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06); color: #1E40AF; }
+        .btn-cta-header { display: inline-flex; align-items: center; padding: 8px 16px; background: linear-gradient(135deg,#047857,#065F46); color: #fff !important; font-size: 12px; font-weight: 700; border-radius: 50px; text-decoration: none; white-space: nowrap; box-shadow: 0 3px 12px rgba(16,185,129,0.28); font-family: var(--font-body); flex-shrink: 0; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.6rem 0 !important; }
+        .header .container { max-width: 1280px !important; margin: 0 auto !important; padding: 0 1.5rem !important; width: 100% !important; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1rem !important; width: 100% !important; }
+        .logo-img { flex-shrink: 0 !important; }
+        .logo-img img { height: 48px !important; width: auto !important; display: block !important; max-width: 180px !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex: 1 !important; justify-content: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563 !important; font-weight: 500 !important; font-size: 12.5px !important; padding: 5px 8px !important; border-radius: 8px !important; white-space: nowrap !important; background: none !important; border: none !important; cursor: pointer !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-drop-btn:hover { color: #10B981 !important; background: rgba(16,185,129,0.06) !important; }
+        .nav-drop-menu { display: none !important; position: absolute !important; top: calc(100% + 8px) !important; right: 0 !important; background: #fff !important; border-radius: 14px !important; box-shadow: 0 8px 30px rgba(30,64,175,0.15) !important; padding: 8px !important; min-width: 200px !important; z-index: 9999 !important; border: 1px solid rgba(0,0,0,0.08) !important; }
+        .nav-dropdown:hover .nav-drop-menu { display: block !important; }
+        .nav-drop-item { display: flex !important; align-items: center !important; gap: 8px !important; padding: 9px 12px !important; border-radius: 8px !important; color: #374151 !important; text-decoration: none !important; font-size: 12.5px !important; font-weight: 500 !important; white-space: nowrap !important; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06) !important; color: #1E40AF !important; }
+        .btn-cta-header { display: inline-flex !important; align-items: center !important; padding: 8px 18px !important; background: linear-gradient(135deg,#047857,#065F46) !important; color: #fff !important; font-size: 12.5px !important; font-weight: 700 !important; border-radius: 50px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-toggle { display: none !important; }
+        @media (max-width: 960px) { .nav { display: none !important; } .nav.open { display: flex !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; left: 0 !important; background: #fff !important; padding: 1rem !important; box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; } .nav-toggle { display: flex !important; } }
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+        /* الجوال: قائمة القفز بدل شريط الـ14 تبويبًا (في النهاية كي تغلب القاعدة الأساسية) */
+        @media(max-width:768px){
+          .calc-jump-wrap{display:block}
+          .calc-tabs-nav{display:none}
+        }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MR2XEXKN8T');
+</script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://maalyplus.com/calculators/calculators.html">
+    <meta property="og:title" content="الحاسبات المالية — MaalyPlus">
+    <meta property="og:description" content="حاسبة القرض، حاسبة الادخار، حاسبة الراتب، وحاسبات أخرى — مجاناً.">
+    <meta property="og:url" content="https://maalyplus.com/calculators/calculators.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الحاسبات المالية — MaalyPlus">
+    <meta name="twitter:description" content="حاسبة القرض، حاسبة الادخار، حاسبة الراتب، وحاسبات أخرى — مجاناً.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+    <!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+    <main>
+        <section class="calc-page-header">
+            <div class="container">
+                <h1 class="calc-main-title">الحاسبات المالية</h1>
+                <p class="calc-subtitle">خطط لمستقبلك المالي باستخدام أدواتنا التفاعلية المجانية</p>
+            </div>
+        </section>
+
+        <nav class="calc-tabs-nav">
+            <!-- الجوال: 14 تبويبًا أفقيًا مربكة — قائمة قفز مصنّفة بدلها -->
+            <div class="calc-jump-wrap">
+              <label for="calcJump" class="calc-jump-label">اختر الحاسبة</label>
+              <select id="calcJump" class="calc-jump" aria-label="اختر الحاسبة">
+                <optgroup label="التمويل والقروض">
+                  <option value="loan" selected>القرض الشخصي</option>
+                  <option value="mortgage">القرض العقاري</option>
+                  <option value="car-loan">قرض السيارة</option>
+                  <option value="murabaha">المرابحة</option>
+                  <option value="capacity">القدرة التمويلية</option>
+                  <option value="compare">مقارنة القروض</option>
+                  <option value="early-payoff">السداد المبكر</option>
+                </optgroup>
+                <optgroup label="الادخار والاستثمار">
+                  <option value="savings">التوفير</option>
+                  <option value="deposits">الودائع</option>
+                  <option value="retirement">التقاعد</option>
+                </optgroup>
+                <optgroup label="البطاقات">
+                  <option value="card-payoff">سداد البطاقة</option>
+                </optgroup>
+                <optgroup label="التخطيط">
+                  <option value="budget">الميزانية</option>
+                  <option value="inflation">التضخم</option>
+                  <option value="zakat">الزكاة</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <button class="calc-tab-link active" data-tab="loan">القرض الشخصي</button>
+            <button class="calc-tab-link" data-tab="mortgage">القرض العقاري</button>
+            <button class="calc-tab-link" data-tab="car-loan">قرض السيارة</button>
+            <button class="calc-tab-link" data-tab="murabaha">المرابحة</button>
+            <button class="calc-tab-link" data-tab="capacity"><span class="new-badge">جديد</span>القدرة التمويلية</button>
+            <button class="calc-tab-link" data-tab="compare"><span class="new-badge">جديد</span>مقارنة القروض</button>
+            <button class="calc-tab-link" data-tab="early-payoff"><span class="new-badge">جديد</span>السداد المبكر</button>
+            <button class="calc-tab-link" data-tab="savings">التوفير</button>
+            <button class="calc-tab-link" data-tab="deposits">الودائع</button>
+            <button class="calc-tab-link" data-tab="retirement">التقاعد</button>
+            <button class="calc-tab-link" data-tab="card-payoff">سداد البطاقة</button>
+            <button class="calc-tab-link" data-tab="budget">الميزانية</button>
+            <button class="calc-tab-link" data-tab="inflation">التضخم</button>
+            <button class="calc-tab-link" data-tab="zakat">الزكاة</button>
+        </nav>
+
+        <section class="calculator-section">
+            <div class="container">
+                <div id="loan-calc" class="calculator-content active"></div>
+                <div id="mortgage-calc" class="calculator-content"></div>
+                <div id="car-loan-calc" class="calculator-content"></div>
+                <div id="murabaha-calc" class="calculator-content"></div>
+                <div id="capacity-calc" class="calculator-content"></div>
+                <div id="compare-calc" class="calculator-content"></div>
+                <div id="early-payoff-calc" class="calculator-content"></div>
+                <div id="savings-calc" class="calculator-content"></div>
+                <div id="deposits-calc" class="calculator-content"></div>
+                <div id="retirement-calc" class="calculator-content"></div>
+                <div id="card-payoff-calc" class="calculator-content"></div>
+                <div id="budget-calc" class="calculator-content"></div>
+                <div id="inflation-calc" class="calculator-content"></div>
+                <div id="zakat-calc" class="calculator-content"></div>
+                <p class="note">جميع الحسابات تقريبية وقد تختلف عن العروض الفعلية من البنوك.</p>
+            </div>
+        </section>
+    </main>
+    
+    <div id="scheduleModal" class="schedule-modal">
+        <div class="schedule-content">
+            <div class="schedule-header">
+                <h2>جدول الأقساط التفصيلي</h2>
+                <button class="close-btn" onclick="closeScheduleModal()">&times;</button>
+            </div>
+            <div id="scheduleTableContainer"></div>
+        </div>
+    </div>
+
+    <!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+    
+    <script>
+        const formatCurrency = (value) => `${Math.round(value).toLocaleString('ar-JO')} دينار`;
+        
+        const templates = {
+            loan: {
+                title: "القرض الشخصي", icon: "💵",
+                html: `
+                    <div class="form-group"><label for="loan-p" class="form-label">مبلغ القرض (دينار)</label><input type="number" id="loan-p" class="form-input" value="10000"><input type="range" class="range-slider" data-target="loan-p" min="500" max="70000" step="500" value="10000"></div>
+                    <div class="form-group"><label for="loan-n" class="form-label">مدة القرض (بالشهور)</label><input type="number" id="loan-n" class="form-input" value="36"><input type="range" class="range-slider" data-target="loan-n" min="6" max="96" step="6" value="36"></div>
+                    <div class="form-group"><label for="loan-r" class="form-label">نسبة الفائدة السنوية (%)</label><input type="number" id="loan-r" class="form-input" value="7.5" step="0.1"><input type="range" class="range-slider" data-target="loan-r" min="4" max="15" step="0.1" value="7.5"></div>
+                    <div class="action-buttons"><button class="btn btn-primary" onclick="showScheduleModal('loan')">📊 عرض جدول الأقساط</button></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>القسط الشهري المتوقع</h3><div class="result-main-value" id="loan-pmt">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">إجمالي الفوائد</span><span class="detail-value success" id="loan-int">0</span></div>
+                        <div class="detail-item"><span class="detail-label">المبلغ الإجمالي</span><span class="detail-value" id="loan-total">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>💵 كيف يعمل القرض الشخصي؟</h3>
+                        <div class="tip-box">
+                            <strong>القرض الشخصي</strong> هو مبلغ تقترضه من البنك وتسدده على أقساط شهرية ثابتة تشمل الأصل والفائدة.<br><br>
+                            <strong>مكونات القسط الشهري:</strong><br>
+                            1️⃣ <strong>جزء من الأصل</strong> - المبلغ المقترض<br>
+                            2️⃣ <strong>الفائدة</strong> - تكلفة الاقتراض<br><br>
+                            في البداية، معظم القسط يذهب للفائدة، ومع الوقت يزيد الجزء الذي يذهب للأصل.
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال عملي:</strong><br>
+                            قرض: 10,000 دينار<br>
+                            مدة: 36 شهر (3 سنوات)<br>
+                            فائدة: 7.5% سنوياً<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • القسط الشهري: ~311 دينار<br>
+                            • إجمالي الفائدة: ~1,200 دينار<br>
+                            • إجمالي المدفوع: ~11,200 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>نصائح مهمة:</strong><br>
+                            • تأكد أن القسط لا يتجاوز 40% من راتبك<br>
+                            • قارن بين عروض البنوك المختلفة<br>
+                            • اقرأ الشروط والأحكام بعناية<br>
+                            • انتبه للرسوم الإدارية والتأمين<br>
+                            • تأكد من إمكانية السداد المبكر بدون غرامات
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const p = parseFloat(document.getElementById('loan-p').value) || 0;
+                    const n = parseInt(document.getElementById('loan-n').value) || 0;
+                    const r = (parseFloat(document.getElementById('loan-r').value) || 0) / 100 / 12;
+                    if (!p || !n || !r) return;
+                    const pmt = p * r / (1 - Math.pow(1 + r, -n));
+                    const total = pmt * n;
+                    document.getElementById('loan-pmt').textContent = formatCurrency(pmt);
+                    document.getElementById('loan-int').textContent = formatCurrency(total - p);
+                    document.getElementById('loan-total').textContent = formatCurrency(total);
+                }
+            },
+            
+            mortgage: {
+                title: "القرض العقاري", icon: "🏡",
+                html: `
+                    <div class="form-group"><label for="mg-price" class="form-label">سعر العقار (دينار)</label><input type="number" id="mg-price" class="form-input" value="100000"></div>
+                    <div class="form-group"><label for="mg-down" class="form-label">الدفعة المقدمة (دينار)</label><input type="number" id="mg-down" class="form-input" value="20000"></div>
+                    <div class="form-group"><label for="mg-years" class="form-label">مدة القرض (سنوات)</label><input type="number" id="mg-years" class="form-input" value="20"></div>
+                    <div class="form-group"><label for="mg-apr" class="form-label">نسبة الفائدة السنوية (%)</label><input type="number" id="mg-apr" class="form-input" value="5.5" step="0.1"></div>
+                    <div class="action-buttons"><button class="btn btn-primary" onclick="showScheduleModal('mortgage')">📊 عرض جدول الأقساط</button></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>القسط الشهري</h3><div class="result-main-value" id="mg-pmt">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">مبلغ القرض</span><span class="detail-value" id="mg-p">0</span></div>
+                        <div class="detail-item"><span class="detail-label">إجمالي الفوائد</span><span class="detail-value success" id="mg-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🏡 دليلك للقرض العقاري</h3>
+                        <div class="tip-box">
+                            <strong>القرض العقاري</strong> هو قرض طويل الأجل (عادة 15-25 سنة) لشراء منزل أو عقار.<br><br>
+                            <strong>أهم المعلومات:</strong><br>
+                            • الدفعة المقدمة: عادة 15-25% من قيمة العقار<br>
+                            • الفائدة: أقل من القروض الشخصية<br>
+                            • الضمان: العقار نفسه يكون رهناً للبنك<br>
+                            • التأمين: إلزامي على العقار وحياة المقترض
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            سعر العقار: 100,000 دينار<br>
+                            الدفعة المقدمة: 20,000 دينار (20%)<br>
+                            القرض: 80,000 دينار<br>
+                            المدة: 20 سنة<br>
+                            الفائدة: 5.5%<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • القسط الشهري: ~550 دينار<br>
+                            • إجمالي الفائدة: ~52,000 دينار<br>
+                            • إجمالي المدفوع: ~132,000 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>قبل التقديم على قرض عقاري:</strong><br>
+                            ✓ تأكد من استقرار دخلك لمدة طويلة<br>
+                            ✓ احتفظ بصندوق طوارئ (6 أشهر على الأقل)<br>
+                            ✓ ضع في الحساب تكاليف الصيانة والضرائب<br>
+                            ✓ اختر موقع العقار بعناية<br>
+                            ✓ قم بتقييم العقار من خبير مستقل
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const price = parseFloat(document.getElementById('mg-price').value) || 0;
+                    const down = parseFloat(document.getElementById('mg-down').value) || 0;
+                    const p = price - down;
+                    const n = (parseInt(document.getElementById('mg-years').value) || 0) * 12;
+                    const r = (parseFloat(document.getElementById('mg-apr').value) || 0) / 100 / 12;
+                    if (p <= 0 || !n || !r) return;
+                    const pmt = p * r / (1 - Math.pow(1 + r, -n));
+                    document.getElementById('mg-p').textContent = formatCurrency(p);
+                    document.getElementById('mg-pmt').textContent = formatCurrency(pmt);
+                    document.getElementById('mg-int').textContent = formatCurrency((pmt * n) - p);
+                }
+            },
+
+            'car-loan': {
+                title: "قرض السيارة", icon: "🚗",
+                html: `
+                    <div class="form-group"><label for="car-price" class="form-label">سعر السيارة (دينار)</label><input type="number" id="car-price" class="form-input" value="25000"></div>
+                    <div class="form-group"><label for="car-down" class="form-label">الدفعة المقدمة (دينار)</label><input type="number" id="car-down" class="form-input" value="5000"></div>
+                    <div class="form-group"><label for="car-years" class="form-label">مدة القرض (سنوات)</label><input type="number" id="car-years" class="form-input" value="5"></div>
+                    <div class="form-group"><label for="car-apr" class="form-label">نسبة الفائدة السنوية (%)</label><input type="number" id="car-apr" class="form-input" value="6.5" step="0.1"></div>
+                    <div class="action-buttons"><button class="btn btn-primary" onclick="showScheduleModal('car')">📊 عرض جدول الأقساط</button></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>القسط الشهري</h3><div class="result-main-value" id="car-pmt">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">مبلغ القرض</span><span class="detail-value" id="car-p">0</span></div>
+                        <div class="detail-item"><span class="detail-label">إجمالي الفوائد</span><span class="detail-value success" id="car-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🚗 دليل تمويل السيارات</h3>
+                        <div class="tip-box">
+                            <strong>تمويل السيارة</strong> يختلف عن القرض الشخصي:<br><br>
+                            <strong>المميزات:</strong><br>
+                            ✅ فائدة أقل من القرض الشخصي<br>
+                            ✅ مدة أطول (حتى 7 سنوات)<br>
+                            ✅ إجراءات أسرع<br>
+                            ✅ السيارة تكون ضماناً<br><br>
+                            <strong>الدفعة المقدمة:</strong><br>
+                            عادة 15-30% من قيمة السيارة. كلما زادت الدفعة المقدمة، قل القسط الشهري والفائدة الإجمالية.
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال عملي:</strong><br>
+                            سعر السيارة: 25,000 دينار<br>
+                            الدفعة المقدمة: 5,000 دينار (20%)<br>
+                            القرض: 20,000 دينار<br>
+                            المدة: 5 سنوات<br>
+                            الفائدة: 6.5%<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • القسط الشهري: ~391 دينار<br>
+                            • إجمالي الفائدة: ~3,460 دينار<br>
+                            • إجمالي المدفوع: ~28,460 دينار (مع الدفعة المقدمة)
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>نصائح مهمة:</strong><br>
+                            • احسب تكاليف التشغيل (وقود، صيانة، تأمين)<br>
+                            • اختر سيارة ذات قيمة إعادة بيع جيدة<br>
+                            • لا تمول كماليات إضافية<br>
+                            • تأكد من تغطية التأمين الشاملة<br>
+                            • السيارة أصل متناقص القيمة - لا تبالغ في الإنفاق!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const price = parseFloat(document.getElementById('car-price').value) || 0;
+                    const down = parseFloat(document.getElementById('car-down').value) || 0;
+                    const p = price - down;
+                    const n = (parseInt(document.getElementById('car-years').value) || 0) * 12;
+                    const r = (parseFloat(document.getElementById('car-apr').value) || 0) / 100 / 12;
+                    if (p <= 0 || !n || !r) return;
+                    const pmt = p * r / (1 - Math.pow(1 + r, -n));
+                    document.getElementById('car-p').textContent = formatCurrency(p);
+                    document.getElementById('car-pmt').textContent = formatCurrency(pmt);
+                    document.getElementById('car-int').textContent = formatCurrency((pmt * n) - p);
+                }
+            },
+
+            murabaha: {
+                title: "المرابحة الإسلامية", icon: "🕌",
+                html: `
+                    <div class="form-group"><label for="mur-cost" class="form-label">ثمن الأصل (دينار)</label><input type="number" id="mur-cost" class="form-input" value="20000"></div>
+                    <div class="form-group"><label for="mur-down" class="form-label">الدفعة الأولى (دينار)</label><input type="number" id="mur-down" class="form-input" value="5000"></div>
+                    <div class="form-group"><label for="mur-rate" class="form-label">نسبة الربح السنوية (%)</label><input type="number" id="mur-rate" class="form-input" value="6.5" step="0.1"></div>
+                    <div class="form-group"><label for="mur-months" class="form-label">مدة السداد (بالشهور)</label><input type="number" id="mur-months" class="form-input" value="48"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>القسط الشهري</h3><div class="result-main-value" id="mur-pmt">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">المبلغ الممول</span><span class="detail-value" id="mur-financed">0</span></div>
+                        <div class="detail-item"><span class="detail-label">إجمالي الربح</span><span class="detail-value success" id="mur-profit">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🕌 ما هي المرابحة الإسلامية؟</h3>
+                        <div class="tip-box">
+                            <strong>المرابحة</strong> هي معاملة إسلامية بديلة عن القرض التقليدي:<br><br>
+                            <strong>كيف تعمل؟</strong><br>
+                            1️⃣ البنك يشتري السلعة (سيارة، عقار، بضاعة)<br>
+                            2️⃣ يبيعها لك بسعر أعلى (السعر + الربح)<br>
+                            3️⃣ تدفع على أقساط متساوية<br>
+                            4️⃣ الربح محدد مسبقاً ولا يتغير<br><br>
+                            <strong>الفرق عن القرض التقليدي:</strong><br>
+                            • لا يوجد فائدة<br>
+                            • الربح ثابت ومعروف مسبقاً<br>
+                            • يجب أن تكون السلعة موجودة فعلياً<br>
+                            • متوافق مع الشريعة الإسلامية
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            تكلفة الأصل: 20,000 دينار<br>
+                            الدفعة الأولى: 5,000 دينار<br>
+                            الممول: 15,000 دينار<br>
+                            نسبة الربح: 6.5% سنوياً<br>
+                            المدة: 48 شهر (4 سنوات)<br><br>
+                            <strong>الحساب:</strong><br>
+                            • الربح السنوي: 15,000 × 6.5% = 975 دينار<br>
+                            • الربح لـ 4 سنوات: 975 × 4 = 3,900 دينار<br>
+                            • المبلغ الإجمالي: 15,000 + 3,900 = 18,900 دينار<br>
+                            • القسط الشهري: 18,900 ÷ 48 = ~394 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>ملاحظات مهمة:</strong><br>
+                            • تأكد أن المنتج معتمد من هيئة شرعية<br>
+                            • السداد المبكر قد لا يوفر كثيراً (الربح محسوب على كامل المدة)<br>
+                            • اقرأ العقد بعناية للتأكد من التزامه بالشريعة<br>
+                            • قارن مع منتجات المرابحة الأخرى
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const cost = parseFloat(document.getElementById('mur-cost').value) || 0;
+                    const down = parseFloat(document.getElementById('mur-down').value) || 0;
+                    const rate = (parseFloat(document.getElementById('mur-rate').value) || 0) / 100;
+                    const months = parseInt(document.getElementById('mur-months').value) || 0;
+                    const financed = cost - down;
+                    const profit = financed * rate * (months / 12);
+                    const total = financed + profit;
+                    const pmt = months > 0 ? total / months : 0;
+                    document.getElementById('mur-financed').textContent = formatCurrency(financed);
+                    document.getElementById('mur-profit').textContent = formatCurrency(profit);
+                    document.getElementById('mur-pmt').textContent = formatCurrency(pmt);
+                }
+            },
+
+            capacity: {
+                title: "القدرة التمويلية", icon: "💼",
+                html: `
+                    <div class="form-group"><label for="cap-salary" class="form-label">الراتب الشهري الصافي (دينار)</label><input type="number" id="cap-salary" class="form-input" value="1000"><input type="range" class="range-slider" data-target="cap-salary" min="300" max="5000" step="50" value="1000"></div>
+                    <div class="form-group"><label for="cap-obligations" class="form-label">الالتزامات الشهرية الحالية (دينار)</label><input type="number" id="cap-obligations" class="form-input" value="200"><input type="range" class="range-slider" data-target="cap-obligations" min="0" max="2000" step="50" value="200"></div>
+                    <div class="form-group"><label for="cap-expenses" class="form-label">المصاريف الشهرية (دينار)</label><input type="number" id="cap-expenses" class="form-input" value="400"><input type="range" class="range-slider" data-target="cap-expenses" min="200" max="2000" step="50" value="400"></div>
+                    <div class="form-group"><label for="cap-guarantor" class="form-label">هل لديك كفيل؟</label><select id="cap-guarantor" class="form-input"><option value="yes">نعم</option><option value="no">لا</option></select></div>
+                    <div class="form-group"><label for="cap-rate" class="form-label">نسبة الفائدة المتوقعة (%)</label><input type="number" id="cap-rate" class="form-input" value="8" step="0.1"></div>
+                    <div class="form-group"><label for="cap-years" class="form-label">مدة القرض المرغوبة (سنوات)</label><input type="number" id="cap-years" class="form-input" value="5"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>الحد الأقصى للقرض</h3><div class="result-main-value" id="cap-max">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">القسط الشهري الآمن (40%)</span><span class="detail-value" id="cap-safe">0</span></div>
+                        <div class="detail-item"><span class="detail-label">صافي الدخل المتاح</span><span class="detail-value success" id="cap-available">0</span></div>
+                        <div class="detail-item"><span class="detail-label">نسبة الالتزامات</span><span class="detail-value" id="cap-ratio">0</span></div>
+                        <div class="detail-item"><span class="detail-label">التقييم</span><span class="detail-value" id="cap-status">-</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>💼 كيف نحسب قدرتك التمويلية؟</h3>
+                        <div class="tip-box">
+                            <strong>القاعدة البنكية:</strong> البنوك تسمح بأن تصل التزاماتك الشهرية إلى 40-50% من راتبك الصافي.<br><br>
+                            <strong>الحساب:</strong><br>
+                            1. نخصم التزاماتك الحالية من راتبك<br>
+                            2. نأخذ 40% من المتبقي كحد أقصى للقسط<br>
+                            3. نحسب المبلغ الذي يمكنك اقتراضه بهذا القسط
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong> راتب 1,000 دينار<br>
+                            - التزامات: 200 دينار<br>
+                            - المتبقي: 800 دينار<br>
+                            - القسط الآمن (40%): 320 دينار<br>
+                            - الحد الأقصى للقرض: ~15,000 دينار (لمدة 5 سنوات بفائدة 8%)
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>تنبيه:</strong> هذا حساب تقريبي. القدرة الفعلية تعتمد على:<br>
+                            • سياسة البنك<br>
+                            • سجلك الائتماني<br>
+                            • نوع الوظيفة (حكومي/خاص)<br>
+                            • وجود كفيل
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const salary = parseFloat(document.getElementById('cap-salary').value) || 0;
+                    const obligations = parseFloat(document.getElementById('cap-obligations').value) || 0;
+                    const expenses = parseFloat(document.getElementById('cap-expenses').value) || 0;
+                    const hasGuarantor = document.getElementById('cap-guarantor').value === 'yes';
+                    const rate = (parseFloat(document.getElementById('cap-rate').value) || 0) / 100 / 12;
+                    const years = parseInt(document.getElementById('cap-years').value) || 0;
+                    const months = years * 12;
+                    
+                    const netIncome = salary - obligations - expenses;
+                    const safePayment = netIncome * 0.4;
+                    const obligationRatio = ((obligations + expenses) / salary * 100).toFixed(1);
+                    
+                    let maxLoan = 0;
+                    if (rate > 0 && months > 0) {
+                        maxLoan = safePayment * (1 - Math.pow(1 + rate, -months)) / rate;
+                    }
+                    
+                    if (hasGuarantor) maxLoan *= 1.2;
+                    
+                    document.getElementById('cap-max').textContent = formatCurrency(maxLoan);
+                    document.getElementById('cap-safe').textContent = formatCurrency(safePayment);
+                    document.getElementById('cap-available').textContent = formatCurrency(netIncome);
+                    document.getElementById('cap-ratio').textContent = `${obligationRatio}%`;
+                    
+                    const statusEl = document.getElementById('cap-status');
+                    if (obligationRatio < 40) {
+                        statusEl.textContent = 'ممتاز 🎉';
+                        statusEl.className = 'detail-value success';
+                    } else if (obligationRatio < 50) {
+                        statusEl.textContent = 'جيد ✅';
+                        statusEl.className = 'detail-value warning';
+                    } else {
+                        statusEl.textContent = 'مرتفع ⚠️';
+                        statusEl.className = 'detail-value danger';
+                    }
+                }
+            },
+
+            compare: {
+                title: "مقارنة القروض", icon: "⚖️",
+                html: `
+                    <h3 style="margin-bottom: 1rem;">القرض الأول</h3>
+                    <div class="form-group"><label for="comp-name1" class="form-label">اسم البنك</label><input type="text" id="comp-name1" class="form-input" value="البنك أ" placeholder="مثال: البنك العربي"></div>
+                    <div class="form-group"><label for="comp-p1" class="form-label">مبلغ القرض (دينار)</label><input type="number" id="comp-p1" class="form-input" value="10000"></div>
+                    <div class="form-group"><label for="comp-r1" class="form-label">نسبة الفائدة (%)</label><input type="number" id="comp-r1" class="form-input" value="7.5" step="0.1"></div>
+                    <div class="form-group"><label for="comp-n1" class="form-label">المدة (شهور)</label><input type="number" id="comp-n1" class="form-input" value="36"></div>
+                    <div class="form-group"><label for="comp-fees1" class="form-label">رسوم إدارية (دينار)</label><input type="number" id="comp-fees1" class="form-input" value="100"></div>
+                    
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px dashed var(--neutral-light-gray-2);">
+                    
+                    <h3 style="margin-bottom: 1rem;">القرض الثاني</h3>
+                    <div class="form-group"><label for="comp-name2" class="form-label">اسم البنك</label><input type="text" id="comp-name2" class="form-input" value="البنك ب" placeholder="مثال: البنك الأهلي"></div>
+                    <div class="form-group"><label for="comp-p2" class="form-label">مبلغ القرض (دينار)</label><input type="number" id="comp-p2" class="form-input" value="10000"></div>
+                    <div class="form-group"><label for="comp-r2" class="form-label">نسبة الفائدة (%)</label><input type="number" id="comp-r2" class="form-input" value="8.5" step="0.1"></div>
+                    <div class="form-group"><label for="comp-n2" class="form-label">المدة (شهور)</label><input type="number" id="comp-n2" class="form-input" value="36"></div>
+                    <div class="form-group"><label for="comp-fees2" class="form-label">رسوم إدارية (دينار)</label><input type="number" id="comp-fees2" class="form-input" value="50"></div>
+                    
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px dashed var(--neutral-light-gray-2);">
+                    
+                    <h3 style="margin-bottom: 1rem;">القرض الثالث (اختياري)</h3>
+                    <div class="form-group"><label for="comp-name3" class="form-label">اسم البنك</label><input type="text" id="comp-name3" class="form-input" value="" placeholder="اختياري"></div>
+                    <div class="form-group"><label for="comp-p3" class="form-label">مبلغ القرض (دينار)</label><input type="number" id="comp-p3" class="form-input" value="10000"></div>
+                    <div class="form-group"><label for="comp-r3" class="form-label">نسبة الفائدة (%)</label><input type="number" id="comp-r3" class="form-input" value="7" step="0.1"></div>
+                    <div class="form-group"><label for="comp-n3" class="form-label">المدة (شهور)</label><input type="number" id="comp-n3" class="form-input" value="36"></div>
+                    <div class="form-group"><label for="comp-fees3" class="form-label">رسوم إدارية (دينار)</label><input type="number" id="comp-fees3" class="form-input" value="150"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>نتائج المقارنة</h3><div style="font-size: 1rem; margin-top: 0.5rem;">الفائز: <span id="comp-winner">-</span></div></div>
+                    <div id="comp-results-table"></div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>⚖️ كيف تقارن بين القروض بشكل صحيح؟</h3>
+                        <div class="tip-box">
+                            <strong>لا تنظر فقط لنسبة الفائدة!</strong> انظر إلى:<br>
+                            1️⃣ <strong>القسط الشهري</strong> - هل يناسب ميزانيتك؟<br>
+                            2️⃣ <strong>إجمالي التكلفة</strong> - كم ستدفع بالمجمل؟<br>
+                            3️⃣ <strong>الرسوم الإضافية</strong> - رسوم إدارية، تأمين، إلخ<br>
+                            4️⃣ <strong>المرونة</strong> - هل يسمح بالسداد المبكر؟
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال مهم:</strong><br>
+                            <strong>البنك أ:</strong> فائدة 7.5% + رسوم 100 دينار<br>
+                            <strong>البنك ب:</strong> فائدة 7% + رسوم 300 دينار<br><br>
+                            قد تظن أن البنك ب أفضل، لكن الرسوم العالية قد تجعل التكلفة الإجمالية أعلى!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const loans = [];
+                    
+                    for (let i = 1; i <= 3; i++) {
+                        const name = document.getElementById(`comp-name${i}`).value || `القرض ${i}`;
+                        const p = parseFloat(document.getElementById(`comp-p${i}`).value) || 0;
+                        const r = (parseFloat(document.getElementById(`comp-r${i}`).value) || 0) / 100 / 12;
+                        const n = parseInt(document.getElementById(`comp-n${i}`).value) || 0;
+                        const fees = parseFloat(document.getElementById(`comp-fees${i}`).value) || 0;
+                        
+                        if (p > 0 && n > 0 && (i <= 2 || document.getElementById(`comp-name${i}`).value)) {
+                            const pmt = p * r / (1 - Math.pow(1 + r, -n));
+                            const totalPaid = (pmt * n) + fees;
+                            const totalInterest = totalPaid - p;
+                            
+                            loans.push({ name, pmt, totalPaid, totalInterest, fees });
+                        }
+                    }
+                    
+                    if (loans.length === 0) return;
+                    
+                    const winner = loans.reduce((best, curr) => curr.totalPaid < best.totalPaid ? curr : best);
+                    document.getElementById('comp-winner').textContent = winner.name + ' 🏆';
+                    
+                    let html = '<div class="comparison-table">';
+                    html += '<div class="comparison-row header"><div>البند</div>';
+                    loans.forEach(loan => html += `<div>${loan.name}</div>`);
+                    html += '</div>';
+                    
+                    html += '<div class="comparison-row"><div><strong>القسط الشهري</strong></div>';
+                    loans.forEach(loan => {
+                        const isWinner = loan.name === winner.name;
+                        html += `<div style="${isWinner ? 'color: var(--primary-green); font-weight: bold;' : ''}">${formatCurrency(loan.pmt)}</div>`;
+                    });
+                    html += '</div>';
+                    
+                    html += '<div class="comparison-row"><div><strong>إجمالي الفوائد</strong></div>';
+                    loans.forEach(loan => html += `<div>${formatCurrency(loan.totalInterest)}</div>`);
+                    html += '</div>';
+                    
+                    html += '<div class="comparison-row"><div><strong>الرسوم</strong></div>';
+                    loans.forEach(loan => html += `<div>${formatCurrency(loan.fees)}</div>`);
+                    html += '</div>';
+                    
+                    html += '<div class="comparison-row" style="background: var(--neutral-light-gray-1); font-weight: bold;"><div><strong>التكلفة الإجمالية</strong></div>';
+                    loans.forEach(loan => {
+                        const isWinner = loan.name === winner.name;
+                        html += `<div style="${isWinner ? 'color: var(--primary-green);' : ''}">${formatCurrency(loan.totalPaid)}</div>`;
+                    });
+                    html += '</div>';
+                    
+                    html += '<div class="comparison-row"><div><strong>الفرق عن الأفضل</strong></div>';
+                    loans.forEach(loan => {
+                        const diff = loan.totalPaid - winner.totalPaid;
+                        html += `<div style="color: ${diff === 0 ? 'var(--primary-green)' : '#dc3545'};">${diff === 0 ? 'الأفضل ✅' : '+' + formatCurrency(diff)}</div>`;
+                    });
+                    html += '</div>';
+                    
+                    html += '</div>';
+                    document.getElementById('comp-results-table').innerHTML = html;
+                }
+            },
+
+            'early-payoff': {
+                title: "السداد المبكر", icon: "⏰",
+                html: `
+                    <div class="form-group"><label for="early-balance" class="form-label">الرصيد المتبقي من القرض (دينار)</label><input type="number" id="early-balance" class="form-input" value="8000"></div>
+                    <div class="form-group"><label for="early-rate" class="form-label">نسبة الفائدة السنوية (%)</label><input type="number" id="early-rate" class="form-input" value="8" step="0.1"></div>
+                    <div class="form-group"><label for="early-months" class="form-label">الأقساط المتبقية (شهور)</label><input type="number" id="early-months" class="form-input" value="24"></div>
+                    <div class="form-group"><label for="early-current-pmt" class="form-label">القسط الشهري الحالي (دينار)</label><input type="number" id="early-current-pmt" class="form-input" value="377"></div>
+                    <div class="form-group"><label for="early-extra" class="form-label">مبلغ السداد الإضافي الشهري (دينار)</label><input type="number" id="early-extra" class="form-input" value="100"><input type="range" class="range-slider" data-target="early-extra" min="0" max="500" step="25" value="100"></div>
+                    <div class="form-group"><label for="early-penalty" class="form-label">غرامة السداد المبكر (%)</label><input type="number" id="early-penalty" class="form-input" value="2" step="0.1"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>مقارنة السيناريوهات</h3></div>
+                    <div class="result-details">
+                        <div style="background: var(--neutral-light-gray-1); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">📅 بدون دفعات إضافية:</h4>
+                            <div class="detail-item"><span class="detail-label">المدة</span><span class="detail-value" id="early-normal-months">0</span></div>
+                            <div class="detail-item"><span class="detail-label">إجمالي المدفوع</span><span class="detail-value" id="early-normal-total">0</span></div>
+                        </div>
+                        <div style="background: rgba(16, 185, 129, 0.08); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">💰 مع دفعات إضافية:</h4>
+                            <div class="detail-item"><span class="detail-label">المدة الجديدة</span><span class="detail-value success" id="early-new-months">0</span></div>
+                            <div class="detail-item"><span class="detail-label">إجمالي المدفوع</span><span class="detail-value success" id="early-new-total">0</span></div>
+                            <div class="detail-item"><span class="detail-label">التوفير</span><span class="detail-value success" id="early-savings">0</span></div>
+                            <div class="detail-item"><span class="detail-label">تقليل المدة</span><span class="detail-value success" id="early-time-saved">0</span></div>
+                        </div>
+                        <div style="background: rgba(245, 158, 11, 0.08); padding: 1rem; border-radius: var(--radius-md);">
+                            <h4 style="margin-bottom: 0.5rem;">⚡ سداد كامل فوري:</h4>
+                            <div class="detail-item"><span class="detail-label">الغرامة</span><span class="detail-value warning" id="early-penalty-amount">0</span></div>
+                            <div class="detail-item"><span class="detail-label">المبلغ المطلوب</span><span class="detail-value" id="early-payoff-amount">0</span></div>
+                            <div class="detail-item"><span class="detail-label">هل يستحق؟</span><span class="detail-value" id="early-worth-it">-</span></div>
+                        </div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>⏰ متى يكون السداد المبكر مجدياً؟</h3>
+                        <div class="tip-box">
+                            <strong>السداد المبكر يستحق عندما:</strong><br>
+                            ✅ الغرامة منخفضة (أقل من 2%)<br>
+                            ✅ لديك مدخرات كافية<br>
+                            ✅ الفوائد المتبقية كبيرة<br>
+                            ✅ فائدة القرض أعلى من عوائد الادخار
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            قرض متبقي: 8,000 دينار<br>
+                            أقساط متبقية: 24 شهر<br>
+                            فائدة: 8%<br><br>
+                            <strong>خيار أ:</strong> استمر بالدفع العادي<br>
+                            • ستدفع: 9,048 دينار<br>
+                            • فوائد: 1,048 دينار<br><br>
+                            <strong>خيار ب:</strong> ادفع 100 دينار إضافي شهرياً<br>
+                            • ستدفع: 8,725 دينار<br>
+                            • توفير: 323 دينار<br>
+                            • مدة أقل: 5 أشهر<br><br>
+                            💡 <strong>الفائدة:</strong> توفير + تحرر من الدين مبكراً!
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>تحذير:</strong> قبل السداد المبكر:<br>
+                            • اسأل البنك عن غرامة السداد المبكر<br>
+                            • تأكد أن لديك صندوق طوارئ (3-6 أشهر)<br>
+                            • لا تستخدم كل مدخراتك!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const balance = parseFloat(document.getElementById('early-balance').value) || 0;
+                    const rate = (parseFloat(document.getElementById('early-rate').value) || 0) / 100 / 12;
+                    const months = parseInt(document.getElementById('early-months').value) || 0;
+                    const currentPmt = parseFloat(document.getElementById('early-current-pmt').value) || 0;
+                    const extra = parseFloat(document.getElementById('early-extra').value) || 0;
+                    const penaltyRate = (parseFloat(document.getElementById('early-penalty').value) || 0) / 100;
+                    
+                    if (!balance || !months || !rate) return;
+                    
+                    const normalTotal = currentPmt * months;
+                    document.getElementById('early-normal-months').textContent = `${months} شهر`;
+                    document.getElementById('early-normal-total').textContent = formatCurrency(normalTotal);
+                    
+                    let remainingBalance = balance;
+                    let newMonths = 0;
+                    let totalPaid = 0;
+                    
+                    while (remainingBalance > 0 && newMonths < months) {
+                        const interestPayment = remainingBalance * rate;
+                        const principalPayment = currentPmt + extra - interestPayment;
+                        remainingBalance -= principalPayment;
+                        totalPaid += currentPmt + extra;
+                        newMonths++;
+                        
+                        if (newMonths > 500) break;
+                    }
+                    
+                    const savings = normalTotal - totalPaid;
+                    const timeSaved = months - newMonths;
+                    
+                    document.getElementById('early-new-months').textContent = `${newMonths} شهر`;
+                    document.getElementById('early-new-total').textContent = formatCurrency(totalPaid);
+                    document.getElementById('early-savings').textContent = formatCurrency(savings);
+                    document.getElementById('early-time-saved').textContent = `${timeSaved} شهر`;
+                    
+                    const penaltyAmount = balance * penaltyRate;
+                    const payoffAmount = balance + penaltyAmount;
+                    const potentialSavings = normalTotal - payoffAmount;
+                    
+                    document.getElementById('early-penalty-amount').textContent = formatCurrency(penaltyAmount);
+                    document.getElementById('early-payoff-amount').textContent = formatCurrency(payoffAmount);
+                    
+                    const worthItEl = document.getElementById('early-worth-it');
+                    if (potentialSavings > 0) {
+                        worthItEl.textContent = `نعم! توفر ${formatCurrency(potentialSavings)} ✅`;
+                        worthItEl.className = 'detail-value success';
+                    } else {
+                        worthItEl.textContent = 'غير مجدي ❌';
+                        worthItEl.className = 'detail-value danger';
+                    }
+                }
+            },
+
+            savings: {
+                title: "حساب التوفير", icon: "💰",
+                html: `
+                    <div class="form-group"><label for="sv-p" class="form-label">الإيداع الأولي (دينار)</label><input type="number" id="sv-p" class="form-input" value="1000"></div>
+                    <div class="form-group"><label for="sv-pmt" class="form-label">الإيداع الشهري (دينار)</label><input type="number" id="sv-pmt" class="form-input" value="100"></div>
+                    <div class="form-group"><label for="sv-r" class="form-label">نسبة العائد السنوي (%)</label><input type="number" id="sv-r" class="form-input" value="3.5" step="0.1"></div>
+                    <div class="form-group"><label for="sv-t" class="form-label">مدة الادخار (سنوات)</label><input type="number" id="sv-t" class="form-input" value="5"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>الرصيد المستقبلي</h3><div class="result-main-value" id="sv-fv">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">إجمالي المبلغ المدخر</span><span class="detail-value" id="sv-deposits">0</span></div>
+                        <div class="detail-item"><span class="detail-label">إجمالي الأرباح</span><span class="detail-value success" id="sv-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>💰 قوة الادخار المنتظم</h3>
+                        <div class="tip-box">
+                            <strong>الادخار المنتظم</strong> هو أفضل استراتيجية لبناء الثروة:<br><br>
+                            <strong>قاعدة الفائدة المركبة:</strong><br>
+                            كلما أطلت مدة الادخار، زادت الأرباح بشكل متسارع! الفائدة تعمل على الفائدة.<br><br>
+                            <strong>مثال على قوة الوقت:</strong><br>
+                            • شخص يدخر 100 دينار/شهر لمدة 30 سنة بعائد 5%<br>
+                            • المدخر: 36,000 دينار<br>
+                            • النتيجة: ~83,000 دينار<br>
+                            • الأرباح: ~47,000 دينار (أكثر من المدخر نفسه!)
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            إيداع أولي: 1,000 دينار<br>
+                            إيداع شهري: 100 دينار<br>
+                            العائد: 3.5% سنوياً<br>
+                            المدة: 5 سنوات<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • إجمالي المدخر: 7,000 دينار<br>
+                            • الرصيد النهائي: ~7,635 دينار<br>
+                            • الأرباح: ~635 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>نصائح للادخار الناجح:</strong><br>
+                            ✓ ابدأ مبكراً - الوقت أهم من المبلغ!<br>
+                            ✓ اجعل الادخار تلقائياً (حوالة بنكية شهرية)<br>
+                            ✓ نوّع استثماراتك (لا تضع كل البيض في سلة واحدة)<br>
+                            ✓ ابحث عن أفضل معدلات العائد<br>
+                            ✓ لا تسحب من مدخراتك إلا للضرورة القصوى
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const p = parseFloat(document.getElementById('sv-p').value) || 0;
+                    const pmt = parseFloat(document.getElementById('sv-pmt').value) || 0;
+                    const r = (parseFloat(document.getElementById('sv-r').value) || 0) / 100 / 12;
+                    const n = (parseInt(document.getElementById('sv-t').value) || 0) * 12;
+                    let fv = p * Math.pow(1 + r, n);
+                    if (r > 0) fv += pmt * ((Math.pow(1 + r, n) - 1) / r); else fv += pmt * n;
+                    const deposits = p + (pmt * n);
+                    document.getElementById('sv-fv').textContent = formatCurrency(fv);
+                    document.getElementById('sv-deposits').textContent = formatCurrency(deposits);
+                    document.getElementById('sv-int').textContent = formatCurrency(fv - deposits);
+                }
+            },
+
+            deposits: {
+                title: "الودائع لأجل", icon: "🏦",
+                html: `
+                    <div class="form-group"><label for="dp-p" class="form-label">مبلغ الوديعة (دينار)</label><input type="number" id="dp-p" class="form-input" value="10000"></div>
+                    <div class="form-group"><label for="dp-r" class="form-label">نسبة الفائدة السنوية (%)</label><input type="number" id="dp-r" class="form-input" value="5.5" step="0.1"></div>
+                    <div class="form-group"><label for="dp-t" class="form-label">مدة الوديعة (سنوات)</label><input type="number" id="dp-t" class="form-input" value="3"></div>
+                    <div class="form-group"><label for="dp-n" class="form-label">دورية صرف الفائدة</label><select id="dp-n" class="form-input"><option value="1">سنوياً</option><option value="2">نصف سنوياً</option><option value="4">ربع سنوياً</option><option value="12">شهرياً</option></select></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>المبلغ عند الاستحقاق</h3><div class="result-main-value" id="dp-fv">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">مبلغ الوديعة الأصلي</span><span class="detail-value" id="dp-principal">0</span></div>
+                        <div class="detail-item"><span class="detail-label">إجمالي الفائدة</span><span class="detail-value success" id="dp-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🏦 الودائع لأجل — خيار ادخاري منخفض المخاطر نسبياً</h3>
+                        <div class="tip-box">
+                            <strong>الوديعة لأجل</strong> هي استثمار محافظ ومضمون:<br><br>
+                            <strong>المميزات:</strong><br>
+                            ✅ آمنة ومضمونة من البنك<br>
+                            ✅ عائد ثابت ومعروف مسبقاً<br>
+                            ✅ عائد أعلى من الحساب الجاري<br>
+                            ✅ مؤمّنة من المؤسسة الأردنية لضمان الودائع<br><br>
+                            <strong>أنواع الودائع:</strong><br>
+                            • <strong>شهرية:</strong> صرف الفائدة كل شهر<br>
+                            • <strong>ربع سنوية:</strong> كل 3 أشهر<br>
+                            • <strong>نصف سنوية:</strong> كل 6 أشهر<br>
+                            • <strong>سنوية:</strong> في نهاية السنة (أعلى عائد)
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            مبلغ الوديعة: 10,000 دينار<br>
+                            الفائدة: 5.5% سنوياً<br>
+                            المدة: 3 سنوات<br>
+                            الصرف: شهرياً<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • المبلغ النهائي: ~11,774 دينار<br>
+                            • الأرباح: ~1,774 دينار<br>
+                            • العائد الشهري التقريبي: ~49 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>نقاط مهمة:</strong><br>
+                            • السحب المبكر قد يلغي الفائدة أو يفرض غرامة<br>
+                            • قارن معدلات الفائدة بين البنوك<br>
+                            • اختر المدة المناسبة لاحتياجاتك<br>
+                            • كلما طالت المدة، زاد العائد عادةً<br>
+                            • الفائدة المركبة (إعادة استثمار الفائدة) تعطي عائداً أعلى
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const p = parseFloat(document.getElementById('dp-p').value) || 0;
+                    const r = (parseFloat(document.getElementById('dp-r').value) || 0) / 100;
+                    const t = parseInt(document.getElementById('dp-t').value) || 0;
+                    const n = parseInt(document.getElementById('dp-n').value) || 1;
+                    const fv = p * Math.pow(1 + (r / n), n * t);
+                    document.getElementById('dp-fv').textContent = formatCurrency(fv);
+                    document.getElementById('dp-principal').textContent = formatCurrency(p);
+                    document.getElementById('dp-int').textContent = formatCurrency(fv - p);
+                }
+            },
+
+            retirement: {
+                title: "التقاعد", icon: "🌴",
+                html: `
+                    <div class="form-group"><label for="ret-age" class="form-label">العمر الحالي</label><input type="number" id="ret-age" class="form-input" value="30"></div>
+                    <div class="form-group"><label for="ret-ret-age" class="form-label">سن التقاعد</label><input type="number" id="ret-ret-age" class="form-input" value="60"></div>
+                    <div class="form-group"><label for="ret-p" class="form-label">المدخرات الحالية (دينار)</label><input type="number" id="ret-p" class="form-input" value="10000"></div>
+                    <div class="form-group"><label for="ret-pmt" class="form-label">المساهمة الشهرية (دينار)</label><input type="number" id="ret-pmt" class="form-input" value="200"></div>
+                    <div class="form-group"><label for="ret-r" class="form-label">معدل العائد السنوي (%)</label><input type="number" id="ret-r" class="form-input" value="7" step="0.1"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>إجمالي مدخراتك عند التقاعد</h3><div class="result-main-value" id="ret-fv">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">إجمالي مساهماتك</span><span class="detail-value" id="ret-contrib">0</span></div>
+                        <div class="detail-item"><span class="detail-label">العوائد الاستثمارية</span><span class="detail-value success" id="ret-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🌴 التخطيط للتقاعد - ابدأ مبكراً!</h3>
+                        <div class="tip-box">
+                            <strong>التقاعد المريح</strong> يحتاج تخطيطاً مبكراً:<br><br>
+                            <strong>قاعدة الـ 25:</strong><br>
+                            احتياجك السنوي × 25 = المبلغ المطلوب للتقاعد<br>
+                            مثال: إذا كنت تحتاج 20,000 دينار سنوياً، تحتاج لـ 500,000 دينار!<br><br>
+                            <strong>قوة البدء المبكر:</strong><br>
+                            • شخص يبدأ في سن 25 ويدخر 200 دينار/شهر<br>
+                            • بعائد 7% حتى سن 60<br>
+                            • النتيجة: ~556,000 دينار!<br>
+                            • نفس الشخص لو بدأ في سن 35: ~282,000 دينار فقط
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال:</strong><br>
+                            العمر الحالي: 30 سنة<br>
+                            سن التقاعد: 60 سنة<br>
+                            المدخرات الحالية: 10,000 دينار<br>
+                            الادخار الشهري: 200 دينار<br>
+                            معدل العائد: 7% سنوياً<br><br>
+                            <strong>النتيجة بعد 30 سنة:</strong><br>
+                            • إجمالي المساهمات: 82,000 دينار<br>
+                            • الرصيد النهائي: ~320,000 دينار<br>
+                            • الأرباح: ~238,000 دينار (290% ربح!)
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>استراتيجيات النجاح:</strong><br>
+                            ✓ ابدأ الآن - كل سنة تأخير تكلفك الكثير!<br>
+                            ✓ ادخر 15-20% من دخلك على الأقل<br>
+                            ✓ نوّع استثماراتك (أسهم، عقار، ودائع)<br>
+                            ✓ استفد من برامج التقاعد الحكومية<br>
+                            ✓ زد مساهماتك كلما زاد دخلك<br>
+                            ✓ راجع خطتك سنوياً وعدّلها حسب الحاجة
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const age = parseInt(document.getElementById('ret-age').value) || 0;
+                    const retAge = parseInt(document.getElementById('ret-ret-age').value) || 0;
+                    const p = parseFloat(document.getElementById('ret-p').value) || 0;
+                    const pmt = parseFloat(document.getElementById('ret-pmt').value) || 0;
+                    const r = (parseFloat(document.getElementById('ret-r').value) || 0) / 100 / 12;
+                    const n = Math.max(0, (retAge - age) * 12);
+                    let fv = p * Math.pow(1 + r, n);
+                    if (r > 0) fv += pmt * ((Math.pow(1 + r, n) - 1) / r); else fv += pmt * n;
+                    const contrib = p + (pmt * n);
+                    document.getElementById('ret-fv').textContent = formatCurrency(fv);
+                    document.getElementById('ret-contrib').textContent = formatCurrency(contrib);
+                    document.getElementById('ret-int').textContent = formatCurrency(fv - contrib);
+                }
+            },
+
+            'card-payoff': {
+                title: "سداد البطاقة", icon: "💳",
+                html: `
+                    <div class="form-group"><label for="card-balance" class="form-label">الرصيد المستحق (دينار)</label><input type="number" id="card-balance" class="form-input" value="3000"></div>
+                    <div class="form-group"><label for="card-apr" class="form-label">معدل الفائدة السنوي (%)</label><input type="number" id="card-apr" class="form-input" value="18" step="0.1"></div>
+                    <div class="form-group"><label for="card-fixed" class="form-label">المبلغ الشهري للسداد (دينار)</label><input type="number" id="card-fixed" class="form-input" value="150"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>ستنتهي من السداد خلال</h3><div class="result-main-value" id="card-months">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">إجمالي الفوائد المدفوعة</span><span class="detail-value success" id="card-int">0</span></div>
+                    </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>💳 فخ البطاقات الائتمانية</h3>
+                        <div class="warning-box">
+                            ⚠️ <strong>تحذير:</strong> البطاقات الائتمانية لها أعلى فوائد!<br><br>
+                            <strong>الحد الأدنى للدفع = فخ مالي!</strong><br>
+                            إذا دفعت فقط الحد الأدنى (عادة 5%):<br>
+                            • رصيد 3,000 دينار بفائدة 18%<br>
+                            • دفع 150 دينار شهرياً<br>
+                            • ستحتاج ~24 شهر للسداد<br>
+                            • ستدفع ~600 دينار فوائد إضافية!<br><br>
+                            <strong>لو دفعت 300 دينار شهرياً:</strong><br>
+                            • تنتهي في ~11 شهر<br>
+                            • فوائد ~300 دينار فقط<br>
+                            • توفير 300 دينار + 13 شهر!
+                        </div>
+                        <div class="tip-box">
+                            <strong>استراتيجية السداد الذكي:</strong><br><br>
+                            1️⃣ <strong>أوقف الاستخدام:</strong> لا مشتريات جديدة حتى السداد الكامل<br>
+                            2️⃣ <strong>ادفع أكثر من الحد الأدنى:</strong> كلما زاد المبلغ، قلت المدة والفوائد<br>
+                            3️⃣ <strong>طريقة كرة الثلج:</strong> إذا كان لديك عدة بطاقات:<br>
+                            • ادفع الحد الأدنى على الكل<br>
+                            • ادفع أكبر مبلغ ممكن على البطاقة ذات الفائدة الأعلى<br>
+                            • عندما تنتهي منها، انتقل للتالية<br>
+                            4️⃣ <strong>انقل الرصيد:</strong> بعض البنوك تعرض نقل رصيد بفائدة 0% لفترة محدودة
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال صادم:</strong><br>
+                            رصيد البطاقة: 5,000 دينار<br>
+                            الفائدة: 18% سنوياً<br><br>
+                            <strong>سيناريو أ:</strong> دفع الحد الأدنى (250 دينار)<br>
+                            • المدة: ~28 شهر<br>
+                            • إجمالي الفوائد: ~2,000 دينار<br>
+                            • المجموع المدفوع: 7,000 دينار!<br><br>
+                            <strong>سيناريو ب:</strong> دفع 500 دينار شهرياً<br>
+                            • المدة: ~11 شهر<br>
+                            • إجمالي الفوائد: ~500 دينار<br>
+                            • المجموع المدفوع: 5,500 دينار<br><br>
+                            💰 توفير 1,500 دينار!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const balance = parseFloat(document.getElementById('card-balance').value) || 0;
+                    const apr = (parseFloat(document.getElementById('card-apr').value) || 0) / 100;
+                    const payment = parseFloat(document.getElementById('card-fixed').value) || 0;
+                    const monthlyRate = apr / 12;
+                    if (balance <= 0 || payment <= 0 || monthlyRate <=0) return;
+                    if (payment <= balance * monthlyRate) {
+                        document.getElementById('card-months').textContent = 'غير ممكن';
+                        document.getElementById('card-int').textContent = '---';
+                        return;
+                    }
+                    const n = -(Math.log(1 - (balance * monthlyRate) / payment)) / Math.log(1 + monthlyRate);
+                    document.getElementById('card-months').textContent = `${Math.ceil(n)} أشهر`;
+                    document.getElementById('card-int').textContent = formatCurrency((payment * n) - balance);
+                }
+            },
+
+            budget: {
+                title: "الميزانية", icon: "📊",
+                html: `<div class="form-group"><label for="bg-income" class="form-label">صافي الدخل الشهري (دينار)</label><input type="number" id="bg-income" class="form-input" value="1000"></div>`,
+                results: `
+                    <div class="result-header"><h3>تقسيم ميزانية 50/30/20</h3></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">50% للاحتياجات</span><span class="detail-value" id="bg-needs">0</span></div>
+                        <div class="detail-item"><span class="detail-label">30% للرغبات</span><span class="detail-value" id="bg-wants">0</span></div>
+                        <div class="detail-item"><span class="detail-label">20% للادخار</span><span class="detail-value success" id="bg-savings">0</span></div>
+                    </div>`,
+                educational: `
+                    <div class="educational-content">
+                        <h3>📊 قاعدة 50/30/20 للميزانية</h3>
+                        <div class="tip-box">
+                            <strong>قاعدة 50/30/20</strong> هي طريقة بسيطة لإدارة ميزانيتك:<br><br>
+                            <strong>50% للاحتياجات الأساسية:</strong><br>
+                            • الإيجار أو قسط المنزل<br>
+                            • فواتير الكهرباء والماء<br>
+                            • الطعام والمواصلات<br>
+                            • التأمين الصحي<br>
+                            • الأقساط الضرورية<br><br>
+                            <strong>30% للرغبات والترفيه:</strong><br>
+                            • المطاعم والكافيهات<br>
+                            • الترفيه والسفر<br>
+                            • الملابس (غير الضرورية)<br>
+                            • الاشتراكات (نتفليكس، إلخ)<br>
+                            • الهوايات<br><br>
+                            <strong>20% للادخار والاستثمار:</strong><br>
+                            • صندوق الطوارئ<br>
+                            • التقاعد<br>
+                            • سداد الديون<br>
+                            • الاستثمارات<br>
+                            • الأهداف المستقبلية
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال عملي:</strong><br>
+                            صافي الدخل الشهري: 1,000 دينار<br><br>
+                            <strong>التقسيم:</strong><br>
+                            • 500 دينار (50%) → احتياجات:<br>
+                            &nbsp;&nbsp;- إيجار: 250 دينار<br>
+                            &nbsp;&nbsp;- فواتير: 100 دينار<br>
+                            &nbsp;&nbsp;- طعام: 100 دينار<br>
+                            &nbsp;&nbsp;- مواصلات: 50 دينار<br><br>
+                            • 300 دينار (30%) → رغبات:<br>
+                            &nbsp;&nbsp;- مطاعم: 100 دينار<br>
+                            &nbsp;&nbsp;- ترفيه: 100 دينار<br>
+                            &nbsp;&nbsp;- ملابس: 100 دينار<br><br>
+                            • 200 دينار (20%) → ادخار:<br>
+                            &nbsp;&nbsp;- صندوق طوارئ: 100 دينار<br>
+                            &nbsp;&nbsp;- استثمار: 100 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>نصائح مهمة:</strong><br>
+                            • يمكنك تعديل النسب حسب ظروفك<br>
+                            • إذا كان الإيجار مرتفع، قد تحتاج 60/20/20<br>
+                            • إذا كان لديك ديون، خصص لها من الـ 20%<br>
+                            • راقب إنفاقك شهرياً وعدّل الميزانية<br>
+                            • استخدم تطبيقات تتبع المصروفات<br>
+                            • الانضباط المالي = حرية مالية مستقبلية!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const income = parseFloat(document.getElementById('bg-income').value) || 0;
+                    document.getElementById('bg-needs').textContent = formatCurrency(income * 0.5);
+                    document.getElementById('bg-wants').textContent = formatCurrency(income * 0.3);
+                    document.getElementById('bg-savings').textContent = formatCurrency(income * 0.2);
+                }
+            },
+
+            inflation: {
+                title: "التضخم", icon: "📉",
+                html: `
+                    <div class="form-group"><label for="inf-amount" class="form-label">المبلغ الحالي (دينار)</label><input type="number" id="inf-amount" class="form-input" value="1000"></div>
+                    <div class="form-group"><label for="inf-rate" class="form-label">معدل التضخم السنوي المتوقع (%)</label><input type="number" id="inf-rate" class="form-input" value="3.5" step="0.1"></div>
+                    <div class="form-group"><label for="inf-years" class="form-label">عدد السنوات</label><input type="number" id="inf-years" class="form-input" value="10"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>قوة الشراء المستقبلية</h3><div class="result-main-value" id="inf-fv">0</div></div>
+                    <div class="result-details">
+                        <div class="detail-item"><span class="detail-label">للحفاظ على نفس القوة الشرائية</span><span class="detail-value" id="inf-needed">0</span></div>
+                    </div>`,
+                educational: `
+                    <div class="educational-content">
+                        <h3>📉 التضخم - العدو الخفي لأموالك</h3>
+                        <div class="warning-box">
+                            ⚠️ <strong>التضخم</strong> يقلل من قيمة أموالك بمرور الوقت!<br><br>
+                            <strong>ما هو التضخم؟</strong><br>
+                            هو ارتفاع أسعار السلع والخدمات مع الوقت، مما يعني أن نفس المبلغ يشتري أقل في المستقبل.<br><br>
+                            <strong>مثال صادم:</strong><br>
+                            • 1,000 دينار اليوم<br>
+                            • بتضخم 3.5% سنوياً<br>
+                            • بعد 10 سنوات ستشتري ما يعادل ~710 دينار فقط!<br>
+                            • خسرت 29% من قوتها الشرائية!<br><br>
+                            <strong>بعد 20 سنة:</strong><br>
+                            • نفس الـ 1,000 دينار ستساوي ~500 دينار فقط!<br>
+                            • خسرت نصف قيمتها!
+                        </div>
+                        <div class="tip-box">
+                            <strong>كيف تحمي نفسك من التضخم؟</strong><br><br>
+                            1️⃣ <strong>لا تترك المال نقداً:</strong><br>
+                            • المال المدخر في البنك بدون فائدة يخسر قيمته<br>
+                            • استثمر في أصول تنمو أسرع من التضخم<br><br>
+                            2️⃣ <strong>الاستثمار في:</strong><br>
+                            ✅ العقارات (تزيد قيمتها عادة مع التضخم)<br>
+                            ✅ الأسهم (عوائد تاريخية ~7-10% سنوياً)<br>
+                            ✅ الذهب (ملاذ آمن ضد التضخم)<br>
+                            ✅ التعليم والمهارات (استثمار في نفسك)<br><br>
+                            3️⃣ <strong>زد دخلك:</strong><br>
+                            • اطلب زيادة راتب سنوية تواكب التضخم<br>
+                            • طور مهاراتك لزيادة قيمتك السوقية
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال توضيحي:</strong><br>
+                            المبلغ الحالي: 1,000 دينار<br>
+                            معدل التضخم: 3.5% سنوياً<br>
+                            المدة: 10 سنوات<br><br>
+                            <strong>النتيجة:</strong><br>
+                            • قوة الشراء المستقبلية: ~710 دينار<br>
+                            • للحفاظ على نفس القوة: تحتاج ~1,411 دينار<br><br>
+                            💡 <strong>الحل:</strong> استثمر بعائد أعلى من التضخم!<br>
+                            إذا استثمرت بعائد 7%:<br>
+                            • بعد 10 سنوات: 1,000 → ~1,967 دينار<br>
+                            • ربحت ~557 دينار حقيقية (بعد التضخم)!
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const amount = parseFloat(document.getElementById('inf-amount').value) || 0;
+                    const rate = (parseFloat(document.getElementById('inf-rate').value) || 0) / 100;
+                    const years = parseInt(document.getElementById('inf-years').value) || 0;
+                    const fv = amount / Math.pow(1 + rate, years);
+                    const needed = amount * Math.pow(1 + rate, years);
+                    document.getElementById('inf-fv').textContent = formatCurrency(fv);
+                    document.getElementById('inf-needed').textContent = formatCurrency(needed);
+                }
+            },
+
+            zakat: {
+                title: "الزكاة", icon: "🕋",
+                html: `
+                    <div class="form-group"><label for="zk-cash" class="form-label">النقد في البنك واليد (دينار)</label><input type="number" id="zk-cash" class="form-input" value="5000"></div>
+                    <div class="form-group"><label for="zk-gold" class="form-label">الذهب (غرام، عيار 24)</label><input type="number" id="zk-gold" class="form-input" value="0"></div>
+                    <div class="form-group"><label for="zk-invest" class="form-label">قيمة الاستثمارات</label><input type="number" id="zk-invest" class="form-input" value="0"></div>
+                    <div class="form-group"><label for="zk-debts" class="form-label">الديون المستحقة عليك</label><input type="number" id="zk-debts" class="form-input" value="0"></div>
+                `,
+                results: `
+                    <div class="result-header"><h3>الزكاة المستحقة</h3><div class="result-main-value" id="zk-due">0</div></div>
+                    <div class="result-details">
+                       <div class="detail-item"><span class="detail-label">النصاب (85غ ذهب)</span><span class="detail-value" id="zk-nisab">0</span></div>
+                       <div class="detail-item"><span class="detail-label">مجموع مالك الزكوي</span><span class="detail-value" id="zk-total">0</span></div>
+                       <div class="detail-item"><span class="detail-label">الحالة</span><span class="detail-value" id="zk-status"></span></div>
+                   </div>
+                `,
+                educational: `
+                    <div class="educational-content">
+                        <h3>🕋 حاسبة الزكاة - ركن من أركان الإسلام</h3>
+                        <div class="tip-box">
+                            <strong>الزكاة</strong> فريضة على كل مسلم بلغ ماله النصاب:<br><br>
+                            <strong>شروط وجوب الزكاة:</strong><br>
+                            ✅ بلوغ النصاب (85 غرام ذهب أو ما يعادله)<br>
+                            ✅ مرور حول كامل (سنة هجرية)<br>
+                            ✅ أن يكون المال فائضاً عن الحاجات الأساسية<br><br>
+                            <strong>نسبة الزكاة:</strong><br>
+                            • 2.5% (ربع العشر) من المال<br>
+                            • أو: المال ÷ 40<br><br>
+                            <strong>الأموال الزكوية:</strong><br>
+                            ✓ النقود في البنك واليد<br>
+                            ✓ الذهب والفضة<br>
+                            ✓ عروض التجارة<br>
+                            ✓ الأسهم والاستثمارات<br>
+                            ✓ المال المدخر<br>
+                            ✗ المنزل الذي تسكنه<br>
+                            ✗ السيارة للاستعمال الشخصي<br>
+                            ✗ الأثاث والملابس
+                        </div>
+                        <div class="example-box">
+                            <strong>مثال عملي:</strong><br>
+                            النقد في البنك: 5,000 دينار<br>
+                            الذهب: 100 غرام × 48.5 = 4,850 دينار<br>
+                            الاستثمارات: 10,000 دينار<br>
+                            الديون المستحقة: 2,000 دينار<br><br>
+                            <strong>الحساب:</strong><br>
+                            • مجموع المال: 19,850 - 2,000 = 17,850 دينار<br>
+                            • النصاب: 85 × 48.5 = ~4,122 دينار<br>
+                            • المال أكبر من النصاب ✅<br>
+                            • الزكاة المستحقة: 17,850 × 2.5% = ~446 دينار
+                        </div>
+                        <div class="warning-box">
+                            ⚠️ <strong>ملاحظات مهمة:</strong><br>
+                            • هذه الحاسبة للمساعدة فقط<br>
+                            • يُفضل استشارة عالم دين للحالات الخاصة<br>
+                            • سعر الذهب يتغير - تحقق من السعر الحالي<br>
+                            • الديون المستحقة عليك تُخصم من المال الزكوي<br>
+                            • لا تؤخر إخراج الزكاة عن موعدها<br>
+                            • تأكد أن الزكاة تصل لمستحقيها الشرعيين
+                        </div>
+                    </div>
+                `,
+                calculate: () => {
+                    const GOLD_PRICE = 48.5; 
+                    const NISAB = 85 * GOLD_PRICE;
+                    const cash = parseFloat(document.getElementById('zk-cash').value) || 0;
+                    const gold = (parseFloat(document.getElementById('zk-gold').value) || 0) * GOLD_PRICE;
+                    const investments = parseFloat(document.getElementById('zk-invest').value) || 0;
+                    const debts = parseFloat(document.getElementById('zk-debts').value) || 0;
+                    const total = cash + gold + investments - debts;
+                    
+                    document.getElementById('zk-nisab').textContent = formatCurrency(NISAB);
+                    document.getElementById('zk-total').textContent = formatCurrency(total);
+
+                    const statusEl = document.getElementById('zk-status');
+                    if (total >= NISAB) {
+                        document.getElementById('zk-due').textContent = formatCurrency(total * 0.025);
+                        statusEl.textContent = 'تجب فيها الزكاة';
+                        statusEl.className = 'detail-value success';
+                    } else {
+                        document.getElementById('zk-due').textContent = formatCurrency(0);
+                        statusEl.textContent = 'لم تبلغ النصاب';
+                        statusEl.className = 'detail-value';
+                    }
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            function buildCalculator(key) {
+                const config = templates[key];
+                const container = document.getElementById(`${key}-calc`);
+                if (!container || !config) return;
+                
+                const fullHtml = `
+                    <div class="calculator-container">
+                        <div class="calculator-form">
+                            <h2 class="form-title"><span>${config.icon}</span><span>${config.title}</span></h2>
+                            ${config.html}
+                        </div>
+                        <div class="results-panel">${config.results}</div>
+                    </div>
+                    ${config.educational || ''}`;
+                container.innerHTML = fullHtml;
+
+                container.querySelectorAll('.form-input, .range-slider').forEach(el => {
+                    el.addEventListener('input', config.calculate);
+                    if(el.classList.contains('range-slider')) {
+                        const target = document.getElementById(el.dataset.target);
+                        if(target) {
+                            el.addEventListener('input', () => target.value = el.value);
+                            target.addEventListener('input', () => el.value = target.value);
+                        }
+                    }
+                });
+                config.calculate();
+            }
+
+            const tabs = document.querySelectorAll('.calc-tab-link');
+            tabs.forEach(tab => {
+                const key = tab.dataset.tab;
+                buildCalculator(key);
+                tab.addEventListener('click', () => {
+                    document.querySelector('.calc-tab-link.active').classList.remove('active');
+                    tab.classList.add('active');
+                    document.querySelectorAll('.calculator-content').forEach(c => c.classList.remove('active'));
+                    document.getElementById(`${key}-calc`).classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+        
+        function showScheduleModal(type) {
+            let principal, rate, months;
+            
+            if (type === 'loan') {
+                principal = parseFloat(document.getElementById('loan-p').value) || 0;
+                months = parseInt(document.getElementById('loan-n').value) || 0;
+                rate = (parseFloat(document.getElementById('loan-r').value) || 0) / 100 / 12;
+            } else if (type === 'mortgage') {
+                const price = parseFloat(document.getElementById('mg-price').value) || 0;
+                const down = parseFloat(document.getElementById('mg-down').value) || 0;
+                principal = price - down;
+                months = (parseInt(document.getElementById('mg-years').value) || 0) * 12;
+                rate = (parseFloat(document.getElementById('mg-apr').value) || 0) / 100 / 12;
+            } else if (type === 'car') {
+                const price = parseFloat(document.getElementById('car-price').value) || 0;
+                const down = parseFloat(document.getElementById('car-down').value) || 0;
+                principal = price - down;
+                months = (parseInt(document.getElementById('car-years').value) || 0) * 12;
+                rate = (parseFloat(document.getElementById('car-apr').value) || 0) / 100 / 12;
+            }
+            
+            if (!principal || !months || !rate) {
+                alert('الرجاء إدخال جميع البيانات أولاً');
+                return;
+            }
+            
+            const payment = principal * rate / (1 - Math.pow(1 + rate, -months));
+            let balance = principal;
+            let html = '<table class="schedule-table"><thead><tr><th>الشهر</th><th>القسط</th><th>الأصل</th><th>الفائدة</th><th>الرصيد</th></tr></thead><tbody>';
+            
+            for (let i = 1; i <= months; i++) {
+                const interestPayment = balance * rate;
+                const principalPayment = payment - interestPayment;
+                balance -= principalPayment;
+                
+                html += `<tr>
+                    <td>${i}</td>
+                    <td>${Math.round(payment).toLocaleString('ar-JO')}</td>
+                    <td>${Math.round(principalPayment).toLocaleString('ar-JO')}</td>
+                    <td style="color: #dc3545;">${Math.round(interestPayment).toLocaleString('ar-JO')}</td>
+                    <td><strong>${Math.max(0, Math.round(balance)).toLocaleString('ar-JO')}</strong></td>
+                </tr>`;
+            }
+            
+            html += '</tbody></table>';
+            document.getElementById('scheduleTableContainer').innerHTML = html;
+            document.getElementById('scheduleModal').classList.add('show');
+        }
+        
+        function closeScheduleModal() {
+            document.getElementById('scheduleModal').classList.remove('show');
+        }
+        
+        document.getElementById('scheduleModal').addEventListener('click', function(e) {
+            if (e.target === this) closeScheduleModal();
+        });
+
+        // Mobile Menu
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+        }
+    </script>
+<script src="../scroll-top.js?v=20260827"></script>
+<script>
+/* مزامنة قائمة القفز مع التبويبات */
+(function(){
+  var sel=document.getElementById('calcJump'); if(!sel) return;
+  sel.addEventListener('change',function(){
+    var b=document.querySelector('.calc-tab-link[data-tab="'+sel.value+'"]');
+    if(b) b.click();
+  });
+  document.querySelectorAll('.calc-tab-link').forEach(function(b){
+    b.addEventListener('click',function(){ sel.value=b.dataset.tab; });
+  });
+})();
+</script>
+</body>
+</html>

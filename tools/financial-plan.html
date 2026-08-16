@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطة الإدارة المالية الشخصية 30 يوماً — MaalyPlus</title>
+    <meta name="description" content="أنشئ خطة مالية شخصية مخصصة لـ30 يوماً بناءً على دخلك الشهري. ميزانية، عادات مالية، وجدول تتبع مجاناً.">
+    <link rel="canonical" href="https://maalyplus.com/tools/financial-plan.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR2XEXKN8T');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <style>
+        :root{--pb:#1E40AF;--pbd:#1E2B3C;--pg:#10B981;--pgd:#059669;--so:#F59E0B;--nw:#FFFFFF;--ng1:#F3F4F6;--ng2:#E5E7EB;--nd1:#374151;--nd2:#1F2937;--fh:'IBM Plex Sans Arabic','Alexandria',sans-serif;--fb:'IBM Plex Sans Arabic',sans-serif;--rm:12px;--rl:16px;--sm:0 4px 12px rgba(0,0,0,0.08);}
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:var(--fb);background:var(--ng1);color:var(--nd1);}
+        .hero{background:linear-gradient(135deg,var(--pbd),var(--pb) 60%,#047857);color:#fff;padding:3rem 1.5rem;text-align:center;}
+        .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:0.3rem 1rem;font-size:0.82rem;margin-bottom:1rem;}
+        .hero h1{font-family:var(--fh);font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700;margin-bottom:0.75rem;line-height:1.3;}
+        .hero p{font-size:1rem;opacity:0.9;max-width:560px;margin:0 auto;}
+        .wrap{max-width:840px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+        .card{background:#fff;border-radius:var(--rl);padding:2rem 2.5rem;box-shadow:var(--sm);margin-bottom:1.25rem;}
+        .card-title{font-family:var(--fh);font-size:1.25rem;color:var(--nd2);margin-bottom:1.5rem;}
+        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+        .fg{display:flex;flex-direction:column;gap:0.35rem;}
+        .fg.full{grid-column:1/-1;}
+        .lbl{font-size:0.88rem;font-weight:600;color:var(--nd2);}
+        .lbl small{font-weight:400;color:#6B7280;}
+        input[type=number],input[type=text],select{border:1.5px solid var(--ng2);border-radius:var(--rm);padding:0.65rem 1rem;font-size:0.95rem;font-family:var(--fb);color:var(--nd2);background:#fff;width:100%;transition:border-color 0.2s;}
+        input:focus,select:focus{outline:none;border-color:var(--pb);}
+        .gen-btn{width:100%;margin-top:1.25rem;padding:0.9rem;background:linear-gradient(135deg,var(--pb),var(--pg));color:#fff;border:none;border-radius:var(--rl);font-family:var(--fh);font-size:1.05rem;font-weight:700;cursor:pointer;transition:opacity 0.2s;}
+        .gen-btn:hover{opacity:0.9;}
+        .err{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--rm);padding:1rem;color:#DC2626;display:none;margin-top:0.75rem;font-size:0.88rem;}
+        .loading{display:none;text-align:center;padding:2.5rem;background:#fff;border-radius:var(--rl);box-shadow:var(--sm);}
+        .spinner{width:44px;height:44px;border:4px solid var(--ng2);border-top-color:var(--pb);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 1rem;}
+        @keyframes spin{to{transform:rotate(360deg);}}
+        .loading p{color:#6B7280;font-size:0.95rem;}
+        .result{display:none;}
+        .result-bar{background:#fff;border-radius:var(--rl);padding:1.25rem 2rem;box-shadow:var(--sm);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+        .result-bar h2{font-family:var(--fh);font-size:1.1rem;color:var(--nd2);}
+        .rbadges{display:flex;gap:0.5rem;flex-wrap:wrap;}
+        .rbadge{background:var(--ng1);border-radius:50px;padding:0.25rem 0.8rem;font-size:0.8rem;color:#6B7280;}
+        .rbadge b{color:var(--pb);}
+        .rbtns{display:flex;gap:0.5rem;}
+        .rbtn{padding:0.45rem 1rem;border:1.5px solid var(--ng2);border-radius:var(--rm);background:transparent;cursor:pointer;font-family:var(--fb);font-size:0.85rem;color:var(--nd1);transition:all 0.2s;}
+        .rbtn:hover{border-color:var(--pb);color:var(--pb);}
+        .rbtn.green{background:var(--pg);color:#fff;border-color:transparent;}
+        .plan{background:#fff;border-radius:var(--rl);padding:2rem 2.5rem;box-shadow:var(--sm);}
+        .plan h2{font-family:var(--fh);font-size:1.3rem;color:var(--pbd);margin:2rem 0 0.75rem;padding-bottom:0.4rem;border-bottom:2px solid var(--ng2);}
+        .plan h2:first-child{margin-top:0;}
+        .plan h3{font-family:var(--fh);font-size:1.05rem;color:var(--pb);margin:1.25rem 0 0.4rem;}
+        .plan p{margin-bottom:0.85rem;line-height:1.85;}
+        .plan ul,.plan ol{padding-right:1.5rem;margin-bottom:1rem;}
+        .plan li{margin-bottom:0.45rem;line-height:1.7;}
+        .plan table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.88rem;}
+        .plan table th{background:var(--pbd);color:#fff;padding:0.65rem 0.9rem;text-align:right;}
+        .plan table td{padding:0.65rem 0.9rem;border-bottom:1px solid var(--ng2);}
+        .plan table tr:nth-child(even) td{background:var(--ng1);}
+        .plan .hl{background:var(--ng1);border-right:4px solid var(--pg);border-radius:0 var(--rm) var(--rm) 0;padding:0.9rem 1.1rem;margin:1.25rem 0;}
+        .plan .warn{background:#FFF7ED;border-right:4px solid var(--so);border-radius:0 var(--rm) var(--rm) 0;padding:0.9rem 1.1rem;margin:1.25rem 0;}
+        .plan .tip{background:#F0FDF4;border-right:4px solid var(--pg);border-radius:0 var(--rm) var(--rm) 0;padding:0.9rem 1.1rem;margin:1.25rem 0;}
+        .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;margin:1.25rem 0;}
+        .kpi{background:var(--ng1);border-radius:var(--rm);padding:1rem;text-align:center;}
+        .kpi .val{font-family:var(--fh);font-size:1.6rem;font-weight:700;color:var(--pb);}
+        .kpi .val.green{color:var(--pg);}
+        .kpi .val.orange{color:var(--so);}
+        .kpi .klbl{font-size:0.78rem;color:#6B7280;margin-top:0.2rem;}
+        .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1rem 0;}
+        .week-card{border-radius:var(--rm);padding:1rem 1.25rem;border:1.5px solid var(--ng2);}
+        .week-card .wnum{font-size:0.75rem;color:#6B7280;margin-bottom:0.3rem;}
+        .week-card .wgoal{font-family:var(--fh);font-size:0.95rem;color:var(--pbd);margin-bottom:0.4rem;}
+        .week-card .waction{font-size:0.85rem;color:var(--nd1);}
+        .week-card .wamt{font-size:0.82rem;color:var(--pg);font-weight:600;margin-top:0.3rem;}
+        .habit-list{display:flex;flex-direction:column;gap:0.75rem;margin:1rem 0;}
+        .habit{display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:var(--ng1);border-radius:var(--rm);}
+        .habit-rank{width:32px;height:32px;border-radius:50%;background:var(--pb);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:700;font-size:0.9rem;flex-shrink:0;}
+        .habit-body{flex:1;}
+        .habit-name{font-family:var(--fh);font-size:0.97rem;color:var(--nd2);margin-bottom:0.2rem;}
+        .habit-how{font-size:0.85rem;color:var(--nd1);margin-bottom:0.25rem;}
+        .habit-impact{font-size:0.82rem;color:var(--pg);font-weight:600;}
+        .cta-end{background:linear-gradient(135deg,var(--pb),var(--pg));border-radius:var(--rl);padding:2rem;text-align:center;margin-top:1.5rem;color:#fff;}
+        .cta-end h3{font-family:var(--fh);font-size:1.2rem;margin-bottom:0.5rem;}
+        .cta-end p{font-size:0.9rem;opacity:0.9;margin-bottom:1rem;}
+        .cta-btns{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;}
+        .cta-w{display:inline-block;background:#fff;color:var(--pb);padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:0.88rem;transition:transform 0.2s;}
+        .cta-w:hover{transform:translateY(-2px);}
+        @media(max-width:640px){.card{padding:1.25rem;}.form-grid{grid-template-columns:1fr;}.fg.full{grid-column:1;}.plan{padding:1.25rem;}.week-grid{grid-template-columns:1fr;}.result-bar{flex-direction:column;}}
+        @media print{.header,.hero,.card,.rbtns,.cta-end,footer{display:none!important;}.result{display:block!important;}.plan{box-shadow:none;border:1px solid #ddd;}}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:title" content="خطتي المالية — أداة تخطيط مجانية | MaalyPlus">
+    <meta property="og:description" content="خطة ادخار وميزانية مخصصة لدخلك. مجانية بدون تسجيل.">
+    <meta property="og:url" content="https://maalyplus.com/tools/financial-plan.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="خطتي المالية — أداة تخطيط مجانية | MaalyPlus">
+    <meta name="twitter:description" content="خطة ادخار وميزانية مخصصة لدخلك. مجانية بدون تسجيل.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<section class="hero">
+  <div class="hero-badge">✨ خطة مخصصة لدخلك — مجاناً</div>
+  <h1>خطة الإدارة المالية الشخصية لـ30 يوماً</h1>
+  <p>أدخل دخلك واحصل على خطة كاملة — ميزانية مخصصة بالأرقام الحقيقية، عادات مالية، جدول تتبع أسبوعي، ونصائح توفير فورية.</p>
+</section>
+
+<main class="wrap">
+
+  <div class="card" id="inputCard">
+    <div class="card-title">⚙️ أخبرنا عن وضعك المالي</div>
+    <div class="form-grid">
+      <div class="fg">
+        <label class="lbl" for="income">الدخل الشهري الصافي <small>(دينار)</small></label>
+        <input type="number" id="income" placeholder="مثال: 650" min="100">
+      </div>
+      <div class="fg">
+        <label class="lbl" for="fixed">الالتزامات الثابتة <small>(إيجار، أقساط)</small></label>
+        <input type="number" id="fixed" placeholder="مثال: 200" min="0">
+      </div>
+      <div class="fg">
+        <label class="lbl" for="family">الوضع العائلي</label>
+        <select id="family">
+          <option value="single">أعزب / عزباء</option>
+          <option value="married">متزوج / متزوجة بدون أطفال</option>
+          <option value="family">متزوج / متزوجة مع أطفال</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="lbl" for="goal">الهدف المالي الرئيسي</label>
+        <select id="goal">
+          <option value="emergency">بناء صندوق طوارئ</option>
+          <option value="debt">سداد الديون</option>
+          <option value="car">ادخار لسيارة</option>
+          <option value="house">ادخار لبيت</option>
+          <option value="general">تحسين الإدارة المالية</option>
+          <option value="invest">استثمار وتوفير</option>
+        </select>
+      </div>
+      <div class="fg full">
+        <label class="lbl" for="challenge">أكبر تحدٍّ مالي تواجهه <small>(اختياري)</small></label>
+        <input type="text" id="challenge" placeholder="مثال: أنفق كثيراً على الأكل خارج البيت">
+      </div>
+    </div>
+    <button class="gen-btn" onclick="generate()">✨ أنشئ خطتي المالية الآن</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>جارٍ تحليل وضعك المالي وبناء خطتك الشخصية...</p>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-bar">
+      <div>
+        <h2>خطتك المالية الشخصية لـ30 يوماً</h2>
+        <div class="rbadges" id="rbadges"></div>
+      </div>
+      <div class="rbtns">
+        <button class="rbtn" onclick="window.print()">🖨️ طباعة</button>
+        <button class="rbtn green" onclick="reset()">خطة جديدة ↺</button>
+      </div>
+    </div>
+    <div class="plan" id="plan"></div>
+    <div class="cta-end">
+      <h3>طبّق خطتك بأدوات مالي بلس</h3>
+      <p>قارن المنتجات المالية واختر ما يناسب خطتك الجديدة</p>
+      <div class="cta-btns">
+        <a href="../calculators/calculators.html" class="cta-w">الحاسبات المالية</a>
+        <a href="../loans/loans.html" class="cta-w">مقارنة القروض</a>
+        <a href="../cards/cards.html" class="cta-w">مقارنة البطاقات</a>
+        <a href="../microfinance/microfinance.html" class="cta-w">التمويل الأصغر</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+
+<script>
+const GOALS={emergency:{label:'بناء صندوق طوارئ',savePct:0.20,tip:'ركّز على بناء 3 رواتب كاحتياطي قبل أي هدف آخر. افتح حساب توفير منفصل مخصص لهذا الهدف فقط.'},debt:{label:'سداد الديون',savePct:0.25,tip:'رتّب ديونك من الأعلى فائدة للأقل وادفع الزيادة على أعلاها أولاً (طريقة Avalanche).'},car:{label:'ادخار لسيارة',savePct:0.20,tip:'حدد السيارة المستهدفة وثمنها، واحسب كم شهراً تحتاج بناءً على ادخارك الشهري.'},house:{label:'ادخار لبيت',savePct:0.22,tip:'التمويل العقاري في الأردن يتطلب 10-20% دفعة أولى. ابدأ الادخار المبكر لتقليل مدة القرض لاحقاً.'},general:{label:'تحسين الإدارة المالية',savePct:0.15,tip:'الهدف الأول هو وقف التسرب المالي وتحديد أين تذهب الأموال فعلاً.'},invest:{label:'استثمار وتوفير',savePct:0.20,tip:'بعد صندوق الطوارئ، فكّر في ودائع لأجل أو صناديق استثمارية مرخصة.'}};
+const FAMILY={single:{label:'أعزب',foodM:0.18,socM:0.12},married:{label:'متزوج',foodM:0.22,socM:0.10},family:{label:'متزوج مع أطفال',foodM:0.25,socM:0.08}};
+
+function fmt(n){return Math.round(n).toLocaleString('ar-JO')+' د.أ';}
+
+function generate(){
+  const income=parseFloat(document.getElementById('income').value)||0;
+  const fixed=parseFloat(document.getElementById('fixed').value)||0;
+  const fam=document.getElementById('family').value;
+  const goal=document.getElementById('goal').value;
+  const challenge=document.getElementById('challenge').value.trim();
+  if(!income||income<100){showErr('يرجى إدخال دخل شهري صحيح (100 دينار على الأقل)');return;}
+  if(fixed>=income){showErr('الالتزامات الثابتة لا يمكن أن تساوي أو تتجاوز الدخل');return;}
+  hideErr();
+  document.getElementById('inputCard').style.display='none';
+  document.getElementById('loading').style.display='block';
+  setTimeout(()=>{
+    document.getElementById('loading').style.display='none';
+    buildPlan(income,fixed,fam,goal,challenge);
+    document.getElementById('result').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+  },900);
+}
+
+function buildPlan(income,fixed,fam,goal,challenge){
+  const g=GOALS[goal];const fm=FAMILY[fam];
+  const disp=income-fixed;
+  const burden=fixed/income;
+  const save=Math.round(disp*g.savePct);
+  const emerg=Math.round(disp*0.05);
+  const food=Math.round(disp*fm.foodM);
+  const trans=Math.round(disp*0.12);
+  const bills=Math.round(disp*0.08);
+  const health=Math.round(disp*0.05);
+  const cloth=Math.round(disp*0.06);
+  const social=Math.round(disp*fm.socM);
+  const misc=Math.max(0,disp-save-emerg-food-trans-bills-health-cloth-social);
+  const monthSave=save+emerg;
+  const weekSave=Math.round(monthSave/4);
+
+  let status,statusClass;
+  if(burden<0.30){status='✅ ممتاز — التزاماتك منخفضة ولديك مساحة جيدة للادخار والمناورة.';statusClass='hl';}
+  else if(burden<0.45){status='⚡ جيد — التزاماتك معقولة. يمكن تحسين نسبة الادخار بتقليل المصاريف الاختيارية.';statusClass='hl';}
+  else{status='⚠️ تنبيه — التزاماتك الثابتة مرتفعة ('+(Math.round(burden*100))+'% من الدخل). الأولوية هي تقليلها.';statusClass='warn';}
+
+  document.getElementById('rbadges').innerHTML=`<span class="rbadge">دخل: <b>${fmt(income)}</b></span><span class="rbadge">متاح: <b>${fmt(disp)}</b></span><span class="rbadge">ادخار مستهدف: <b>${fmt(monthSave)}</b></span><span class="rbadge">الهدف: <b>${g.label}</b></span>`;
+
+  const habits=buildHabits(disp,goal,challenge,fm,social,weekSave);
+  const weeks=buildWeeks(goal,weekSave,g.label);
+  const tips=buildTips(challenge,goal,disp,social,food);
+
+  document.getElementById('plan').innerHTML=`
+<h2>1. تشخيص وضعك المالي</h2>
+<div class="kpi-grid">
+  <div class="kpi"><div class="val">${fmt(income)}</div><div class="klbl">الدخل الشهري</div></div>
+  <div class="kpi"><div class="val">${fmt(fixed)}</div><div class="klbl">الالتزامات الثابتة</div></div>
+  <div class="kpi"><div class="val green">${fmt(disp)}</div><div class="klbl">المتاح للتوزيع</div></div>
+  <div class="kpi"><div class="val ${burden>0.45?'orange':''}">${Math.round(burden*100)}%</div><div class="klbl">نسبة الأعباء</div></div>
+</div>
+<div class="${statusClass}">${status}</div>
+
+<h2>2. ميزانيتك الشهرية المقترحة</h2>
+<p>توزيع الـ<strong>${fmt(disp)}</strong> المتاحة كل شهر:</p>
+<table>
+  <tr><th>الفئة</th><th>المبلغ المقترح</th><th>النسبة</th></tr>
+  <tr><td>🛒 طعام وبقالة</td><td>${fmt(food)}</td><td>${Math.round(food/disp*100)}%</td></tr>
+  <tr><td>🚗 مواصلات وبنزين</td><td>${fmt(trans)}</td><td>${Math.round(trans/disp*100)}%</td></tr>
+  <tr><td>📱 فواتير واشتراكات</td><td>${fmt(bills)}</td><td>${Math.round(bills/disp*100)}%</td></tr>
+  <tr><td>🏥 صحة وطب</td><td>${fmt(health)}</td><td>${Math.round(health/disp*100)}%</td></tr>
+  <tr><td>👕 ملابس وشخصيات</td><td>${fmt(cloth)}</td><td>${Math.round(cloth/disp*100)}%</td></tr>
+  <tr><td>🎉 ترفيه واجتماعيات</td><td>${fmt(social)}</td><td>${Math.round(social/disp*100)}%</td></tr>
+  <tr><td>📦 متنوع واحتياطي</td><td>${fmt(misc)}</td><td>${Math.round(misc/disp*100)}%</td></tr>
+  <tr style="background:#DBEAFE"><td><strong>💰 الادخار الشهري</strong></td><td><strong>${fmt(save)}</strong></td><td><strong>${Math.round(save/disp*100)}%</strong></td></tr>
+  <tr style="background:#D1FAE5"><td><strong>🛡️ احتياطي الطوارئ</strong></td><td><strong>${fmt(emerg)}</strong></td><td><strong>${Math.round(emerg/disp*100)}%</strong></td></tr>
+</table>
+<div class="tip"><strong>💡 نصيحة:</strong> حوّل ${fmt(monthSave)} لحساب توفير منفصل فور وصول الراتب — قبل أي إنفاق آخر.</div>
+
+<h2>3. أهم 5 عادات مالية — مرتبة بالتأثير</h2>
+<div class="habit-list">${habits}</div>
+
+<h2>4. خطة الادخار الأسبوعية — 4 أسابيع</h2>
+<p>المستهدف كل أسبوع: <strong>${fmt(weekSave)}</strong></p>
+<div class="week-grid">${weeks}</div>
+
+<h2>5. جدول تتبع الإنفاق الأسبوعي</h2>
+<table>
+  <tr><th>الفئة</th><th>الميزانية / أسبوع</th><th>المنفق الفعلي</th><th>الفرق (+/-)</th></tr>
+  <tr><td>طعام وبقالة</td><td>${fmt(food/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>مواصلات</td><td>${fmt(trans/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>فواتير</td><td>${fmt(bills/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>صحة</td><td>${fmt(health/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>ترفيه</td><td>${fmt(social/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>ملابس</td><td>${fmt(cloth/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr><td>متنوع</td><td>${fmt(misc/4)}</td><td>_______</td><td>_______</td></tr>
+  <tr style="background:#D1FAE5"><td><strong>الادخار</strong></td><td><strong>${fmt(weekSave)}</strong></td><td>_______</td><td>_______</td></tr>
+</table>
+
+<h2>6. نصائح تقليل النفقات غير الضرورية</h2>
+<ul>${tips}</ul>
+
+<h2>7. هدف الـ30 يوم</h2>
+<div class="kpi-grid">
+  <div class="kpi"><div class="val green">${fmt(monthSave)}</div><div class="klbl">المبلغ المستهدف توفيره</div></div>
+  <div class="kpi"><div class="val">${fmt(weekSave)}</div><div class="klbl">الهدف الأسبوعي</div></div>
+</div>
+<div class="hl"><strong>كيف تقيس نجاحك في نهاية الشهر؟</strong><br>هل رصيد حسابك المنفصل وصل لـ${fmt(monthSave)} على الأقل؟<br>نعم ✅ — كرر الخطة الشهر القادم وزد الادخار بـ5%.<br>لا — راجع جدول التتبع لتعرف أي فئة تجاوزت ميزانيتها وقلّصها الشهر القادم.</div>
+<p>${g.tip}</p>`;
+}
+
+function buildHabits(disp,goal,challenge,fm,social,weekSave){
+  const all=[
+    {n:'ادخر أول الشهر لا آخره',h:`حوّل ${Math.round(disp*0.15)} دينار لحساب توفير منفصل يوم قبض الراتب مباشرة — قبل أي إنفاق آخر.`,i:`توفير مضمون ${fmt(Math.round(disp*0.15))} كل شهر`},
+    {n:'تتبع إنفاقك أسبوعياً',h:'سجّل كل مصروف في تطبيق Notes أو ورقة. 10 دقائق أسبوعياً تكشف أين تذهب الأموال.',i:'تقليل الإنفاق غير الواعي بـ10-20%'},
+    {n:'حدد سقفاً أسبوعياً للترفيه',h:`خصص ${fmt(Math.round(social/4))} فقط أسبوعياً للمطاعم والترفيه. عندما تنتهي — تنتهي.`,i:`توفير ${fmt(Math.round(social*0.3))} شهرياً`},
+    {n:'فعّل السداد التلقائي للفواتير',h:'فعّل سداد تلقائي لبطاقتك الائتمانية وأقساطك — تجنب غرامات التأخر والضرر على ملفك الائتماني.',i:'صفر غرامات تأخر'},
+    {n:'قاعدة الـ48 ساعة للمشتريات',h:'أي مشترى يزيد عن 20 دينار — انتظر 48 ساعة قبل الشراء. 60% من قرارات الشراء الاندفاعية تتغير.',i:`توفير ${fmt(Math.round(disp*0.05))}-${fmt(Math.round(disp*0.08))} شهرياً`}
+  ];
+  if(challenge){
+    const c=challenge.toLowerCase();
+    if(c.includes('أكل')||c.includes('مطعم')||c.includes('طعام'))
+      all.unshift({n:'ميزانية أسبوعية للمطاعم',h:`خصص ${fmt(Math.round(disp*0.08/4))} فقط أسبوعياً للأكل خارج. احضر غداءك للعمل 3 أيام في الأسبوع.`,i:`توفير ${fmt(Math.round(disp*0.07))} شهرياً`});
+    else if(c.includes('تسوق')||c.includes('ملابس'))
+      all.unshift({n:'قائمة الاحتياجات قبل التسوق',h:'اكتب قائمة ما تحتاجه فعلاً قبل أي رحلة تسوق. لا تشتر خارج القائمة أبداً.',i:`توفير ${fmt(Math.round(disp*0.06))} شهرياً`});
+    else if(c.includes('قهوة')||c.includes('كافيه'))
+      all.unshift({n:'حدد ميزانية القهوة',h:`خصص ${fmt(Math.round(social*0.3))} فقط شهرياً للمقاهي. عندما تنتهي اشرب في البيت.`,i:`توفير ${fmt(Math.round(social*0.2))} شهرياً`});
+  }
+  return all.slice(0,5).map((h,i)=>`<div class="habit"><div class="habit-rank">${i+1}</div><div class="habit-body"><div class="habit-name">${h.n}</div><div class="habit-how">${h.h}</div><div class="habit-impact">💰 ${h.i}</div></div></div>`).join('');
+}
+
+function buildWeeks(goal,weekSave,goalLabel){
+  const w=[
+    {num:'الأسبوع الأول',goal:'التشخيص والبداية',action:goal==='debt'?'اكتب قائمة بكل ديونك مع الفائدة. رتّبها من الأعلى للأقل.':goal==='emergency'?'افتح حساب توفير منفصل مخصص لصندوق الطوارئ اليوم.':'سجّل كل مصروف لمدة 7 أيام دون تغيير عاداتك. هذا أسبوع المراقبة.',amt:`هدف: ${fmt(weekSave)}`},
+    {num:'الأسبوع الثاني',goal:'تطبيق الميزانية',action:'طبّق الميزانية المقترحة بصرامة. حوّل مبلغ الادخار أول الأسبوع لحساب منفصل.',amt:`هدف: ${fmt(weekSave)}`},
+    {num:'الأسبوع الثالث',goal:'تحسين وتعديل',action:'راجع جدول التتبع — أي فئة تجاوزت؟ قلّل منها هذا الأسبوع بمبلغ واضح.',amt:`هدف: ${fmt(weekSave)}`},
+    {num:'الأسبوع الرابع',goal:'تقييم والاستمرار',action:`احسب ما وفّرته. إذا حققت الهدف كرر الشهر القادم وزد الادخار ${fmt(Math.round(weekSave*0.1))}.`,amt:`هدف: ${fmt(weekSave)}`}
+  ];
+  return w.map(wk=>`<div class="week-card"><div class="wnum">${wk.num}</div><div class="wgoal">${wk.goal}</div><div class="waction">${wk.action}</div><div class="wamt">${wk.amt}</div></div>`).join('');
+}
+
+function buildTips(challenge,goal,disp,social,food){
+  const tips=[
+    `<li><strong>اطبخ في البيت 4 أيام في الأسبوع</strong> — الفرق بين وجبة منزلية وخارجية 3-5 دنانير. شهرياً توفير ${fmt(Math.round(disp*0.05))}-${fmt(Math.round(disp*0.08))}.</li>`,
+    `<li><strong>راجع اشتراكاتك الشهرية</strong> — Netflix، Spotify، تطبيقات لا تستخدمها. ألغِ أي اشتراك لم تستخدمه خلال آخر شهر.</li>`,
+    `<li><strong>قارن قبل أي شراء فوق 15 دينار</strong> — تحقق من سعره في متجرين أو موقعين على الأقل.</li>`,
+    `<li><strong>يوم تسوق واحد في الأسبوع بقائمة مسبقة</strong> — التسوق المتفرق يزيد الإنفاق 15-20% بدون أن تشعر.</li>`,
+    `<li><strong>استخدم بطاقة كاش باك لمشترياتك اليومية</strong> — إنفاق عادي + كاش باك 1.5% = ${fmt(Math.round(disp*12*0.015))} دينار سنوياً مجاناً. <a href="../cards/cards.html">قارن البطاقات</a></li>`
+  ];
+  if(challenge){
+    const c=challenge.toLowerCase();
+    if(c.includes('أكل')||c.includes('مطعم'))
+      tips.unshift(`<li><strong>خصص ${fmt(Math.round(food*0.4))} فقط للمطاعم هذا الشهر</strong> — استخدم تطبيقات العروض للحصول على أفضل قيمة.</li>`);
+  }
+  return tips.slice(0,5).join('');
+}
+
+function showErr(m){const e=document.getElementById('err');e.textContent=m;e.style.display='block';}
+function hideErr(){document.getElementById('err').style.display='none';}
+function reset(){document.getElementById('result').style.display='none';document.getElementById('inputCard').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('nav-toggle')?.addEventListener('click',()=>document.getElementById('nav-menu')?.classList.toggle('open'));
+</script>
+<script src="../scroll-top.js?v=20260827"></script>
+</body>
+</html>

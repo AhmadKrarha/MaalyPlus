@@ -1,0 +1,91 @@
+:root {
+    --primary: #123866; --secondary: #2db8b7; --accent: #f6b332; --success: #22c55e;
+    --text-primary: #0f1a2b; --text-secondary: #6b7b94; --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fb; --border: #e6eaf2; --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --radius-lg: 12px; --radius-xl: 20px; --transition: 300ms ease;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Cairo', sans-serif;
+    color: var(--text-primary); background: var(--bg-secondary); line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.header { background: var(--bg-primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.logo { display: flex; align-items: center; text-decoration: none; }
+.nav { display: flex; gap: 2rem; align-items: center; }
+.nav-link { color: var(--text-primary); text-decoration: none; font-weight: 500; }
+.nav-link.active { color: var(--secondary); font-weight: 700; }
+.page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 3rem 0; color: white; }
+.page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.filters-section { background: white; padding: 2rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 81px; z-index: 900; }
+.search-sort-container { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; }
+#searchFilter { flex-grow: 1; }
+#searchFilter, #sortBy { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+.filters-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; align-items: flex-end; }
+.filter-label { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 500; }
+.filter-select, .checkbox-group { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+.checkbox-group { display: flex; align-items: center; gap: 0.5rem; padding-top: 14px; padding-bottom: 14px; }
+.checkbox-group input { width: 1.2em; height: 1.2em; }
+.pills-and-reset-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; }
+.pills-container { display: flex; gap: 1rem; flex-wrap: wrap; }
+.pill { padding: 8px 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-xl); font-size: 0.95rem; cursor: pointer; transition: var(--transition); }
+.pill:hover { background: #e9ecef; }
+.pill.active { background: var(--secondary); color: white; border-color: var(--secondary); }
+.pill .count { background: rgba(0,0,0,0.1); padding: 2px 6px; border-radius: 10px; margin-right: 4px; font-size: 0.85rem; }
+.pill.active .count { background: rgba(255,255,255,0.2); }
+#resetFilters { padding: 8px 20px; }
+.cards-section { padding: 3rem 0; }
+.results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.results-count { font-size: 1.1rem; color: var(--text-secondary); }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+.card-item { background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition); display: flex; flex-direction: column; }
+.card-item:hover { transform: translateY(-5px); }
+.card-header { padding: 1.5rem; border-bottom: 1px solid var(--border); }
+.card-top { display: flex; gap: 1rem; align-items: center; }
+.bank-logo-img { width: 70px; height: 45px; object-fit: contain; padding: 5px; background: white; border-radius: 8px; border: 1px solid var(--border); }
+.card-name { font-size: 1.2rem; font-weight: 600; color: var(--primary); }
+.bank-name { color: var(--text-secondary); font-size: 0.9rem; }
+.card-body { padding: 1.5rem; flex-grow: 1; }
+.features-list { display: flex; flex-direction: column; gap: 1rem; }
+.feature { display: flex; align-items: center; gap: 0.75rem; }
+.feature .value { font-weight: 600; margin-inline-start: 4px; }
+.feature-icon { width: 24px; text-align: center; }
+.card-footer { padding: 1rem 1.5rem; background: var(--bg-secondary); display: flex; gap: 1rem; margin-top: auto; }
+.btn { flex: 1; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; border: none; transition: var(--transition); }
+.btn:hover { opacity: 0.9; }
+.btn-outline { background: white; border: 2px solid var(--border); color: var(--text-primary); }
+.btn-primary { background: var(--secondary); color: white; }
+.compare-float { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: white; padding: 15px 25px; border-radius: var(--radius-xl); box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; cursor: pointer; z-index: 1000; transform: translateY(120px); opacity: 0; transition: all 0.4s ease; }
+.compare-float.show { transform: translateY(0); opacity: 1; }
+.compare-count { background: var(--accent); padding: 2px 8px; border-radius: 50%; }
+.loader { border: 5px solid #f3f3f3; border-top: 5px solid var(--secondary); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 4rem auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+/**
+ * هذا الكود يضمن محاذاة النص داخل تفاصيل البطاقة إلى اليمين
+ * لتحسين العرض في الواجهة العربية.
+ */
+.card-details p {
+    text-align: right;
+}
+/**
+ * تنظيم رأس البطاقة (Header) باستخدام Flexbox
+ * لمحاذاة الشعار والنص بشكل عمودي.
+ */
+.card-header {
+    display: flex;
+    align-items: center; /* محاذاة عمودية في المنتصف */
+    gap: 16px;           /* مسافة بين الشعار والنص */
+    margin-bottom: 16px; /* مسافة أسفل الهيدر */
+}
+
+/**
+ * تحديد حجم شعار البنك وضمان ظهوره بشكل سليم.
+ */
+.bank-logo {
+    height: 50px;         /* تحديد ارتفاع ثابت ومناسب للشعار */
+    width: 50px;          /* تحديد عرض ثابت ومناسب للشعار */
+    object-fit: contain;  /* لضمان ظهور الصورة كاملة ضمن الأبعاد دون تشويه */
+    border: 1px solid #eee; /* إضافة إطار خفيف (اختياري) */
+    border-radius: 50%;   /* جعل الإطار دائرياً (اختياري) */
+}

@@ -1,0 +1,85 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: ar
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  # ── الأخبار المالية ──
+  - name: news
+    label: "📰 الأخبار المالية"
+    label_singular: خبر
+    folder: _news
+    create: true
+    extension: json
+    format: json
+    slug: "{{year}}-{{month}}-{{day}}-{{tag}}"
+    summary: "{{title}} | {{tag}} | {{date}}"
+    sortable_fields: ['date', 'tag', 'title']
+    fields:
+      - label: "عنوان الخبر"
+        name: title
+        widget: string
+        hint: "مثال: البنك المركزي يرفع أسعار الفائدة"
+
+      - label: "التصنيف"
+        name: tag
+        widget: select
+        options:
+          - { label: "🏦 بنوك", value: "بنوك" }
+          - { label: "🛡️ تأمين", value: "تأمين" }
+          - { label: "💚 تمويل أصغر", value: "تمويل أصغر" }
+          - { label: "📈 اقتصاد", value: "اقتصاد" }
+          - { label: "🔴 عاجل", value: "عاجل" }
+          - { label: "💰 أسعار", value: "تضخم" }
+
+      - label: "لون التصنيف"
+        name: tagStyle
+        widget: select
+        default: "background:#DBEAFE;color:#1E40AF"
+        options:
+          - { label: "أزرق — بنوك/عام",       value: "background:#DBEAFE;color:#1E40AF" }
+          - { label: "أحمر — تأمين/عاجل",    value: "background:#FEE2E2;color:#DC2626" }
+          - { label: "أخضر — تمويل أصغر",    value: "background:#D1FAE5;color:#065F46" }
+          - { label: "ذهبي — أسعار/اقتصاد", value: "background:#FEF3C7;color:#92400E" }
+          - { label: "بنفسجي — تحليل",       value: "background:#EDE9FE;color:#5B21B6" }
+
+      - label: "اللون الجانبي للبطاقة"
+        name: accent
+        widget: select
+        default: "#1E40AF"
+        options:
+          - { label: "🔵 أزرق",    value: "#1E40AF" }
+          - { label: "🔴 أحمر",    value: "#EF4444" }
+          - { label: "🟢 أخضر",    value: "#10B981" }
+          - { label: "🟡 ذهبي",    value: "#F59E0B" }
+          - { label: "🟣 بنفسجي",  value: "#7C3AED" }
+
+      - label: "التاريخ (نص)"
+        name: date
+        widget: string
+        default: "أبريل 2026"
+        hint: "مثال: أبريل 2026"
+
+      - label: "وصف الخبر"
+        name: desc
+        widget: text
+        hint: "2-3 جمل مختصرة تظهر أسفل العنوان"
+
+      - label: "الرابط الداخلي"
+        name: url
+        widget: select
+        default: "insurance/insurance.html"
+        options:
+          - { label: "📄 الصفحة الرئيسية",     value: "index.html" }
+          - { label: "💳 البطاقات",              value: "cards/cards.html" }
+          - { label: "💵 القروض",               value: "loans/loans.html" }
+          - { label: "🏦 التمويل الأصغر",       value: "microfinance/microfinance.html" }
+          - { label: "🛡️ التأمين",              value: "insurance/insurance.html" }
+          - { label: "🚗 تمويل السيارات",        value: "car-financing/car-financing.html" }
+          - { label: "📖 المدونة",               value: "education/education.html" }
+          - { label: "📊 الحاسبات",             value: "calculators/calculators.html" }

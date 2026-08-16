@@ -1,0 +1,293 @@
+[
+ {
+  "id": "arab-bank-car",
+  "bank_ar": "البنك العربي",
+  "bank_en": "Arab Bank",
+  "product_name": "تمويل سيارة",
+  "logo_color": "#006B3F",
+  "interest_rate_display": "ابتداءً من 7.5%",
+  "interest_rate_min": 7.5,
+  "interest_rate_max": 10,
+  "max_amount_jod": 50000,
+  "max_tenor_years": 7,
+  "down_payment_min_percent": 20,
+  "car_type": "both",
+  "max_car_age_years": 5,
+  "min_salary_jod": 500,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "features": [
+   "للسيارات الجديدة والمستعملة",
+   "فائدة متناقصة",
+   "تأمين شامل مشمول"
+  ],
+  "pros": [
+   "شبكة فروع واسعة",
+   "إجراءات سريعة",
+   "فائدة تنافسية"
+  ],
+  "cons": [
+   "دفعة أولى 20%",
+   "يتطلب نقل راتب"
+  ],
+  "apply_url": "https://www.arabbank.jo",
+  "official_url": "https://www.arabbank.jo",
+  "last_verified": "2026-04",
+  "confidence": 85,
+  "logo": "../images/banks/arab_bank.png"
+ },
+ {
+  "id": "hbtf-car",
+  "bank_ar": "بنك الإسكان للتجارة والتمويل (HBTF)",
+  "bank_en": "Housing Bank",
+  "product_name": "تمويل السيارات",
+  "logo_color": "#10B981",
+  "interest_rate_display": "من 7.75%",
+  "interest_rate_min": 7.75,
+  "interest_rate_max": 10.5,
+  "max_amount_jod": 75000,
+  "max_tenor_years": 8,
+  "down_payment_min_percent": 15,
+  "car_type": "both",
+  "max_car_age_years": 7,
+  "min_salary_jod": 450,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "features": [
+   "مدد تصل 8 سنوات",
+   "دفعة أولى 15% فقط",
+   "تمويل حتى 75,000 د.أ"
+  ],
+  "pros": [
+   "أطول مدة في السوق",
+   "أقل دفعة أولى",
+   "مبلغ تمويل عالٍ"
+  ],
+  "cons": [
+   "يتطلب نقل راتب",
+   "رسوم تسجيل إضافية"
+  ],
+  "apply_url": "https://hbtf.com",
+  "official_url": "https://hbtf.com",
+  "last_verified": "2026-04",
+  "confidence": 90,
+  "logo": "../images/banks/housing_bank.png"
+ },
+ {
+  "id": "bank-etihad-car",
+  "bank_ar": "بنك الاتحاد",
+  "bank_en": "Bank al Etihad",
+  "product_name": "تمويل سيارة",
+  "logo_color": "#1E40AF",
+  "interest_rate_display": "من 7.99%",
+  "interest_rate_min": 7.99,
+  "interest_rate_max": 10.5,
+  "max_amount_jod": 60000,
+  "max_tenor_years": 7,
+  "down_payment_min_percent": 20,
+  "car_type": "both",
+  "max_car_age_years": 5,
+  "min_salary_jod": 500,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "badge": "★ استحوذ على العقاري 2026",
+  "features": [
+   "فائدة متناقصة",
+   "دفعة أولى 20%",
+   "مدد تصل 7 سنوات"
+  ],
+  "pros": [
+   "فائدة تنافسية",
+   "انتشار موسّع",
+   "خدمات رقمية جيدة"
+  ],
+  "cons": [
+   "دفعة أولى 20%"
+  ],
+  "apply_url": "https://www.bankaletihad.com",
+  "official_url": "https://www.bankaletihad.com",
+  "last_verified": "2026-04",
+  "confidence": 85,
+  "logo": "../images/banks/bank_al_etihad.png"
+ },
+ {
+  "id": "jib-car",
+  "bank_ar": "البنك الإسلامي الأردني",
+  "bank_en": "Jordan Islamic Bank",
+  "product_name": "تمويل سيارتي — مرابحة",
+  "logo_color": "#065F46",
+  "interest_rate_display": "ربح مرابحة 3.33% (رواتب محولة) / 3.99% (غير محولة) — حملة حتى 2026-08-31",
+  "profit_rate_display": "3.33% محول / 3.99% غير محول",
+  "max_amount_jod": 50000,
+  "max_tenor_years": 7,
+  "down_payment_min_percent": 0,
+  "car_type": "both",
+  "max_car_age_years": 20,
+  "min_salary_jod": 450,
+  "salary_transfer_required": false,
+  "is_islamic": true,
+  "features": [
+   "تمويل يصل إلى 100% من قيمة المركبة",
+   "حملة حتى 2026-08-31: ربح 3.33% للرواتب المحولة و3.99% لغير المحولة",
+   "بدون عمولة منح ائتمان (1% معفاة)",
+   "عمر المركبة حتى 20 سنة وسداد حتى 84 شهراً",
+   "إمكانية الإعفاء من الكفلاء حسب الوضع الائتماني"
+  ],
+  "pros": [
+   "تمويل كامل دون دفعة أولى إلزامية",
+   "يقبل الرواتب غير المحولة",
+   "عمر مركبة مقبول حتى 20 سنة — الأوسع في السوق"
+  ],
+  "cons": [
+   "نسبة الحملة مؤقتة حتى 2026-08-31",
+   "الربح يثبت في الذمة — التسوية المبكرة بإبراء تقديري من البنك"
+  ],
+  "apply_url": "https://www.jordanislamicbank.com/ar/my-car-financing",
+  "official_url": "https://www.jordanislamicbank.com/ar/my-car-financing",
+  "last_verified": "2026-08",
+  "confidence": 90,
+  "logo": "../images/banks/jib.png",
+  "dbr_max_percent": 50,
+  "profit_basis": "murabaha_flat",
+  "profit_rate_flat_min": 3.33,
+  "profit_rate_flat_max": 3.99
+ },
+ {
+  "id": "cairo-amman-car",
+  "bank_ar": "بنك القاهرة عمان",
+  "bank_en": "Cairo Amman Bank",
+  "product_name": "تمويل سيارة",
+  "logo_color": "#DC2626",
+  "interest_rate_display": "من 8%",
+  "interest_rate_min": 8,
+  "interest_rate_max": 10.5,
+  "max_amount_jod": 50000,
+  "max_tenor_years": 6,
+  "down_payment_min_percent": 20,
+  "car_type": "both",
+  "max_car_age_years": 5,
+  "min_salary_jod": 400,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "features": [
+   "للسيارات الجديدة",
+   "مرونة في المدة",
+   "خدمات رقمية"
+  ],
+  "pros": [
+   "أقل راتب (400 د.أ)",
+   "خدمات رقمية ممتازة"
+  ],
+  "cons": [
+   "دفعة أولى 20%"
+  ],
+  "apply_url": "https://www.cab.jo",
+  "official_url": "https://www.cab.jo",
+  "last_verified": "2026-04",
+  "confidence": 80,
+  "logo": "../images/banks/cab.png"
+ },
+ {
+  "id": "safwa-car",
+  "bank_ar": "بنك صفوة الإسلامي",
+  "bank_en": "Safwa Islamic Bank",
+  "product_name": "تمويل سيارة مرابحة",
+  "logo_color": "#065F46",
+  "interest_rate_display": "مرابحة — لا فوائد",
+  "profit_rate_display": "ربح تنافسي",
+  "max_amount_jod": 45000,
+  "max_tenor_years": 5,
+  "down_payment_min_percent": 25,
+  "car_type": "new",
+  "max_car_age_years": 3,
+  "min_salary_jod": 400,
+  "salary_transfer_required": true,
+  "is_islamic": true,
+  "features": [
+   "متوافق مع الشريعة",
+   "مرابحة على السيارات الجديدة"
+  ],
+  "pros": [
+   "متوافق مع الشريعة",
+   "إجراءات سريعة"
+  ],
+  "cons": [
+   "للسيارات الجديدة فقط",
+   "دفعة أولى 25%"
+  ],
+  "apply_url": "https://www.safwabank.com",
+  "official_url": "https://www.safwabank.com",
+  "last_verified": "2026-04",
+  "confidence": 78,
+  "logo": "../images/banks/safwa_islamic_bank.png"
+ },
+ {
+  "id": "capital-bank-car",
+  "bank_ar": "بنك كابيتال",
+  "bank_en": "Capital Bank",
+  "product_name": "تمويل سيارة",
+  "logo_color": "#BE185D",
+  "interest_rate_display": "من 8.25%",
+  "interest_rate_min": 8.25,
+  "interest_rate_max": 11,
+  "max_amount_jod": 55000,
+  "max_tenor_years": 7,
+  "down_payment_min_percent": 20,
+  "car_type": "both",
+  "max_car_age_years": 5,
+  "min_salary_jod": 500,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "features": [
+   "تطبيق رقمي متقدم",
+   "طلب أونلاين",
+   "مدة تصل 7 سنوات"
+  ],
+  "pros": [
+   "تجربة رقمية ممتازة",
+   "سرعة الموافقة"
+  ],
+  "cons": [
+   "فائدة أعلى قليلاً"
+  ],
+  "apply_url": "https://www.capitalbank.jo",
+  "official_url": "https://www.capitalbank.jo",
+  "last_verified": "2026-04",
+  "confidence": 78,
+  "logo": "../images/banks/capital_bank.png"
+ },
+ {
+  "id": "jkb-car",
+  "bank_ar": "البنك الأردني الكويتي (JKB)",
+  "bank_en": "Jordan Kuwait Bank",
+  "product_name": "تمويل سيارة",
+  "logo_color": "#991B1B",
+  "interest_rate_display": "من 8.5%",
+  "interest_rate_min": 8.5,
+  "interest_rate_max": 10.75,
+  "max_amount_jod": 55000,
+  "max_tenor_years": 6,
+  "down_payment_min_percent": 20,
+  "car_type": "both",
+  "max_car_age_years": 5,
+  "min_salary_jod": 500,
+  "salary_transfer_required": true,
+  "is_islamic": false,
+  "features": [
+   "شراكة مع وكلاء السيارات",
+   "تأمين شامل مشمول"
+  ],
+  "pros": [
+   "شراكات مع الوكلاء",
+   "خبرة 48 سنة"
+  ],
+  "cons": [
+   "فائدة متوسطة"
+  ],
+  "apply_url": "https://www.jkb.com",
+  "official_url": "https://www.jkb.com",
+  "last_verified": "2026-04",
+  "confidence": 78,
+  "logo": "../images/banks/jkb.png"
+ }
+]

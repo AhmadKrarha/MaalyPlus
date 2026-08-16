@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+        <!-- Preload: Critical Resources for LCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaalyPlus - منصة المقارنة المالية الذكية</title>
+    
+    <meta name="description" content="منصة المقارنة المالية الأولى في الأردن. قارن <!--mp:stat cards_count-->156<!--/mp:stat-->+ بطاقة ائتمانية، قروض، حسابات توفير، و9 شركات تمويل أصغر من 22+ بنك. <!--mp:stat articles_count-->52<!--/mp:stat--> مقالة تثقيفية مجانية.">
+
+    <meta property="og:title" content="MaalyPlus - منصة المقارنة المالية الذكية">
+    <meta property="og:description" content="قارن واختر أفضل البطاقات الائتمانية والقروض وتمويل السيارات. قرارات مالية أذكى تبدأ من هنا.">
+    <meta property="og:image" content="https://maalyplus.com/images/logo.png">
+    <meta property="og:url" content="https://maalyplus.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css?v=20260827">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MR2XEXKN8T');
+</script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://maalyplus.com/#website","url":"https://maalyplus.com","name":"MaalyPlus — مالي بلس","description":"منصة المقارنة المالية الأولى في الأردن","inLanguage":"ar","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://maalyplus.com/cards/cards.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"FinancialService","@id":"https://maalyplus.com/#org","name":"MaalyPlus","alternateName":"مالي بلس","url":"https://maalyplus.com","description":"أول منصة عربية لمقارنة المنتجات المالية في الأردن — بطاقات، قروض، توفير، تمويل أصغر","inLanguage":"ar","areaServed":{"@type":"Country","name":"Jordan","sameAs":"https://www.wikidata.org/wiki/Q810"},"serviceType":["مقارنة بطاقات ائتمانية","مقارنة قروض شخصية","مقارنة حسابات توفير","مقارنة تمويل أصغر"],"sameAs":["https://maalyplus.com"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما هي أفضل بطاقة ائتمانية في الأردن؟","acceptedAnswer":{"@type":"Answer","text":"تعتمد أفضل بطاقة على احتياجاتك — قارن 156+ بطاقة على مالي بلس بناءً على الكاش باك والرسوم والفائدة."}},{"@type":"Question","name":"كيف أحصل على قرض شخصي بأقل فائدة في الأردن؟","acceptedAnswer":{"@type":"Answer","text":"تبدأ أقل فوائد القروض الشخصية في الأردن من حوالي 7.5% سنوياً (على أساس متناقص) وتصل إلى نحو 9.5%، يمكنك مقارنة جميع العروض مجاناً على مالي بلس."}},{"@type":"Question","name":"ما هو التمويل الأصغر في الأردن؟","acceptedAnswer":{"@type":"Answer","text":"التمويل الأصغر قروض للأفراد وأصحاب المشاريع الصغيرة تبدأ من 50 ديناراً وتصل إلى 110,000 دينار من 9 شركات مرخصة من البنك المركزي الأردني."}},{"@type":"Question","name":"ما هو أعلى عائد حساب توفير في الأردن؟","acceptedAnswer":{"@type":"Answer","text":"عوائد حسابات التوفير في الأردن منخفضة عادةً (غالباً أقل من 1.5% سنوياً)، أمّا الودائع لأجل فتصل إلى نحو 4.75% سنوياً. قارن الحسابات والودائع مجاناً على مالي بلس."}}]}]}
+    </script>
+    <style>
+        /* ══ News Section ══ */
+        #financial-news { background:linear-gradient(180deg,#F0F4FF 0%,#fff 100%); padding:3.5rem 0 2.5rem; direction:rtl; }
+        .news-ticker-bar { display:flex; align-items:center; gap:.75rem; background:#1E2B3C; border-radius:10px; padding:.6rem 1rem; margin-bottom:1.75rem; overflow:hidden; }
+        .ticker-label { background:#DC2626; color:#fff; font-size:.75rem; font-weight:700; padding:.22rem .6rem; border-radius:20px; white-space:nowrap; flex-shrink:0; animation:blink 1.2s ease-in-out infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.5} }
+        .ticker-track { color:#CBD5E1; font-size:.82rem; white-space:nowrap; overflow:hidden; flex:1; direction:ltr; }
+        .t-item { color:#CBD5E1; text-decoration:none; white-space:nowrap; padding:0 0.75rem; transition:color .2s; }
+        .t-item:hover { color:#10B981 !important; }
+        .t-sep { color:#475569; font-size:.6rem; }
+        .ticker-animate:hover { animation-play-state:paused; }
+        .ticker-animate { animation:ticker-scroll 30s linear infinite; display:inline-block; padding-right:60px; }
+        @keyframes ticker-scroll { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+        .fn-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.1rem; direction:rtl; }
+        .fn-card { background:#fff; direction:rtl; text-align:right; border-radius:14px; padding:1.25rem 1.4rem; border:1.5px solid #E5E7EB; text-decoration:none; display:flex; flex-direction:column; gap:.6rem; transition:transform .2s,box-shadow .2s,border-color .2s; position:relative; overflow:hidden; }
+        .fn-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--fna,#10B981); }
+        .fn-card:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(30,64,175,.12); border-color:var(--fna,#10B981); }
+        .fn-meta { display:flex; align-items:center; gap:.5rem; direction:rtl; }
+        .fn-tag { font-size:.75rem; font-weight:700; padding:.2rem .6rem; border-radius:20px; white-space:nowrap; }
+        .fn-date { font-size:.75rem; color:#6B7280; }
+        .fn-title { font-size:.9rem; font-weight:600; color:#1E2B3C; line-height:1.5; margin:0; }
+        .fn-desc  { font-size:.8rem; color:#6B7280; margin:0; line-height:1.5; flex:1; }
+
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.6rem 0 !important; }
+        .header .container { max-width: 1280px !important; margin: 0 auto !important; padding: 0 1.5rem !important; width: 100% !important; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1rem !important; width: 100% !important; }
+        .logo-img { flex-shrink: 0 !important; }
+        .logo-img img { height: 48px !important; width: auto !important; display: block !important; max-width: 180px !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex: 1 !important; justify-content: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563 !important; font-weight: 500 !important; font-size: 12.5px !important; padding: 5px 8px !important; border-radius: 8px !important; white-space: nowrap !important; background: none !important; border: none !important; cursor: pointer !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-drop-btn:hover { color: #10B981 !important; background: rgba(16,185,129,0.06) !important; }
+        .nav-drop-menu { display: none !important; position: absolute !important; top: calc(100% + 8px) !important; right: 0 !important; background: #fff !important; border-radius: 14px !important; box-shadow: 0 8px 30px rgba(30,64,175,0.15) !important; padding: 8px !important; min-width: 200px !important; z-index: 9999 !important; border: 1px solid rgba(0,0,0,0.08) !important; }
+        .nav-dropdown:hover .nav-drop-menu { display: block !important; }
+        .nav-drop-item { display: flex !important; align-items: center !important; gap: 8px !important; padding: 9px 12px !important; border-radius: 8px !important; color: #374151 !important; text-decoration: none !important; font-size: 12.5px !important; font-weight: 500 !important; white-space: nowrap !important; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06) !important; color: #1E40AF !important; }
+        .btn-cta-header { display: inline-flex !important; align-items: center !important; padding: 8px 18px !important; background: linear-gradient(135deg,#047857,#065F46) !important; color: #fff !important; font-size: 12.5px !important; font-weight: 700 !important; border-radius: 50px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-toggle { display: none !important; }
+        @media (max-width: 960px) { .nav { display: none !important; } .nav.open { display: flex !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; left: 0 !important; background: #fff !important; padding: 1rem !important; box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; } .nav-toggle { display: flex !important; } }
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+
+        .fn-foot{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding-top:.55rem;border-top:1px solid #EEF2F7}
+        .fn-src{font-size:.74rem;color:#1E40AF;text-decoration:none;font-weight:600}
+        .fn-src:hover{text-decoration:underline}
+        .fn-src.muted{color:#9CA3AF;font-weight:400}
+        .fn-rel{font-size:.74rem;color:#6B7280;text-decoration:underline}
+
+        .mp-country{position:relative}
+        .mp-country-btn{display:inline-flex;align-items:center;gap:6px;background:#F3F4F6;border:1px solid #E5E7EB;border-radius:50px;padding:5px 12px;font-size:12px;font-weight:600;color:#374151;cursor:pointer;font-family:var(--font-body);white-space:nowrap}
+        .mp-country-btn:hover{border-color:#1E40AF;color:#1E40AF}
+        .mp-country-menu{display:none;position:absolute;top:calc(100% + 8px);inset-inline-end:0;background:#fff;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 10px 28px rgba(16,32,68,.14);padding:10px 12px;min-width:212px;z-index:1001}
+        .mp-country-cur{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;color:#065F46;margin-bottom:6px}
+        .mp-country-soon{font-size:.72rem;color:#9CA3AF;line-height:1.6;border-top:1px solid #F3F4F6;padding-top:6px}
+        @media(max-width:900px){.mp-country{display:none}}
+
+      /* ترتيب البطل: إجراء أساسي واحد أولاً، والباقي مطويّ حتى يُطلب */
+      .home-refined .hero-more{margin-top:1.1rem;border-top:1px solid rgba(255,255,255,.16);padding-top:.9rem}
+      .home-refined .hero-more>summary{cursor:pointer;list-style:none;font-size:.88rem;font-weight:600;
+        opacity:.9;display:inline-flex;align-items:center;gap:.45rem;min-height:44px}
+      .home-refined .hero-more>summary::-webkit-details-marker{display:none}
+      .home-refined .hero-more>summary::after{content:'▾';transition:transform .2s}
+      .home-refined .hero-more[open]>summary::after{transform:rotate(180deg)}
+      .home-refined .hero-more-body{padding-top:.6rem}
+      .home-refined .hero-more .hero-quiz{margin-top:0}
+    </style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://maalyplus.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:title" content="MaalyPlus — قارن أفضل المنتجات المالية في الأردن">
+    <meta name="twitter:description" content="قارن البطاقات الائتمانية، القروض، الادخار، وتمويل السيارات في الأردن. بيانات موثقة من البنوك الرسمية.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="mobile.css?v=20260827">
+    <script defer src="mobile-menu.js?v=20260827"></script>
+
+    <!-- ===== تحسينات هادئة للصفحة الرئيسية: تراتب أوضح + تنفّس + ظهور خفيف (نطاق .home-refined) ===== -->
+    <style id="homeRefine">
+      /* ── سُلَّم عناوين موحّد للصفحة الرئيسية ──
+         خط واحد (IBM Plex Sans Arabic) ووزن واحد (700) وتدرّج أحجام واضح:
+         h1 أكبر من h2 أكبر من h3 — كان h2 (48px) أكبر من h1 (46px). */
+      .home-refined h1,
+      .home-refined h2,
+      .home-refined h3,
+      .home-refined .section-header h2 {
+        font-family: 'IBM Plex Sans Arabic', 'Alexandria', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-wrap: balance;
+      }
+      .home-refined .hero-text h1        { font-size: clamp(1.9rem, 4vw, 2.85rem); line-height: 1.45; }
+      .home-refined .section-header h2,
+      .home-refined .cta-section h2      { font-size: clamp(1.55rem, 3.1vw, 2.15rem); line-height: 1.35; margin-bottom: 1rem; }
+      .home-refined h3                   { font-size: clamp(1.05rem, 1.9vw, 1.3rem); line-height: 1.55; }
+      .nowrap { white-space: nowrap; }
+
+
+      /* نموذج واجهة مسطّح يحاكي نتائج المقارنة الحقيقية (بديل الصورة ثلاثية الأبعاد) */
+      .mp-mock{background:#fff;border:1px solid #E9EDF3;border-radius:18px;overflow:hidden;
+        box-shadow:0 30px 60px -26px rgba(16,32,68,.4);font-family:'IBM Plex Sans Arabic',sans-serif}
+      .mp-mock-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:#F6F8FB;border-bottom:1px solid #EDF1F6}
+      .mp-dot{width:9px;height:9px;border-radius:50%}
+      .mp-dot:nth-child(1){background:#F87171}.mp-dot:nth-child(2){background:#FBBF24}.mp-dot:nth-child(3){background:#34D399}
+      .mp-url{margin-inline-start:auto;font-size:.64rem;color:#94A3B8;background:#fff;border:1px solid #E9EDF3;
+        border-radius:20px;padding:3px 12px;direction:ltr}
+      .mp-mock-body{padding:16px 15px 18px}
+      .mp-mock-title{font-family:'Alexandria',sans-serif;font-weight:800;font-size:1.02rem;color:#1E2B3C;margin-bottom:12px}
+      .mp-row{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #EEF2F7;
+        border-radius:13px;margin-bottom:9px;background:#fff}
+      .mp-row:last-child{margin-bottom:0}
+      .mp-row-top{border-color:#BFD5FF;background:linear-gradient(180deg,#F5F9FF,#fff);box-shadow:0 6px 18px -10px rgba(30,64,175,.3)}
+      .mp-logo{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+        color:#fff;font-family:'Alexandria',sans-serif;font-weight:800;font-size:.95rem;flex-shrink:0}
+      .mp-info{display:flex;flex-direction:column;line-height:1.35;flex:1;min-width:0}
+      .mp-info b{font-size:.86rem;color:#1E2B3C;font-weight:700}
+      .mp-info small{font-size:.7rem;color:#8A94A6}
+      .mp-tag{font-size:.62rem;font-weight:700;color:#065F46;background:#D1FAE5;border-radius:20px;padding:3px 9px;flex-shrink:0}
+      .mp-score{font-family:'Alexandria',sans-serif;font-weight:900;font-size:1.15rem;color:#1E40AF;flex-shrink:0}
+      .mp-row-top .mp-score{color:#047857}
+      /* النموذج صار تفاعليًا: صفوف حقيقية قابلة للنقر من cards_scored.json */
+      .mp-row{text-decoration:none;color:inherit;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s}
+      .mp-row:hover{transform:translateY(-2px);border-color:#93C5FD;box-shadow:0 8px 20px -10px rgba(30,64,175,.35)}
+      .mp-row:focus-visible{outline:2px solid #1E40AF;outline-offset:2px}
+      .mp-logo-img{width:34px;height:34px;border-radius:50%;object-fit:contain;background:#F9FAFB;border:1px solid #E5E7EB;padding:3px;flex-shrink:0}
+      .mp-tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+      .mp-tab{background:#F3F4F6;border:1px solid #E5E7EB;border-radius:50px;padding:4px 11px;
+        font-family:inherit;font-size:.7rem;font-weight:700;color:#4B5563;cursor:pointer;transition:all .15s}
+      .mp-tab:hover{border-color:#1E40AF;color:#1E40AF}
+      .mp-tab.is-on{background:#1E40AF;border-color:#1E40AF;color:#fff}
+      .mp-tab:focus-visible{outline:2px solid #1E40AF;outline-offset:2px}
+      .mp-more-link{display:block;text-align:center;margin-top:10px;font-size:.78rem;font-weight:700;color:#1E40AF;text-decoration:none}
+      .mp-more-link:hover{text-decoration:underline}
+      /* أزرار البحث السريع باتت تستخدم أيقونات SVG — نُلغي ::before الفارغ */
+      .home-refined .quiz-btn::before{content:none}
+      .home-refined .quiz-btn .mp-ic,.home-refined .hp-pill .mp-ic{width:1.05em;height:1.05em}
+      /* مؤشّر «مباشر» — نبضة نظيفة بدل الإيموجي */
+      .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#EF4444;
+        vertical-align:middle;margin-inline-start:2px;box-shadow:0 0 0 0 rgba(239,68,68,.55);animation:livePulse 1.6s infinite}
+      @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%{box-shadow:0 0 0 7px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+      @media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
+      /* فراغ أكثر تنفّساً بين الأقسام */
+      .home-refined .section{padding:100px 0}
+      @media(max-width:768px){.home-refined .section{padding:64px 0}}
+      /* تراتب خطّي أوضح للعناوين (بلا تباعد أحرف — يكسر الخط العربي) */
+      .home-refined .section-header{max-width:720px;margin:0 auto 60px}
+      .home-refined .section-header p{font-size:1.18rem;line-height:1.85;color:var(--neutral-dark-gray-1);max-width:640px;margin-inline:auto}
+      .home-refined .section-badge{letter-spacing:normal;margin-bottom:1rem}
+      /* ظهور خفيف عند التمرير — يُطبَّق فقط على ما هو تحت الطية عبر JS */
+      .home-refined .reveal-up{opacity:0;transform:translateY(26px);
+        transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+      .home-refined .reveal-up.in{opacity:1;transform:none}
+      @media(prefers-reduced-motion:reduce){
+        .home-refined .reveal-up{opacity:1!important;transform:none!important;transition:none!important}
+      }
+    </style>
+</head>
+<body class="home-refined">
+
+    <!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo logo-img">
+                <img src="images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-shapes" aria-hidden="true">
+                <div class="hs hs1"></div>
+                <div class="hs hs2"></div>
+                <div class="hs hs3"></div>
+                <div class="hs hs4"></div>
+                <div class="hs hs5"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
+                            <span>مقارنة مالية مستقلة · الأردن</span>
+                        </div>
+                        <h1><span class="hl-line">قارن المنتجات المالية في الأردن</span><span class="hl-line">واختر <span class="gradient-text">الأنسب لك</span></span></h1>
+                        
+                        <!-- اختيار الدولة انتقل إلى الترويسة -->
+
+
+                        <!-- Quiz سريع -->
+                        <p class="subheading">بطاقات وقروض وحسابات توفير وتمويل أصغر من أكثر من <!--mp:stat banks_partners-->23<!--/mp:stat--> بنكاً ومؤسسة، ببيانات محدّثة من المصادر الرسمية المنشورة.</p>
+                        <div class="hero-buttons">
+                            <a href="start.html" class="btn btn-primary">
+                                <svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg>
+                                رشّح لي الأنسب
+                            </a>
+                            <a href="cards/cards.html" class="btn btn-secondary">
+                                <svg class="mp-ic"><use href="/images/icons.svg#ic-grid"/></svg>
+                                تصفّح المنتجات
+                            </a>
+                        </div>
+                    <div class="smart-search">
+                            <input type="text" id="searchInput" aria-label="ابحث عن منتج مالي" placeholder="ابحث عن بطاقة ائتمانية، قرض، أو أي منتج مالي...">
+                            <button class="btn btn-primary" id="searchBtn">بحث</button>
+                        </div>
+                        <details class="hero-more">
+  <summary>أعرف ما أريد تحديداً — اختصارات ومسارات</summary>
+  <div class="hero-more-body">
+<div class="hero-quiz">
+                            <p class="quiz-label">ما الذي تبحث عنه اليوم؟</p>
+                            <div class="quiz-btns">
+                                <a href="cards/cards.html" class="quiz-btn"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg>بطاقة ائتمانية</a>
+                                <a href="loans/loans.html" class="quiz-btn"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg>قرض شخصي</a>
+                                <a href="microfinance/microfinance.html" class="quiz-btn"><svg class="mp-ic"><use href="/images/icons.svg#ic-briefcase"/></svg>تمويل مشروع</a>
+                                <!-- التأمين مخفي مؤقتاً: <a href="insurance/insurance.html" class="quiz-btn" data-icon="🛡️">تأمين سيارة</a> -->
+                            </div>
+                        </div><!-- /hero-quiz -->
+
+                        <!-- مسارات مخصصة -->
+                        <div class="hero-personas">
+                            <p class="hp-label">أو اختر ما يناسب وضعك للحصول على توصيات مخصّصة:</p>
+                            <div class="hp-pills">
+                                <a href="paths/index.html?persona=student" class="hp-pill" style="--hp:#1E40AF"><svg class="mp-ic"><use href="/images/icons.svg#ic-grad"/></svg> طالب</a>
+                                <a href="paths/index.html?persona=newjob" class="hp-pill" style="--hp:#10B981"><svg class="mp-ic"><use href="/images/icons.svg#ic-briefcase"/></svg> موظف جديد</a>
+                                <a href="paths/index.html?persona=entrepreneur" class="hp-pill" style="--hp:#F59E0B"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> رائد أعمال</a>
+                                <a href="paths/index.html?persona=homemaker" class="hp-pill" style="--hp:#EC4899"><svg class="mp-ic"><use href="/images/icons.svg#ic-home"/></svg> ربة منزل</a>
+                                <a href="paths/index.html?persona=retiree" class="hp-pill" style="--hp:#7C3AED"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> متقاعد</a>
+                            </div>
+                        </div>
+  </div>
+</details>
+</div>
+                    <div class="hero-visual" style="width:420px;flex-shrink:0;">
+                       <nav class="mp-mock" aria-label="أعلى ثلاث بطاقات بتقييم مالي بلس — روابط لصفحات تفاصيلها">
+                         <div class="mp-mock-bar" aria-hidden="true">
+                           <span class="mp-dot"></span><span class="mp-dot"></span><span class="mp-dot"></span>
+                           <span class="mp-url">maalyplus.com/cards</span>
+                         </div>
+                         <div class="mp-mock-body">
+                           <div class="mp-mock-title">الأعلى تقييماً بمنهجيتنا</div>
+                           <!--mp:topcards-->
+<div class="mp-tabs" role="tablist" aria-label="فئات العرض">
+<button type="button" class="mp-tab is-on" role="tab" aria-selected="true" data-g="0" data-url="cards/cards.html#all">الأعلى تقييماً</button>
+<button type="button" class="mp-tab" role="tab" aria-selected="false" data-g="1" data-url="cards/cards.html?rewards=cashback#all">استرداد نقدي</button>
+<button type="button" class="mp-tab" role="tab" aria-selected="false" data-g="2" data-url="cards/cards.html?rewards=miles#all">سفر وأميال</button>
+<button type="button" class="mp-tab" role="tab" aria-selected="false" data-g="3" data-url="cards/cards.html?fee=0#all">بدون رسوم</button>
+</div>
+<div class="mp-group" role="tabpanel" data-g="0">
+<a class="mp-row mp-row-top" href="cards/details.html?id=JIBVisaSignature"><img class="mp-logo-img" src="images/banks/jib.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>فيزا سيغنتشر</b><small>البنك الإسلامي الأردني</small></span><span class="mp-tag">الأفضل</span><span class="mp-score" data-count="86">86</span></a>
+<a class="mp-row" href="cards/details.html?id=JIBAlMusawamahCard"><img class="mp-logo-img" src="images/banks/jib.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>بطاقة المساومة للتقسيط</b><small>البنك الإسلامي الأردني</small></span><span class="mp-score" data-count="84">84</span></a>
+<a class="mp-row" href="cards/details.html?id=JCBUCreditCard"><img class="mp-logo-img" src="images/banks/jcb.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>U Credit Card</b><small>البنك التجاري الأردني</small></span><span class="mp-score" data-count="73">73</span></a>
+</div>
+<div class="mp-group" role="tabpanel" data-g="1" hidden>
+<a class="mp-row mp-row-top" href="cards/details.html?id=JCBUCreditCard"><img class="mp-logo-img" src="images/banks/jcb.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>U Credit Card</b><small>البنك التجاري الأردني</small></span><span class="mp-tag">الأفضل</span><span class="mp-score" data-count="73">73</span></a>
+<a class="mp-row" href="cards/details.html?id=CairoAmmanBankTitaniumMC"><img class="mp-logo-img" src="images/banks/cab.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>Mastercard Titanium</b><small>بنك القاهرة عمان</small></span><span class="mp-score" data-count="67">67</span></a>
+<a class="mp-row" href="cards/details.html?id=JCBWorldMastercard"><img class="mp-logo-img" src="images/banks/jcb.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>World MasterCard</b><small>البنك التجاري الأردني</small></span><span class="mp-score" data-count="65">65</span></a>
+</div>
+<div class="mp-group" role="tabpanel" data-g="2" hidden>
+<a class="mp-row mp-row-top" href="cards/details.html?id=JIBVisaSignature"><img class="mp-logo-img" src="images/banks/jib.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>فيزا سيغنتشر</b><small>البنك الإسلامي الأردني</small></span><span class="mp-tag">الأفضل</span><span class="mp-score" data-count="86">86</span></a>
+<a class="mp-row" href="cards/details.html?id=JCBUCreditCard"><img class="mp-logo-img" src="images/banks/jcb.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>U Credit Card</b><small>البنك التجاري الأردني</small></span><span class="mp-score" data-count="73">73</span></a>
+<a class="mp-row" href="cards/details.html?id=SafwaIslamicBankTitaniumCreditCard"><img class="mp-logo-img" src="images/banks/safwa_islamic_bank.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>Titanium Credit Card</b><small>بنك صفوة الاسلامي</small></span><span class="mp-score" data-count="72">72</span></a>
+</div>
+<div class="mp-group" role="tabpanel" data-g="3" hidden>
+<a class="mp-row mp-row-top" href="cards/details.html?id=JIBAlMusawamahCard"><img class="mp-logo-img" src="images/banks/jib.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>بطاقة المساومة للتقسيط</b><small>البنك الإسلامي الأردني</small></span><span class="mp-tag">الأفضل</span><span class="mp-score" data-count="84">84</span></a>
+<a class="mp-row" href="cards/details.html?id=ArabBankShababCredit"><img class="mp-logo-img" src="images/banks/arab_bank.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>Visa Shabab Credit Card</b><small>البنك العربي</small></span><span class="mp-score" data-count="69">69</span></a>
+<a class="mp-row" href="cards/details.html?id=ReflectCreditCard"><img class="mp-logo-img" src="images/banks/reflect.png" alt="" width="34" height="34" loading="lazy" onerror="this.style.display='none'"><span class="mp-info"><b>بطاقة ائتمانية</b><small>Reflect (البنك العربي)</small></span><span class="mp-score" data-count="65">65</span></a>
+</div>
+<!--/mp:topcards-->
+                           <a class="mp-more-link" id="mpMoreLink" href="cards/cards.html#all">تصفّح كل البطاقات ←</a>
+                         </div>
+                       </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-goal="23">23+</div>
+                        <div class="stat-label">بنك ومؤسسة مالية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-goal="251">251+</div>
+                        <div class="stat-label">منتج مالي</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-goal="52" data-suffix="">52</div>
+                        <div class="stat-label">مقالة تثقيفية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">مجاناً</div>
+                        <div class="stat-label">كل خدماتنا</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ أخبار تؤثر على محفظتك ══ -->
+        
+        <!-- ══ نهاية قسم الأخبار ══ -->
+
+        </div>
+
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ماذا يمكنك أن تقارن على مالي بلس؟</h2>
+                    <p>كل ما تحتاجه لاتخاذ قرارات مالية صحيحة في مكان واحد</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div>
+                        <h3>بطاقات ائتمانية</h3>
+                        <p>قارن بين أكثر من <!--mp:stat cards_count-->156<!--/mp:stat--> بطاقة ائتمانية من أكثر من 23 بنكاً أردنياً</p>
+                        <div class="badge"><!--mp:stat cards_count-->156<!--/mp:stat-->+ بطاقة</div>
+                        <a href="cards/cards.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-green"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                        <h3>قروض شخصية</h3>
+                        <p>احصل على أفضل عروض القروض بأقل نسبة فائدة</p>
+                        <div class="badge">30+ متوفر</div>
+                        <a href="loans/loans.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-purple"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><line x1="8" y1="10" x2="8" y2="18"></line><line x1="12" y1="10" x2="12" y2="18"></line></svg></div>
+                        <h3>حاسبات تفاعلية</h3>
+                        <p>خطط لأهدافك المالية باستخدام أدواتنا الذكية</p>
+                        <div class="badge">10+ أداة</div>
+                        <a href="calculators/calculators.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-green"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+                        <h3>خطة مالية لثلاثين يوماً</h3>
+                        <p>خطة ادخار وميزانية مخصصة بناءً على دخلك الشهري</p>
+                        <div class="badge">مجاني — جرّبه الآن</div>
+                        <a href="tools/financial-plan.html" class="card-link">ابدأ الخطة ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                        <h3>حسابات التوفير</h3>
+                        <p>قارن أعلى عوائد حسابات التوفير من 10+ بنك أردني</p>
+                        <div class="badge">جديد</div>
+                        <a href="savings/savings.html" class="card-link">قارن الآن ←</a>
+                    </div>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <div class="service-card">
+                        <div class="service-icon icon-orange"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                        <h3>التأمين</h3>
+                        <p>قارن تأمين السيارة والتأمين الصحي من 9 شركة أردنية</p>
+                        <div class="badge">جديد</div>
+                        <a href="insurance/insurance.html" class="card-link">قارن الآن ←</a>
+                    </div>
+                    -->
+                    <div class="service-card">
+                        <div class="service-icon icon-orange"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+                        <h3>تثقيف مالي</h3>
+                        <p><!--mp:stat articles_count-->52<!--/mp:stat--> مقالة في البطاقات والقروض والتمويل الأصغر</p>
+                        <div class="badge"><!--mp:stat articles_count-->52<!--/mp:stat--> مقالة</div>
+                        <a href="education/education.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-green"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                        <h3>التمويل الأصغر</h3>
+                        <p>قارن خيارات تمويل للمشاريع الصغيرة بمتطلبات تختلف عن متطلبات البنوك.</p>
+                        <div class="badge">9 شركات</div>
+                        <a href="microfinance/microfinance.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
+                        <h3>تمويل السيارات</h3>
+                        <p>قارن تمويل السيارات من البنوك وشركات التمويل</p>
+                        <div class="badge">بنوك + تمويل</div>
+                        <a href="car-financing/car-financing.html" class="card-link">اكتشف المزيد ←</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+                        <h3>المقارنة المباشرة</h3>
+                        <p>قارن بين أي منتجين جنباً إلى جنب — مثل البطاقات وحسابات التوفير.</p>
+                        <div class="badge">جديد</div>
+                        <a href="compare/compare.html" class="card-link">قارن الآن ←</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="section" id="financial-news" style="padding:2.5rem 0 2rem;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><span class="live-dot" aria-hidden="true"></span> مباشر</span>
+                    <h2>أخبار تؤثر على محفظتك</h2>
+                    <p>آخر مستجدات قطاع البنوك والتمويل في الأردن</p>
+                </div>
+                <div id="news-ticker" class="news-ticker-bar">
+                    <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span> مباشر</span>
+                    <div class="ticker-track" aria-hidden="true" id="ticker-track"><span class="ticker-animate"><a href="loans/loans.html" class="t-item">الحكومة تثبّت أسعار المحروقات والغاز لشهر تموز</a><span class="t-sep">◆</span><a href="education/education.html" class="t-item">الاقتصاد الأردني ينمو 2.9% في الربع الأول من 2026</a><span class="t-sep">◆</span><a href="loans/loans.html" class="t-item">المركزي الأردني يثبّت سعر الفائدة عند 5.75%</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">التضخم يسجل 2.83% في أيار مدفوعاً بالنقل والإيجارات</a><span class="t-sep">◆</span><a href="cards/cards.html" class="t-item">3.09 مليار دينار حوالات عبر المحافظ الإلكترونية منذ بداية العام</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">حوالات المغتربين ترتفع 13.3% إلى 1.6 مليار دولار</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">الهيئة العامة لبنك الاتحاد تقر إتمام الاندماج مع الاستثماري</a><span class="t-sep">◆</span><a href="education/education.html" class="t-item">بورصة عمان تواصل الصعود والقيمة السوقية ترتفع 8%</a><span class="t-sep">◆</span><a href="loans/loans.html" class="t-item">الحكومة تثبّت أسعار المحروقات والغاز لشهر تموز</a><span class="t-sep">◆</span><a href="education/education.html" class="t-item">الاقتصاد الأردني ينمو 2.9% في الربع الأول من 2026</a><span class="t-sep">◆</span><a href="loans/loans.html" class="t-item">المركزي الأردني يثبّت سعر الفائدة عند 5.75%</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">التضخم يسجل 2.83% في أيار مدفوعاً بالنقل والإيجارات</a><span class="t-sep">◆</span><a href="cards/cards.html" class="t-item">3.09 مليار دينار حوالات عبر المحافظ الإلكترونية منذ بداية العام</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">حوالات المغتربين ترتفع 13.3% إلى 1.6 مليار دولار</a><span class="t-sep">◆</span><a href="savings/savings.html" class="t-item">الهيئة العامة لبنك الاتحاد تقر إتمام الاندماج مع الاستثماري</a><span class="t-sep">◆</span><a href="education/education.html" class="t-item">بورصة عمان تواصل الصعود والقيمة السوقية ترتفع 8%</a><span class="t-sep">◆</span></span></div>
+                </div>
+                <div id="news-grid" class="fn-grid"></div>
+            </div>
+        <div style="text-align:center;margin-top:1rem"><a href="news.html" style="display:inline-block;background:#fff;border:1.5px solid #1E40AF;color:#1E40AF;border-radius:50px;padding:.6rem 1.6rem;font-weight:700;font-size:.86rem;text-decoration:none">كل الأخبار المالية ←</a></div>
+</section>
+
+        <section class="section how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>كيف يعمل مالي بلس؟</h2>
+                    <p>ثلاث خطوات بسيطة للوصول إلى أفضل منتج مالي</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <div class="step-number">1</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                        <h3>نجمع البيانات</h3>
+                        <p>نزور المواقع الرسمية للبنوك وشركات التمويل ونجمع بياناتها الحقيقية ونحدّثها بشكل دوري.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <div class="step-number">2</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3>نحلل ونقارن</h3>
+                        <p>نحلل كل المنتجات بناءً على معايير موضوعية: الفائدة، الرسوم، المزايا، وشروط التقديم لنعرض لك الأنسب أولاً.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <div class="step-number">3</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>أنت تقرر</h3>
+                        <p>نعرض لك جميع الخيارات بأرقام واضحة ومقارنة شفافة — القرار النهائي دائماً لك.</p>
+                    </div>
+                </div>
+
+                <!-- منهجيتنا -->
+                <div class="fade-in" style="background:#F8FAFF;border:1px solid #DBEAFE;border-radius:16px;padding:2rem;margin-top:2.5rem;max-width:780px;margin-left:auto;margin-right:auto;">
+                    <div style="display:flex;align-items:flex-start;gap:1rem;">
+                        <div style="background:#EFF6FF;border-radius:10px;padding:.75rem;flex-shrink:0;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <div>
+                            <h4 style="font-family:var(--font-heading);font-size:1rem;color:#1E3A8A;margin-bottom:.5rem;">كيف نختار ما يظهر أولاً؟</h4>
+                            <p style="font-size:.9rem;color:#374151;line-height:1.8;margin:0;">
+                                نستخدم منهجية تحليل موضوعية تأخذ بعين الاعتبار عدة عوامل مرتبة بأوزان مدروسة:
+                                <strong>نسبة الفائدة أو العائد</strong> (30%)،
+                                <strong>الرسوم والتكاليف السنوية</strong> (25%)،
+                                <strong>المزايا والتغطية</strong> (25%)،
+                                و<strong>سهولة الوصول</strong> (20%).
+                                كل منتج يحصل على تقييم شامل نعرضه بشفافية تامة — لا توجد منتجات "مدفوعة" تظهر في المقدمة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured-products" id="featured-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>لماذا مالي بلس؟</h2>
+                    <p>نقدّم تجربة مقارنة مالية عربية مصممة للسوق الأردني.</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div><h4>أكثر من <!--mp:stat cards_count-->156<!--/mp:stat--> بطاقة ائتمانية</h4><span>من أكثر من 23 بنكاً أردنياً</span></div>
+                            <div style="color:#1E40AF"><svg class="mp-ic" style="width:2rem;height:2rem"><use href="/images/icons.svg#ic-card"/></svg></div>
+                        </div>
+                        <div class="product-body"><ul class="product-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> بطاقات كاش باك وأميال وإسلامية</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> فلتر بالراتب والشبكة والمزايا</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> بيانات محدّثة من المواقع الرسمية</li>
+                        </ul></div>
+                        <div class="product-footer"><a href="cards/cards.html" class="btn btn-primary">تصفّح البطاقات</a></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div><h4>9 شركات تمويل أصغر</h4><span>خيارات بمتطلبات مختلفة عن البنوك</span></div>
+                            <div style="color:#B45309"><svg class="mp-ic" style="width:2rem;height:2rem"><use href="/images/icons.svg#ic-briefcase"/></svg></div>
+                        </div>
+                        <div class="product-body"><ul class="product-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> تمويل حتى 110,000 دينار</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> بدون شروط البنوك التقليدية</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> بيانات حقيقية من المواقع الرسمية</li>
+                        </ul></div>
+                        <div class="product-footer"><a href="microfinance/microfinance.html" class="btn btn-primary">تصفّح التمويل الأصغر</a></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div><h4>مستشارك المالي الذكي</h4><span>توصية مخصصة لوضعك</span></div>
+                            <div style="color:#7C3AED"><svg class="mp-ic" style="width:2rem;height:2rem"><use href="/images/icons.svg#ic-compass"/></svg></div>
+                        </div>
+                        <div class="product-body"><ul class="product-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> ٥ أو ٦ أسئلة قصيرة حسب اختيارك</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> توصية بالمنتج المناسب لراتبك</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> يوجّهك للصفحة الصحيحة مباشرة</li>
+                        </ul></div>
+                        <div class="product-footer"><a href="start.html" class="btn btn-primary">ابدأ الآن</a></div>
+                    </div>
+                </div></div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>الأسئلة الشائعة</h2>
+                    <p>لديك أسئلة؟ لدينا الأجوبة. كل ما تحتاج معرفته للبدء.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>هل خدمة MaalyPlus مجانية؟</span>
+                            <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، جميع خدمات المقارنة والبحث على منصتنا مجانية تماماً للمستخدمين. نحن نساعدك على توفير المال بدون أي تكلفة عليك.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>كيف تختارون أفضل المنتجات المالية؟</span>
+                            <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نحن نستخدم خوارزميات ذكية تقوم بتحليل جميع العروض المتاحة من البنوك والمؤسسات المالية بناءً على عدة عوامل مثل نسبة الفائدة، الرسوم، الميزات، ومتطلبات التقديم، لنقدم لك الخيارات الأكثر ملاءمة لاحتياجاتك.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>هل معلوماتي الشخصية آمنة معكم؟</span>
+                            <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>أمان معلوماتك هو أولويتنا القصوى. نحن لا نبيع بياناتك الشخصية. وعند اختيارك المتابعة، تنتقل إلى القناة الرسمية للجهة المالية ذات الصلة، حيثما كانت الخدمة متاحة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section partners">
+            <div class="container">
+                <div class="section-header">
+                    <h2>نقارن منتجات أكثر من <!--mp:stat banks_partners-->23<!--/mp:stat--> بنكاً ومؤسسة مالية <span class="nowrap">في الأردن</span></h2>
+                </div>
+                <div class="partners-logos">
+                    <div class="partner-slot"><img src="images/banks/arab_bank.png" alt="البنك العربي" class="partner-logo" loading="lazy" width="256" height="256"></div>
+                    <div class="partner-slot"><img src="images/banks/housing_bank.png" alt="بنك الإسكان" class="partner-logo" loading="lazy" width="300" height="300"></div>
+                    <div class="partner-slot"><img src="images/banks/bank_al_etihad.png" alt="بنك الاتحاد" class="partner-logo" loading="lazy" width="300" height="300"></div>
+                    <div class="partner-slot"><img src="images/banks/capital_bank.png" alt="كابيتال بنك" class="partner-logo" loading="lazy" width="300" height="212"></div>
+                    <div class="partner-slot"><img src="images/banks/jkb.png" alt="البنك الأردني الكويتي" class="partner-logo" loading="lazy" width="188" height="267"></div>
+                    <div class="partner-slot"><img src="images/banks/safwa_islamic_bank.png" alt="بنك صفوة الإسلامي" class="partner-logo" loading="lazy" width="225" height="225"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="cta">
+            <div class="container">
+                <h2>جاهز لاتخاذ قرار مالي ذكي؟</h2>
+                <p>وفّر وقت البحث وقارن خياراتك المالية في مكان واحد مع مالي بلس</p>
+                <a href="compare/compare.html" class="btn">ابدأ المقارنة الآن</a>
+            </div>
+        </section>
+
+    </main>
+
+        <!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo logo-img">
+                    <img src="images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="education/education.html">مركز المعرفة</a></li>
+                    <li><a href="community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="methodology.html">منهجية التقييم</a></li>
+                    <li><a href="for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+
+    <div class="modal-overlay" id="soonModal">
+        <div class="modal-content">
+            <h3>قريباً</h3>
+            <p>نعمل بجهد لإطلاق خدماتنا في هذا البلد. ترقبوا المزيد من التحديثات!</p>
+            <button class="modal-close-btn" id="modalClose">حسناً</button>
+        </div>
+    </div>
+    
+    <a href="#header" class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
+    <script>
+        // --- Staggered Fade-in Animation on Scroll ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const parentGrid = entry.target.closest('.services-grid, .products-grid, .testimonials-grid, .steps-container');
+                    if (parentGrid) {
+                        const delay = Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100;
+                        entry.target.style.transitionDelay = `${delay}ms`;
+                    }
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            fadeInObserver.observe(el);
+        });
+
+        // --- Number Counter Animation ---
+        const statsSection = document.querySelector('.stats-bar');
+        if (statsSection) {
+            const counterObserver = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    document.querySelectorAll('.stat-number[data-goal]').forEach(counter => {
+                        if (counter.classList.contains('animated')) return;
+                        counter.classList.add('animated');
+                        const goal = parseInt(counter.dataset.goal, 10);
+                        if (isNaN(goal)) return;
+                        let start = 0;
+                        const duration = 1800;
+                        const increment = goal / (duration / 16);
+                        const step = () => {
+                            start = Math.min(start + increment, goal);
+                            counter.textContent = Math.ceil(start) + (counter.dataset.suffix !== undefined ? counter.dataset.suffix : '+');
+                            if (start < goal) requestAnimationFrame(step);
+                        };
+                        requestAnimationFrame(step);
+                    });
+                    counterObserver.unobserve(statsSection);
+                }
+            }, { threshold: 0.3 });
+            counterObserver.observe(statsSection);
+        }
+
+        // --- Modal Logic ---
+        const soonModal = document.getElementById('soonModal');
+        const modalTriggers = document.querySelectorAll('#sa-tab, #iq-tab, #eg-tab');
+        const modalCloseBtn = document.getElementById('modalClose');
+        const openModal = () => soonModal && soonModal.classList.add('visible');
+        const closeModal = () => soonModal && soonModal.classList.remove('visible');
+        modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+        if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+        if (soonModal) soonModal.addEventListener('click', e => (e.target === soonModal) && closeModal());
+        
+        /* ── البحث الذكي: اقتراحات حيّة توصل لنتائج مفلترة فعلياً ──
+           القديم كان يطابق 4 كلمات فقط ثم يرمي الباقي في صفحة المقارنة بلا كلمة البحث. */
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const SEARCH_INDEX = [
+          {l:'بطاقات استرداد نقدي (كاش باك)', u:'cards/cards.html?rewards=cashback#all', k:'كاش باك cashback استرداد نقدي كاشباك'},
+          {l:'بطاقات بدون رسوم سنوية',        u:'cards/cards.html?fee=0#all',            k:'بدون رسوم مجانية مجاني fee free'},
+          {l:'بطاقات أميال وسفر',             u:'cards/cards.html?rewards=miles#all',    k:'اميال أميال سفر طيران miles travel صالات'},
+          {l:'بطاقات متوافقة مع الشريعة',      u:'cards/cards.html?islamic=true#all',     k:'اسلامي إسلامية شريعة مرابحة islamic'},
+          {l:'كل البطاقات الائتمانية',        u:'cards/cards.html#all',                  k:'بطاقة بطاقات ائتمان فيزا ماستركارد card visa'},
+          {l:'القروض الشخصية',                u:'loans/loans.html',                      k:'قرض قروض شخصي تمويل loan راتب قرض شخصي قرض بدون كفيل تمويل شخصي'},
+          {l:'القروض السكنية',                u:'loans/loans.html',                      k:'سكني اسكان منزل بيت عقار housing قرض سكني قرض اسكان تمويل عقاري قرض بيت'},
+          {l:'حاسبة نسبة عبء الدين (DBR)',    u:'loans/loans.html#dbr',                  k:'dbr نسبة عبء الدين اقتطاع اقتطاع نسبة الاقتطاع حاسبة القرض'},
+          {l:'تمويل السيارات',                u:'car-financing/car-financing.html',      k:'سيارة سيارات مركبة car قرض سيارة قرض سيارات تمويل سيارة تمويل سيارات اقساط سيارة شراء سيارة'},
+          {l:'حسابات التوفير والودائع',        u:'savings/savings.html',                  k:'توفير ادخار وديعة ودائع عائد فائدة saving حساب توفير حساب ادخار'},
+          {l:'التمويل الأصغر وتمويل المشاريع', u:'microfinance/microfinance.html',        k:'تمويل اصغر أصغر مشروع مشاريع صغير بدون ضمانات تمويل مشروع قرض مشروع تمويل شركات'},
+          {l:'الحاسبات المالية',              u:'calculators/calculators.html',          k:'حاسبة حاسبات احسب قسط calculator'},
+          {l:'المستشار المالي — رشّح لي الأنسب', u:'start.html',                          k:'مستشار توصية ترشيح انسب أنسب ابدأ'},
+          {l:'مقارنة منتجين جنباً إلى جنب',    u:'compare/compare.html',                  k:'قارن مقارنة compare'},
+          {l:'شركات التداول والاستثمار',       u:'brokers/index.html',                    k:'تداول استثمار اسهم أسهم بورصة broker'},
+          {l:'مركز المعرفة والمقالات',         u:'education/education.html',              k:'مقال مقالات تعلم شرح دليل'}
+        ];
+        const norm = s => String(s||'').toLowerCase().replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/[ًٌٍَُِّْ]/g,'').trim();
+        /* الترتيب بالمعنى الكامل: «قرض سيارة» يجب أن يقود لتمويل السيارات،
+           لا للقروض الشخصية لمجرّد أن كلمة «قرض» وردت فيها أولاً في القائمة. */
+        function scoreOf(it, q, words){
+          const L = norm(it.l), K = norm(it.k);
+          let sc = 0, hit = 0;
+          if (L.includes(q)) sc += 130;            // العبارة كاملة في الاسم
+          if (K.includes(q)) sc += 95;             // العبارة كاملة في الكلمات
+          words.forEach(w => {
+            if (L.includes(w))      { sc += 24; hit++; }
+            else if (K.includes(w)) { sc += 15; hit++; }
+          });
+          if (words.length > 1 && hit === words.length) sc += 50;   // غطّى كل كلمات البحث
+          return sc;
+        }
+        function matches(term){
+          const q = norm(term); if(!q) return [];
+          const words = q.split(/\s+/).filter(w => w.length > 1);
+          return SEARCH_INDEX
+            .map(it => ({ it, sc: scoreOf(it, q, words) }))
+            .filter(x => x.sc > 0)
+            .sort((a, b) => b.sc - a.sc)
+            .map(x => x.it);
+        }
+        function scored(term){
+          const q = norm(term); if(!q) return [];
+          const words = q.split(/\s+/).filter(w => w.length > 1);
+          return SEARCH_INDEX
+            .map(it => ({ it, sc: scoreOf(it, q, words) }))
+            .filter(x => x.sc > 0)
+            .sort((a, b) => b.sc - a.sc);
+        }
+        function go(url){ window.location.href = url; }
+        function handleSearch(){
+          const term = searchInput.value.trim();
+          if(!term){ go('cards/cards.html#all'); return; }
+          const r = scored(term);
+          if(!r.length){
+            go('cards/cards.html?q=' + encodeURIComponent(term) + '#all');  // نمرّر الكلمة بدل ضياعها
+            return;
+          }
+          /* ننتقل مباشرةً فقط حين تكون النتيجة الأولى حاسمة: تطابق عبارة كاملة،
+             أو تتقدّم على التالية بفارق واضح. غير ذلك نعرض الخيارات ليختار هو. */
+          /* الفارق وحده هو الحسم، لا الدرجة المطلقة: «قرض» تتصدّر بدرجة عالية
+             لكنها تتعادل مع «القروض السكنية» — وهذه بالضبط حالة عرض الخيارات. */
+          const decisive = r.length === 1 || r[0].sc >= r[1].sc * 1.6;
+          if(decisive){ go(r[0].it.u); return; }
+          if(typeof window.__mpShowSuggest === 'function'){
+            window.__mpShowSuggest(r.map(x => x.it));
+          } else {
+            go(r[0].it.u);
+          }
+        }
+        /* قائمة اقتراحات حيّة */
+        if (searchInput) {
+          const box = document.createElement('div');
+          box.id = 'searchSuggest';
+          box.setAttribute('role','listbox');
+          box.style.cssText = 'position:absolute;z-index:60;top:calc(100% + 6px);inset-inline:0;background:#fff;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 12px 30px rgba(16,32,68,.16);overflow:hidden;display:none;text-align:start';
+          const wrap = searchInput.closest('.smart-search');
+          if (wrap) { wrap.style.position = 'relative'; wrap.appendChild(box); }
+          let active = -1, items = [];
+          const render = list => {
+            items = list.slice(0,6);
+            active = -1;
+            if(!items.length){ box.style.display='none'; return; }
+            box.innerHTML = items.map((it,i)=>`<button type="button" role="option" data-i="${i}" style="display:block;width:100%;text-align:start;padding:.7rem 1rem;border:none;background:#fff;cursor:pointer;font-family:inherit;font-size:.9rem;color:#1E2B3C;border-bottom:1px solid #F3F4F6">${it.l}</button>`).join('');
+            box.style.display='block';
+          };
+          window.__mpShowSuggest = list => { render(list); searchInput.focus(); };
+          searchInput.addEventListener('input', () => {
+            const v = searchInput.value.trim();
+            render(v ? matches(v) : []);
+          });
+          searchInput.addEventListener('keydown', e => {
+            if(box.style.display==='none') return;
+            const btns = [...box.querySelectorAll('button')];
+            if(e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(active+1,btns.length-1); }
+            else if(e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(active-1,0); }
+            else if(e.key==='Enter' && active>-1){ e.preventDefault(); go(items[active].u); return; }
+            else if(e.key==='Escape'){ box.style.display='none'; return; }
+            btns.forEach((b,i)=>b.style.background = i===active ? '#EFF6FF' : '#fff');
+          });
+          box.addEventListener('click', e => {
+            const b = e.target.closest('button[data-i]');
+            if(b) go(items[+b.dataset.i].u);
+          });
+          document.addEventListener('click', e => { if(!wrap || !wrap.contains(e.target)) box.style.display='none'; });
+        }
+        if (searchBtn) searchBtn.addEventListener('click', handleSearch);
+        if (searchInput) searchInput.addEventListener('keypress', e => { if(e.key==='Enter' && !document.querySelector('#searchSuggest button[style*="EFF6FF"]')) handleSearch(); });
+
+        // --- Mobile Menu Logic ---
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+        }
+
+        // --- Back to Top Button Logic ---
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                backToTopButton.classList.toggle('visible', window.scrollY > 300);
+            });
+            backToTopButton.addEventListener('click', e => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // --- Newsletter Form Logic ---
+        // معالجة الاشتراك (إرسال Netlify) تتم في layout.js لتفادي تكرار المعالج.
+    </script>
+
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    }
+  });
+}
+</script>
+
+    <script>
+    (function(){
+        var NEWS=[{"type": "urgent", "tag": "طاقة", "tagStyle": "background:#FEF3C7;color:#92400E", "date": "يوليو 2026", "title": "الحكومة تثبّت أسعار المحروقات والغاز لشهر تموز", "desc": "قررت لجنة التسعير تثبيت أسعار البنزين والسولار والغاز المنزلي لشهر تموز، ما يبقي فاتورة التنقل والطبخ مستقرة دون زيادات جديدة على ميزانية أسرتك.", "url": "loans/loans.html", "accent": "#F59E0B", "source_url": "https://www.sarayanews.com/article/1090317"}, {"type": "info", "tag": "اقتصاد", "tagStyle": "background:#EDE9FE;color:#5B21B6", "date": "يونيو 2026", "title": "الاقتصاد الأردني ينمو 2.9% في الربع الأول من 2026", "desc": "نما الاقتصاد الأردني 2.9% في الربع الأول بقيادة الزراعة والصناعة، ما يعزز فرص العمل ويحسن دخل الأسر تدريجياً هذا العام.", "url": "education/education.html", "accent": "#7C3AED", "source_url": "https://maqar.com/archives/763693"}, {"type": "rates", "tag": "بنوك", "tagStyle": "background:#DBEAFE;color:#1E40AF", "date": "يونيو 2026", "title": "المركزي الأردني يثبّت سعر الفائدة عند 5.75%", "desc": "ثبّت المركزي سعر الفائدة الرئيسي عند 5.75% في اجتماعه الرابع، ما يعني استقرار أقساط قروضك وفوائد ودائعك خلال الأشهر المقبلة.", "url": "loans/loans.html", "accent": "#1E40AF", "source_url": "https://alsaa.net/article/643222/%D8%A7%D9%84%D8%A8%D9%86%D9%83-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%B3%D8%B9%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9"}, {"type": "info", "tag": "تضخم", "tagStyle": "background:#FEF3C7;color:#92400E", "date": "يونيو 2026", "title": "التضخم يسجل 2.83% في أيار مدفوعاً بالنقل والإيجارات", "desc": "سجل التضخم 2.83% في أيار مدفوعاً بالنقل والإيجارات، فيما بلغ 1.88% لخمسة أشهر؛ راقب أسعار السلع وخطط لمدخراتك بذكاء.", "url": "savings/savings.html", "accent": "#F59E0B"}, {"type": "info", "tag": "بنوك", "tagStyle": "background:#DBEAFE;color:#1E40AF", "date": "يونيو 2026", "title": "3.09 مليار دينار حوالات عبر المحافظ الإلكترونية منذ بداية العام", "desc": "تجاوزت حوالات المحافظ الإلكترونية 3 مليارات دينار منذ بداية العام بـ2.97 مليون مستخدم، بديل مجاني وسريع للتحويلات اليومية من هاتفك.", "url": "cards/cards.html", "accent": "#10B981", "source_url": "https://maqar.com/archives/762147"}, {"type": "info", "tag": "اقتصاد", "tagStyle": "background:#EDE9FE;color:#5B21B6", "date": "يونيو 2026", "title": "حوالات المغتربين ترتفع 13.3% إلى 1.6 مليار دولار", "desc": "ارتفعت حوالات المغتربين 13.3% إلى 1.6 مليار دولار في أربعة أشهر، ما يدعم الدينار واستقرار أسعار الصرف لمشترياتك بالعملات الأجنبية.", "url": "savings/savings.html", "accent": "#7C3AED", "source_url": "https://alsaa.net/article/642690/%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86-162-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D8%AD%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86-%D8%A7%D9%84%D9%88%D8%A7%D8%B1%D8%AF%D8%A9-%D8%AE%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D8%AB%D9%84%D8%AB-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D8%B9%D8%A7%D9%85"}, {"type": "info", "tag": "بنوك", "tagStyle": "background:#DBEAFE;color:#1E40AF", "date": "مايو 2026", "title": "الهيئة العامة لبنك الاتحاد تقر إتمام الاندماج مع الاستثماري", "desc": "أقرت الهيئة العامة لبنك الاتحاد اندماج البنك الاستثماري بالكامل، دون أي تغيير على حسابات العملاء والفروع والخدمات المصرفية اليومية حالياً.", "url": "savings/savings.html", "accent": "#1E40AF", "source_url": "https://maqar.com/archives/758869"}, {"type": "info", "tag": "أسواق", "tagStyle": "background:#EDE9FE;color:#5B21B6", "date": "مايو 2026", "title": "بورصة عمان تواصل الصعود والقيمة السوقية ترتفع 8%", "desc": "ارتفعت القيمة السوقية للشركات المدرجة 8% بأكثر من ملياري دينار منذ بداية العام، فرصة لتنويع مدخراتك بالاستثمار المدروس في الأسهم.", "url": "education/education.html", "accent": "#7C3AED", "source_url": "https://maqar.com/archives/758427"}]; // المصادر موثقة في data/_news_2026-07.json
+        function render(){
+            var g=document.getElementById('news-grid');
+            if(!g)return;
+            /* بطاقة الخبر: المصدر الرسمي وتاريخه ظاهران، ورابط «اقرأ الخبر» يفتح المصدر
+               بدل الإيهام بأن صفحة المنتج هي الخبر. */
+            g.innerHTML=NEWS.slice(0,3).map(function(n){
+                var host = n.source_url ? n.source_url.replace(/^https?:\/\/(www\.)?/,'').split('/')[0] : '';
+                return '<div class="fn-card" style="--fna:'+n.accent+'">'
+                    +'<div class="fn-meta"><span class="fn-tag" style="'+n.tagStyle+'">'+n.tag+'</span>'
+                    +'<span class="fn-date">'+n.date+'</span></div>'
+                    +'<p class="fn-title">'+n.title+'</p>'
+                    +'<p class="fn-desc">'+n.desc+'</p>'
+                    +'<div class="fn-foot">'
+                    +(n.source_url
+                        ? '<a href="'+n.source_url+'" target="_blank" rel="noopener nofollow" class="fn-src">اقرأ الخبر لدى '+host+' ←</a>'
+                        : '<span class="fn-src muted">المصدر غير متاح</span>')
+                    +'<a href="'+n.url+'" class="fn-rel">ما علاقته بك؟</a>'
+                    +'</div>'
+                    +'</div>';
+            }).join('');
+            var t=document.getElementById('ticker-track');
+            if(t){
+                var items=NEWS.map(function(n){
+                    return '<a href="'+n.url+'" class="t-item">◈  '+n.title+'</a>';
+                }).join('<span style="color:#475569;padding:0 1.5rem;">|</span>');
+                var html=items+'<span style="padding:0 2rem;"></span>'+items;
+                var sp=document.createElement('span');
+                sp.className='ticker-animate';
+                sp.innerHTML=html;
+                t.innerHTML='';
+                t.appendChild(sp);
+            }
+        }
+        if(document.readyState==='loading'){
+            document.addEventListener('DOMContentLoaded',render);
+        }else{render();}
+    })();
+    </script>
+
+    <script>
+    // تثبيت القوائم المنسدلة — لا تختفي عند التحرك بين الزر والقائمة
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+        var timer;
+        dd.addEventListener('mouseenter', function() {
+            clearTimeout(timer);
+            var menu = dd.querySelector('.nav-drop-menu');
+            if (menu) menu.style.display = 'block';
+        });
+        dd.addEventListener('mouseleave', function() {
+            var menu = dd.querySelector('.nav-drop-menu');
+            timer = setTimeout(function() {
+                if (menu) menu.style.display = '';
+            }, 150);
+        });
+    });
+    </script>
+
+<script>
+/* ===== ظهور خفيف عند التمرير — كتل تحت الطية فقط، بلا وميض، ولا يؤخّر الوصول للأدوات =====
+   معالج تمرير (rAF) بدل IntersectionObserver: يُطلق موثوقاً مع أي تمرير، ويستحيل أن يبقى محتوى مخفياً. */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var sels = [
+    '.home-refined .section-header',
+    '.home-refined .services-grid',
+    '.home-refined .steps-container',
+    '.home-refined .products-grid',
+    '.home-refined .faq-container',
+    '.home-refined .partners-logos'
+  ];
+  var fold = window.innerHeight * 0.85;
+  var watched = [];
+  sels.forEach(function(sel){
+    Array.prototype.slice.call(document.querySelectorAll(sel)).forEach(function(el){
+      if(el.getBoundingClientRect().top < fold) return;                 // مرئي عند التحميل → يبقى ظاهراً (بلا وميض/تأخير)
+      el.classList.add('reveal-up'); watched.push(el);
+    });
+  });
+
+  var ticking = false;
+  function reveal(){
+    ticking = false;
+    var trig = window.innerHeight * 0.9;
+    for(var i = watched.length - 1; i >= 0; i--){
+      if(watched[i].getBoundingClientRect().top < trig){
+        watched[i].classList.add('in');
+        watched.splice(i, 1);                                           // كُشِف نهائياً — يُزال من المراقبة
+      }
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(reveal); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  reveal();                                                            // كشف ما هو قريب أصلاً عند التحميل
+})();
+</script>
+<script>
+/* الهاتف: اعرض 4 خدمات ثم زر «عرض جميع الخدمات» — بلا حذف أي بطاقة */
+(function(){
+  function init(){
+    var grid=document.querySelector('.services-grid');
+    if(!grid) return;
+    var isMobile=window.matchMedia('(max-width:768px)').matches;
+    var wrap=document.getElementById('svcMoreWrap');
+    if(!isMobile){ grid.classList.remove('mp-collapsed'); if(wrap) wrap.remove(); return; }
+    if(grid.classList.contains('mp-collapsed')||wrap) return;
+    var hidden=grid.children.length-4;
+    if(hidden<1) return;
+    grid.classList.add('mp-collapsed');
+    wrap=document.createElement('div');
+    wrap.id='svcMoreWrap'; wrap.className='mp-more-wrap';
+    wrap.innerHTML='<button type="button" class="mp-more-btn">عرض جميع الخدمات ('+hidden+') ↓</button>';
+    grid.parentNode.insertBefore(wrap,grid.nextSibling);
+    wrap.querySelector('button').onclick=function(){ grid.classList.remove('mp-collapsed'); wrap.remove(); };
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  window.addEventListener('resize',function(){ clearTimeout(window._svcT); window._svcT=setTimeout(init,200); });
+})();
+</script>
+<script>
+/* نموذج البطاقات: تبويبات فئات + تدوير يومي للافتتاحية + تنقّل تلقائي هادئ
+   قواعد التنقّل التلقائي: يتوقف عند مرور المؤشر/تركيز لوحة المفاتيح، يتوقف
+   نهائيًا إن اختار المستخدم بنفسه، يتوقف بخلفية التبويب، ولا يعمل مع
+   prefers-reduced-motion. العدّ يجري أول عرض لكل فئة فقط (لا رجرجة). */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.mp-tab'));
+  var groups=[].slice.call(document.querySelectorAll('.mp-group'));
+  var more=document.getElementById('mpMoreLink');
+  var mock=document.querySelector('.mp-mock');
+  if(!tabs.length||!groups.length) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var animated={}, timer=null, userStopped=false;
+
+  function countUp(panel){
+    if(reduce||animated[panel.dataset.g]) return;
+    animated[panel.dataset.g]=true;
+    [].slice.call(panel.querySelectorAll('.mp-score[data-count]')).forEach(function(el){
+      var target=parseInt(el.dataset.count,10); if(!target) return;
+      var t0=null; el.textContent='0';
+      function step(ts){ if(!t0)t0=ts; var k=Math.min(1,(ts-t0)/650);
+        el.textContent=Math.round(target*(1-Math.pow(1-k,3)));
+        if(k<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+  }
+  function activate(tab, animate){
+    tabs.forEach(function(b){ var on=b===tab;
+      b.classList.toggle('is-on',on); b.setAttribute('aria-selected',String(on)); });
+    var g=tab.dataset.g, panel=null;
+    groups.forEach(function(p){ var show=p.dataset.g===g;
+      p.hidden=!show; if(show) panel=p; });
+    if(more&&tab.dataset.url) more.setAttribute('href',tab.dataset.url);
+    if(panel&&animate) countUp(panel);
+  }
+  function current(){ for(var i=0;i<tabs.length;i++) if(tabs[i].classList.contains('is-on')) return i; return 0; }
+  function next(){ activate(tabs[(current()+1)%tabs.length], true); }
+  function stopAuto(){ if(timer){ clearInterval(timer); timer=null; } }
+  function startAuto(){
+    if(reduce||userStopped||document.hidden) return;
+    stopAuto(); timer=setInterval(next, 6000);
+  }
+
+  tabs.forEach(function(b){ b.addEventListener('click',function(){
+    userStopped=true; stopAuto();          /* اختيار المستخدم يُنهي التلقائي */
+    activate(b,true);
+  }); });
+  if(mock){
+    mock.addEventListener('mouseenter', stopAuto);
+    mock.addEventListener('mouseleave', startAuto);
+    mock.addEventListener('focusin', stopAuto);
+    mock.addEventListener('focusout', startAuto);
+  }
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) stopAuto(); else startAuto();
+  });
+
+  /* الافتتاحية اليومية ثم بدء التنقّل التلقائي */
+  /* مقبض فحص صغير للتحقق الآلي (لا يؤثر على الزوار) */
+  window.__mpHero={next:next,active:current,paused:function(){return !timer;}};
+  var idx=Math.floor(Date.now()/86400000)%tabs.length;
+  activate(tabs[idx], false);
+  setTimeout(function(){ var vis=groups.filter(function(p){return !p.hidden;})[0]; if(vis) countUp(vis); },350);
+  startAuto();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حاسبة تمويل السيارات في الأردن — القسط وخياراتك خلال دقيقة | مالي بلس</title>
+<meta name="description" content="اعرف خيارات تمويل سيارتك والقسط المتوقع خلال دقيقة. قارن التمويل التقليدي والمتوافق مع الشريعة من 8 جهات أردنية بناءً على دخلك وسعر السيارة والدفعة الأولى.">
+<link rel="canonical" href="https://maalyplus.com/car-financing/car-financing.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+:focus-visible{outline:2px solid #7C3AED;outline-offset:2px;border-radius:4px}
+/* ضمانة قياسية: محتوى details المغلقة مخفي في كل المحركات */
+details:not([open]) > *:not(summary){display:none !important}
+
+/* ═══ البطل: مضغوط ليظهر مع الحاسبة في أول شاشة ═══ */
+.cf-hero{background:linear-gradient(135deg,#1E2B3C 0%,#7C3AED 60%,#047857 100%);color:#fff;padding:.9rem 0 2.4rem;position:relative;overflow:hidden}
+.cf-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:44px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+.cf-hero .container{position:relative;z-index:2}
+.cf-breadcrumb{font-size:.78rem;opacity:.7;margin-bottom:.35rem}
+.cf-breadcrumb a{color:#fff;text-decoration:none}
+.cf-hero h1{font-family:var(--font-heading);font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:700;margin:0 0 .3rem;line-height:1.4}
+.cf-hero p{font-size:.9rem;opacity:.9;max-width:640px;line-height:1.7;margin:0 0 .5rem}
+.cf-hero-points{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem .5rem}
+.cf-hero-points li{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:4px 11px;font-size:.8rem;font-weight:500}
+
+.cf-body{max-width:1100px;margin:-2rem auto 0;padding:0 1.25rem 4rem;position:relative;z-index:2}
+.cf-card-box{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:0 2px 10px rgba(0,0,0,.05);border:1px solid #E5E7EB;margin-bottom:1.1rem}
+.cf-box-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.08rem;margin:0 0 .25rem}
+.cf-box-sub{font-size:.875rem;color:#4B5563;margin:0 0 .9rem;line-height:1.7}
+
+/* تفاصيل إضافية اختيارية */
+.cf-extra{margin-top:.8rem;border-top:1px dashed #E5E7EB;padding-top:.6rem}
+.cf-extra>summary{cursor:pointer;list-style:none;font-size:.875rem;font-weight:700;color:#7C3AED;min-height:44px;display:flex;align-items:center}
+.cf-extra>summary::-webkit-details-marker{display:none}
+/* رسالة تبديل الوضع */
+.cf-mode-msg{background:#F5F3FF;border:1px solid #DDD6FE;color:#5B21B6;border-radius:10px;padding:.6rem .85rem;font-size:.875rem;font-weight:600;margin-top:.8rem;line-height:1.7}
+.cf-mode-msg[hidden]{display:none}
+
+/* اختيار المسار */
+.cf-paths{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.1rem}
+.cf-path{border:2px solid #E5E7EB;border-radius:13px;padding:.9rem;cursor:pointer;background:#fff;text-align:center;transition:.15s}
+.cf-path:hover{border-color:#C4B5FD}
+.cf-path.on{border-color:#7C3AED;background:#FAF5FF}
+.cf-path b{display:block;font-family:var(--font-heading);font-size:.92rem;color:#1E2B3C;margin-bottom:3px}
+.cf-path span{font-size:.73rem;color:#6B7280;line-height:1.55;display:block}
+.cf-path:has(:focus-visible){outline:2px solid #7C3AED;outline-offset:2px}
+.cf-path input{position:absolute;opacity:0;pointer-events:none}
+
+/* الحقول */
+.cf-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:.8rem}
+.cf-field label{display:block;font-size:.875rem;font-weight:600;color:#374151;margin-bottom:5px}
+.cf-field label .opt{font-weight:400;color:#9CA3AF;font-size:.7rem}
+.cf-unit-wrap{position:relative}
+.cf-unit-wrap input{padding-inline-end:2.9rem !important}
+.cf-unit{position:absolute;top:50%;transform:translateY(-50%);inset-inline-end:11px;font-size:.74rem;color:#6B7280;font-weight:600;pointer-events:none}
+.cf-field input,.cf-field select{width:100%;box-sizing:border-box;height:46px;padding:10px 12px;border:1.5px solid #E5E7EB;border-radius:10px;font-family:var(--font-body);font-size:1rem;background:#fff;color:#111827}
+.cf-field input:focus,.cf-field select:focus{outline:none;border-color:#7C3AED;box-shadow:0 0 0 3px rgba(124,58,237,.12)}
+.cf-field input.err{border-color:#B91C1C;background:#FEF2F2}
+.cf-err{font-size:.8rem;color:#B91C1C;font-weight:600;margin-top:4px;line-height:1.5}
+.cf-err:empty{display:none}
+.cf-optional-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:.8rem;border-top:1px dashed #E5E7EB;padding-top:.8rem;margin-top:.2rem}
+
+.cf-calc-btn{width:100%;margin-top:1rem;background:linear-gradient(135deg,#7C3AED,#10B981);color:#fff;border:none;border-radius:11px;padding:1rem;font-family:var(--font-heading);font-size:1.05rem;font-weight:700;cursor:pointer;transition:.18s;box-shadow:0 4px 14px rgba(124,58,237,.25)}
+.cf-calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(124,58,237,.3)}
+
+/* زر مثبّت أسفل الهاتف */
+.cf-sticky{position:fixed;bottom:0;inset-inline:0;z-index:70;background:#fff;border-top:2px solid #7C3AED;padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.12);transform:translateY(110%);transition:transform .25s}
+.cf-sticky.show{transform:none}
+.cf-sticky button{width:100%;background:linear-gradient(135deg,#7C3AED,#10B981);color:#fff;border:none;border-radius:10px;padding:.75rem;font-family:var(--font-heading);font-size:.9rem;font-weight:700;cursor:pointer}
+@media(min-width:900px){.cf-sticky{display:none}}
+
+/* ملخص النتيجة */
+.cf-summary{scroll-margin-top:80px}
+.cf-sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:.6rem;margin-bottom:.8rem}
+.cf-sum{background:#F8FAFF;border:1px solid #DBEAFE;border-radius:11px;padding:.75rem .5rem;text-align:center}
+.cf-sum.hero{grid-column:1/-1;background:linear-gradient(135deg,#F5F3FF,#ECFDF5);border-color:#C4B5FD;padding:.9rem}
+.cf-sum.hero .v{font-size:2rem;color:#1E2B3C}
+.cf-sum .v{font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#7C3AED;display:block;line-height:1.25}
+.cf-sum .v.dim{color:#6B7280;font-size:.95rem}
+.cf-sum .k{font-size:.8rem;color:#4B5563;margin-top:3px;display:block;line-height:1.5}
+.cf-budget{background:linear-gradient(135deg,#F5F3FF,#ECFDF5);border:1.5px solid #C4B5FD;border-radius:13px;padding:1rem;text-align:center;margin-bottom:.8rem}
+.cf-budget .b-lbl{font-size:.78rem;color:#5B21B6;font-weight:600}
+.cf-budget .b-val{font-family:var(--font-heading);font-size:1.55rem;font-weight:800;color:#1E2B3C;margin:.2rem 0}
+.cf-budget .b-sub{font-size:.72rem;color:#6B7280;line-height:1.7}
+.cf-dbr-note{border-radius:10px;padding:.65rem .85rem;font-size:.8rem;font-weight:600;line-height:1.7;border:1px solid;margin-bottom:.8rem}
+.cf-dbr-note.good{background:#F0FDF4;border-color:#BBF7D0;color:#047857}
+.cf-dbr-note.warn{background:#FFFBEB;border-color:#FDE68A;color:#B45309}
+.cf-dbr-note.bad{background:#FEF2F2;border-color:#FECACA;color:#B91C1C}
+.cf-disclaim{font-size:.72rem;color:#6B7280;line-height:1.8;margin:.6rem 0 0;padding-top:.6rem;border-top:1px dashed #E5E7EB}
+
+/* بطاقات النتائج */
+.cf-top-list{display:grid;gap:.9rem}
+.cf-res{border:1.5px solid #E5E7EB;border-radius:12px;padding:.85rem .95rem;background:#fff}
+.cf-res.match{border-color:#86EFAC;background:#FCFFFD}
+.cf-res.maybe{border-color:#FDE68A;background:#FFFEFA}
+.cf-res-head{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.7rem}
+.cf-res-logo{width:44px;height:44px;border-radius:10px;object-fit:contain;background:#fff;border:1px solid #F3F4F6;padding:3px;flex-shrink:0;box-sizing:border-box}
+.cf-res-logo-fb{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-heading);font-weight:800;font-size:.68rem;flex-shrink:0}
+.cf-res-idt{flex:1;min-width:0}
+.cf-res-idt b{display:block;font-family:var(--font-heading);font-size:.93rem;color:#1E2B3C;line-height:1.35}
+.cf-res-idt small{font-size:.75rem;color:#6B7280}
+.cf-res-vd{flex-shrink:0;border-radius:999px;padding:4px 10px;font-size:.68rem;font-weight:700;white-space:nowrap}
+.cf-res-vd.match{background:#F0FDF4;color:#047857;border:1px solid #BBF7D0}
+.cf-res-vd.maybe{background:#FFFBEB;color:#B45309;border:1px solid #FDE68A}
+.cf-res-type{display:inline-block;border-radius:999px;padding:2px 9px;font-size:.66rem;font-weight:700;margin-bottom:.55rem;background:#F5F3FF;color:#5B21B6}
+.cf-res-type.islamic{background:#ECFDF5;color:#065F46}
+.cf-res-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:.3rem;background:#F9FAFB;border-radius:10px;padding:.55rem .3rem;margin-bottom:.5rem;align-items:center}
+.cf-rn.big .v{font-size:1.3rem}
+.cf-rn{text-align:center}
+.cf-rn .v{font-family:var(--font-heading);font-size:.95rem;font-weight:800;color:#7C3AED;display:block;line-height:1.25}
+.cf-rn .v.dim{color:#6B7280;font-size:.78rem;font-weight:700}
+.cf-rn .k{font-size:.72rem;color:#4B5563;margin-top:2px;display:block}
+.cf-res-facts{font-size:.74rem;color:#4B5563;line-height:1.9;margin-bottom:.55rem}
+.cf-res-facts b{color:#1E2B3C}
+.cf-why{background:#F8FAFF;border-right:3px solid #7C3AED;border-radius:8px;padding:.45rem .7rem;font-size:.8rem;color:#4B5563;line-height:1.7;margin-bottom:.5rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cf-why.maybe{background:#FFFBEB;border-right-color:#D97706;color:#78350F}
+.cf-meta-row{display:flex;flex-wrap:wrap;gap:.35rem .8rem;font-size:.68rem;color:#6B7280;margin-bottom:.7rem}
+.cf-meta-row a{color:#6B7280}
+.cf-databadge{border-radius:999px;padding:2px 8px;font-weight:700;font-size:.64rem}
+.cf-databadge.full{background:#ECFDF5;color:#065F46}
+.cf-databadge.partial{background:#FEF3C7;color:#92400E}
+.cf-res-acts{display:flex;gap:.45rem;flex-wrap:wrap}
+.cf-res-acts button,.cf-res-acts a{flex:1;min-width:110px;text-align:center;padding:9px 10px;border-radius:9px;font-size:.76rem;font-weight:700;cursor:pointer;font-family:var(--font-heading);text-decoration:none;border:1.5px solid #E5E7EB;background:#fff;color:#374151;transition:.15s}
+.cf-res-acts .act-interest{background:linear-gradient(135deg,#7C3AED,#10B981);color:#fff;border:none}
+.cf-res-acts button:hover,.cf-res-acts a:hover{transform:translateY(-1px)}
+.cf-res-acts .act-cmp.on{background:#F5F3FF;border-color:#7C3AED;color:#5B21B6}
+.cf-res-more[open] summary{margin-bottom:.5rem}
+.cf-res-more summary{cursor:pointer;font-size:.75rem;font-weight:700;color:#7C3AED;list-style:none}
+.cf-res-more summary::-webkit-details-marker{display:none}
+.cf-res-more ul{margin:.2rem 0 0;padding-inline-start:1.1rem;font-size:.75rem;color:#4B5563;line-height:1.85}
+
+.cf-more-btn{display:block;width:100%;margin-top:.7rem;background:#fff;border:1.5px solid #E5E7EB;border-radius:10px;padding:.7rem;font-family:var(--font-heading);font-size:.83rem;font-weight:700;color:#4B5563;cursor:pointer}
+.cf-more-btn:hover{background:#F9FAFB;color:#1E2B3C}
+
+/* المقارنة المصغّرة */
+.cf-cmp-bar{position:sticky;bottom:0;z-index:60;background:#1E2B3C;color:#fff;border-radius:12px;padding:.6rem .9rem;display:none;align-items:center;justify-content:space-between;gap:.6rem;margin-top:.8rem}
+.cf-cmp-bar.show{display:flex}
+.cf-cmp-bar button{background:#fff;color:#1E2B3C;border:none;border-radius:8px;padding:.5rem 1rem;font-family:var(--font-heading);font-size:.78rem;font-weight:700;cursor:pointer}
+.cf-cmp-wrap{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.cf-cmp-col{border:1.5px solid #E5E7EB;border-radius:12px;padding:.9rem;background:#fff}
+.cf-cmp-col h4{font-family:var(--font-heading);font-size:.85rem;color:#1E2B3C;margin:0 0 .5rem}
+.cf-cmp-col .row{display:flex;justify-content:space-between;gap:.5rem;font-size:.74rem;padding:.3rem 0;border-bottom:1px dashed #F3F4F6}
+.cf-cmp-col .row span{color:#6B7280}
+.cf-cmp-col .row b{color:#1E2B3C;text-align:left}
+
+/* المستبعدون */
+.cf-excluded summary{cursor:pointer;font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:.95rem;list-style:none;display:flex;align-items:center;gap:.5rem;min-height:44px}
+.cf-excluded summary::-webkit-details-marker{display:none}
+.cf-excluded summary::after{content:'▾';color:#7C3AED;transition:transform .2s}
+.cf-excluded[open] summary::after{transform:rotate(180deg)}
+.cf-exc-item{display:flex;align-items:flex-start;gap:.6rem;padding:.6rem 0;border-bottom:1px dashed #F3F4F6;font-size:.8rem;line-height:1.7}
+.cf-exc-item:last-child{border-bottom:none}
+.cf-exc-item .x{color:#B91C1C;font-weight:700;flex-shrink:0}
+.cf-exc-item b{color:#1E2B3C}
+.cf-exc-item span{color:#6B7280}
+
+/* نموذج الاهتمام */
+.cf-interest{scroll-margin-top:80px}
+.cf-int-ctx{background:#F5F3FF;border:1px solid #DDD6FE;border-radius:10px;padding:.6rem .85rem;font-size:.8rem;color:#5B21B6;font-weight:600;margin-bottom:.9rem;line-height:1.7}
+.cf-consent{background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:11px;padding:.85rem 1rem;margin-top:.6rem}
+.cf-consent label{display:flex;align-items:flex-start;gap:9px;font-size:.79rem;line-height:1.8;color:#374151;cursor:pointer}
+.cf-consent input{margin:3px 0 0;accent-color:#7C3AED;width:16px;height:16px;flex-shrink:0}
+.cf-int-msg{margin-top:.7rem;border-radius:10px;padding:.7rem .9rem;font-size:.82rem;line-height:1.8;border:1px solid}
+.cf-int-msg.ok{background:#F0FDF4;border-color:#BBF7D0;color:#047857}
+.cf-int-msg.err{background:#FEF2F2;border-color:#FECACA;color:#B91C1C}
+.cf-int-msg.info{background:#FFFBEB;border-color:#FDE68A;color:#B45309}
+.cf-int-msg:empty{display:none}
+
+/* الثقة */
+.cf-trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:.8rem}
+.cf-trust-card{background:#fff;border:1px solid #E5E7EB;border-radius:13px;padding:1rem}
+.cf-trust-card h3{font-family:var(--font-heading);font-size:.9rem;color:#1E2B3C;margin:0 0 .4rem}
+.cf-trust-card p,.cf-trust-card li{font-size:.77rem;color:#4B5563;line-height:1.85;margin:0}
+.cf-trust-card ol{margin:0;padding-inline-start:1.1rem}
+
+/* القائمة الكاملة (القسم السفلي القائم) */
+.cf-all summary{cursor:pointer;list-style:none;min-height:44px;display:flex;align-items:center}
+.cf-all summary::-webkit-details-marker{display:none}
+.cf-all-btn{width:100%;background:#fff;border:1.5px solid #7C3AED;color:#5B21B6;border-radius:11px;padding:.8rem;font-family:var(--font-heading);font-size:.88rem;font-weight:700;text-align:center}
+.cf-all[open] .cf-all-btn{margin-bottom:1rem}
+.cf-filter{background:#fff;border-radius:16px;padding:1.25rem;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid #E5E7EB;margin-bottom:1.25rem}
+.cf-filter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:.7rem;margin-bottom:.8rem}
+.cf-field-sm label{display:block;font-size:.8rem;font-weight:600;color:#4B5563;margin-bottom:4px}
+.cf-field-sm input,.cf-field-sm select{width:100%;box-sizing:border-box;height:42px;padding:9px 11px;border:1.5px solid #E5E7EB;border-radius:9px;font-family:var(--font-body);font-size:.9rem;background:#fff}
+.cf-btn{padding:10px 20px;border:none;border-radius:50px;font-weight:700;font-size:.83rem;cursor:pointer;font-family:var(--font-body)}
+.cf-btn-secondary{background:#F3F4F6;color:#374151;border:1.5px solid #E5E7EB}
+.cf-section-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.1rem;margin:0 0 1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.7rem}
+.cf-sort{padding:8px 14px;border:1.5px solid #E5E7EB;border-radius:50px;font-size:.78rem;font-family:var(--font-body);background:#fff;cursor:pointer}
+.cf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1rem}
+.cf-card{background:#fff;border-radius:16px;padding:1.2rem;border:1.5px solid #E5E7EB;transition:all .2s;position:relative;display:flex;flex-direction:column;gap:.8rem}
+.cf-card:hover{border-color:#7C3AED;box-shadow:0 8px 24px rgba(124,58,237,.1)}
+.cf-card-head{display:flex;align-items:center;gap:.6rem}
+.cf-card-logo{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.7rem;flex-shrink:0}
+.cf-card-bank{font-size:.87rem;font-weight:700;color:#1E2B3C;margin:0;line-height:1.3}
+.cf-card-product{font-size:.75rem;color:#6B7280}
+.cf-card-badge{font-size:.66rem;padding:3px 9px;border-radius:20px;font-weight:700;display:inline-block;background:#F5F3FF;color:#5B21B6}
+.cf-card-badge.islamic{background:#ECFDF5;color:#065F46}
+.cf-card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;background:#F9FAFB;border-radius:10px;padding:.7rem .35rem}
+.cf-stat{text-align:center}
+.cf-stat-val{font-family:var(--font-heading);font-size:.9rem;font-weight:700;color:#7C3AED;display:block;line-height:1.2}
+.cf-stat-label{font-size:.6rem;color:#6B7280;margin-top:2px}
+.cf-card-details{font-size:.73rem;color:#4B5563;display:flex;flex-wrap:wrap;gap:.25rem .6rem}
+.cf-card-details strong{color:#1E2B3C}
+.cf-card-verified{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding-top:.55rem;border-top:1px dashed #E5E7EB;font-size:.66rem;color:#6B7280}
+.cf-verified-badge{background:#ECFDF5;color:#065F46;padding:2px 8px;border-radius:10px;font-weight:700}
+.cf-card-actions{display:flex;gap:.45rem}
+.cf-card-actions a{flex:1;text-align:center;padding:9px 11px;border-radius:50px;font-size:.76rem;font-weight:700;text-decoration:none}
+.cf-apply{background:linear-gradient(135deg,#7C3AED,#10B981);color:#fff}
+.cf-details{background:#F3F4F6;color:#374151;border:1.5px solid #E5E7EB}
+
+/* هيكل تحميل */
+.cf-skel{border:1.5px solid #E5E7EB;border-radius:14px;padding:1rem;background:#fff}
+.cf-skel .l{height:13px;border-radius:6px;background:linear-gradient(90deg,#F3F4F6 25%,#E5E7EB 50%,#F3F4F6 75%);background-size:200% 100%;animation:sk 1.2s infinite;margin-bottom:.6rem}
+@keyframes sk{to{background-position:-200% 0}}
+
+.cf-request{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;background:linear-gradient(135deg,#1E2B3C,#1E40AF);color:#fff;border-radius:16px;padding:1.4rem 1.6rem;margin-top:1.6rem}
+.cf-request-txt{flex:1;min-width:260px}
+.cf-request h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:700;margin:0 0 .35rem;color:#fff}
+.cf-request p{font-size:.83rem;line-height:1.8;opacity:.88;margin:0;max-width:640px}
+.cf-request-btn{flex-shrink:0;background:#fff;color:#1E40AF;text-decoration:none;border-radius:10px;padding:.75rem 1.5rem;font-family:var(--font-heading);font-size:.88rem;font-weight:700;transition:.18s;white-space:nowrap}
+.cf-request-btn:hover{transform:translateY(-2px)}
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+
+@media(max-width:640px){
+  .cf-body{padding:0 .9rem 3.5rem}
+  .cf-card-box{padding:1.1rem}
+  .cf-paths{grid-template-columns:1fr}
+  .cf-res-acts button,.cf-res-acts a{flex:1 1 100%}
+  /* أرقام البطاقة 2×2 على الهاتف والقسط ممتد للصف كله */
+  .cf-res-nums{grid-template-columns:repeat(2,1fr)}
+  .cf-rn.big{grid-column:1/-1}
+  .cf-rn.big .v{font-size:1.5rem}
+}
+</style>
+    <meta property="og:title" content="حاسبة تمويل السيارات في الأردن — MaalyPlus">
+    <meta property="og:description" content="اعرف خيارات تمويل سيارتك والقسط المتوقع خلال دقيقة.">
+    <meta property="og:url" content="https://maalyplus.com/car-financing/car-financing.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-cars.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="حاسبة تمويل السيارات في الأردن — MaalyPlus">
+    <meta name="twitter:description" content="اعرف خيارات تمويل سيارتك والقسط المتوقع خلال دقيقة.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-cars.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+<div class="cf-hero">
+<div class="container">
+<div class="cf-breadcrumb"><a href="../index.html">الرئيسية</a> ← تمويل السيارات</div>
+<h1>اعرف خيارات تمويل سيارتك والقسط المتوقع خلال دقيقة</h1>
+<p>قارن خيارات تمويل السيارات التقليدية والمتوافقة مع الشريعة بناءً على دخلك وسعر السيارة والدفعة الأولى.</p>
+<ul class="cf-hero-points">
+<li>خيارات من بنوك وشركات تمويل أردنية</li>
+<li>الحساب تقديري ولا يضمن الموافقة</li>
+<li>لا نطلب رقماً وطنياً أو معلومات بنكية</li>
+</ul>
+</div>
+</div>
+
+<div class="cf-body">
+
+<!-- ═══ ١) الحاسبة ═══ -->
+<section class="cf-card-box" id="calcBox" aria-labelledby="calcTitle">
+  <h2 class="cf-box-title" id="calcTitle">احسب خياراتك</h2>
+  <p class="cf-box-sub">اختر وضعك أولاً — الأسئلة تتغيّر تبعاً له.</p>
+
+  <div class="cf-paths" role="radiogroup" aria-label="وضعك الحالي">
+    <label class="cf-path on" id="pathA">
+      <input type="radio" name="cfPath" value="picked" checked>
+      <b>اخترت سيارة بالفعل</b>
+      <span>أعرف سعرها وأريد القسط وخيارات التمويل</span>
+    </label>
+    <label class="cf-path" id="pathB">
+      <input type="radio" name="cfPath" value="budget">
+      <b>لم أختر السيارة بعد</b>
+      <span>أريد أن أعرف الميزانية المناسبة لوضعي أولاً</span>
+    </label>
+  </div>
+
+  <form id="cfForm" novalidate>
+    <div class="cf-form-grid">
+      <div class="cf-field" data-show="picked">
+        <label for="inPrice">سعر السيارة</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="inPrice" placeholder="مثال: 15000" autocomplete="off"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="ePrice"></div>
+      </div>
+      <div class="cf-field">
+        <label for="inDown" id="lblDown">الدفعة الأولى</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="inDown" placeholder="مثال: 3000" autocomplete="off"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eDown"></div>
+      </div>
+      <div class="cf-field">
+        <label for="inSalary">الراتب الشهري</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="inSalary" placeholder="مثال: 700" autocomplete="off"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eSalary"></div>
+      </div>
+      <div class="cf-field">
+        <label for="inObl">الالتزامات الشهرية الحالية <span class="opt">(اختياري)</span></label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="inObl" placeholder="0" autocomplete="off"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eObl"></div>
+      </div>
+      <div class="cf-field">
+        <label for="inTenor">مدة التمويل</label>
+        <select id="inTenor">
+          <option value="">اختر…</option>
+          <option value="1">سنة</option><option value="2">سنتان</option>
+          <option value="3">3 سنوات</option><option value="4">4 سنوات</option>
+          <option value="5" selected>5 سنوات</option><option value="6">6 سنوات</option>
+          <option value="7">7 سنوات</option><option value="8">8 سنوات</option>
+        </select>
+        <div class="cf-err" id="eTenor"></div>
+      </div>
+      <div class="cf-field">
+        <label for="inCond">حالة السيارة</label>
+        <select id="inCond">
+          <option value="new">جديدة</option>
+          <option value="used">مستعملة</option>
+        </select>
+      </div>
+      <div class="cf-field">
+        <label for="inFType">نوع التمويل</label>
+        <select id="inFType">
+          <option value="all">الكل</option>
+          <option value="conventional">تقليدي</option>
+          <option value="islamic">متوافق مع الشريعة</option>
+        </select>
+      </div>
+    </div>
+    <details class="cf-extra" id="extraDetails">
+      <summary>تفاصيل إضافية اختيارية ▾</summary>
+      <div class="cf-form-grid" style="margin-top:.7rem">
+        <div class="cf-field">
+          <label for="inFuel">نوع الوقود</label>
+          <select id="inFuel">
+            <option value="بنزين">بنزين</option>
+            <option value="هايبرد">هايبرد</option>
+            <option value="كهرباء">كهرباء</option>
+          </select>
+          <div class="cf-err" style="color:#6B7280;font-weight:400" id="fuelHint"></div>
+        </div>
+        <div class="cf-field" data-show="picked"><label for="inBrand">الماركة <span class="opt">(اختياري)</span></label><input type="text" id="inBrand" placeholder="مثال: تويوتا"></div>
+        <div class="cf-field" data-show="picked"><label for="inModel">الموديل <span class="opt">(اختياري)</span></label><input type="text" id="inModel" placeholder="مثال: كورولا 2024"></div>
+        <div class="cf-field" data-show="picked"><label for="inDealer">الوكيل أو المعرض <span class="opt">(اختياري)</span></label><input type="text" id="inDealer" placeholder="اختياري"></div>
+      </div>
+    </details>
+    <div class="cf-mode-msg" id="modeMsg" hidden>أدخل بياناتك ثم اضغط «احسب خياراتي» للحصول على نتيجة جديدة.</div>
+    <button type="submit" class="cf-calc-btn" id="calcBtn">احسب خياراتي</button>
+  </form>
+</section>
+
+<!-- زر مثبّت للهاتف -->
+<div class="cf-sticky" id="cfSticky"><button type="button" id="stickyBtn">احسب خياراتي</button></div>
+
+<!-- ═══ ٢) ملخص النتيجة ═══ -->
+<section class="cf-card-box cf-summary" id="sumBox" hidden aria-live="polite">
+  <h2 class="cf-box-title" id="sumTitle">نتيجتك</h2>
+  <p class="cf-box-sub" id="sumSub"></p>
+  <div id="budgetWrap" hidden></div>
+  <div class="cf-sum-grid" id="sumGrid"></div>
+  <div class="cf-dbr-note" id="dbrNote" hidden></div>
+  <p class="cf-disclaim">هذه أرقام تقديرية مبنية على المعلومات المنشورة من الجهات التمويلية. السعر والموافقة النهائيان تحددهما الجهة الممولة بعد دراسة الطلب.</p>
+</section>
+
+<!-- ═══ ٣) أفضل النتائج ═══ -->
+<section class="cf-card-box" id="topBox" hidden>
+  <h2 class="cf-box-title">الخيارات الأقرب لوضعك</h2>
+  <p class="cf-box-sub" id="topSub"></p>
+  <div class="cf-top-list" id="topList"></div>
+  <button type="button" class="cf-more-btn" id="moreBtn" hidden></button>
+</section>
+
+<!-- ═══ ٤) المستبعدون ولماذا ═══ -->
+<details class="cf-card-box cf-excluded" id="excBox" hidden>
+  <summary>لماذا لم تظهر بعض الخيارات؟</summary>
+  <p class="cf-box-sub" style="margin-top:.5rem">حسب الشروط المنشورة لكل جهة — الهدف أن تفهم النتيجة لا أن تختفي المنتجات بصمت.</p>
+  <div id="excList"></div>
+</details>
+
+<!-- ═══ ٥) تسجيل الاهتمام ═══ -->
+<section class="cf-card-box cf-interest" id="intBox" hidden>
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:.4rem">
+    <h2 class="cf-box-title" style="margin:0">احصل على عرض</h2>
+    <button type="button" id="intClose" aria-label="إغلاق النموذج" style="background:#F3F4F6;border:1.5px solid #E5E7EB;border-radius:9px;width:38px;height:38px;font-size:1.1rem;cursor:pointer;color:#4B5563;flex-shrink:0">✕</button>
+  </div>
+  <p class="cf-box-sub">نحفظ طلبك مع الجهة التي اخترتها ونتولى التواصل — <b>لا تُرسل بياناتك لأي جهة تمويلية دون موافقتك</b>.</p>
+  <div class="cf-int-ctx" id="intCtx"></div>
+  <form id="intForm" name="car-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <input type="hidden" name="form-name" value="car-interest">
+    <p hidden><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
+    <input type="hidden" name="provider_id" id="intProduct">
+    <input type="hidden" name="provider_name" id="intProviderName">
+    <input type="hidden" name="context" id="intContext">
+    <h3 style="font-family:var(--font-heading);font-size:.95rem;color:#1E2B3C;margin:.2rem 0 .6rem">بياناتك</h3>
+    <div class="cf-form-grid">
+      <div class="cf-field"><label for="intName">الاسم</label><input type="text" id="intName" name="name" autocomplete="name"><div class="cf-err" id="eIntName"></div></div>
+      <div class="cf-field"><label for="intPhone">رقم الموبايل</label><input type="tel" id="intPhone" name="phone" inputmode="tel" placeholder="07XXXXXXXX" autocomplete="tel"><div class="cf-err" id="eIntPhone"></div></div>
+      <div class="cf-field"><label for="intIncome">الدخل الشهري</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="intIncome" name="income_jod"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eIntIncome"></div></div>
+      <div class="cf-field"><label for="intEmployer">جهة العمل</label>
+        <select id="intEmployer" name="employer">
+          <option value="">اختر…</option>
+          <option>قطاع عام</option><option>قطاع خاص</option><option>عسكري / أمن عام</option>
+          <option>أعمال حرّة</option><option>متقاعد</option><option>أخرى</option>
+        </select>
+        <div class="cf-err" id="eIntEmployer"></div></div>
+    </div>
+    <h3 style="font-family:var(--font-heading);font-size:.95rem;color:#1E2B3C;margin:1rem 0 .6rem">بيانات السيارة</h3>
+    <div class="cf-form-grid">
+      <div class="cf-field"><label for="intCarPrice">سعر السيارة</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="intCarPrice" name="car_price_jod"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eIntCarPrice"></div></div>
+      <div class="cf-field"><label for="intCond">حالة السيارة</label>
+        <select id="intCond" name="car_condition"><option value="جديدة">جديدة</option><option value="مستعملة">مستعملة</option></select></div>
+      <div class="cf-field"><label for="intYear">سنة الصنع</label>
+        <input type="text" inputmode="numeric" id="intYear" name="car_year" placeholder="مثال: 2024">
+        <div class="cf-err" id="eIntYear"></div></div>
+      <div class="cf-field"><label for="intDown">الدفعة الأولى</label>
+        <div class="cf-unit-wrap"><input type="text" inputmode="numeric" id="intDown" name="down_payment_jod"><span class="cf-unit">د.أ</span></div>
+        <div class="cf-err" id="eIntDown"></div></div>
+      <div class="cf-field"><label for="intTenorY">مدة التمويل المطلوبة</label>
+        <select id="intTenorY" name="tenor_years">
+          <option value="">اختر…</option>
+          <option value="1">سنة</option><option value="2">سنتان</option><option value="3">3 سنوات</option>
+          <option value="4">4 سنوات</option><option value="5">5 سنوات</option><option value="6">6 سنوات</option>
+          <option value="7">7 سنوات</option><option value="8">8 سنوات</option>
+        </select>
+        <div class="cf-err" id="eIntTenorY"></div></div>
+      <div class="cf-field"><label for="intCity">المدينة</label>
+        <select id="intCity" name="city">
+          <option value="">اختر…</option>
+          <option>عمّان</option><option>إربد</option><option>الزرقاء</option><option>البلقاء</option>
+          <option>المفرق</option><option>جرش</option><option>عجلون</option><option>مادبا</option>
+          <option>الكرك</option><option>الطفيلة</option><option>معان</option><option>العقبة</option>
+        </select>
+        <div class="cf-err" id="eIntCity"></div>
+      </div>
+      <div class="cf-field"><label for="intTime">الوقت المناسب للتواصل</label>
+        <select id="intTime" name="best_time">
+          <option value="">اختر…</option>
+          <option>صباحاً (9–12)</option><option>ظهراً (12–3)</option><option>عصراً (3–6)</option><option>مساءً (6–9)</option>
+        </select>
+        <div class="cf-err" id="eIntTime"></div>
+      </div>
+    </div>
+    <div class="cf-consent">
+      <label><input type="checkbox" id="intConsent" name="consent" value="نعم، أوافق">
+        <span>أوافق على استخدام بياناتي للتواصل معي بشأن طلب تمويل السيارة، وعلى مشاركتها مع جهة تمويلية فقط بعد إبلاغي والحصول على موافقتي.</span>
+      </label>
+    </div>
+    <div class="cf-err" id="eIntConsent" style="margin-top:.4rem"></div>
+    <button type="submit" class="cf-calc-btn" id="intSubmit" style="margin-top:.8rem">أرسل بيانات التواصل</button>
+    <div class="cf-int-msg" id="intMsg"></div>
+  </form>
+</section>
+
+<!-- ═══ ٧) القائمة الكاملة — القسم القائم كما هو، مطوياً ═══ -->
+<details class="cf-all" id="allBox">
+  <summary><span class="cf-all-btn" id="allBtnLabel">عرض جميع الجهات والخيارات ▾</span></summary>
+
+  <div class="cf-filter">
+    <div class="cf-filter-grid">
+      <div class="cf-field-sm"><label for="flSearch">ابحث باسم الجهة أو المنتج</label><input type="search" id="flSearch" placeholder="مثال: تمكين"></div>
+      <div class="cf-field-sm"><label for="flFin">نوع التمويل</label><select id="flFin"><option value="all">الكل</option><option value="bank">قرض بنكي</option><option value="murabaha">مرابحة / تمويل إسلامي</option><option value="lease">تأجير تمويلي</option></select></div>
+      <div class="cf-field-sm"><label for="flCond">حالة السيارة</label><select id="flCond"><option value="all">الكل</option><option value="new">جديدة</option><option value="used">مستعملة</option></select></div>
+      <div class="cf-field-sm"><label for="flRatio">نسبة التمويل</label><select id="flRatio"><option value="">الكل</option><option value="80">80%+</option><option value="90">90%+</option><option value="100">100%</option></select></div>
+      <div class="cf-field-sm"><label for="flTenor">مدة التمويل</label><select id="flTenor"><option value="">الكل</option><option value="36">3 سنوات+</option><option value="60">5 سنوات+</option><option value="84">7 سنوات+</option></select></div>
+      <div class="cf-field-sm"><label for="flTransfer">تحويل الراتب</label><select id="flTransfer"><option value="">الكل</option><option value="no">لا يشترط تحويلاً</option><option value="yes">يشترط تحويلاً</option></select></div>
+      <div class="cf-field-sm"><label for="flGuarantor">الكفيل</label><select id="flGuarantor"><option value="">الكل</option><option value="no">بدون كفيل</option><option value="yes">يقبل بكفيل</option></select></div>
+    </div>
+    <p style="font-size:.7rem;color:#9CA3AF;margin:.2rem 0 .6rem;line-height:1.7">فلترا سنة الصنع ونوع الوقود سيُفعّلان حين تنشر الجهات هذه المعلومة — لا نفلتر على بيانات غير موجودة.</p>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+      <button class="cf-btn cf-btn-secondary" type="button" id="flReset">إعادة ضبط</button>
+      <div id="resultCount" style="font-size:.8rem;color:#10B981;font-weight:700"></div>
+    </div>
+  </div>
+
+  <h2 class="cf-section-title">
+    <span id="resultsTitle">حلول تمويل السيارات</span>
+    <select class="cf-sort" id="sortBy">
+      <option value="default">الترتيب: البنوك ثم الجهات المتخصصة</option>
+      <option value="rate">الأقل فائدة/ربحاً (الموثق فقط)</option>
+      <option value="down">الأقل دفعة أولى</option>
+      <option value="amount">الأعلى تمويلاً</option>
+      <option value="tenor">الأطول مدة</option>
+      <option value="inst" disabled>الأقل قسطاً — احسب أولاً</option>
+      <option value="cost" disabled>الأقل تكلفة — احسب أولاً</option>
+    </select>
+  </h2>
+
+  <div class="cf-grid" id="cfGrid" aria-live="polite"></div>
+
+  <div class="cf-cmp-bar" id="cmpBar">
+    <span id="cmpCount" style="font-size:.8rem;font-weight:700"></span>
+    <button type="button" id="cmpShow">اعرض المقارنة</button>
+  </div>
+  <div id="cmpWrap" hidden style="margin-top:.9rem">
+    <h3 class="cf-box-title" style="font-size:.95rem">مقارنة اختياراتك — القيم غير المنشورة تظهر كما هي، لا أصفاراً</h3>
+    <div class="cf-cmp-wrap" id="cmpCols"></div>
+  </div>
+
+</details>
+
+<details class="cf-all" id="dirBox" style="margin-top:1.1rem">
+  <summary><span class="cf-all-btn" style="border-color:#9CA3AF;color:#4B5563">دليل الجهات المرخصة بلا شروط منشورة ▾</span></summary>
+  <p class="cf-box-sub" style="margin-top:.8rem">جهات مرخصة من البنك المركزي الأردني لم نعثر لها على شروط سيارات منشورة — نعرضها للاكتمال، <b>ولا تدخل في المقارنة</b> حتى تتوفر شروطها.</p>
+  <div class="cf-grid" id="dirGrid"></div>
+</details>
+
+<!-- ═══ ٦) الثقة ═══ -->
+<section class="cf-trust" id="trustBox" style="margin-bottom:1.25rem">
+  <div class="cf-trust-card">
+    <h3>كيف تعمل المقارنة؟</h3>
+    <ol>
+      <li>تدخل معلومات السيارة ووضعك المالي.</li>
+      <li>نطابقها مع الشروط المنشورة.</li>
+      <li>نعرض الخيارات الأقرب لوضعك.</li>
+    </ol>
+  </div>
+  <div class="cf-trust-card">
+    <h3>استقلالية المقارنة</h3>
+    <p>العمولات، عند وجودها، لا تغيّر ترتيب المنتجات أو تقييمها. المعايير واحدة للجميع، ومنشورة في <a href="../methodology.html" style="color:#7C3AED">منهجية التقييم</a>.</p>
+  </div>
+  <div class="cf-trust-card">
+    <h3>دقة البيانات</h3>
+    <p>لكل منتج تاريخ آخر تحقق ورابط المصدر الرسمي متى توفّر. الأرقام قد تتغير — تحقق دائماً من الجهة قبل القرار.</p>
+  </div>
+</section>
+
+
+<div class="cf-request">
+<div class="cf-request-txt">
+<h3>أرسل طلباً واحداً بدل مراجعة كل بنك</h3>
+<p>يصلك ترشيح مبني على دخلك ومدة السداد التي تناسبك — لك كفرد أو باسم شركتك. مالي بلس ليست جهة تمويل ولا تصدر قرارات ائتمانية.</p>
+</div>
+<a href="../finance-request/" class="cf-request-btn">اطلب تمويلاً ←</a>
+</div>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+if (typeof document === 'undefined') return;
+
+/* ═══ أدوات ═══ */
+function $(id){ return document.getElementById(id); }
+function track(ev, params){
+  try { if (typeof gtag === 'function') gtag('event', ev, params || {}); } catch(e){}
+}
+/* الأرقام العربية والهندية ← لاتينية، مع تنظيف الفواصل */
+function normDigits(s){
+  return String(s || '')
+    .replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d))
+    .replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+    .replace(/[،,]/g, '');
+}
+function num(v){
+  const n = parseFloat(normDigits(v));
+  return isFinite(n) ? n : null;
+}
+function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function yrs(v){
+  const x = num(v); if (x === null) return '—';
+  if (x === 1) return 'سنة'; if (x === 2) return 'سنتان';
+  if (x >= 3 && x <= 10) return x + ' سنوات'; return x + ' سنة';
+}
+function pmt(P, annualPct, months){
+  if (!P || !months) return null;
+  const r = annualPct / 100 / 12;
+  if (r <= 0) return P / months;
+  return P * r / (1 - Math.pow(1 + r, -months));
+}
+function verifiedTxt(v){
+  if (!v) return '—';
+  const [y, m] = String(v).split('-');
+  const M = {'01':'يناير','02':'فبراير','03':'مارس','04':'أبريل','05':'مايو','06':'يونيو','07':'يوليو','08':'أغسطس','09':'سبتمبر','10':'أكتوبر','11':'نوفمبر','12':'ديسمبر'};
+  return (M[m] || '') + ' ' + y;
+}
+/* «تقدم الآن» صادقة فقط إذا كان الرابط صفحة تقديم لا صفحة رئيسية */
+function bareDomain(u){ return /^https?:\/\/[^\/]+\/?$/.test(String(u || '')); }
+
+/* ═══ تحميل البيانات ═══ */
+let CARS = [], PROVIDERS = [], SOLUTIONS = [], DIRECTORY = [], loadFailed = false;
+const grid = $('cfGrid');
+grid.innerHTML = Array.from({length:4}, () =>
+  '<div class="cf-skel"><div class="l" style="width:55%"></div><div class="l" style="width:85%"></div><div class="l" style="width:70%"></div></div>').join('');
+
+const RATE_LABEL = { interest:'الفائدة', murabaha:'ربح المرابحة', lease:'عائد التأجير', islamic:'الربح/العائد' };
+
+/* نموذج موحّد للبطاقات: البنوك والجهات المتخصصة معاً — بلا خلط مسميات */
+function bankToSolution(c){
+  return {
+    id: c.id, source: 'bank', name: c.bank_ar, product: c.product_name || '',
+    logo: c.logo || null, logo_color: c.logo_color || '#7C3AED',
+    ftype_label: c.is_islamic ? 'مرابحة (بنك)' : 'قرض بنكي',
+    rate_kind: c.is_islamic ? 'murabaha' : 'interest',
+    new_cars: (c.car_type === 'both' || c.car_type === 'new') ? true : (c.car_type ? false : null),
+    used_cars: (c.car_type === 'both' || c.car_type === 'used') ? true : (c.car_type ? false : null),
+    /* نسبة التمويل القصوى مشتقة من الدفعة الأولى المنشورة: 100 - الحد الأدنى */
+    max_ratio: c.down_payment_min_percent != null ? 100 - c.down_payment_min_percent : null,
+    max_amount: c.max_amount_jod ?? null,
+    max_tenor_months: c.max_tenor_years != null ? c.max_tenor_years * 12 : null,
+    rate_display: c.interest_rate_display || (c.interest_rate_min != null ? 'من ' + c.interest_rate_min + '%' : null),
+    salary_transfer: c.salary_transfer_required ?? null,
+    guarantor: null,
+    key_terms: (c.features || []).slice(0, 2),
+    product_url: c.official_url || null, apply_url: c.apply_url || null,
+    website: c.official_url || c.apply_url || null,
+    last_verified: c.last_verified || null,
+    sharia: !!c.is_islamic
+  };
+}
+function providerToSolution(x){
+  return {
+    id: x.id, source: 'provider', name: x.name_ar, product: x.finance_type || '',
+    logo: null, logo_color: x.sharia ? '#065F46' : '#1E40AF',
+    ftype_label: /تأجير/.test(x.finance_type || '') ? 'تأجير تمويلي'
+               : /مرابحة/.test(x.finance_type || '') ? 'مرابحة'
+               : (x.finance_type || 'تمويل متخصص'),
+    rate_kind: x.rate_kind,
+    new_cars: x.new_cars, used_cars: x.used_cars,
+    max_ratio: x.max_finance_ratio, max_amount: x.max_amount_jod,
+    max_tenor_months: x.max_tenor_months,
+    rate_display: x.rate_display,
+    salary_transfer: x.salary_transfer, guarantor: x.guarantor,
+    key_terms: x.key_terms || [],
+    product_url: x.product_url, apply_url: null,
+    website: x.website, phone: x.phone,
+    last_verified: x.last_verified, sharia: !!x.sharia
+  };
+}
+function unpub(v, suffix){
+  return v == null ? '<span style="color:#9CA3AF">غير منشور</span>' : esc(String(v)) + (suffix || '');
+}
+function ynTxt(v){ return v === true ? 'نعم' : v === false ? 'لا' : null; }
+
+Promise.all([
+  fetch('car-financing.json?v=20260827').then(r => { if (!r.ok) throw 0; return r.json(); }),
+  fetch('providers.json?v=20260827').then(r => { if (!r.ok) throw 0; return r.json(); })
+]).then(([banks, provs]) => {
+  CARS = banks; PROVIDERS = provs;
+  SOLUTIONS = banks.map(bankToSolution)
+    .concat(provs.filter(x => x.listing === 'solutions').map(providerToSolution));
+  DIRECTORY = provs.filter(x => x.listing === 'directory');
+  const lbl = $('allBtnLabel');
+  if (lbl) lbl.textContent = 'عرض جميع الجهات والخيارات الـ' + SOLUTIONS.length + ' ▾';
+  renderCards(); renderDirectory();
+}).catch(() => {
+  loadFailed = true;
+  grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:2rem"><h3 style="font-family:var(--font-heading);color:#1E2B3C">تعذّر تحميل البيانات</h3><p style="color:#6B7280;font-size:.85rem">تحقّق من اتصالك ثم أعد تحميل الصفحة.</p></div>';
+});
+
+track('car_page_view');
+
+/* ═══ المسار: اخترت / لم أختر ═══ */
+let path = 'picked';
+function applyPath(){
+  document.querySelectorAll('[data-show]').forEach(el => {
+    el.style.display = (el.getAttribute('data-show') === path) ? '' : 'none';
+  });
+  $('pathA').classList.toggle('on', path === 'picked');
+  $('pathB').classList.toggle('on', path === 'budget');
+  $('lblDown').textContent = (path === 'picked') ? 'الدفعة الأولى' : 'الدفعة المتوفرة لديك';
+}
+$('inFuel').addEventListener('change', () => {
+  $('fuelHint').textContent = $('inFuel').value === 'كهرباء'
+    ? 'لا تنشر الجهات شروطاً خاصة بالكهربائية حالياً — نستخدم اختيارك في التواصل والإحصاء لا في الفلترة.'
+    : '';
+});
+document.querySelectorAll('input[name="cfPath"]').forEach(r => {
+  r.addEventListener('change', () => {
+    path = r.value; applyPath();
+    /* نتائج المسار السابق لم تعد تخص المدخلات الجديدة — تُخفى حتى إعادة الحساب */
+    if (lastCalc){
+      lastCalc = null;
+      $('sumBox').hidden = true; $('topBox').hidden = true; $('excBox').hidden = true;
+      ['inst','cost'].forEach(v => {
+        const o = document.querySelector('#sortBy option[value="' + v + '"]');
+        if (o){ o.disabled = true; o.textContent = v === 'inst' ? 'الأقل قسطاً — احسب أولاً' : 'الأقل تكلفة — احسب أولاً'; }
+      });
+      if ($('sortBy').value === 'inst' || $('sortBy').value === 'cost') $('sortBy').value = 'default';
+      renderCards();
+      $('modeMsg').hidden = false;
+    }
+  });
+});
+applyPath();
+
+/* ═══ التتبع: بدء الحاسبة مرة واحدة ═══ */
+let calcStarted = false;
+$('cfForm').addEventListener('input', () => {
+  if (!calcStarted){ calcStarted = true; track('car_calculator_started', { path }); }
+}, { once: false });
+
+/* تطبيع الأرقام أثناء الكتابة في الحقول الرقمية */
+['inPrice','inDown','inSalary','inObl','intIncome','intCarPrice','intDown','intYear'].forEach(id => {
+  const el = $(id);
+  if (!el) return;
+  el.addEventListener('input', () => {
+    const clean = normDigits(el.value).replace(/[^\d.]/g, '');
+    if (clean !== el.value) el.value = clean;
+  });
+});
+
+/* ═══ التحقق من المدخلات ═══ */
+function setErr(id, msg){
+  $(id.replace('in', 'e')).textContent = msg || '';
+  $(id).classList.toggle('err', !!msg);
+  return !msg;
+}
+function readInputs(){
+  const v = {
+    price:  num($('inPrice').value),
+    down:   num($('inDown').value),
+    salary: num($('inSalary').value),
+    obl:    num($('inObl').value) || 0,
+    tenor:  num($('inTenor').value),
+    cond:   $('inCond').value,
+    fuel:   $('inFuel').value,
+    ftype:  $('inFType').value,
+    brand:  $('inBrand').value.trim(),
+    model:  $('inModel').value.trim(),
+    dealer: $('inDealer').value.trim()
+  };
+  let ok = true;
+  if (path === 'picked'){
+    ok = setErr('inPrice',  v.price === null ? 'أدخل سعر السيارة' : (v.price <= 0 ? 'السعر يجب أن يكون أكبر من صفر' : '')) && ok;
+    ok = setErr('inDown',   v.down === null ? 'أدخل الدفعة الأولى (اكتب 0 إن لم توجد)' : (v.down < 0 ? 'لا تُقبل قيمة سالبة' : (v.price !== null && v.down >= v.price ? 'الدفعة الأولى يجب أن تكون أقل من سعر السيارة' : ''))) && ok;
+  } else {
+    ok = setErr('inDown',   v.down === null ? 'أدخل الدفعة المتوفرة (اكتب 0 إن لم توجد)' : (v.down < 0 ? 'لا تُقبل قيمة سالبة' : '')) && ok;
+  }
+  ok = setErr('inSalary', v.salary === null ? 'أدخل راتبك الشهري' : (v.salary <= 0 ? 'الراتب يجب أن يكون أكبر من صفر' : '')) && ok;
+  ok = setErr('inObl',    v.obl < 0 ? 'لا تُقبل قيمة سالبة' : '') && ok;
+  ok = setErr('inTenor',  v.tenor === null ? 'اختر مدة التمويل' : '') && ok;
+  return ok ? v : null;
+}
+
+/* ═══ محرّك المطابقة — المجهول ليس تأكيداً ═══ */
+/* أعلى اقتطاع متعارف عليه لدى البنوك الأردنية — استرشادي، غير منشور لمنتجات السيارات */
+const DBR_GUIDE = 50;
+
+function evalProduct(c, u){
+  /* u: {finance, price, down, salary, obl, tenor, cond, ftype} */
+  const why = [], exc = [];
+  let unknown = false;
+
+  if (c.min_salary_jod != null){
+    if (u.salary >= c.min_salary_jod) why.push('راتبك يتجاوز الحد الأدنى (' + fmt(c.min_salary_jod) + ' د.أ)');
+    else exc.push('الراتب أقل من الحد الأدنى (' + fmt(c.min_salary_jod) + ' د.أ)');
+  } else unknown = true;
+
+  if (c.max_amount_jod != null){
+    if (u.finance <= c.max_amount_jod) why.push('مبلغ التمويل ضمن الحد الأقصى (' + fmt(c.max_amount_jod) + ' د.أ)');
+    else exc.push('مبلغ التمويل أعلى من الحد المعلن (' + fmt(c.max_amount_jod) + ' د.أ)');
+  } else unknown = true;
+
+  if (c.max_tenor_years != null){
+    if (u.tenor <= c.max_tenor_years) why.push('المدة ضمن الحد (' + yrs(c.max_tenor_years) + ')');
+    else exc.push('المدة المطلوبة غير متاحة (الأقصى ' + yrs(c.max_tenor_years) + ')');
+  } else unknown = true;
+
+  if (c.car_type){
+    if (c.car_type === 'both' || c.car_type === u.cond) why.push(u.cond === 'used' ? 'يشمل السيارات المستعملة' : 'يشمل السيارات الجديدة');
+    else exc.push(u.cond === 'used' ? 'التمويل لا يشمل السيارات المستعملة' : 'التمويل مخصص للسيارات المستعملة فقط');
+  } else unknown = true;
+
+  if (u.ftype !== 'all'){
+    const isl = !!c.is_islamic;
+    if ((u.ftype === 'islamic') === isl) why.push(isl ? 'متوافق مع الشريعة كما طلبت' : 'تمويل تقليدي كما طلبت');
+    else exc.push(isl ? 'متوافق مع الشريعة وأنت طلبت تقليدياً' : 'تقليدي وأنت طلبت المتوافق مع الشريعة');
+  }
+
+  /* الدفعة الأولى: يُحسب لها معنى فقط حين نعرف السعر (مسار «اخترت سيارة») */
+  if (u.price && c.down_payment_min_percent != null){
+    const minDown = u.price * c.down_payment_min_percent / 100;
+    if (u.down >= minDown) why.push('دفعتك تغطي الحد الأدنى (' + c.down_payment_min_percent + '%)');
+    else exc.push('الدفعة الأولى أقل من الحد الأدنى (' + c.down_payment_min_percent + '% = ' + fmt(minDown) + ' د.أ)');
+  }
+
+  /* القسط: من سعر المنتج المنشور نفسه — وبأساس الاحتساب الصحيح لعقده */
+  const isMurabaha = c.profit_basis === 'murabaha_flat' && c.profit_rate_flat_max != null;
+  let rate = null, inst = null;
+  if (isMurabaha){
+    /* مرابحة: الربح على أصل التمويل طوال المدة، والقسط قسمة الثمن الكلي.
+       نحسب بالشريحة الأعلى (رواتب غير محولة) تحفّظاً — والمحوّل أوفر. */
+    rate = c.profit_rate_flat_max;
+    inst = u.finance * (1 + rate / 100 * u.tenor) / (u.tenor * 12);
+  } else {
+    rate = (c.interest_rate_min != null) ? c.interest_rate_min : null;
+    inst = (rate != null) ? pmt(u.finance, rate, u.tenor * 12) : null;
+  }
+  const finCost = (inst != null) ? inst * u.tenor * 12 - u.finance : null;   /* ما تدفعه فوق المبلغ */
+  const total = (inst != null) ? inst * u.tenor * 12 + u.down : null;
+
+  /* حد الاقتطاع المنشور — غير متوفر لأي منتج حالياً؛ يُفحص فقط إن نُشر */
+  if (c.dbr_max_percent != null && inst != null){
+    const dbr = (inst + u.obl) / u.salary * 100;
+    if (dbr <= c.dbr_max_percent) why.push('اقتطاعك ضمن حد الجهة (' + c.dbr_max_percent + '%)');
+    else exc.push('اقتطاعك يتجاوز حد الجهة المنشور (' + c.dbr_max_percent + '%)');
+  }
+
+  if (rate == null){ unknown = true; exc.length || why.push('الشروط الأساسية المنشورة تنطبق'); }
+
+  let verdict;
+  if (exc.length) verdict = 'excluded';
+  else if (unknown || rate == null) verdict = 'maybe';
+  else verdict = 'match';
+
+  return { c, verdict, why, exc, inst, rate, finCost, total, isMurabaha,
+           dataFull: rate != null && (isMurabaha || c.interest_rate_max != null) };
+}
+
+/* ═══ الحساب والعرض ═══ */
+let lastCalc = null;      /* يحفظ آخر نتيجة للفرز بالقسط في القائمة الكاملة */
+let compareSet = [];
+
+function calc(){
+  if (loadFailed){ alert('تعذّر تحميل بيانات المنتجات — أعد تحميل الصفحة'); return; }
+  if (!CARS.length){ return; }
+  const v = readInputs();
+  if (!v) return;
+
+  let finance, budgetBand = null, priceForDown = v.price;
+
+  if (path === 'picked'){
+    finance = v.price - v.down;
+    if (finance <= 0){ setErr('inDown', 'الدفعة الأولى يجب أن تكون أقل من سعر السيارة'); return; }
+  } else {
+    /* الميزانية من هامش الاقتطاع الاسترشادي (50%) وأسعار المنتجات المنشورة */
+    const room = Math.max(0, v.salary * DBR_GUIDE / 100 - v.obl);
+    if (room <= 0){
+      $('sumBox').hidden = false;
+      $('sumTitle').textContent = 'وضعك الحالي لا يترك هامشاً لقسط جديد';
+      $('sumSub').textContent = 'التزاماتك الحالية تبلغ أو تتجاوز نصف دخلك — وهو أعلى اقتطاع متعارف عليه لدى البنوك.';
+      $('budgetWrap').hidden = true; $('sumGrid').innerHTML = '';
+      $('dbrNote').hidden = false; $('dbrNote').className = 'cf-dbr-note bad';
+      $('dbrNote').textContent = 'جرّب تقليل الالتزامات أولاً، أو دفعة أولى أكبر بتمويل أصغر.';
+      $('topBox').hidden = true; $('excBox').hidden = true;
+      $('sumBox').scrollIntoView({ behavior:'smooth', block:'start' });
+      return;
+    }
+    const rates = CARS.map(c => c.interest_rate_min).filter(r => r != null);
+    const rLow = Math.min(...rates), rHigh = Math.max(...CARS.map(c => c.interest_rate_max).filter(r => r != null));
+    const months = v.tenor * 12;
+    const capLow  = room * (1 - Math.pow(1 + rHigh/1200, -months)) / (rHigh/1200);
+    const capHigh = room * (1 - Math.pow(1 + rLow /1200, -months)) / (rLow /1200);
+    budgetBand = {
+      lo: Math.floor((capLow  + v.down) / 500) * 500,
+      hi: Math.floor((capHigh + v.down) / 500) * 500,
+      rLow, rHigh
+    };
+    finance = Math.round((capLow + capHigh) / 2);   /* منتصف النطاق للمطابقة — مذكور صراحةً */
+    priceForDown = null;                             /* لا سعر محدداً → شرط الدفعة لا يُفحص */
+  }
+
+  const u = { finance, price: priceForDown, down: v.down, salary: v.salary,
+              obl: v.obl, tenor: v.tenor, cond: v.cond, ftype: v.ftype };
+
+  const rows = CARS.map(c => evalProduct(c, u));
+  const matched  = rows.filter(r => r.verdict !== 'excluded');
+  const excluded = rows.filter(r => r.verdict === 'excluded');
+  const order = { match: 0, maybe: 1 };
+  matched.sort((a, b) => {
+    if (order[a.verdict] !== order[b.verdict]) return order[a.verdict] - order[b.verdict];
+    if (a.inst == null && b.inst == null) return 0;
+    if (a.inst == null) return 1;
+    if (b.inst == null) return -1;
+    return a.inst - b.inst;
+  });
+
+  $('modeMsg').hidden = true;
+  lastCalc = { v, u, rows, matched, excluded, budgetBand };
+  renderSummary();
+  renderTop(3);
+  renderExcluded();
+  enableCalcSorts();
+  renderCards();
+
+  track('car_calculator_completed', {
+    path, condition: v.cond, fuel: v.fuel, ftype: v.ftype, tenor: v.tenor,
+    car_price: v.price || undefined, finance_amount: Math.round(finance),
+    matches: matched.length
+  });
+
+  $('cfSticky').classList.remove('show');
+  $('sumBox').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function renderSummary(){
+  const { v, u, matched, budgetBand } = lastCalc;
+  $('sumBox').hidden = false;
+  $('sumTitle').textContent = 'نتيجتك';
+
+  const carLine = (v.brand || v.model) ? ' لسيارة ' + esc([v.brand, v.model].filter(Boolean).join(' ')) : '';
+  const fuelLine = ' (' + (v.cond === 'new' ? 'جديدة' : 'مستعملة') + ' · ' + esc(v.fuel) + ')';
+  $('sumSub').textContent = (path === 'picked')
+    ? 'بناءً على ما أدخلته' + carLine + fuelLine + ' — القسط أدناه محسوب على أدنى سعر منشور بين الخيارات المطابقة.'
+    : 'حسبنا ميزانيتك من هامش الاقتطاع المتعارف عليه (50%) وأسعار التمويل المنشورة — ثم طابقنا الخيارات على منتصف النطاق.';
+
+  if (budgetBand){
+    $('budgetWrap').hidden = false;
+    $('budgetWrap').innerHTML =
+      '<div class="cf-budget"><span class="b-lbl">ميزانية السيارة المناسبة لك</span>' +
+      '<div class="b-val">' + fmt(budgetBand.lo) + ' – ' + fmt(budgetBand.hi) + ' د.أ</div>' +
+      '<span class="b-sub">تشمل دفعتك (' + fmt(v.down) + ' د.أ) + تمويلاً بقسط لا يتجاوز هامشك · ' +
+      'الطرف الأدنى على أعلى سعر منشور (' + budgetBand.rHigh + '%) والأعلى على أدناه (' + budgetBand.rLow + '%)</span></div>';
+  } else {
+    $('budgetWrap').hidden = true;
+  }
+
+  const bestInst = matched.length && matched[0].inst != null ? matched[0].inst : null;
+  const dbrNow = (u.obl / u.salary) * 100;
+  const dbrAfter = bestInst != null ? ((u.obl + bestInst) / u.salary) * 100 : null;
+
+  $('sumGrid').innerHTML =
+    '<div class="cf-sum hero"><span class="v' + (bestInst == null ? ' dim' : '') + '">' + (bestInst != null ? fmt(bestInst) : 'غير متاح') + '</span><span class="k">القسط الشهري المتوقع — الأقل بين خياراتك (د.أ)</span></div>' +
+    '<div class="cf-sum"><span class="v">' + fmt(u.finance) + '</span><span class="k">مبلغ التمويل (د.أ)' + (budgetBand ? ' — منتصف النطاق' : '') + '</span></div>' +
+    '<div class="cf-sum"><span class="v">' + dbrNow.toFixed(0) + '%</span><span class="k">اقتطاعك الحالي</span></div>' +
+    '<div class="cf-sum"><span class="v' + (dbrAfter == null ? ' dim' : '') + '">' + (dbrAfter != null ? dbrAfter.toFixed(0) + '%' : '—') + '</span><span class="k">اقتطاعك بعد القسط</span></div>' +
+    '<div class="cf-sum"><span class="v">' + matched.length + '</span><span class="k">خيار محتمل من أصل ' + CARS.length + '</span></div>';
+
+  const note = $('dbrNote');
+  if (dbrAfter == null){
+    note.hidden = false; note.className = 'cf-dbr-note warn';
+    note.textContent = 'تعذّر حساب القسط — لا سعر منشوراً بين الخيارات المطابقة. الأرقام لدى الجهة مباشرة.';
+  } else if (dbrAfter > DBR_GUIDE){
+    note.hidden = false; note.className = 'cf-dbr-note bad';
+    note.textContent = 'اقتطاعك بعد القسط (' + dbrAfter.toFixed(0) + '%) يتجاوز السقف المتعارف عليه (50%) — الموافقة مستبعدة غالباً. جرّب دفعة أكبر أو مدة أطول أو سيارة أقل سعراً.';
+  } else if (dbrAfter > 45){
+    note.hidden = false; note.className = 'cf-dbr-note warn';
+    note.textContent = 'اقتطاعك بعد القسط (' + dbrAfter.toFixed(0) + '%) قريب من السقف المتعارف عليه (50%) — قد تشترط بعض الجهات دفعة أكبر أو مدة أطول.';
+  } else {
+    note.hidden = false; note.className = 'cf-dbr-note good';
+    note.textContent = 'اقتطاعك بعد القسط (' + dbrAfter.toFixed(0) + '%) ضمن الحدود المريحة المتعارف عليها.';
+  }
+
+  track('car_results_viewed', { matches: matched.length });
+}
+
+/* ═══ أفضل النتائج ═══ */
+let shown = 3;
+function renderTop(n){
+  shown = n;
+  const { matched } = lastCalc;
+  $('topBox').hidden = false;
+  $('topSub').textContent = matched.length
+    ? 'مرتبة حسب القسط التقديري. «مؤهل حسب الشروط المنشورة» ليس وعداً بالموافقة — القرار للجهة الممولة.'
+    : '';
+
+  if (!matched.length){
+    $('topList').innerHTML =
+      '<div style="text-align:center;padding:1.5rem;border:2px dashed #E5E7EB;border-radius:13px;background:#FCFCFD">' +
+      '<h3 style="font-family:var(--font-heading);font-size:.95rem;color:#1E2B3C;margin:0 0 .4rem">لا خيار تنطبق شروطه المنشورة على وضعك</h3>' +
+      '<p style="font-size:.8rem;color:#6B7280;line-height:1.8;margin:0">هذا لا يعني الرفض من كل الجهات — يعني أن الشروط المعلنة لا تغطي حالتك. ' +
+      'جرّب دفعة أولى أكبر، أو مدة أطول، أو راجع أسباب الاستبعاد أدناه.</p></div>';
+    $('moreBtn').hidden = true;
+    $('excBox').hidden = false; $('excBox').open = true;
+    return;
+  }
+
+  const list = matched.slice(0, shown);
+  $('topList').innerHTML = list.map(r => resCard(r)).join('');
+
+  const rest = matched.length - shown;
+  $('moreBtn').hidden = rest <= 0;
+  if (rest > 0) $('moreBtn').textContent = 'عرض المزيد (' + rest + ')';
+
+  bindResActions();
+}
+$('moreBtn').addEventListener('click', () => renderTop(lastCalc.matched.length));
+
+function resCard(r){
+  const c = r.c;
+  const vd = r.verdict === 'match'
+    ? '<span class="cf-res-vd match">مؤهل حسب الشروط المنشورة</span>'
+    : '<span class="cf-res-vd maybe">قد يناسبك — يحتاج التحقق من الجهة</span>';
+  const logo = c.logo
+    ? '<img class="cf-res-logo" src="' + esc(c.logo) + '?v=20260827" alt="' + esc(c.bank_ar) + '" width="44" height="44" loading="lazy" onerror="this.style.display=\'none\'">'
+    : '<span class="cf-res-logo-fb" style="background:' + esc(c.logo_color || '#7C3AED') + '">' + esc((c.bank_ar || '').slice(0, 3)) + '</span>';
+
+  const rateTxt = r.isMurabaha
+    ? (c.profit_rate_flat_min != null ? c.profit_rate_flat_min + '%–' : '') + c.profit_rate_flat_max + '%'
+    : (r.rate != null
+        ? r.rate + '%' + (c.interest_rate_max != null ? '–' + c.interest_rate_max + '%' : '')
+        : (c.interest_rate_display || 'غير منشورة'));
+  const rateKind = r.isMurabaha
+    ? ' ربح مرابحة على أصل التمويل — القسط محسوب بالشريحة الأعلى (' + c.profit_rate_flat_max + '% لغير المحول) والمحوّل أوفر'
+    : (/متناقص/.test((c.interest_rate_display || '') + (c.features || []).join(' ')) ? ' (متناقصة)'
+      : /ثابت/.test((c.interest_rate_display || '') + (c.features || []).join(' ')) ? ' (ثابتة)'
+      : ' — نوع الاحتساب غير منشور');
+
+  const minDownTxt = c.down_payment_min_percent != null
+    ? c.down_payment_min_percent + '%' + (lastCalc.v.price ? ' (' + fmt(lastCalc.v.price * c.down_payment_min_percent / 100) + ' د.أ)' : '')
+    : 'غير منشورة';
+
+  const dataBadge = r.dataFull
+    ? '<span class="cf-databadge full">البيانات الأساسية مكتملة</span>'
+    : '<span class="cf-databadge partial">بيانات ناقصة' + (r.rate == null ? ' — السعر غير منشور' : '') + '</span>';
+
+  const why = r.verdict === 'match'
+    ? 'ظهر هذا الخيار لأن ' + r.why.slice(0, 3).join('، ') + '.'
+    : 'الشروط المنشورة تنطبق (' + r.why.slice(0, 2).join('، ') + ')، لكن ' +
+      (r.rate == null
+        ? (c.interest_rate_display
+            ? 'النسبة منشورة نصاً (' + c.interest_rate_display.split('—')[0].trim() + ') دون أساس احتساب واضح، فلا نحسب قسطك آلياً'
+            : 'سعر التمويل غير منشور فلا نستطيع حساب قسطك أو تأكيد الأهلية')
+        : 'بعض الشروط غير منشورة') +
+      ' — تحقق من الجهة مباشرة.';
+
+  const inCmp = compareSet.includes(c.id);
+
+  return '<article class="cf-res ' + r.verdict + '" data-id="' + esc(c.id) + '">' +
+    '<div class="cf-res-head">' + logo +
+      '<span class="cf-res-idt"><b>' + esc(c.bank_ar) + '</b><small>' + esc(c.product_name || '') + '</small></span>' + vd +
+    '</div>' +
+    '<span class="cf-res-type' + (c.is_islamic ? ' islamic' : '') + '">' + (c.is_islamic ? 'متوافق مع الشريعة' : 'تقليدي') + '</span>' +
+    '<div class="cf-res-nums">' +
+      '<div class="cf-rn big"><span class="v' + (r.inst == null ? ' dim' : '') + '">' + (r.inst != null ? fmt(r.inst) : 'غير متاح') + '</span><span class="k">القسط الشهري (د.أ)</span></div>' +
+      '<div class="cf-rn"><span class="v' + (r.rate != null ? '' : ' dim') + '" style="font-size:.85rem">' + esc(rateTxt).slice(0, 40) + '</span><span class="k">' + (r.isMurabaha ? 'ربح المرابحة' : 'الفائدة/الربح') + '</span></div>' +
+      '<div class="cf-rn"><span class="v" style="font-size:.85rem">' + esc(minDownTxt) + '</span><span class="k">الدفعة المطلوبة</span></div>' +
+      '<div class="cf-rn"><span class="v" style="font-size:.85rem">' + yrs(lastCalc.u.tenor) + '</span><span class="k">المدة</span></div>' +
+    '</div>' +
+    '<div class="cf-why' + (r.verdict === 'maybe' ? ' maybe' : '') + '">' + esc(why) + '</div>' +
+    '<details class="cf-res-more"><summary>عرض التفاصيل ▾</summary>' +
+      '<div class="cf-res-facts" style="margin:.5rem 0">' +
+        (r.finCost != null ? 'كلفة التمويل فوق المبلغ: <b>' + fmt(r.finCost) + ' د.أ</b> · ' : '') +
+        (r.total != null ? 'إجمالي ما ستدفعه مع الدفعة: <b>' + fmt(r.total) + ' د.أ</b> · ' : '') +
+        esc(rateKind).trim() + ' · الحد الأدنى للراتب: <b>' + (c.min_salary_jod != null ? fmt(c.min_salary_jod) + ' د.أ' : 'غير منشور') + '</b>' +
+      '</div>' +
+      '<ul>' + (c.features || []).map(f => '<li>' + esc(f) + '</li>').join('') +
+      (c.max_car_age_years ? '<li>عمر السيارة المقبول: حتى ' + yrs(c.max_car_age_years) + '</li>' : '') +
+      (c.salary_transfer_required ? '<li>يتطلب تحويل الراتب</li>' : '') + '</ul>' +
+      '<div class="cf-meta-row" style="margin-top:.5rem">' +
+        '<span>آخر تحديث: ' + verifiedTxt(c.last_verified) + '</span>' + dataBadge +
+        (c.official_url ? '<a href="' + esc(c.official_url) + '" target="_blank" rel="noopener">المصدر الرسمي ↗</a>' : '') +
+      '</div>' +
+    '</details>' +
+    '<div class="cf-res-acts">' +
+      '<button type="button" class="act-cmp' + (inCmp ? ' on' : '') + '" data-cmp="' + esc(c.id) + '">' + (inCmp ? '✓ في المقارنة' : 'قارن هذا الخيار') + '</button>' +
+      '<button type="button" class="act-interest" data-int="' + esc(c.id) + '">احصل على عرض</button>' +
+    '</div>' +
+  '</article>';
+}
+
+function bindResActions(){
+  document.querySelectorAll('#topList .cf-res-more > summary').forEach(s => {
+    s.addEventListener('click', () => {
+      const id = s.closest('.cf-res').getAttribute('data-id');
+      track('car_product_details_opened', { product: id });
+    }, { once: true });
+  });
+  document.querySelectorAll('#topList [data-cmp]').forEach(b => {
+    b.addEventListener('click', () => toggleCompare(b.getAttribute('data-cmp')));
+  });
+  document.querySelectorAll('#topList [data-int]').forEach(b => {
+    b.addEventListener('click', () => openInterest(b.getAttribute('data-int')));
+  });
+}
+
+/* ═══ المقارنة الموحّدة — حلول فقط (البنوك والجهات)، أعمدة مكدّسة ═══
+   دليل الجهات لا يدخلها، وغير المنشور يظهر «غير منشور» لا صفراً. */
+function toggleCompare(id){
+  if (!SOLUTIONS.some(o => o.id === id)) return;   /* حارس: الدليل خارج المقارنة */
+  const i = compareSet.indexOf(id);
+  if (i > -1) compareSet.splice(i, 1);
+  else {
+    if (compareSet.length >= 3){ alert('حتى ثلاث جهات في المقارنة'); return; }
+    compareSet.push(id);
+    track('car_product_compared', { provider: id });
+  }
+  if (lastCalc) renderTop(shown);
+  renderCards();
+  const bar = $('cmpBar');
+  bar.classList.toggle('show', compareSet.length >= 1);
+  $('cmpCount').textContent = 'قارن (' + compareSet.length + ' من 3)';
+  if (compareSet.length < 2) $('cmpWrap').hidden = true;
+  else if (!$('cmpWrap').hidden) renderCompare();
+}
+function unpubCell(v, suffix){
+  return v == null ? 'غير منشور' : String(v) + (suffix || '');
+}
+function renderCompare(){
+  const items = compareSet.map(id => SOLUTIONS.find(o => o.id === id)).filter(Boolean);
+  $('cmpCols').innerHTML = items.map(o => {
+    const inst = instOf(o);
+    return '<div class="cf-cmp-col"><h4>' + esc(o.name) + '</h4>' +
+      '<div class="row"><span>نوع التمويل</span><b>' + esc(o.ftype_label) + '</b></div>' +
+      '<div class="row"><span>' + RATE_LABEL[o.rate_kind] + '</span><b>' + esc(unpubCell(o.rate_display)) + '</b></div>' +
+      '<div class="row"><span>أقصى نسبة تمويل</span><b>' + esc(unpubCell(o.max_ratio, '%')) + '</b></div>' +
+      '<div class="row"><span>أقصى مبلغ</span><b>' + (o.max_amount != null ? fmt(o.max_amount) + ' د.أ' : 'غير منشور') + '</b></div>' +
+      '<div class="row"><span>أقصى مدة</span><b>' + esc(tenorTxt(o.max_tenor_months) || 'غير منشورة') + '</b></div>' +
+      '<div class="row"><span>جديدة / مستعملة</span><b>' + esc(unpubCell(ynTxt(o.new_cars))) + ' / ' + esc(unpubCell(ynTxt(o.used_cars))) + '</b></div>' +
+      '<div class="row"><span>تحويل راتب</span><b>' + esc(unpubCell(ynTxt(o.salary_transfer))) + '</b></div>' +
+      '<div class="row"><span>كفيل</span><b>' + esc(unpubCell(ynTxt(o.guarantor))) + '</b></div>' +
+      (inst != null ? '<div class="row"><span>قسطك التقديري</span><b>' + fmt(inst) + ' د.أ</b></div>' : '') +
+      '<div class="row"><span>آخر تحقق</span><b>' + esc(verifiedTxt(o.last_verified)) + '</b></div>' +
+    '</div>';
+  }).join('');
+}
+$('cmpShow').addEventListener('click', () => {
+  if (compareSet.length < 2){ alert('اختر جهتين على الأقل'); return; }
+  $('allBox').open = true;
+  renderCompare();
+  $('cmpWrap').hidden = false;
+  $('cmpWrap').scrollIntoView({ behavior:'smooth', block:'nearest' });
+});
+
+/* ═══ المستبعدون ═══ */
+function renderExcluded(){
+  const { excluded } = lastCalc;
+  if (!excluded.length){ $('excBox').hidden = true; return; }
+  $('excBox').hidden = false;
+  $('excList').innerHTML = excluded.map(r =>
+    '<div class="cf-exc-item"><span class="x">✕</span><div><b>' + esc(r.c.bank_ar) + '</b> — ' + esc(r.c.product_name || '') +
+    '<br><span>' + r.exc.map(esc).join(' · ') + '</span></div></div>'
+  ).join('');
+}
+
+/* ═══ تسجيل الاهتمام ═══ */
+let intStarted = false, intProduct = null;
+function openInterest(id){
+  /* الجهة من الحلول الموحّدة (بنك أو جهة متخصصة) — provider_id يُحفظ مع الطلب */
+  intProduct = SOLUTIONS.find(o => o.id === id) || null;
+  $('intBox').hidden = false;
+  $('intProduct').value = id;
+  $('intProviderName').value = intProduct ? intProduct.name : '';
+  const v = lastCalc ? lastCalc.v : null;
+  const ctxParts = [];
+  if (intProduct) ctxParts.push('الجهة المختارة: ' + intProduct.name + (intProduct.product ? ' — ' + intProduct.product : ''));
+  if (v){
+    if (v.brand || v.model) ctxParts.push('السيارة: ' + [v.brand, v.model].filter(Boolean).join(' '));
+    if (v.dealer) ctxParts.push('الوكيل: ' + v.dealer);
+    ctxParts.push('الوقود: ' + v.fuel);
+  }
+  $('intCtx').textContent = ctxParts.join(' · ') || 'طلب عرض تمويل سيارة';
+  $('intContext').value = ctxParts.join(' | ');
+  /* تعبئة تلقائية من الحاسبة إن حُسبت */
+  if (v){
+    if (v.price != null) $('intCarPrice').value = v.price;
+    if (v.down  != null) $('intDown').value = v.down;
+    if (v.salary != null) $('intIncome').value = v.salary;
+    $('intCond').value = v.cond === 'used' ? 'مستعملة' : 'جديدة';
+    if (v.tenor != null) $('intTenorY').value = String(v.tenor);
+  }
+  $('intMsg').textContent = ''; $('intMsg').className = 'cf-int-msg';
+  track('car_interest_form_started', { provider: id });
+  $('intBox').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function setIntErr(errId, inputEl, msg){
+  $(errId).textContent = msg || '';
+  if (inputEl) inputEl.classList.toggle('err', !!msg);
+  return !msg;
+}
+/* المدينة والوقت حقلان شخصيان — ينقلان إلى مجموعة «بياناتك» */
+(function(){
+  const grids = document.querySelectorAll('#intForm .cf-form-grid');
+  if (grids.length === 2){
+    const city = $('intCity') && $('intCity').closest('.cf-field');
+    const time = $('intTime') && $('intTime').closest('.cf-field');
+    if (city) grids[0].appendChild(city);
+    if (time) grids[0].appendChild(time);
+  }
+  const x = $('intClose');
+  if (x) x.addEventListener('click', () => { $('intBox').hidden = true; });
+})();
+
+$('intForm').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  const name = $('intName').value.trim();
+  const phone = normDigits($('intPhone').value).replace(/\D/g, '');
+  const income = num($('intIncome').value);
+  const carPrice = num($('intCarPrice').value);
+  const down = num($('intDown').value);
+  const year = num(normDigits($('intYear').value));
+  let ok = true;
+  ok = setIntErr('eIntName', $('intName'), name ? '' : 'أدخل اسمك') && ok;
+  ok = setIntErr('eIntPhone', $('intPhone'), /^07\d{8}$/.test(phone) ? '' : 'أدخل رقم موبايل أردنياً صحيحاً (07XXXXXXXX)') && ok;
+  ok = setIntErr('eIntIncome', $('intIncome'), income != null && income > 0 ? '' : 'أدخل دخلك الشهري') && ok;
+  ok = setIntErr('eIntEmployer', $('intEmployer'), $('intEmployer').value ? '' : 'اختر جهة عملك') && ok;
+  ok = setIntErr('eIntCarPrice', $('intCarPrice'), carPrice != null && carPrice > 0 ? '' : 'أدخل سعر السيارة') && ok;
+  ok = setIntErr('eIntYear', $('intYear'), year != null && year >= 1990 && year <= 2027 ? '' : 'أدخل سنة صنع صحيحة') && ok;
+  ok = setIntErr('eIntDown', $('intDown'),
+        down == null ? 'أدخل الدفعة الأولى (اكتب 0 إن لم توجد)'
+      : down < 0 ? 'لا تُقبل قيمة سالبة'
+      : (carPrice != null && down >= carPrice) ? 'الدفعة يجب أن تكون أقل من سعر السيارة'
+      : '') && ok;
+  ok = setIntErr('eIntTenorY', $('intTenorY'), $('intTenorY').value ? '' : 'اختر مدة التمويل') && ok;
+  ok = setIntErr('eIntCity', $('intCity'), $('intCity').value ? '' : 'اختر مدينتك') && ok;
+  ok = setIntErr('eIntTime', $('intTime'), $('intTime').value ? '' : 'اختر الوقت المناسب') && ok;
+  ok = setIntErr('eIntConsent', null, $('intConsent').checked ? '' : 'لا نستطيع التواصل دون موافقتك') && ok;
+  if (!ok) return;
+
+  /* حارس التكرار: نفس الرقم ونفس المنتج في هذا المتصفح */
+  const dupKey = 'mp_car_int_' + ($('intProduct').value || 'general') + '_' + phone;
+  let dup = false;
+  try { dup = !!localStorage.getItem(dupKey); } catch(e){}
+  const msg = $('intMsg');
+  if (dup){
+    msg.className = 'cf-int-msg info';
+    msg.textContent = 'طلبك لهذا الخيار مسجّل مسبقاً — سنتواصل معك، ولا حاجة لإرساله مرة أخرى.';
+    return;
+  }
+
+  const btn = $('intSubmit');
+  btn.disabled = true; btn.textContent = 'جارٍ الإرسال…';
+  $('intPhone').value = phone;
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData($('intForm'))).toString()
+  }).then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    try { localStorage.setItem(dupKey, '1'); } catch(e){}
+    msg.className = 'cf-int-msg ok';
+    msg.textContent = '✓ وصلنا طلبك. سنتواصل معك في الوقت الذي اخترته — ولن تُشارك بياناتك مع أي جهة تمويلية دون موافقتك.';
+    btn.textContent = 'تم الإرسال';
+    track('car_interest_form_submitted', { provider: $('intProduct').value || '' });
+  }).catch(() => {
+    btn.disabled = false; btn.textContent = 'أرسل بيانات التواصل';
+    msg.className = 'cf-int-msg err';
+    msg.innerHTML = 'تعذّر الإرسال — لم يصلنا شيء. أعد المحاولة، أو راسلنا على <a href="mailto:info@maalyplus.com" style="color:inherit;font-weight:700">info@maalyplus.com</a>.';
+  });
+});
+
+/* ═══ الزر المثبّت على الهاتف ═══ */
+(function(){
+  const sticky = $('cfSticky');
+  if (!('IntersectionObserver' in window)) return;
+  let calcVisible = false, done = false;
+  const io = new IntersectionObserver(en => {
+    calcVisible = en[0].isIntersecting;
+    sticky.classList.toggle('show', calcVisible && !done && window.innerWidth < 900);
+  }, { threshold: .15 });
+  io.observe($('calcBox'));
+  $('stickyBtn').addEventListener('click', () => { done = true; calc(); });
+  $('cfForm').addEventListener('submit', () => { done = true; });
+})();
+
+$('cfForm').addEventListener('submit', function(ev){ ev.preventDefault(); calc(); });
+
+/* ═══ القائمة الكاملة — المنطق القائم محفوظ ومُوسَّع ═══ */
+function enableCalcSorts(){
+  ['inst','cost'].forEach(vv => {
+    const o = document.querySelector('#sortBy option[value="' + vv + '"]');
+    if (o){ o.disabled = false; o.textContent = vv === 'inst' ? 'الأقل قسطاً (حسب حسابك)' : 'الأقل تكلفة (حسب حسابك)'; }
+  });
+}
+function listFilters(){
+  return {
+    q: ($('flSearch').value || '').trim(),
+    fin: $('flFin').value,
+    cond: $('flCond').value,
+    ratio: num($('flRatio').value),
+    tenorM: num($('flTenor').value),
+    transfer: $('flTransfer').value,
+    guarantor: $('flGuarantor').value
+  };
+}
+/* قاعدة الفلترة الصادقة:
+   - حدّ أدنى رقمي (نسبة/مدة): غير المنشور لا يجتاز — لا نزعم قدرة لم تُنشر.
+   - وجود خاصية (جديدة/مستعملة): غير المنشور يبقى ظاهراً بوسم «غير منشور».
+   - «لا يشترط»: يجتازها المنشور بـ«لا» فقط. */
+function passList(o, f){
+  if (f.q && !((o.name || '') + (o.product || '')).includes(f.q)) return false;
+  if (f.fin !== 'all'){
+    if (f.fin === 'bank' && o.source !== 'bank') return false;
+    if (f.fin === 'lease' && o.rate_kind !== 'lease') return false;
+    if (f.fin === 'murabaha' && !(o.rate_kind === 'murabaha' || o.rate_kind === 'islamic')) return false;
+  }
+  if (f.cond === 'new'  && o.new_cars  === false) return false;
+  if (f.cond === 'used' && o.used_cars === false) return false;
+  if (f.ratio != null  && !(o.max_ratio != null && o.max_ratio >= f.ratio)) return false;
+  if (f.tenorM != null && !(o.max_tenor_months != null && o.max_tenor_months >= f.tenorM)) return false;
+  if (f.transfer === 'no'  && o.salary_transfer !== false) return false;
+  if (f.transfer === 'yes' && o.salary_transfer !== true)  return false;
+  if (f.guarantor === 'no'  && o.guarantor === true)  return false;
+  if (f.guarantor === 'yes' && o.guarantor === false) return false;
+  return true;
+}
+function bankRateMin(o){
+  if (o.source !== 'bank') return null;
+  const c = CARS.find(x => x.id === o.id);
+  return c ? (c.interest_rate_min ?? null) : null;
+}
+function instOf(o){
+  const r = bankRateMin(o);
+  if (!lastCalc || r == null) return null;
+  return pmt(lastCalc.u.finance, r, lastCalc.u.tenor * 12);
+}
+function tenorTxt(m){
+  if (m == null) return null;
+  return m % 12 === 0 ? yrs(m / 12) : m + ' شهراً';
+}
+
+function solutionCard(o){
+  const inst = instOf(o);
+  const logo = o.logo
+    ? '<img src="' + esc(o.logo) + '?v=20260827" alt="' + esc(o.name) + '" class="cf-card-logo" style="object-fit:contain;background:#fff;border:1px solid #E5E7EB;padding:3px" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;flex&quot;"><div class="cf-card-logo" style="background:' + esc(o.logo_color) + ';display:none">' + esc(o.name.slice(0, 3)) + '</div>'
+    : '<div class="cf-card-logo" style="background:' + esc(o.logo_color) + '">' + esc(o.name.replace('شركة ', '').slice(0, 4)) + '</div>';
+  const verified = o.product_url && o.last_verified
+    ? '<span class="cf-verified-badge">✓ موثق من المصدر · ' + esc(verifiedTxt(o.last_verified)) + '</span>'
+    : '<span class="cf-verified-badge" style="background:#FEF3C7;color:#92400E">شروط غير منشورة بالكامل</span>';
+  const inCmp = compareSet.includes(o.id);
+  const report = 'mailto:info@maalyplus.com?subject=' + encodeURIComponent('معلومة غير محدثة — ' + o.name);
+
+  return '<div class="cf-card" data-sol="' + esc(o.id) + '">' +
+    '<div class="cf-card-head">' + logo +
+      '<div><div class="cf-card-bank">' + esc(o.name) + '</div><div class="cf-card-product">' + esc(o.product || o.ftype_label) + '</div></div>' +
+    '</div>' +
+    '<div style="display:flex;gap:5px;flex-wrap:wrap">' +
+      '<span class="cf-card-badge">' + esc(o.ftype_label) + '</span>' +
+      (o.sharia ? '<span class="cf-card-badge islamic">متوافق مع الشريعة</span>' : '') +
+    '</div>' +
+    '<div class="cf-card-stats">' +
+      '<div class="cf-stat"><span class="cf-stat-val">' + (o.max_ratio != null ? o.max_ratio + '%' : '—') + '</span><span class="cf-stat-label">أقصى نسبة تمويل</span></div>' +
+      '<div class="cf-stat"><span class="cf-stat-val">' + (o.max_amount != null ? fmt(o.max_amount) : '—') + '</span><span class="cf-stat-label">أقصى مبلغ (د.أ)</span></div>' +
+      '<div class="cf-stat"><span class="cf-stat-val">' + (tenorTxt(o.max_tenor_months) || '—') + '</span><span class="cf-stat-label">أقصى مدة</span></div>' +
+    '</div>' +
+    '<div class="cf-card-details">' +
+      '<span>' + RATE_LABEL[o.rate_kind] + ': <strong>' + unpub(o.rate_display) + '</strong></span>' +
+      '<span>جديدة: <strong>' + unpub(ynTxt(o.new_cars)) + '</strong></span>' +
+      '<span>مستعملة: <strong>' + unpub(ynTxt(o.used_cars)) + '</strong></span>' +
+      '<span>تحويل راتب: <strong>' + unpub(ynTxt(o.salary_transfer)) + '</strong></span>' +
+      '<span>كفيل: <strong>' + unpub(ynTxt(o.guarantor)) + '</strong></span>' +
+      (inst != null ? '<span>قسطك التقديري: <strong>' + fmt(inst) + ' د.أ</strong></span>' : '') +
+    '</div>' +
+    '<details class="cf-res-more"><summary>عرض التفاصيل ▾</summary><ul>' +
+      (o.key_terms || []).map(t => '<li>' + esc(t) + '</li>').join('') +
+      (o.phone ? '<li>هاتف: <bdi dir="ltr">' + esc(o.phone) + '</bdi></li>' : '') +
+      (o.website ? '<li><a href="' + esc(o.website) + '" target="_blank" rel="noopener" style="color:#7C3AED">موقع الجهة ↗</a></li>' : '') +
+    '</ul></details>' +
+    '<div class="cf-card-verified">' + verified +
+      '<a href="' + report + '" style="color:#6B7280">الإبلاغ عن معلومة غير محدثة</a>' +
+    '</div>' +
+    '<div class="cf-card-actions">' +
+      '<button type="button" class="cf-details" data-cmp="' + esc(o.id) + '" style="cursor:pointer;font-family:inherit">' + (inCmp ? '✓ في المقارنة' : 'قارن') + '</button>' +
+      '<button type="button" class="cf-apply" data-offer="' + esc(o.id) + '" style="border:none;cursor:pointer;font-family:inherit">احصل على عرض</button>' +
+    '</div>' +
+    (o.product_url ? '<div style="font-size:.68rem;color:#6B7280"><a href="' + esc(o.product_url) + '" target="_blank" rel="noopener" style="color:#6B7280">المصدر الرسمي للشروط ↗</a></div>' : '') +
+  '</div>';
+}
+
+function renderCards(){
+  if (loadFailed || !SOLUTIONS.length) return;
+  const sortBy = $('sortBy').value;
+  const f = listFilters();
+  let list = SOLUTIONS.filter(o => passList(o, f));
+
+  list.sort((a, b) => {
+    if (sortBy === 'rate'){
+      /* الترتيب بالسعر للموثّق المؤرّخ فقط — غير المنشور آخر القائمة دائماً */
+      const x = bankRateMin(a), y = bankRateMin(b);
+      return (x ?? 1e9) - (y ?? 1e9);
+    }
+    if (sortBy === 'down')  return (b.max_ratio ?? -1) - (a.max_ratio ?? -1);
+    if (sortBy === 'amount')return (b.max_amount ?? 0) - (a.max_amount ?? 0);
+    if (sortBy === 'tenor') return (b.max_tenor_months ?? 0) - (a.max_tenor_months ?? 0);
+    if (sortBy === 'inst' || sortBy === 'cost'){
+      const x = instOf(a), y = instOf(b);
+      return (x != null ? x : 1e9) - (y != null ? y : 1e9);
+    }
+    /* الافتراضي: البنوك أولاً ثم الجهات، وداخل كل مجموعة الموثق سعره أولاً */
+    if (a.source !== b.source) return a.source === 'bank' ? -1 : 1;
+    return (bankRateMin(a) ?? 99) - (bankRateMin(b) ?? 99);
+  });
+
+  $('resultCount').textContent = list.length < SOLUTIONS.length
+    ? list.length + ' من أصل ' + SOLUTIONS.length + ' حسب فلاترك'
+    : SOLUTIONS.length + ' جهة وبنكاً';
+
+  grid.innerHTML = list.length ? list.map(solutionCard).join('')
+    : '<div style="grid-column:1/-1;text-align:center;padding:1.8rem;border:2px dashed #E5E7EB;border-radius:13px;background:#FCFCFD;color:#6B7280;font-size:.85rem">لا نتيجة تطابق فلاترك — جرّب توسيعها. تذكّر أن غير المنشور لا يجتاز فلاتر النسبة والمدة.</div>';
+
+  grid.querySelectorAll('[data-cmp]').forEach(b => b.addEventListener('click', () => toggleCompare(b.getAttribute('data-cmp'))));
+  grid.querySelectorAll('[data-offer]').forEach(b => b.addEventListener('click', () => openInterest(b.getAttribute('data-offer'))));
+}
+
+function renderDirectory(){
+  const dg = $('dirGrid');
+  if (!dg) return;
+  dg.innerHTML = DIRECTORY.map(x =>
+    '<div class="cf-card" style="background:#FCFCFD">' +
+      '<div class="cf-card-head">' +
+        '<div class="cf-card-logo" style="background:#6B7280">' + esc((x.name_ar || '').replace('شركة ', '').slice(0, 4)) + '</div>' +
+        '<div><div class="cf-card-bank">' + esc(x.name_ar) + '</div><div class="cf-card-product">' + esc(x.finance_type || 'جهة تمويل مرخصة') + '</div></div>' +
+      '</div>' +
+      '<div style="font-size:.76rem;color:#6B7280;line-height:1.8">لا شروط سيارات منشورة — غير مدرجة في المقارنة. ' +
+        (x.license_source ? '<a href="' + esc(x.license_source) + '" target="_blank" rel="noopener" style="color:#7C3AED">سجل الترخيص ↗</a>' : '') + '</div>' +
+      '<div class="cf-card-details">' +
+        (x.website ? '<span><a href="' + esc(x.website) + '" target="_blank" rel="noopener" style="color:#374151">الموقع ↗</a></span>' : '') +
+        (x.phone ? '<span>هاتف: <strong><bdi dir="ltr">' + esc(x.phone) + '</bdi></strong></span>' : '') +
+      '</div>' +
+      '<div class="cf-card-verified"><span class="cf-verified-badge">مرخصة من البنك المركزي</span>' +
+        '<span>تحقق: ' + esc(verifiedTxt(x.last_verified)) + '</span></div>' +
+    '</div>'
+  ).join('');
+}
+['flSearch','flFin','flCond','flRatio','flTenor','flTransfer','flGuarantor','sortBy'].forEach(id => {
+  const el = $(id);
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', renderCards);
+});
+$('flReset').addEventListener('click', () => {
+  $('flSearch').value = ''; $('flFin').value = 'all'; $('flCond').value = 'all';
+  $('flRatio').value = ''; $('flTenor').value = ''; $('flTransfer').value = ''; $('flGuarantor').value = '';
+  renderCards();
+});
+
+/* القائمة الكاملة مغلقة افتراضياً على كل المقاسات — تُفتح بطلب المستخدم */
+
+})();
+</script>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+</body>
+</html>

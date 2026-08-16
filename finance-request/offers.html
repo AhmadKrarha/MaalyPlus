@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>نتائج طلبك | مالي بلس</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+.of-hero{background:linear-gradient(135deg,#1E2B3C 0%,#1E40AF 60%,#0891B2 100%);color:#fff;padding:2.5rem 0 3.5rem;position:relative;overflow:hidden}
+.of-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:44px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+.of-hero .container{position:relative;z-index:2}
+.of-crumb{font-size:.78rem;opacity:.7;margin-bottom:.7rem}
+.of-crumb a{color:#fff;text-decoration:none}
+.of-hero h1{font-family:var(--font-heading);font-size:var(--h2);font-weight:700;margin:0 0 .4rem}
+.of-hero p{font-size:.9rem;opacity:.88;margin:0;line-height:1.8;max-width:640px}
+.of-refline{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:5px 14px;font-size:.78rem;margin-top:1rem}
+.of-refline b{font-family:var(--font-heading);letter-spacing:.4px}
+
+.of-body{max-width:1000px;margin:-1.75rem auto 0;padding:0 1.5rem 4rem;position:relative;z-index:3}
+.of-card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);padding:1.5rem;margin-bottom:1.25rem}
+
+/* شريط صادق أعلى النتائج */
+.of-truth{background:#F8FAFF;border:1px solid #DBEAFE;border-right:4px solid #1E40AF;border-radius:12px;padding:1rem 1.15rem;margin-bottom:1.25rem}
+.of-truth h2{font-family:var(--font-heading);font-size:.95rem;color:#1E3A8A;margin:0 0 .35rem}
+.of-truth p{font-size:.83rem;color:#1E3A8A;line-height:1.85;margin:0;opacity:.9}
+
+/* ملخص العدّ */
+.of-tally{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1.25rem}
+.of-t{border-radius:12px;padding:.85rem;text-align:center;border:1px solid}
+.of-t .n{font-family:var(--font-heading);font-size:1.6rem;font-weight:800;display:block;line-height:1.2}
+.of-t .l{font-size:.75rem;font-weight:600;display:block;margin-top:2px}
+.of-t.ok{background:#F0FDF4;border-color:#BBF7D0}.of-t.ok .n,.of-t.ok .l{color:#047857}
+.of-t.unk{background:#FFFBEB;border-color:#FDE68A}.of-t.unk .n,.of-t.unk .l{color:#B45309}
+.of-t.no{background:#F9FAFB;border-color:#E5E7EB}.of-t.no .n,.of-t.no .l{color:#6B7280}
+
+.of-sec-title{font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:#1E2B3C;margin:0 0 .3rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.of-sec-sub{font-size:.83rem;color:#6B7280;line-height:1.85;margin:0 0 1.1rem}
+
+/* بطاقة منتج */
+.of-item{border:1.5px solid #E5E7EB;border-radius:14px;padding:1.1rem;margin-bottom:.85rem;transition:.18s}
+.of-item.match{border-color:#BBF7D0;background:#FCFFFD}
+.of-item.unsure{border-color:#FDE68A;background:#FFFEFA}
+.of-item.no{border-color:#E5E7EB;background:#FCFCFD;opacity:.9}
+.of-item-head{display:flex;align-items:flex-start;gap:.85rem;margin-bottom:.8rem}
+.of-logo{width:46px;height:46px;border-radius:10px;object-fit:contain;background:#fff;border:1px solid #F3F4F6;flex-shrink:0;padding:3px;box-sizing:border-box}
+.of-logo-fb{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-heading);font-weight:800;font-size:.72rem;flex-shrink:0;text-align:center;line-height:1.1;padding:3px;box-sizing:border-box}
+.of-idt{flex:1;min-width:0}
+.of-idt b{display:block;font-family:var(--font-heading);font-size:.95rem;color:#1E2B3C;line-height:1.35}
+.of-idt span{font-size:.79rem;color:#6B7280}
+.of-verdict{flex-shrink:0;border-radius:999px;padding:4px 11px;font-size:.72rem;font-weight:700;white-space:nowrap}
+.of-verdict.match{background:#F0FDF4;color:#047857;border:1px solid #BBF7D0}
+.of-verdict.unsure{background:#FFFBEB;color:#B45309;border:1px solid #FDE68A}
+.of-verdict.no{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+
+.of-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;background:#F9FAFB;border-radius:10px;padding:.7rem .4rem;margin-bottom:.8rem}
+.of-n{text-align:center}
+.of-n .v{font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#1E40AF;display:block;line-height:1.25}
+.of-n .v.muted{color:#9CA3AF;font-size:.82rem;font-weight:700}
+.of-n .k{font-size:.66rem;color:#6B7280;margin-top:2px;display:block}
+
+.of-checks{list-style:none;margin:0 0 .8rem;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.3rem .9rem}
+.of-checks li{font-size:.78rem;line-height:1.7;display:flex;align-items:flex-start;gap:6px;color:#4B5563}
+.of-checks .m{flex-shrink:0;font-weight:700;width:13px}
+.of-checks li.ok .m{color:#047857}
+.of-checks li.no{color:#B91C1C}.of-checks li.no .m{color:#B91C1C}
+.of-checks li.unk{color:#B45309}.of-checks li.unk .m{color:#B45309}
+
+.of-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;padding-top:.7rem;border-top:1px dashed #E5E7EB}
+.of-src{font-size:.7rem;color:#6B7280;line-height:1.7}
+.of-src a{color:#6B7280}
+.of-go{background:linear-gradient(135deg,#1E40AF,#0891B2);color:#fff;text-decoration:none;border-radius:9px;padding:.5rem 1.1rem;font-family:var(--font-heading);font-size:.8rem;font-weight:700;white-space:nowrap;transition:.18s}
+.of-go:hover{transform:translateY(-2px)}
+.of-go.ghost{background:#fff;color:#1E40AF;border:1.5px solid #DBEAFE}
+
+.of-more{display:block;width:100%;margin-top:.5rem;background:#fff;border:1.5px solid #E5E7EB;border-radius:10px;padding:.7rem;font-family:var(--font-heading);font-size:.84rem;font-weight:700;color:#4B5563;cursor:pointer;transition:.15s}
+.of-more:hover{background:#F9FAFB;color:#1E2B3C}
+
+/* العروض المخصّصة */
+.of-demo{background:#FFFBEB;border:1px solid #FDE68A;border-right:4px solid #D97706;border-radius:12px;padding:.9rem 1.1rem;margin-bottom:1rem}
+.of-demo b{color:#92400E;font-size:.87rem;font-family:var(--font-heading)}
+.of-demo p{font-size:.81rem;color:#78350F;line-height:1.85;margin:.3rem 0 0}
+.of-offer{border:1.5px solid #DBEAFE;background:#F8FAFF;border-radius:14px;padding:1.1rem;margin-bottom:.85rem}
+.of-offer-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.75rem}
+.of-offer-head b{font-family:var(--font-heading);font-size:.95rem;color:#1E2B3C}
+.of-offer-tag{background:#6B7280;color:#fff;border-radius:999px;padding:2px 10px;font-size:.68rem;font-weight:700}
+.of-offer-note{font-size:.79rem;color:#4B5563;line-height:1.8;margin:.6rem 0 0;padding-top:.6rem;border-top:1px dashed #DBEAFE}
+
+.of-empty{text-align:center;padding:2rem 1.25rem;border:2px dashed #E5E7EB;border-radius:14px;background:#FCFCFD}
+.of-empty .ic{width:52px;height:52px;border-radius:50%;background:#F3F4F6;color:#9CA3AF;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;font-size:1.5rem}
+.of-empty h3{font-family:var(--font-heading);font-size:1rem;color:#1E2B3C;margin:0 0 .45rem}
+.of-empty p{font-size:.84rem;color:#6B7280;line-height:1.9;max-width:480px;margin:0 auto}
+
+.of-acts{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem}
+.of-acts a{text-decoration:none;border-radius:10px;padding:.7rem 1.4rem;font-family:var(--font-heading);font-size:.87rem;font-weight:700;transition:.18s}
+.of-a1{background:linear-gradient(135deg,#1E40AF,#0891B2);color:#fff;box-shadow:0 4px 14px rgba(30,64,175,.28)}
+.of-a1:hover{transform:translateY(-2px)}
+.of-a2{background:#fff;color:#1E40AF;border:1.5px solid #DBEAFE}
+.of-a2:hover{background:#F8FAFF}
+
+@media(max-width:700px){
+  .of-body{padding:0 1rem 3rem}
+  .of-card{padding:1.15rem}
+  .of-checks{grid-template-columns:1fr}
+  .of-tally{grid-template-columns:1fr;gap:.5rem}
+  .of-t{display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .of-t .n{font-size:1.15rem}
+}
+</style>
+</head>
+<body>
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+<section class="of-hero">
+  <div class="container">
+    <nav class="of-crumb" aria-label="مسار التصفح">
+      <a href="../index.html">الرئيسية</a> ‹ <a href="index.html">طلب تمويل</a> ‹ النتائج
+    </nav>
+    <h1>نتائج طلبك</h1>
+    <p id="ofLede">نطابق وضعك مع الشروط المنشورة، ونعرض العروض التي أرسلتها الجهات المموّلة على طلبك.</p>
+    <div class="of-refline" id="ofRefLine" hidden>الرقم المرجعي: <b id="ofRef" dir="ltr">—</b></div>
+    <div id="ofSwitchWrap" hidden style="margin-top:.6rem">
+      <label for="ofSwitch" style="font-size:.76rem;opacity:.8;margin-inline-end:.4rem">طلباتك:</label>
+      <select id="ofSwitch" style="padding:5px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;font-family:inherit;font-size:.78rem"></select>
+    </div>
+  </div>
+</section>
+
+<div class="of-body">
+
+  <!-- لا يوجد طلب -->
+  <div class="of-card" id="ofNoReq" hidden>
+    <div class="of-empty">
+      <div class="ic">؟</div>
+      <h3>لا نجد طلباً مرتبطاً بهذا المتصفح</h3>
+      <p>النتائج تُبنى من الطلب المحفوظ في متصفحك. إن لم ترسل طلباً بعد، أو أرسلته من جهاز آخر، ابدأ من صفحة الطلب.</p>
+      <div class="of-acts">
+        <a class="of-a1" href="index.html">قدّم طلب تمويل</a>
+        <a class="of-a2" href="../loans/loans.html">تصفّح القروض بنفسك</a>
+      </div>
+      <p style="font-size:.78rem;color:#6B7280;line-height:1.9;margin:1.25rem auto 0;max-width:460px">
+        أو حمّل طلبين تجريبيين (فرد ومنشأة) لتجربة المسار كاملاً دون تعبئة النموذج:<br>
+        <button type="button" id="ofSeed"
+          style="margin-top:.6rem;background:#fff;border:1.5px solid #DBEAFE;color:#1E40AF;border-radius:9px;padding:.55rem 1.2rem;font-family:var(--font-heading);font-size:.82rem;font-weight:700;cursor:pointer">
+          حمّل طلباً تجريبياً
+        </button>
+      </p>
+    </div>
+  </div>
+
+  <div id="ofMain" hidden>
+
+    <!-- ══ المطابقة الفورية ══ -->
+    <div class="of-card" id="ofMatchCard">
+      <div class="of-truth">
+        <h2>ما هذه القائمة بالضبط</h2>
+        <p id="ofTruthTxt">مطابقة بين ما أدخلته وبين الشروط <b>المنشورة علناً</b> لكل منتج. هي ليست عرضاً من البنك ولا موافقة مسبقة، والقرار النهائي للبنك بعد دراسة ملفك. ما لم يُنشر شرطه لا نعتبره اجتيازاً — نضعه في «يحتاج تأكيد».</p>
+      </div>
+
+      <div class="of-tally" id="ofTally"></div>
+
+      <h2 class="of-sec-title">المنتجات المرتّبة حسب مطابقتك</h2>
+      <p class="of-sec-sub" id="ofMatchSub"></p>
+      <div id="ofList"></div>
+      <button class="of-more" id="ofMoreBtn" hidden></button>
+    </div>
+
+    <!-- ══ التمويل الأصغر ══ -->
+    <div class="of-card" id="ofMicroCard" hidden>
+      <h2 class="of-sec-title">جهات التمويل الأصغر</h2>
+      <p class="of-sec-sub" id="ofMicroSub"></p>
+      <div id="ofMicroList"></div>
+    </div>
+
+    <!-- ══ العروض المخصّصة ══ -->
+    <div class="of-card">
+      <h2 class="of-sec-title">عروض مخصّصة على طلبك</h2>
+      <p class="of-sec-sub">هذه العروض تصل من الجهات المموّلة ردّاً على طلبك أنت — بخلاف القائمة أعلاه المبنية على شروط منشورة للجميع.</p>
+      <div id="ofOffersWrap"></div>
+    </div>
+
+    <div class="of-acts">
+      <a class="of-a1" href="status.html">حالة الطلب</a>
+      <a class="of-a2" href="index.html">تعديل الطلب أو إرسال طلب جديد</a>
+    </div>
+    <p style="text-align:center;font-size:.75rem;color:#6B7280;line-height:1.9;margin:1.25rem 0 0">
+      للاطلاع على الجانب الآخر من السوق:
+      <a href="lender.html" style="color:#6B7280;text-decoration:underline">بوابة الجهة المموّلة</a>
+      — شاشة تجريبية تُظهر كيف يصل طلبك للممولين وكيف يردّون بعرض.
+    </p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  if (typeof document === 'undefined') return;
+
+  /* ─── طلبان تجريبيان للعرض ──────────────────────── */
+  /* بيانات مُصطنعة بوضوح (MP-DEMO) لتجربة المسار دون تعبئة النموذج */
+  function seedDemo(){
+    var now = new Date().toISOString();
+    var ind = { ref:'MP-DEMO-1001', track:'فرد', at:now,
+      ind_product:'قرض شخصي', ind_amount:'10000', ind_tenor:'5', ind_sharia:'لا يهمّني',
+      ind_income:'800', ind_obligations:'100', ind_employment:'قطاع خاص',
+      ind_job_years:'أكثر من 5 سنوات', ind_transfer:'نعم',
+      full_name:'طلب تجريبي', phone:'0790000000', email:'demo@example.com', governorate:'عمّان' };
+    var biz = { ref:'MP-DEMO-1002', track:'منشأة', at:now,
+      biz_name:'منشأة تجريبية للتجارة', biz_legal:'شركة ذات مسؤولية محدودة',
+      biz_sector:'تجارة جملة وتجزئة', biz_age:'3 إلى 5 سنوات', biz_employees:'6 إلى 20',
+      biz_revenue:'150 إلى 500 ألف', biz_purpose:'رأس مال عامل وسيولة',
+      biz_amount:'40000', biz_tenor:'5', biz_sharia:'لا يهمّني',
+      doc_cr:'نعم', doc_license:'نعم', doc_bank:'نعم', doc_tax:'نعم',
+      full_name:'طلب تجريبي', phone:'0790000000', email:'demo@example.com',
+      governorate:'عمّان', contact_role:'المالك أو الشريك' };
+    try {
+      localStorage.setItem('mp_fr_req',  JSON.stringify(ind));
+      localStorage.setItem('mp_fr_reqs', JSON.stringify([ind, biz]));
+      localStorage.setItem('mp_fr_ref',  ind.ref);
+      localStorage.setItem('mp_fr_type', ind.track);
+      localStorage.setItem('mp_fr_at',   now);
+    } catch(e){}
+    location.reload();
+  }
+
+  /* ─── قراءة الطلب ───────────────────────────────── */
+  var req = null;
+  try { req = JSON.parse(localStorage.getItem('mp_fr_req') || 'null'); } catch(e){}
+  if (!req || !req.ref){
+    document.getElementById('ofNoReq').hidden = false;
+    var sb = document.getElementById('ofSeed');
+    if (sb) sb.addEventListener('click', seedDemo);
+    return;
+  }
+  document.getElementById('ofMain').hidden = false;
+  document.getElementById('ofRefLine').hidden = false;
+  document.getElementById('ofRef').textContent = req.ref;
+
+  /* مبدّل الطلبات — يظهر فقط عند وجود أكثر من طلب */
+  (function(){
+    var all = [];
+    try { all = JSON.parse(localStorage.getItem('mp_fr_reqs') || '[]'); } catch(e){}
+    all = all.filter(function(r){ return r && r.ref; });
+    if (all.length < 2) return;
+    var sel = document.getElementById('ofSwitch');
+    sel.innerHTML = all.map(function(r){
+      return '<option value="' + r.ref + '"' + (r.ref === req.ref ? ' selected' : '') + '>' +
+             r.ref + ' — ' + (r.track || '') + '</option>';
+    }).join('');
+    document.getElementById('ofSwitchWrap').hidden = false;
+    sel.addEventListener('change', function(){
+      var picked = all.filter(function(r){ return r.ref === sel.value; })[0];
+      if (!picked) return;
+      try {
+        localStorage.setItem('mp_fr_req',  JSON.stringify(picked));
+        localStorage.setItem('mp_fr_ref',  picked.ref);
+        localStorage.setItem('mp_fr_type', picked.track || '');
+        localStorage.setItem('mp_fr_at',   picked.at || new Date().toISOString());
+      } catch(e){}
+      location.reload();
+    });
+  })();
+
+  var isBiz = (req.track === 'منشأة');
+
+  /* ─── أدوات ─────────────────────────────────────── */
+  function n(v){ var x = parseFloat(v); return isFinite(x) ? x : null; }
+  function fmt(v){ return Math.round(v).toLocaleString('en-US'); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function pmt(P, annualPct, months){
+    if (!P || !months) return null;
+    var r = annualPct / 100 / 12;
+    if (r <= 0) return P / months;
+    return P * r / (1 - Math.pow(1 + r, -months));
+  }
+  /* جمع «سنة» عربياً: 1 سنة · 2 سنتان · 3–10 سنوات · 11+ سنة */
+  function yrs(v){
+    var x = n(v);
+    if (x === null) return '—';
+    if (x === 1) return 'سنة';
+    if (x === 2) return 'سنتان';
+    if (x >= 3 && x <= 10) return x + ' سنوات';
+    return x + ' سنة';
+  }
+
+  /* ─── محرّك الأهلية: ثلاث حالات، والمجهول ليس اجتيازاً ─── */
+  function evalProduct(p, ctx){
+    var checks = [], hardFail = false, unknown = false;
+
+    function ok(label){ checks.push({s:'ok', t:label}); }
+    function no(label){ checks.push({s:'no', t:label}); hardFail = true; }
+    function unk(label){ checks.push({s:'unk', t:label}); unknown = true; }
+
+    /* 1) الحد الأدنى للدخل */
+    var minSal = n(p.min_salary_jod);
+    if (minSal === null)          unk('الحد الأدنى للدخل غير منشور');
+    else if (ctx.income === null) unk('لم تُدخل دخلك — لا يمكن التحقّق');
+    else if (ctx.income >= minSal) ok('دخلك يتجاوز الحد الأدنى (' + fmt(minSal) + ' د.أ)');
+    else                           no('الحد الأدنى للدخل ' + fmt(minSal) + ' د.أ وأنت دونه');
+
+    /* 2) سقف المبلغ */
+    var maxAmt = n(p.max_amount_jod);
+    if (maxAmt === null)              unk('سقف التمويل غير منشور');
+    else if (ctx.amount === null)     unk('لم تُدخل المبلغ');
+    else if (ctx.amount <= maxAmt)    ok('المبلغ ضمن السقف (' + fmt(maxAmt) + ' د.أ)');
+    else                              no('السقف ' + fmt(maxAmt) + ' د.أ وطلبك أعلى');
+
+    /* 3) المدة */
+    var maxTen = n(p.max_tenor_years);
+    if (maxTen === null)                 unk('أقصى مدة غير منشورة');
+    else if (ctx.tenor === null)         unk('لم تُدخل المدة');
+    else if (ctx.tenor <= maxTen)        ok('المدة ضمن الحد (' + yrs(maxTen) + ')');
+    else                                 no('أقصى مدة ' + yrs(maxTen) + ' وطلبك أطول');
+
+    /* 4) نسبة الاقتطاع */
+    var maxDbr = n(p.dbr_max_percent);
+    var inst = null, rate = n(p.interest_rate_min);
+    if (rate !== null && ctx.amount && ctx.tenor) inst = pmt(ctx.amount, rate, ctx.tenor * 12);
+    if (maxDbr === null)                    unk('حد الاقتطاع غير منشور');
+    else if (inst === null || ctx.income === null) unk('لا يمكن حساب الاقتطاع لهذا المنتج');
+    else {
+      var dbr = (inst + (ctx.oblig || 0)) / ctx.income * 100;
+      if (dbr <= maxDbr) ok('الاقتطاع ' + dbr.toFixed(0) + '% ضمن حدّه (' + maxDbr + '%)');
+      else               no('الاقتطاع ' + dbr.toFixed(0) + '% يتجاوز حدّه (' + maxDbr + '%)');
+    }
+
+    /* 5) تحويل الراتب */
+    if (p.salary_transfer_required === true){
+      if (ctx.transfer === 'نعم')      ok('تحويل الراتب مطلوب وأنت توافق');
+      else if (ctx.transfer === 'لا')  no('يشترط تحويل الراتب وأنت لا تستطيع');
+      else                             unk('يشترط تحويل الراتب ولم تحسم أمرك');
+    } else if (p.salary_transfer_required === false){
+      ok('لا يشترط تحويل الراتب');
+    } else {
+      unk('شرط تحويل الراتب غير منشور');
+    }
+
+    /* 6) التوافق مع الشريعة */
+    if (ctx.sharia === 'متوافق مع الشريعة فقط'){
+      if (p.is_islamic) ok('متوافق مع الشريعة');
+      else              no('منتج تقليدي وأنت طلبت المتوافق مع الشريعة');
+    } else if (ctx.sharia === 'تقليدي فقط'){
+      if (!p.is_islamic) ok('منتج تقليدي كما طلبت');
+      else               no('منتج متوافق مع الشريعة وأنت طلبت التقليدي');
+    }
+
+    return {
+      verdict: hardFail ? 'no' : (unknown ? 'unsure' : 'match'),
+      checks: checks, installment: inst, rate: rate
+    };
+  }
+
+  /* ─── سياق المستخدم ─────────────────────────────── */
+  var ctx = {
+    income:   n(req.ind_income),
+    oblig:    n(req.ind_obligations) || 0,
+    amount:   n(isBiz ? req.biz_amount : req.ind_amount),
+    tenor:    n(isBiz ? req.biz_tenor  : req.ind_tenor),
+    transfer: req.ind_transfer || '',
+    sharia:   (isBiz ? req.biz_sharia : req.ind_sharia) || 'لا يهمّني'
+  };
+
+  /* ─── التمويل الأصغر ────────────────────────────── */
+  /* أسعار هذه الجهات منشورة كنطاقات («18-28% متناقصة»)، فنعرض القسط كنطاق
+     مشتقّ من نطاقها هي — لا رقماً واحداً يوحي بدقّة لا نملكها. */
+  function parseRateRange(s){
+    if (!s) return null;
+    var two = String(s).match(/(\d+(?:\.\d+)?)\s*[-–—]\s*(\d+(?:\.\d+)?)\s*%/);
+    if (two) return [parseFloat(two[1]), parseFloat(two[2])];
+    var one = String(s).match(/(\d+(?:\.\d+)?)\s*%/);
+    if (one) return [parseFloat(one[1]), parseFloat(one[1])];
+    return null;
+  }
+
+  var BIZ_WORDS = /مشاريع|مشروع|شركات|SME|أعمال|منشآت|تجار/i;
+
+  function matchMicro(list){
+    var amt = ctx.amount;
+    return list.map(function(m){
+      var lo = n(m.min_loan_jod), hi = n(m.max_loan_jod);
+      var inRange = (amt === null) ? null : (lo !== null && hi !== null ? (amt >= lo && amt <= hi) : null);
+
+      /* الشريعة */
+      var shariaOk = true;
+      if (ctx.sharia === 'متوافق مع الشريعة فقط') shariaOk = m.sharia_compliant === true;
+      else if (ctx.sharia === 'تقليدي فقط')       shariaOk = m.sharia_compliant === false;
+
+      /* هل تخدم المنشآت؟ */
+      var aud = (m.target_audience || []).join(' ');
+      var servesBiz = BIZ_WORDS.test(aud) || (m.products || []).some(function(p){
+        return BIZ_WORDS.test(String(p.target || '') + ' ' + String(p.name || ''));
+      });
+
+      /* المنتجات التي يغطي مداها المبلغ */
+      var fit = (m.products || []).filter(function(p){
+        var pl = n(p.min_amount_jod), ph = n(p.max_amount_jod);
+        if (amt === null || pl === null || ph === null) return false;
+        return amt >= pl && amt <= ph;
+      });
+      if (isBiz) {
+        var bizFit = fit.filter(function(p){ return BIZ_WORDS.test(String(p.target||'') + ' ' + String(p.name||'')); });
+        if (bizFit.length) fit = bizFit;
+      }
+
+      /* أفضل منتج مسعّر: الأدنى بين المنتجات التي يغطي مداها المبلغ ونُشرت نسبتها */
+      var best = null, bestRange = null;
+      fit.forEach(function(p){
+        var rr = parseRateRange(p.interest_rate);
+        if (!rr) return;
+        if (!bestRange || rr[0] < bestRange[0]){ best = p; bestRange = rr; }
+      });
+
+      return { m: m, inRange: inRange, shariaOk: shariaOk, servesBiz: servesBiz,
+               fit: fit, best: best, bestRange: bestRange };
+    }).filter(function(x){
+      return x.shariaOk && x.inRange !== false && (!isBiz || x.servesBiz);
+    }).sort(function(a, b){
+      /* المسعّر أولاً، ثم الأقل نسبة، ثم من يغطي مبلغك، ثم الباقي */
+      var ap = a.bestRange ? 0 : (a.fit.length ? 1 : 2);
+      var bp = b.bestRange ? 0 : (b.fit.length ? 1 : 2);
+      if (ap !== bp) return ap - bp;
+      if (a.bestRange && b.bestRange) return a.bestRange[0] - b.bestRange[0];
+      return 0;
+    });
+  }
+
+  function microCard(x){
+    var m = x.m;
+    var logo = m.logo
+      ? '<img class="of-logo" src="' + esc(m.logo) + '?v=20260827" alt="' + esc(m.name_ar) + '" loading="lazy" width="46" height="46">'
+      : '<span class="of-logo-fb" style="background:' + esc(m.logo_color || '#6B7280') + '">' +
+        esc(m.logo_fallback_text || m.name_ar).slice(0, 12) + '</span>';
+
+    var best = x.best, bestRange = x.bestRange;
+
+    var instTxt = 'يحدّده المموّل', instMuted = ' muted';
+    var months = ctx.tenor ? ctx.tenor * 12 : null;
+    if (best && bestRange && ctx.amount){
+      var dur = n(best.max_duration_months);
+      var useM = (months && dur) ? Math.min(months, dur) : (dur || months);
+      if (useM){
+        var a = pmt(ctx.amount, bestRange[0], useM);
+        var b = pmt(ctx.amount, bestRange[1], useM);
+        instTxt = (Math.round(a) === Math.round(b)) ? fmt(a) : fmt(a) + '–' + fmt(b);
+        instMuted = '';
+      }
+    }
+
+    var rangeTxt = (n(m.min_loan_jod) !== null && n(m.max_loan_jod) !== null)
+      ? fmt(m.min_loan_jod) + '–' + fmt(m.max_loan_jod) : 'غير منشور';
+
+    var checks = [];
+    checks.push({s: x.inRange === true ? 'ok' : 'unk',
+      t: x.inRange === true ? 'مبلغك ضمن مدى التمويل المنشور' : 'مدى التمويل ' + rangeTxt + ' د.أ'});
+    if (m.no_collateral === true)       checks.push({s:'ok',  t:'بلا ضمانات عقارية'});
+    else if (m.no_collateral === false) checks.push({s:'unk', t:'قد تُطلب ضمانات'});
+    else                                checks.push({s:'unk', t:'شرط الضمانات غير منشور'});
+    if (best && best.guarantor_required === true) checks.push({s:'unk', t:'يتطلّب كفيلاً'});
+    if (m.sharia_compliant === true) checks.push({s:'ok', t:'متوافق مع الشريعة'});
+    if (x.servesBiz) checks.push({s:'ok', t:'يخدم أصحاب المشاريع والمنشآت'});
+    if (n(m.branches)) checks.push({s:'ok', t:m.branches + ' فرعاً في المملكة'});
+
+    return '<div class="of-item ' + (x.fit.length ? 'match' : 'unsure') + '">' +
+      '<div class="of-item-head">' + logo +
+        '<span class="of-idt"><b>' + esc(m.name_ar) + '</b><span>' +
+          esc(best ? best.name : (m.tagline || 'تمويل أصغر')) + '</span></span>' +
+        '<span class="of-verdict ' + (x.fit.length ? 'match' : 'unsure') + '">' +
+          (x.fit.length ? 'منتج يغطي مبلغك' : 'ضمن المدى') + '</span>' +
+      '</div>' +
+      '<div class="of-nums">' +
+        '<div class="of-n"><span class="v' + instMuted + '">' + instTxt + '</span><span class="k">قسط شهري تقديري (د.أ)</span></div>' +
+        '<div class="of-n"><span class="v' + (best && best.interest_rate ? '' : ' muted') + '">' +
+          esc(best && best.interest_rate ? best.interest_rate : 'غير منشورة') + '</span><span class="k">النسبة المنشورة</span></div>' +
+        '<div class="of-n"><span class="v' + (best && n(best.max_duration_months) ? '' : ' muted') + '">' +
+          (best && n(best.max_duration_months) ? best.max_duration_months + ' شهراً' : '—') + '</span><span class="k">أقصى مدة</span></div>' +
+      '</div>' +
+      '<ul class="of-checks">' + checks.map(function(ch){
+        var mk = ch.s === 'ok' ? '✓' : (ch.s === 'no' ? '✕' : '؟');
+        return '<li class="' + ch.s + '"><span class="m">' + mk + '</span>' + esc(ch.t) + '</li>';
+      }).join('') + '</ul>' +
+      '<div class="of-foot">' +
+        '<span class="of-src">نسب التمويل الأصغر أعلى من نسب البنوك عادةً — قارنها بعناية · ' +
+          '<a href="../microfinance/microfinance.html">تفاصيل الجهات</a></span>' +
+        '<a class="of-go" href="' + esc(m.apply_url || m.website || '#') + '" target="_blank" rel="noopener">زيارة الموقع ←</a>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderMicro(){
+    return fetch('../microfinance/microfinance.json?v=20260827').then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function(list){
+      var rows = matchMicro(list);
+      if (!rows.length) return;
+      document.getElementById('ofMicroCard').hidden = false;
+
+      var priced = rows.filter(function(x){ return x.bestRange; }).length;
+      var sub = isBiz
+        ? 'جهات تمويل أصغر مرخّصة من البنك المركزي الأردني تخدم أصحاب المشاريع والمنشآت الصغيرة. ' +
+          'نسبها أعلى من نسب البنوك في العادة، لكنها كثيراً ما تقبل ملفات ترفضها البنوك.'
+        : 'جهات مرخّصة من البنك المركزي الأردني، مدى تمويلها يغطي مبلغك. مفيدة إن لم تنطبق عليك شروط البنوك — ' +
+          'مع الانتباه إلى أن نسبها أعلى.';
+
+      if (!priced && ctx.amount){
+        sub += ' <b>لكن مبلغك (' + fmt(ctx.amount) + ' د.أ) أعلى من سقوف منتجاتها التي تنشر نسبة رقمية</b>، ' +
+               'فلا قسط نحسبه لك هنا — الجهات أدناه قد تدرس حالتك، والمسار الأنسب لمبلغك هو عروض الجهات المموّلة أدناه.';
+      }
+      document.getElementById('ofMicroSub').innerHTML = sub;
+      document.getElementById('ofMicroList').innerHTML = rows.map(microCard).join('');
+    }).catch(function(){ /* غياب هذا القسم لا يُفشل الصفحة */ });
+  }
+
+  /* ─── العروض المخصّصة ───────────────────────────── */
+  function readOffers(){
+    var all = [];
+    try { all = JSON.parse(localStorage.getItem('mp_fr_offers') || '[]'); } catch(e){}
+    return all.filter(function(o){ return o && o.ref === req.ref; });
+  }
+
+  function renderOffers(){
+    var offers = readOffers();
+    var wrap = document.getElementById('ofOffersWrap');
+    if (!offers.length){
+      wrap.innerHTML =
+        '<div class="of-empty">' +
+          '<div class="ic">…</div>' +
+          '<h3>لم يصل أي عرض بعد</h3>' +
+          '<p>' + (isBiz
+            ? 'تمويل المنشآت يُسعَّر لكل حالة على حدة، فلا توجد أسعار منشورة نطابقك بها — لذلك يعتمد مسار المنشآت على عروض تصل من الجهات المموّلة ردّاً على طلبك.'
+            : 'القائمة أعلاه مبنية على شروط منشورة للجميع. العروض المخصّصة تصل هنا حين ترد جهة مموّلة على طلبك تحديداً.') +
+          '</p>' +
+        '</div>';
+      return;
+    }
+
+    var html = '<div class="of-demo"><b>هذه العروض من بيئة تجريبية</b>' +
+      '<p>أُدخلت عبر بوابة الجهات المموّلة في وضع التجربة، ولا تمثّل بنكاً حقيقياً ولا تُلزم أي جهة. ' +
+      'في التشغيل الفعلي يُدخلها ممثّل الجهة المموّلة نفسه.</p></div>';
+
+    offers.sort(function(a,b){
+      var ai = n(a.installment), bi = n(b.installment);
+      if (ai === null) return 1;
+      if (bi === null) return -1;
+      return ai - bi;
+    });
+
+    html += offers.map(function(o){
+      var inst = n(o.installment);
+      var rateTxt = n(o.rate) !== null ? (+o.rate) + '%' : 'غير محدّد';
+      var total = (inst && n(o.tenor)) ? inst * o.tenor * 12 : null;
+      return '<div class="of-offer">' +
+        '<div class="of-offer-head"><b>' + esc(o.lender) + '</b>' +
+          '<span class="of-offer-tag">عرض تجريبي</span></div>' +
+        '<div class="of-nums">' +
+          '<div class="of-n"><span class="v' + (inst ? '' : ' muted') + '">' + (inst ? fmt(inst) : '—') + '</span><span class="k">قسط شهري (د.أ)</span></div>' +
+          '<div class="of-n"><span class="v">' + esc(rateTxt) + '</span><span class="k">نسبة سنوية</span></div>' +
+          '<div class="of-n"><span class="v' + (total ? '' : ' muted') + '">' + (total ? fmt(total) : '—') + '</span><span class="k">إجمالي السداد (د.أ)</span></div>' +
+        '</div>' +
+        '<ul class="of-checks">' +
+          '<li class="ok"><span class="m">•</span>المبلغ: ' + (n(o.amount) ? fmt(o.amount) + ' د.أ' : 'غير محدّد') + '</li>' +
+          '<li class="ok"><span class="m">•</span>المدة: ' + (n(o.tenor) ? yrs(o.tenor) : 'غير محدّدة') + '</li>' +
+          '<li class="ok"><span class="m">•</span>الرسوم: ' + (o.fees ? esc(o.fees) : 'غير مذكورة') + '</li>' +
+          '<li class="ok"><span class="m">•</span>الضمانات: ' + (o.collateral ? esc(o.collateral) : 'غير مذكورة') + '</li>' +
+        '</ul>' +
+        (o.notes ? '<p class="of-offer-note">' + esc(o.notes) + '</p>' : '') +
+        (o.validUntil ? '<p class="of-offer-note">صالح حتى: ' + esc(o.validUntil) + '</p>' : '') +
+      '</div>';
+    }).join('');
+
+    wrap.innerHTML = html;
+  }
+
+  /* ─── المطابقة الفورية ──────────────────────────── */
+  var matchCard = document.getElementById('ofMatchCard');
+
+  function noProductBase(msg){
+    document.getElementById('ofTally').hidden = true;
+    document.getElementById('ofMatchSub').textContent = '';
+    document.getElementById('ofList').innerHTML =
+      '<div class="of-empty"><div class="ic">—</div><h3>لا قاعدة منتجات نطابقك بها هنا</h3><p>' + msg + '</p></div>';
+    document.querySelector('.of-sec-title').textContent = 'المطابقة الفورية';
+  }
+
+  /* المنشآت: لا توجد أسعار تمويل منشآت منشورة لدينا — لا نخترع مطابقة */
+  if (isBiz){
+    document.getElementById('ofTruthTxt').innerHTML =
+      '<b>البنوك في الأردن لا تنشر جداول أسعار لتمويل المنشآت</b> — تُسعَّر كل حالة على حدة. ' +
+      'لذلك مسار المنشآت لا يبدأ بمطابقة أسعار بنكية، بل بجاهزية ملفك، ثم بجهات التمويل الأصغر التي تنشر نسبها فعلاً، ' +
+      'ثم بالعروض التي ترد على طلبك تحديداً.';
+    document.getElementById('ofLede').textContent =
+      'جاهزية ملف منشأتك، والعروض التي وصلت على طلبك.';
+
+    var DOCS = [
+      ['doc_cr','سجل تجاري ساري'], ['doc_license','رخصة مهن سارية'],
+      ['doc_financials','قوائم مالية'], ['doc_bank','كشف حساب 12 شهراً'],
+      ['doc_tax','شهادة تسجيل ضريبي'], ['doc_collateral','ضمانات متاحة']
+    ];
+    var have = DOCS.filter(function(d){ return req[d[0]]; });
+    document.getElementById('ofTally').innerHTML =
+      '<div class="of-t ok"><span class="n">' + have.length + '</span><span class="l">مستند متوفّر</span></div>' +
+      '<div class="of-t unk"><span class="n">' + (6 - have.length) + '</span><span class="l">مستند ناقص</span></div>' +
+      '<div class="of-t no"><span class="n">' + (n(req.biz_amount) ? fmt(req.biz_amount) : '—') + '</span><span class="l">المبلغ المطلوب (د.أ)</span></div>';
+
+    document.querySelector('.of-sec-title').textContent = 'جاهزية ملفك';
+    document.getElementById('ofMatchSub').textContent =
+      'هذه هي المستندات التي تطلبها البنوك عادةً في بداية دراسة أي ملف منشأة.';
+    document.getElementById('ofList').innerHTML =
+      '<ul class="of-checks" style="grid-template-columns:1fr 1fr">' + DOCS.map(function(d){
+        var on = !!req[d[0]];
+        return '<li class="' + (on ? 'ok' : 'unk') + '"><span class="m">' + (on ? '✓' : '○') + '</span>' + d[1] + '</li>';
+      }).join('') + '</ul>';
+
+    renderMicro();
+    renderOffers();
+    return;
+  }
+
+  /* الأفراد: مطابقة حقيقية على البيانات المنشورة */
+  var product = req.ind_product || '';
+  var source, typeFilter;
+  if (product === 'تمويل سيارة'){
+    source = '../car-financing/car-financing.json?v=20260827';
+    typeFilter = null;
+  } else if (product === 'بطاقة ائتمان'){
+    noProductBase('طلبك عن بطاقة ائتمان، وتقييم البطاقات له محرّك مستقل بمعايير مختلفة. ' +
+      'افتح <a href="../cards/cards.html" style="color:#1E40AF">صفحة البطاقات</a> لترى الترشيح المبني على راتبك ونمط إنفاقك.');
+    renderOffers();
+    return;
+  } else {
+    source = '../loans/loans.json?v=20260827';
+    typeFilter = (product === 'تمويل سكني') ? 'housing' : 'personal';
+  }
+
+  fetch(source).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(data){
+    var pool = data;
+    if (typeFilter) pool = data.filter(function(p){ return p.loan_type === typeFilter; });
+    if (!pool.length){ noProductBase('لا توجد منتجات من هذا النوع في قاعدتنا حالياً.'); renderOffers(); return; }
+
+    var rows = pool.map(function(p){
+      var r = evalProduct(p, ctx);
+      return { p: p, r: r };
+    });
+
+    var order = { match: 0, unsure: 1, no: 2 };
+    rows.sort(function(a, b){
+      if (order[a.r.verdict] !== order[b.r.verdict]) return order[a.r.verdict] - order[b.r.verdict];
+      var ai = a.r.installment, bi = b.r.installment;
+      if (ai === null && bi === null) return 0;
+      if (ai === null) return 1;
+      if (bi === null) return -1;
+      return ai - bi;
+    });
+
+    var c = { match:0, unsure:0, no:0 };
+    rows.forEach(function(x){ c[x.r.verdict]++; });
+    document.getElementById('ofTally').innerHTML =
+      '<div class="of-t ok"><span class="n">' + c.match + '</span><span class="l">مطابق للشروط المنشورة</span></div>' +
+      '<div class="of-t unk"><span class="n">' + c.unsure + '</span><span class="l">يحتاج تأكيد</span></div>' +
+      '<div class="of-t no"><span class="n">' + c.no + '</span><span class="l">لا تنطبق شروطه</span></div>';
+
+    document.getElementById('ofMatchSub').innerHTML =
+      'قارنّا وضعك بـ <b>' + pool.length + '</b> منتجاً من <b>' +
+      (new Set(pool.map(function(p){ return p.bank_ar; }))).size + '</b> جهة في قاعدتنا الحالية — ' +
+      'وهي عيّنة موثّقة نوسّعها باستمرار، لا كل ما في السوق. ' +
+      (ctx.income === null
+        ? 'لم تُدخل دخلك، لذلك تعذّر التحقّق من شروط الدخل والاقتطاع — ولم نحسبها اجتيازاً.'
+        : 'الترتيب: المطابق أولاً، ثم الأقل قسطاً.');
+
+    var VERDICT_TXT = { match:'مطابق', unsure:'يحتاج تأكيد', no:'لا تنطبق شروطه' };
+
+    function card(x){
+      var p = x.p, r = x.r;
+      var logo = p.logo
+        ? '<img class="of-logo" src="' + esc(p.logo) + '?v=20260827" alt="' + esc(p.bank_ar) + '" loading="lazy" width="46" height="46">'
+        : '<span class="of-logo-fb" style="background:' + esc(p.logo_color || '#6B7280') + '">' + esc(p.bank_ar).slice(0, 12) + '</span>';
+
+      var rateTxt = r.rate !== null
+        ? (n(p.interest_rate_max) !== null ? r.rate + '%–' + p.interest_rate_max + '%' : 'من ' + r.rate + '%')
+        : 'غير منشورة';
+
+      var total = (r.installment && ctx.tenor) ? r.installment * ctx.tenor * 12 : null;
+      var href = p.apply_url || p.official_url || '#';
+      var bare = /^https?:\/\/[^\/]+\/?$/.test(String(p.apply_url || ''));
+      var goTxt = (!p.apply_url || p.apply_url === p.official_url || bare) ? 'زيارة موقع البنك' : 'تقدّم عبر موقع البنك';
+
+      return '<div class="of-item ' + r.verdict + '">' +
+        '<div class="of-item-head">' + logo +
+          '<span class="of-idt"><b>' + esc(p.bank_ar) + '</b><span>' + esc(p.product_name || '') + '</span></span>' +
+          '<span class="of-verdict ' + r.verdict + '">' + VERDICT_TXT[r.verdict] + '</span>' +
+        '</div>' +
+        '<div class="of-nums">' +
+          '<div class="of-n"><span class="v' + (r.installment ? '' : ' muted') + '">' +
+            (r.installment ? fmt(r.installment) : 'غير محسوب') + '</span><span class="k">قسط شهري تقديري (د.أ)</span></div>' +
+          '<div class="of-n"><span class="v' + (r.rate !== null ? '' : ' muted') + '">' + esc(rateTxt) + '</span><span class="k">الفائدة المنشورة</span></div>' +
+          '<div class="of-n"><span class="v' + (total ? '' : ' muted') + '">' + (total ? fmt(total) : '—') + '</span><span class="k">إجمالي السداد (د.أ)</span></div>' +
+        '</div>' +
+        '<ul class="of-checks">' + r.checks.map(function(ch){
+          var mark = ch.s === 'ok' ? '✓' : (ch.s === 'no' ? '✕' : '؟');
+          return '<li class="' + ch.s + '"><span class="m">' + mark + '</span>' + esc(ch.t) + '</li>';
+        }).join('') + '</ul>' +
+        '<div class="of-foot">' +
+          '<span class="of-src">الشروط منشورة من الجهة · محدّثة ' + esc(p.last_verified || '—') +
+            ' · <a href="../methodology.html" target="_blank" rel="noopener">منهجية التقييم</a></span>' +
+          '<a class="of-go' + (r.verdict === 'no' ? ' ghost' : '') + '" href="' + esc(href) +
+            '" target="_blank" rel="noopener">' + goTxt + ' ←</a>' +
+        '</div>' +
+      '</div>';
+    }
+
+    /* نعرض المطابق ويحتاج تأكيد، ونطوي «لا تنطبق شروطه» خلف زر — لكن نقول عددها */
+    var shown  = rows.filter(function(x){ return x.r.verdict !== 'no'; });
+    var hidden = rows.filter(function(x){ return x.r.verdict === 'no'; });
+    var expanded = false;
+
+    function draw(){
+      var list = expanded ? shown.concat(hidden) : shown;
+      document.getElementById('ofList').innerHTML =
+        list.length ? list.map(card).join('')
+                    : '<div class="of-empty"><div class="ic">—</div><h3>لا منتج تنطبق شروطه المنشورة على وضعك</h3>' +
+                      '<p>هذا لا يعني الرفض — يعني أن الشروط المعلنة لا تغطّي حالتك. جرّب مبلغاً أقل أو مدة أطول، ' +
+                      'أو انتظر عروض الجهات المموّلة أدناه.</p></div>';
+      var btn = document.getElementById('ofMoreBtn');
+      if (hidden.length){
+        btn.hidden = false;
+        btn.textContent = expanded
+          ? 'إخفاء ' + hidden.length + ' منتجاً لا تنطبق شروطه'
+          : 'أظهر ' + hidden.length + ' منتجاً لا تنطبق شروطه ولماذا';
+      } else { btn.hidden = true; }
+    }
+    document.getElementById('ofMoreBtn').addEventListener('click', function(){
+      expanded = !expanded; draw();
+    });
+    draw();
+    renderMicro();
+    renderOffers();
+  }).catch(function(){
+    noProductBase('تعذّر تحميل بيانات المنتجات. تحقّق من اتصالك ثم أعد تحميل الصفحة.');
+    renderOffers();
+  });
+})();
+</script>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+</body>
+</html>

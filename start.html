@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشارك المالي الذكي — اكتشف المنتج المالي الأنسب لك | MaalyPlus</title>
+    <meta name="description" content="اكتشف المنتج المالي المناسب لوضعك في 4 خطوات — بطاقة ائتمان، قرض، تمويل أصغر، أو ادخار.">
+    <link rel="canonical" href="https://maalyplus.com/start.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR2XEXKN8T');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260827">
+    <style>
+        :root{--pb:#1E40AF;--pbd:#1E2B3C;--pg:#10B981;--pgd:#059669;--so:#F59E0B;--ng1:#F3F4F6;--ng2:#E5E7EB;--nd1:#374151;--nd2:#1F2937;--fh:'IBM Plex Sans Arabic','Alexandria',sans-serif;--fb:'IBM Plex Sans Arabic',sans-serif;--rm:12px;--rl:16px;--sm:0 4px 12px rgba(0,0,0,0.08);}
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:var(--fb);background:var(--ng1);color:var(--nd1);min-height:100vh;}
+
+        /* Hero */
+        .wizard-hero{background:linear-gradient(135deg,var(--pbd),var(--pb) 60%,#047857);color:#fff;padding:2.5rem 1.5rem 1.5rem;text-align:center;}
+        .wizard-hero h1{font-family:var(--fh);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;margin-bottom:0.5rem;}
+        .wizard-hero p{opacity:0.9;font-size:0.95rem;max-width:500px;margin:0 auto;}
+
+        /* Progress */
+        .progress-bar{background:rgba(255,255,255,0.2);border-radius:50px;height:6px;max-width:400px;margin:1.5rem auto 0;overflow:hidden;}
+        .progress-fill{height:100%;background:#fff;border-radius:50px;transition:width 0.4s ease;}
+        .progress-label{text-align:center;font-size:0.8rem;opacity:0.8;margin-top:0.5rem;}
+
+        /* Wizard */
+        .wizard-wrap{max-width:680px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+
+        /* Step */
+        .step{display:none;animation:fadeIn 0.3s ease;}
+        .step.active{display:block;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+        .step-card{background:#fff;border-radius:var(--rl);padding:2rem;box-shadow:var(--sm);}
+        .step-title{font-family:var(--fh);font-size:1.2rem;color:var(--nd2);margin-bottom:0.4rem;}
+        .step-sub{font-size:0.875rem;color:#4B5563;margin-bottom:1.5rem;}
+        .field-hint{font-size:.8rem;color:#4B5563;line-height:1.6;margin:-.15rem 0 .7rem;}
+
+        /* Options Grid */
+        .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+        .option-btn{background:var(--ng1);border:2px solid var(--ng2);border-radius:var(--rl);padding:1.1rem 1rem;cursor:pointer;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+        .option-btn:hover{border-color:var(--pb);background:#EFF6FF;}
+        .option-btn.selected{border-color:var(--pg);background:#F0FDF4;}
+        .option-icon{font-size:1.8rem;line-height:1;}
+        .option-label{font-family:var(--fh);font-size:0.9rem;font-weight:700;color:var(--nd2);}
+        .option-desc{font-size:0.75rem;color:#6B7280;line-height:1.4;}
+
+        /* Single option full width */
+        .options-grid.cols-1{grid-template-columns:1fr;}
+        .options-grid.cols-3{grid-template-columns:1fr 1fr 1fr;}
+
+        /* Nav Buttons */
+        .step-nav{display:flex;gap:0.75rem;margin-top:1.25rem;align-items:center;}
+        .btn-back{padding:0.65rem 1.25rem;border:1.5px solid var(--ng2);border-radius:var(--rm);background:transparent;font-family:var(--fb);font-size:0.88rem;color:var(--nd1);cursor:pointer;transition:all 0.2s;}
+        .btn-back:hover{border-color:var(--pb);color:var(--pb);}
+        .btn-next{flex:1;padding:0.75rem;background:linear-gradient(135deg,var(--pb),var(--pg));color:#fff;border:none;border-radius:var(--rm);font-family:var(--fh);font-size:1rem;font-weight:700;cursor:pointer;transition:opacity 0.2s;}
+        .btn-next:hover{opacity:0.9;}
+        .btn-next:disabled{opacity:0.4;cursor:not-allowed;}
+
+        /* Result */
+        .result-card{background:#fff;border-radius:var(--rl);box-shadow:var(--sm);overflow:hidden;}
+        .result-hero{background:linear-gradient(135deg,var(--pb),#047857);color:#fff;padding:1.75rem 2rem;text-align:center;}
+        .result-hero .icon{font-size:2.5rem;margin-bottom:0.75rem;}
+        .result-hero h2{font-family:var(--fh);font-size:1.4rem;font-weight:700;margin-bottom:0.4rem;}
+        .result-hero p{opacity:0.9;font-size:0.9rem;}
+        .result-body{padding:1.5rem 2rem;}
+        .result-why{background:var(--ng1);border-radius:var(--rm);padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.88rem;color:var(--nd1);line-height:1.7;}
+        .result-why strong{color:var(--pbd);}
+        .result-options{display:flex;flex-direction:column;gap:0.75rem;}
+        .result-option{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:1.5px solid var(--ng2);border-radius:var(--rm);text-decoration:none;color:inherit;transition:all 0.2s;}
+        .result-option:hover{border-color:var(--pg);background:#F0FDF4;transform:translateX(-2px);}
+        .result-option-icon{font-size:1.5rem;flex-shrink:0;}
+        .result-option-body{flex:1;}
+        .result-option-title{font-family:var(--fh);font-size:0.95rem;font-weight:700;color:var(--nd2);}
+        .result-option-desc{font-size:0.8rem;color:#6B7280;margin-top:2px;}
+        .result-option-arrow{color:#6B7280;font-size:1rem;}
+        .result-option.primary{background:var(--pb);border-color:var(--pb);color:#fff;}
+        .result-option.primary:hover{background:var(--pbd);border-color:var(--pbd);}
+        .result-option.primary .result-option-title{color:#fff;}
+        .result-option.primary .result-option-desc{color:rgba(255,255,255,0.8);}
+        .result-option.primary .result-option-arrow{color:#fff;}
+
+        .start-over{text-align:center;margin-top:1.25rem;}
+        .start-over button{background:transparent;border:none;color:#6B7280;font-size:0.85rem;cursor:pointer;text-decoration:underline;}
+
+        @media(max-width:480px){
+            .options-grid{grid-template-columns:1fr;}
+            .options-grid.cols-3{grid-template-columns:1fr 1fr;}
+        }
+    
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.75rem 0 !important; }
+        .header .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1.5rem !important; }
+        .logo-img img { height: 52px !important; width: auto !important; display: block !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+        
+        .nav-link:hover, 
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563; font-weight: 500; font-size: 12px; padding: 5px 7px; border-radius: 8px; white-space: nowrap; background: none; border: none; cursor: pointer; font-family: var(--font-body); }
+        .nav-drop-btn:hover { color: #10B981; background: rgba(16,185,129,0.06); }
+        .nav-drop-menu { display: none; position: absolute; top: calc(100% + 10px); right: 0; background: #fff; border-radius: 14px; box-shadow: 0 8px 30px rgba(30,64,175,0.12); padding: 8px; min-width: 210px; z-index: 999; border: 1px solid rgba(0,0,0,0.06); }
+        .nav-dropdown:hover .nav-drop-menu, .nav-dropdown:focus-within .nav-drop-menu { display: block; }
+        .nav-drop-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 8px; color: #374151; text-decoration: none; font-size: 13px; font-weight: 500; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06); color: #1E40AF; }
+        .btn-cta-header { display: inline-flex; align-items: center; padding: 8px 16px; background: linear-gradient(135deg,#047857,#065F46); color: #fff !important; font-size: 12px; font-weight: 700; border-radius: 50px; text-decoration: none; white-space: nowrap; box-shadow: 0 3px 12px rgba(16,185,129,0.28); font-family: var(--font-body); flex-shrink: 0; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.6rem 0 !important; }
+        .header .container { max-width: 1280px !important; margin: 0 auto !important; padding: 0 1.5rem !important; width: 100% !important; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1rem !important; width: 100% !important; }
+        .logo-img { flex-shrink: 0 !important; }
+        .logo-img img { height: 48px !important; width: auto !important; display: block !important; max-width: 180px !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex: 1 !important; justify-content: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563 !important; font-weight: 500 !important; font-size: 12.5px !important; padding: 5px 8px !important; border-radius: 8px !important; white-space: nowrap !important; background: none !important; border: none !important; cursor: pointer !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-drop-btn:hover { color: #10B981 !important; background: rgba(16,185,129,0.06) !important; }
+        .nav-drop-menu { display: none !important; position: absolute !important; top: calc(100% + 8px) !important; right: 0 !important; background: #fff !important; border-radius: 14px !important; box-shadow: 0 8px 30px rgba(30,64,175,0.15) !important; padding: 8px !important; min-width: 200px !important; z-index: 9999 !important; border: 1px solid rgba(0,0,0,0.08) !important; }
+        .nav-dropdown:hover .nav-drop-menu { display: block !important; }
+        .nav-drop-item { display: flex !important; align-items: center !important; gap: 8px !important; padding: 9px 12px !important; border-radius: 8px !important; color: #374151 !important; text-decoration: none !important; font-size: 12.5px !important; font-weight: 500 !important; white-space: nowrap !important; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06) !important; color: #1E40AF !important; }
+        .btn-cta-header { display: inline-flex !important; align-items: center !important; padding: 8px 18px !important; background: linear-gradient(135deg,#047857,#065F46) !important; color: #fff !important; font-size: 12.5px !important; font-weight: 700 !important; border-radius: 50px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-toggle { display: none !important; }
+        @media (max-width: 960px) { .nav { display: none !important; } .nav.open { display: flex !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; left: 0 !important; background: #fff !important; padding: 1rem !important; box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; } .nav-toggle { display: flex !important; } }
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:title" content="مستشارك المالي الذكي — أداة التوصية المالية | MaalyPlus">
+    <meta property="og:description" content="اكتشف المنتج المالي المناسب لوضعك بأسئلة قصيرة — توصية مخصّصة لراتبك.">
+    <meta property="og:url" content="https://maalyplus.com/start.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مستشارك المالي الذكي — أداة التوصية المالية | MaalyPlus">
+    <meta name="twitter:description" content="اكتشف المنتج المالي المناسب لوضعك بأسئلة قصيرة — توصية مخصّصة لراتبك.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="mobile.css?v=20260827">
+    <script defer src="mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo logo-img">
+                <img src="images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+<div class="wizard-hero">
+    <h1><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> مستشارك المالي الذكي</h1>
+    <p>بطاقات، قروض، ادخار، وتمويل — نسألك القليل ونرشّح لك الأنسب بالأرقام: نحسب نسبة التزاماتك (DBR) والعائد الصافي بالدينار على وضعك أنت</p>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-label" id="progressLabel">ابدأ الآن</div>
+</div>
+
+<main class="wizard-wrap">
+
+    <!-- Step 1: ماذا تحتاج؟ -->
+    <div class="step active" id="step1">
+        <div id="historyHost"></div>
+        <div class="step-card">
+            <div class="step-title">ماذا تحتاج بالضبط؟</div>
+            <div class="step-sub">اختر الأقرب لما يدور في ذهنك — <strong>لماذا نسأل؟</strong> لنعرض لك المسار والأسئلة المناسبة فقط، دون إزعاجك بما لا يخصّك</div>
+            <div class="options-grid">
+                <button class="option-btn" onclick="selectOption(1,'spend')" data-val="spend">
+                    <span class="option-icon" style="color:#1E40AF"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-card"/></svg></span>
+                    <span class="option-label">أريد بطاقة دفع</span>
+                    <span class="option-desc">للإنفاق اليومي أو التسوق عبر الإنترنت</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(1,'cash')" data-val="cash">
+                    <span class="option-icon" style="color:#047857"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-cash"/></svg></span>
+                    <span class="option-label">أحتاج مبلغاً نقدياً</span>
+                    <span class="option-desc">قرضاً أو تمويلاً لهدف محدد</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(1,'save')" data-val="save">
+                    <span class="option-icon" style="color:#0E7490"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-safe"/></svg></span>
+                    <span class="option-label">أريد الادخار وتنمية أموالي</span>
+                    <span class="option-desc">أبحث عن حساب بعائد مناسب</span>
+                </button>
+                <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                <button class="option-btn" onclick="selectOption(1,'protect')" data-val="protect">
+                    <span class="option-icon" style="color:#7C3AED"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-shield"/></svg></span>
+                    <span class="option-label">أريد تأمين</span>
+                    <span class="option-desc">تأمين سيارة أو تأمين صحي</span>
+                </button>
+                -->
+                <button class="option-btn" onclick="selectOption(1,'project')" data-val="project">
+                    <span class="option-icon" style="color:#B45309"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-trend"/></svg></span>
+                    <span class="option-label">تمويل مشروع صغير</span>
+                    <span class="option-desc">حتى إن لم أستوفِ متطلبات البنوك التقليدية</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(1,'car')" data-val="car">
+                    <span class="option-icon" style="color:#991B1B"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-car"/></svg></span>
+                    <span class="option-label">شراء سيارة</span>
+                    <span class="option-desc">تمويل سيارة جديدة أو مستعملة</span>
+                </button>
+            </div>
+            <div class="step-nav">
+                <button class="btn-next" id="next1" disabled onclick="goNext(2)">التالي ←</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2: وضعك الوظيفي -->
+    <div class="step" id="step2">
+        <div class="step-card">
+            <div class="step-title">ما وضعك الوظيفي؟</div>
+            <div class="step-sub">هذا يحدد المنتجات المؤهَّل لها فعلاً</div>
+            <div class="options-grid">
+                <button class="option-btn" onclick="selectOption(2,'gov')" data-val="gov">
+                    <span class="option-icon" style="color:#1E40AF"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-bank"/></svg></span><span class="option-label">موظف حكومي</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(2,'private')" data-val="private">
+                    <span class="option-icon" style="color:#047857"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-briefcase"/></svg></span><span class="option-label">موظف قطاع خاص</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(2,'self')" data-val="self">
+                    <span class="option-icon" style="color:#B45309"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-trend"/></svg></span><span class="option-label">أعمل لحسابي الخاص / صاحب عمل</span>
+                </button>
+                <button class="option-btn" onclick="selectOption(2,'none')" data-val="none">
+                    <span class="option-icon" style="color:#6B7280"><svg class="mp-ic" style="width:1.7rem;height:1.7rem"><use href="/images/icons.svg#ic-search"/></svg></span><span class="option-label">بدون دخل ثابت حالياً</span>
+                </button>
+            </div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(1)">→ رجوع</button>
+                <button class="btn-next" id="next2" disabled onclick="goNext(3)">التالي ←</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 3: الدخل الشهري (رقم) -->
+    <div class="step" id="step3">
+        <div class="step-card">
+            <div class="step-title">كم دخلك الشهري بالدينار؟</div>
+            <div class="step-sub">رقم تقريبي — لا نخزّن بياناتك، الحساب يتم داخل متصفحك فقط</div>
+            <div class="num-input-wrap">
+                <input type="number" id="salaryInput" inputmode="numeric" min="0" max="20000" placeholder="مثال: 750" oninput="onNumInput(3)">
+                <span class="num-unit">د.أ / شهر</span>
+            </div>
+            <div class="quick-chips">
+                <button class="chip" onclick="setNum('salaryInput',350,3)">~350</button>
+                <button class="chip" onclick="setNum('salaryInput',600,3)">~600</button>
+                <button class="chip" onclick="setNum('salaryInput',1000,3)">~1000</button>
+                <button class="chip" onclick="setNum('salaryInput',2000,3)">~2000</button>
+            </div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(2)">→ رجوع</button>
+                <button class="btn-next" id="next3" disabled onclick="goNext(4)">التالي ←</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 4: الالتزامات الشهرية → DBR -->
+    <div class="step" id="step4">
+        <div class="step-card">
+            <div class="step-title">كم مجموع أقساطك الشهرية الحالية؟</div>
+            <div class="step-sub">أقساط قروض + الحد الأدنى لسداد البطاقات. اكتب 0 إذا لا يوجد — هذا ما يحدد نسبة الاقتطاع (DBR) لديك</div>
+            <div class="num-input-wrap">
+                <input type="number" id="oblInput" inputmode="numeric" min="0" max="20000" placeholder="مثال: 150" oninput="onNumInput(4)">
+                <span class="num-unit">د.أ / شهر</span>
+            </div>
+            <div class="quick-chips">
+                <button class="chip" onclick="setNum('oblInput',0,4)">لا يوجد</button>
+                <button class="chip" onclick="setNum('oblInput',100,4)">~100</button>
+                <button class="chip" onclick="setNum('oblInput',250,4)">~250</button>
+                <button class="chip" onclick="setNum('oblInput',500,4)">~500</button>
+            </div>
+            <div class="dbr-live" id="dbrLive"></div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(3)">→ رجوع</button>
+                <button class="btn-next" id="next4" disabled onclick="goStep5()">التالي ←</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 5A: قرض/سيارة/مشروع — المبلغ والمدة -->
+    <div class="step" id="step5loan">
+        <div class="step-card">
+            <div style="display:inline-flex;align-items:center;gap:5px;background:#EFF6FF;color:#1E40AF;font-size:.72rem;font-weight:700;padding:3px 11px;border-radius:50px;margin-bottom:.75rem;"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> مسار التمويل — «من يموّلني؟»</div>
+            <div class="step-title" id="loanTitle">كم المبلغ الذي تحتاجه؟</div>
+            <div class="step-sub">سنحسب القسط المتوقع وكلفة الفائدة الكاملة لكل بنك</div>
+            <div class="num-input-wrap">
+                <input type="number" id="amountInput" inputmode="numeric" min="500" max="200000" placeholder="مثال: 10000" oninput="onNumInput('5loan')">
+                <span class="num-unit">د.أ</span>
+            </div>
+            <div class="field-label">مدة السداد</div>
+            <div class="quick-chips" id="tenorChips">
+                <button class="chip chip-toggle" data-tenor="2" onclick="setTenor(2)">سنتان</button>
+                <button class="chip chip-toggle" data-tenor="4" onclick="setTenor(4)">4 سنوات</button>
+                <button class="chip chip-toggle selected" data-tenor="5" onclick="setTenor(5)">5 سنوات</button>
+                <button class="chip chip-toggle" data-tenor="7" onclick="setTenor(7)">7 سنوات</button>
+            </div>
+            <div class="field-label">نوع التمويل</div>
+            <div class="quick-chips" id="loanModeChips">
+                <button class="chip chip-toggle selected" data-mode="all" onclick="setMode('loan','all')">الكل</button>
+                <button class="chip chip-toggle" data-mode="islamic" onclick="setMode('loan','islamic')"><svg class="mp-ic"><use href="/images/icons.svg#ic-crescent"/></svg> متوافق مع الشريعة</button>
+                <button class="chip chip-toggle" data-mode="conventional" onclick="setMode('loan','conventional')"><svg class="mp-ic"><use href="/images/icons.svg#ic-bank"/></svg> تقليدي فقط</button>
+            </div>
+            <div class="field-label">نوع الفائدة/الربح <span style="font-weight:400;color:#6B7280;font-size:.8rem">— أغلب البنوك لا تنشر النوع؛ «ثابتة» تعرض الموثّق فقط</span></div>
+            <div class="quick-chips" id="rateModeChips">
+                <button class="chip chip-toggle selected" data-mode="all" onclick="setMode('rate','all')">الكل</button>
+                <button class="chip chip-toggle" data-mode="fixed" onclick="setMode('rate','fixed')"><svg class="mp-ic"><use href="/images/icons.svg#ic-lock"/></svg> ثابتة فقط (الموثّق)</button>
+            </div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(4)">→ رجوع</button>
+                <button class="btn-next" id="next5loan" disabled onclick="runEngine()">اعرض أفضل القروض <svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 5B: بطاقة — الإنفاق والتفضيل -->
+    <div class="step" id="step5card">
+        <div class="step-card">
+            <div class="step-title">كم تبلغ مشترياتك الشهرية بالبطاقة تقريباً؟</div>
+            <div class="step-sub">لحساب العائد الصافي: قيمة الاسترداد النقدي والمكافآت ناقص الرسوم السنوية — بالدينار</div>
+            <div class="num-input-wrap">
+                <input type="number" id="spendInput" inputmode="numeric" min="0" max="20000" placeholder="مثال: 400" oninput="onNumInput('5card')">
+                <span class="num-unit">د.أ / شهر</span>
+            </div>
+            <div class="field-label">كيف ستسدّد فاتورة البطاقة عادةً؟</div>
+            <div class="field-hint">طريقة السداد تؤثّر في التكلفة والترتيب، لأن فوائد/أرباح الرصيد المحمول قد تتجاوز قيمة المكافآت.</div>
+            <div class="quick-chips" id="repayChips">
+                <button class="chip chip-toggle selected" data-repay="full" onclick="setRepay('full')"><svg class="mp-ic"><use href="/images/icons.svg#ic-check-circle"/></svg> أسدّد الرصيد كاملاً كل شهر</button>
+                <button class="chip chip-toggle" data-repay="revolver" onclick="setRepay('revolver')"><svg class="mp-ic"><use href="/images/icons.svg#ic-refresh"/></svg> أسدّد جزءاً وأرحّل الباقي</button>
+                <button class="chip chip-toggle" data-repay="installment" onclick="setRepay('installment')"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> أقساط</button>
+            </div>
+            <div id="balanceWrap" style="display:none">
+                <div class="field-label">كم الرصيد الذي تتوقع حمله شهرياً؟ <span style="font-weight:400;color:#4B5563;font-size:.8rem">— لحساب تكلفة الفائدة الفعلية</span></div>
+                <div class="num-input-wrap">
+                    <input type="number" id="balanceInput" inputmode="numeric" min="0" max="50000" placeholder="مثال: 1000" oninput="setBalance(this.value)">
+                    <span class="num-unit">د.أ</span>
+                </div>
+            </div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(4)">→ رجوع</button>
+                <button class="btn-next" id="next5card" disabled onclick="goCardPrefs()">التالي <svg class="mp-ic"><use href="/images/icons.svg#ic-arrow-left"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 6: بطاقات — التفضيلات (فُصل عن السؤال الخامس لتخفيف الازدحام) -->
+    <div class="step" id="step6card">
+        <div class="step-card">
+            <div class="step-title">ما الذي يهمّك في البطاقة؟</div>
+            <div class="step-sub">سؤالان قصيران يحدّدان ترتيب الترشيح</div>
+            <div class="field-label">أي نوع من البطاقات تفضّل؟</div>
+            <div class="quick-chips" id="cardModeChips">
+                <button class="chip chip-toggle selected" data-mode="all" onclick="setMode('card','all')"><svg class="mp-ic"><use href="/images/icons.svg#ic-grid"/></svg> جميع الأنواع</button>
+                <button class="chip chip-toggle" data-mode="islamic" onclick="setMode('card','islamic')"><svg class="mp-ic"><use href="/images/icons.svg#ic-crescent"/></svg> متوافقة مع الشريعة</button>
+                <button class="chip chip-toggle" data-mode="conventional" onclick="setMode('card','conventional')"><svg class="mp-ic"><use href="/images/icons.svg#ic-bank"/></svg> تقليدية فقط</button>
+            </div>
+            <div class="field-label">ما الأولوية الأهم لك؟ <span style="font-weight:400;color:#6B7280;font-size:.8rem">(اختر واحدة)</span></div>
+            <div class="quick-chips" id="prefChips">
+                <button class="chip chip-toggle selected" data-pref="cashback" onclick="setPref('cashback')"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> استرداد نقدي</button>
+                <button class="chip chip-toggle" data-pref="travel" onclick="setPref('travel')"><svg class="mp-ic"><use href="/images/icons.svg#ic-plane"/></svg> مزايا السفر وصالات المطارات</button>
+                <button class="chip chip-toggle" data-pref="nofee" onclick="setPref('nofee')"><svg class="mp-ic"><use href="/images/icons.svg#ic-percent"/></svg> بدون رسوم سنوية</button>
+            </div>
+            <label class="pref-check"><input type="checkbox" id="exclSegmentChk" onchange="A.exclSegment=this.checked"> <svg class="mp-ic"><use href="/images/icons.svg#ic-grad"/></svg> استثنِ البطاقات المخصّصة لفئة معيّنة (شباب، متقاعدون، أطفال/ناشئة)</label>
+            <div class="step-nav">
+                <button class="btn-back" onclick="show('step5card',5)">→ رجوع</button>
+                <button class="btn-next" onclick="runEngine()">اعرض أفضل البطاقات <svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 5C: ادخار — المبلغ -->
+    <div class="step" id="step5save">
+        <div class="step-card">
+            <div class="step-title">كم المبلغ الذي ستودعه؟</div>
+            <div class="step-sub">لحساب العائد السنوي المتوقع بالدينار لكل حساب</div>
+            <div class="num-input-wrap">
+                <input type="number" id="depositInput" inputmode="numeric" min="0" max="1000000" placeholder="مثال: 5000" oninput="onNumInput('5save')">
+                <span class="num-unit">د.أ</span>
+            </div>
+            <div class="field-label">نوع الحساب</div>
+            <div class="quick-chips" id="saveModeChips">
+                <button class="chip chip-toggle selected" data-mode="all" onclick="setMode('save','all')">الكل</button>
+                <button class="chip chip-toggle" data-mode="islamic" onclick="setMode('save','islamic')"><svg class="mp-ic"><use href="/images/icons.svg#ic-crescent"/></svg> متوافق مع الشريعة</button>
+                <button class="chip chip-toggle" data-mode="conventional" onclick="setMode('save','conventional')"><svg class="mp-ic"><use href="/images/icons.svg#ic-bank"/></svg> تقليدي فقط</button>
+            </div>
+            <div class="step-nav">
+                <button class="btn-back" onclick="goBack(4)">→ رجوع</button>
+                <button class="btn-next" id="next5save" disabled onclick="runEngine()">اعرض أفضل الحسابات <svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- النتيجة -->
+    <div class="step" id="stepResult">
+        <div id="resultCard"></div>
+        <div class="restart-wrap"><button class="btn-back" onclick="restart()"><svg class="mp-ic"><use href="/images/icons.svg#ic-refresh"/></svg> ابدأ من جديد</button></div>
+    </div>
+
+</main>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo logo-img">
+                    <img src="images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="education/education.html">مركز المعرفة</a></li>
+                    <li><a href="community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="methodology.html">منهجية التقييم</a></li>
+                    <li><a href="for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+<style>
+/* ── إضافات محرك القرار ── */
+.num-input-wrap{display:flex;align-items:center;gap:.6rem;margin:.4rem 0 .8rem;}
+.num-input-wrap input{flex:1;max-width:240px;font-size:1.3rem;font-weight:700;padding:.7rem 1rem;border:2px solid #E5E7EB;border-radius:12px;text-align:center;font-family:inherit;}
+.num-input-wrap input:focus{border-color:#10B981;outline:none;}
+.num-unit{color:#6B7280;font-size:.9rem;font-weight:600;}
+.quick-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.chip{border:1.5px solid #E5E7EB;background:#fff;border-radius:50px;padding:.4rem .95rem;font-size:.85rem;cursor:pointer;font-family:inherit;transition:all .15s;}
+.chip:hover{border-color:#10B981;}
+.chip.selected{background:#ECFDF5;border-color:#10B981;color:#047857;font-weight:700;}
+.field-label{font-size:.85rem;font-weight:700;color:#374151;margin:.9rem 0 .45rem;}
+.pref-check{display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:#374151;margin:.4rem 0 .2rem;cursor:pointer;}
+.dbr-live{min-height:1.4rem;font-size:.83rem;font-weight:600;margin-bottom:.4rem;}
+.dbr-gauge{background:#fff;border-radius:16px;padding:1.1rem 1.3rem;box-shadow:var(--sm,0 1px 4px rgba(0,0,0,.07));margin-bottom:1rem;}
+.dbr-gauge-bar{position:relative;height:12px;border-radius:50px;background:linear-gradient(to left,#10B981 0%,#10B981 40%,#F59E0B 40%,#F59E0B 50%,#EF4444 50%,#EF4444 100%);margin:.7rem 0 .3rem;}
+.dbr-marker{position:absolute;top:-5px;width:4px;height:22px;background:#111827;border-radius:2px;}
+.dbr-scale{display:flex;justify-content:space-between;font-size:.7rem;color:#9CA3AF;}
+.reco-card{background:#fff;border-radius:16px;box-shadow:var(--sm,0 1px 4px rgba(0,0,0,.07));padding:1.2rem 1.3rem;margin-bottom:1rem;border:1.5px solid transparent;}
+.reco-card.top{border-color:#10B981;position:relative;}
+.reco-top-badge{position:absolute;top:-11px;right:16px;background:#10B981;color:#fff;font-size:.72rem;font-weight:800;border-radius:50px;padding:2px 12px;}
+.reco-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem;}
+.reco-head img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:#F9FAFB;padding:4px;}
+.reco-name{font-weight:800;color:#111827;font-size:1rem;}
+.reco-bank{font-size:.8rem;color:#6B7280;}
+.reco-score{margin-inline-start:auto;text-align:center;}
+.reco-score .num{font-size:1.5rem;font-weight:900;line-height:1;}
+.reco-score .lbl{font-size:.65rem;color:#6B7280;}
+.reco-benefit{display:flex;gap:.7rem;flex-wrap:wrap;margin:.6rem 0;}
+.benefit-pill{background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;border-radius:10px;padding:.45rem .8rem;font-size:.8rem;font-weight:700;}
+.benefit-pill.neutral{background:#F9FAFB;border-color:#E5E7EB;color:#374151;}
+.benefit-pill.warn{background:#FFFBEB;border-color:#FDE68A;color:#92400E;}
+.reco-why{background:#F8FAFC;border-radius:10px;padding:.7rem .9rem;font-size:.83rem;color:#334155;line-height:1.7;margin:.5rem 0;}
+.reco-why strong{color:#0F172A;}
+.reco-breakdown{margin-top:.5rem;}
+.bd-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:.75rem;}
+.bd-row .k{min-width:110px;color:#374151;}
+.bd-row .bar{flex:1;background:#E5E7EB;border-radius:50px;height:6px;overflow:hidden;}
+.bd-row .bar div{height:100%;background:#1E40AF;border-radius:50px;}
+.bd-row .v{font-weight:800;min-width:22px;color:#111;}
+.bd-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:.5rem;font-size:.68rem;color:#6B7280;}
+.bd-legend span{display:inline-flex;align-items:center;gap:4px;}
+.bd-legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+/* أخضر = الفعل الأساسي الوحيد · أزرق = ثانوي/استكشاف */
+.reco-cta{display:inline-block;margin-top:.6rem;background:linear-gradient(135deg,#047857,#065F46);color:#fff;border-radius:10px;padding:.6rem 1.3rem;font-weight:700;font-size:.85rem;text-decoration:none;}
+.reco-cta.ghost{background:#fff !important;background-image:none !important;color:#1E40AF !important;border:1.5px solid #1E40AF;margin-inline-start:.5rem;}
+.reco-cta.ghost:hover{background:#EFF6FF !important;}
+.verified-tag{display:inline-flex;align-items:center;gap:4px;background:#F0FDF4;border:1px solid #BBF7D0;color:#15803D;border-radius:50px;padding:2px 9px;font-size:.68rem;font-weight:700;margin-top:.3rem;}
+.feedback-bar{background:#fff;border-radius:16px;box-shadow:var(--sm,0 1px 4px rgba(0,0,0,.07));padding:1rem 1.3rem;margin:1.2rem 0 .5rem;text-align:center;}
+.feedback-bar .q{font-weight:800;font-size:.95rem;color:#111827;margin-bottom:.6rem;}
+.fb-btn{border:1.5px solid #E5E7EB;background:#fff;border-radius:12px;padding:.5rem 1.4rem;font-size:1.2rem;cursor:pointer;margin:0 .3rem;transition:all .15s;font-family:inherit;}
+.fb-btn:hover{transform:scale(1.08);border-color:#10B981;}
+.fb-thanks{color:#047857;font-weight:700;font-size:.9rem;}
+.fb-reasons{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem;}
+.history-panel{background:#F8FAFC;border:1.5px dashed #CBD5E1;border-radius:14px;padding:.9rem 1.1rem;margin-bottom:1.1rem;}
+.history-panel .hp-title{font-weight:800;font-size:.85rem;color:#334155;margin-bottom:.5rem;display:flex;justify-content:space-between;align-items:center;}
+.history-item{display:flex;justify-content:space-between;align-items:center;gap:.6rem;font-size:.8rem;color:#475569;padding:.35rem 0;border-bottom:1px solid #E2E8F0;}
+.history-item:last-child{border-bottom:none;}
+.history-item .hi-score{font-weight:800;color:#047857;}
+.hp-clear{background:none;border:none;color:#94A3B8;font-size:.72rem;cursor:pointer;font-family:inherit;text-decoration:underline;}
+.result-hero2{background:linear-gradient(135deg,#065F46,#10B981);color:#fff;border-radius:16px;padding:1.4rem 1.5rem;margin-bottom:1rem;}
+.result-hero2 h2{margin:.2rem 0 .3rem;font-size:1.25rem;}
+.result-hero2 p{margin:0;opacity:.92;font-size:.87rem;line-height:1.6;}
+.dbr-warning{background:#FEF2F2;border:1.5px solid #FECACA;color:#991B1B;border-radius:12px;padding:.9rem 1.1rem;font-size:.85rem;line-height:1.7;margin-bottom:1rem;}
+.disclaimer{font-size:.72rem;color:#9CA3AF;margin:.8rem 0 0;line-height:1.6;}
+/* عرض الدرجة: «درجة التوافق: 96/100» */
+.reco-score .lbl.top{font-weight:700;color:#475569;margin-bottom:2px;}
+.reco-score .num small{font-size:.8rem;color:#9CA3AF;font-weight:700;}
+/* وسوم أعلى النتيجة */
+.result-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 .2rem;}
+.rtag{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.32);color:#fff;border-radius:50px;padding:3px 11px;font-size:.74rem;font-weight:700;}
+/* كتلة القيمة: السنة الأولى مقابل السنوات التالية + المعادلة */
+.reco-value{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:.7rem .9rem;margin:.5rem 0 .4rem;}
+.reco-value.neg{background:#FFFBEB;border-color:#FDE68A;}
+.rv-line{font-size:.9rem;color:#14532D;line-height:1.75;}
+.rv-line b{font-weight:900;font-size:1.04rem;}
+.rv-first b{color:#5B21B6;}
+.rv-steady b{color:#047857;}
+.reco-value.neg .rv-steady b{color:#B45309;}
+.rv-formula{font-size:.78rem;color:#4B5563;margin-top:.4rem;padding-top:.4rem;border-top:1px dashed #BBF7D0;}
+.reco-value.neg .rv-formula{border-top-color:#FDE68A;}
+.reco-detail{font-size:.78rem;color:#4B5563;margin:.1rem 0 .5rem;line-height:1.65;}
+/* مخطط الدرجات المطوي «كيف احتسبنا التقييم؟» */
+.reco-calc{margin-top:.55rem;border:1px solid #E5E7EB;border-radius:10px;background:#fff;overflow:hidden;}
+.reco-calc>summary{cursor:pointer;padding:.55rem .8rem;font-size:.8rem;font-weight:700;color:#374151;list-style:none;display:flex;align-items:center;gap:6px;}
+.reco-calc>summary::-webkit-details-marker{display:none;}
+.reco-calc>summary::after{content:'▾';margin-inline-start:auto;color:#9CA3AF;transition:transform .2s;}
+.reco-calc[open]>summary::after{transform:rotate(180deg);}
+.reco-calc .reco-breakdown{padding:0 .8rem .7rem;margin-top:0;}
+.bd-note{font-size:.72rem;color:#6B7280;line-height:1.6;margin:.35rem 0;}
+@media(max-width:520px){.reco-head{flex-wrap:wrap}.reco-score{margin-inline-start:0}}
+</style>
+
+<script>
+/* ═══════════════════ MaalyPlus Decision Engine v3 ═══════════════════
+   DBR فعلي + عائد صافٍ بالدينار + نقاط شخصية 0-100 + تفسير "لماذا يناسبك"
+   كل الحسابات client-side — لا يُرسل أي رقم لأي خادم.
+======================================================================= */
+const A = { need:null, work:null, salary:0, obligations:0,
+            amount:0, tenor:5, spend:0, deposit:0, pref:'cashback',
+            loanMode:'all', cardMode:'all', saveMode:'all', rateMode:'all',
+            repay:'full', balance:0, exclSegment:false };
+let totalSteps = 5;   // مسار البطاقات ٦ خطوات بعد تقسيم السؤال الخامس
+const DATA = { loans:null, cards:null, savings:null };
+
+/* ── قياس الأحداث (GA4) — نطاقات وأكواد فقط، لا قيم راتب/رصيد خام ── */
+function track(ev, params){ try{ if(typeof gtag==='function') gtag('event', ev, params||{}); }catch(e){} }
+function salaryBucket(s){ return !s?'unknown':s<400?'under_400':s<800?'400_800':s<1500?'800_1500':s<3000?'1500_3000':'3000_plus'; }
+let _engineStarted=false;
+
+/* ── تحميل البيانات مبكراً ── */
+async function loadData(key, url){
+  if (DATA[key]) return DATA[key];
+  try { const r = await fetch(url); DATA[key] = await r.json(); } catch(e){ DATA[key] = []; }
+  return DATA[key];
+}
+loadData('loans','loans/loans.json?v=20260827'); loadData('cards','cards/cards.json?v=20260827'); loadData('savings','savings/savings.json?v=20260827');
+/* العودة من صفحة التفاصيل إلى نتائج المستشار نفسها */
+if (typeof location !== 'undefined' && new URLSearchParams(location.search).get('restore') === '1' && restoreWizardState()) {
+  runEngine();
+}
+
+/* ── تنقّل ── */
+function selectOption(step, val){
+  if (step === 1){ A.need = val;
+    if(!_engineStarted){ _engineStarted=true; track('engine_started'); }
+    track('goal_selected', {goal: val});
+  }
+  if (step === 2) A.work = val;
+  const parent = document.getElementById('step'+step).querySelector('.options-grid');
+  parent.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+  parent.querySelector(`[data-val="${val}"]`)?.classList.add('selected');
+  document.getElementById('next'+step).disabled = false;
+  setTimeout(()=>goNext(step+1), 350);
+}
+function show(id, stepNo){
+  if (id==='stepResult') track('recommendation_viewed', {need:A.need||'', repay:A.repay||'', mode:A.cardMode||A.loanMode||'', salary_bucket:salaryBucket(A.salary)});
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const pct = ((stepNo-1)/totalSteps)*100;
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('progressLabel').textContent = stepNo<=totalSteps ? `سؤال ${stepNo} من ${totalSteps}` : 'نتيجتك جاهزة ✅';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goNext(step){ show('step'+step, step); }
+function goCardPrefs(){ show('step6card', 6); }
+function goBack(step){ show('step'+step, step); }
+
+function onNumInput(step){
+  const map = {3:'salaryInput',4:'oblInput','5loan':'amountInput','5card':'spendInput','5save':'depositInput'};
+  const el = document.getElementById(map[step]);
+  const v = parseFloat(el.value);
+  const ok = !isNaN(v) && v >= 0 && el.value !== '';
+  document.getElementById('next'+step).disabled = !ok;
+  if (step===3 && ok) A.salary = v;
+  if (step===4){ if(ok) A.obligations = v; liveDBR(); }
+  if (step==='5loan' && ok) A.amount = v;
+  if (step==='5card' && ok) A.spend = v;
+  if (step==='5save' && ok) A.deposit = v;
+}
+function setNum(id, val, step){
+  document.getElementById(id).value = val; onNumInput(step);
+}
+function setTenor(t){ A.tenor = t;
+  document.querySelectorAll('#tenorChips .chip').forEach(c=>c.classList.toggle('selected', +c.dataset.tenor===t));
+}
+function setMode(kind, m){ A[kind+'Mode'] = m;
+  document.querySelectorAll('#'+kind+'ModeChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.mode===m));
+}
+function setPref(p){ A.pref = p;
+  document.querySelectorAll('#prefChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.pref===p));
+}
+function setRepay(r){ A.repay = r;
+  track('scenario_changed', {field:'repay', value:r});
+  document.querySelectorAll('#repayChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.repay===r));
+  document.getElementById('balanceWrap').style.display = (r==='revolver') ? 'block' : 'none';
+  if (r!=='revolver') A.balance = 0;
+}
+function setBalance(v){ const n=parseFloat(v); A.balance = isNaN(n)?0:n; }
+function liveDBR(){
+  const el = document.getElementById('dbrLive');
+  if (!A.salary){ el.textContent=''; return; }
+  const d = A.obligations / A.salary * 100;
+  const c = d < 35 ? '#059669' : d < 50 ? '#D97706' : '#DC2626';
+  el.innerHTML = `<span style="color:${c}">نسبة اقتطاعك الحالية (DBR): ${d.toFixed(0)}%</span>`;
+}
+function goStep5(){
+  track('eligibility_completed', {salary_bucket: salaryBucket(A.salary), dbr_bucket: A.salary? (A.obligations/A.salary<0.35?'ok':A.obligations/A.salary<0.5?'high':'over') : 'unknown'});
+  if (['cash','car','project'].includes(A.need)){
+    document.getElementById('loanTitle').textContent =
+      A.need==='car' ? 'كم سعر السيارة التي تخطط لها؟' :
+      A.need==='project' ? 'كم يحتاج مشروعك من تمويل؟' : 'كم المبلغ الذي تحتاجه؟';
+    totalSteps = 5;
+    show('step5loan', 5);
+  } else if (A.need==='spend') { totalSteps = 6; show('step5card', 5); }
+  else if (A.need==='save') { totalSteps = 5; show('step5save', 5); }
+  else runEngine(); // تأمين — لا يحتاج سؤالاً خامساً
+}
+
+/* ── أدوات مالية ── */
+const fmt = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(Math.round(n));
+function annuity(P, annualRate, years){
+  const r = annualRate/100/12, n = years*12;
+  if (r === 0) return P/n;
+  return P * r / (1 - Math.pow(1+r, -n));
+}
+function num(v, d=0){ const n=parseFloat(v); return isNaN(n)?d:n; }
+function clampScore(x){ return Math.max(25, Math.min(98, Math.round(x))); }
+
+/* ── العائد التقديري للبطاقة (schema v2: موثّق/تقديري + سقوف) ── */
+function cardRewardRate(c){
+  const rs = c.rewards_structure;
+  if (rs && typeof rs.default_rate === 'number') return rs.default_rate;
+  const r = String(c.rewards||'').toLowerCase();
+  if (r==='cashback') return 0.01;
+  if (r==='miles' || r==='travel') return 0.008;
+  if (r==='points') return 0.006;
+  return 0;
+}
+function cardAnnualRewards(c, annualSpend){
+  const rs = c.rewards_structure || {};
+  let rewards = annualSpend * cardRewardRate(c);
+  if (rs.monthly_cap_jod) rewards = Math.min(rewards, rs.monthly_cap_jod*12);
+  if (rs.monthly_cap_points && rs.point_value_jod){
+    const cap = (rs.monthly_cap_points.local||0) * rs.point_value_jod * 12;
+    if (cap) rewards = Math.min(rewards, cap);
+  }
+  return rewards;
+}
+function rewardTrustNote(c){
+  const rs = c.rewards_structure || {};
+  if (rs.verified) return '✓ نسبة المكافآت موثّقة من البنك' + (rs.rate_assumption?` (${rs.rate_assumption})`:'');
+  if (rs.needs_verification) return '~ نسبة المكافآت تقديرية متحفظة — قيد التحقق من البنك';
+  return '';
+}
+
+/* ═══════ محرك القروض — مواصفة 1.1: زوايا مستقلة + دخل متبقٍ + اختبار ضغط + شفافية استبعاد ═══════ */
+function engineLoans(){
+  const islamicOnly = A.loanMode === 'islamic';
+  const capRoom = A.salary - A.obligations;
+  const results = [];
+  const excluded = { salary:0, dbr:0, rateUnknown:0 };   // شفافية: لماذا غاب الباقي (reason codes)
+  DATA.loans.forEach(L=>{
+    if ((L.loan_type||'personal')!=='personal') return;  // مسار «مبلغ/سيارة/مشروع» = قروض شخصية فقط
+    if (islamicOnly && !L.is_islamic) return;
+    if (A.loanMode === 'conventional' && L.is_islamic) return;
+    if (A.rateMode==='fixed' && L.rate_fixed!==true){ excluded.rateUnknown++; return; } // RATE_TYPE_UNPUBLISHED
+    const reasonsOut = [];
+    const minSal = num(L.min_salary_jod, 0);
+    if (A.salary < minSal){ excluded.salary++; return; } // SALARY_MIN
+    const maxAmt = num(L.max_amount_jod, 1e9);
+    const amt = Math.min(A.amount, maxAmt);
+    const tenor = Math.min(A.tenor, num(L.max_tenor_years, A.tenor));
+    const rateMin = num(L.interest_rate_min, 9), rateMax = num(L.interest_rate_max, rateMin+2);
+    const rateMid = (rateMin+rateMax)/2;
+    const pay = annuity(amt, rateMid, tenor);
+    const totalInterest = pay*tenor*12 - amt;
+    const dbrNew = (A.obligations + pay) / A.salary * 100;
+    const dbrCap = num(L.dbr_max_percent, 50);
+    const eligibleDBR = dbrNew <= dbrCap;
+    if (!eligibleDBR) excluded.dbr++;                       // DBR_LIMIT (يبقى معروضاً كغير مؤهل)
+    /* §7.3: الدخل المتبقي بعد القسط — يُعرض دائماً لأغراض القرار */
+    const residual = A.salary - A.obligations - pay;
+    /* §7.5: اختبار الضغط — القسط لو ارتفع المعدل +2% (تنبيه، لا استبعاد) */
+    const stressPay = annuity(amt, rateMid+2, tenor);
+
+    /* نقاط شخصية 0-100 */
+    // كلفة (40): معدل الفائدة نسبةً لأفضل/أسوأ معدل بالسوق
+    const allMin = Math.min(...DATA.loans.map(x=>num(x.interest_rate_min,9)));
+    const allMax = Math.max(...DATA.loans.map(x=>num(x.interest_rate_max,12)));
+    const costScore = allMax===allMin ? 70 : (1-(rateMid-allMin)/(allMax-allMin))*100;
+    // ملاءمة (30): هامش DBR + هامش راتب + تغطية المبلغ
+    let fit = 0;
+    fit += eligibleDBR ? Math.min(1,(dbrCap-dbrNew)/20)*45 + 25 : 0;
+    fit += A.salary >= minSal*1.5 ? 15 : 8;
+    fit += A.amount <= maxAmt ? 15 : 5;
+    // شروط (30): نقل راتب، مرونة مدة، إسلامي match
+    let terms = 50;
+    if (!L.salary_transfer_required) { terms += 25; reasonsOut.push('لا يشترط نقل راتب'); }
+    if (num(L.max_tenor_years,0) >= A.tenor) terms += 15; else terms -= 10;
+    if (islamicOnly && L.is_islamic) terms += 10;
+    terms = Math.min(terms, 100);
+    const score = clampScore(costScore*0.40 + fit*0.30 + terms*0.30);
+
+    /* لماذا يناسبك */
+    const why = [];
+    why.push(`قسطك المتوقع <strong>${fmt(pay)} د.أ/شهر</strong> على ${tenor} سنوات بمعدل وسطي ${rateMid.toFixed(1)}% — يرفع نسبة اقتطاعك إلى <strong>${dbrNew.toFixed(0)}%</strong> (حد البنك ${dbrCap}%)${eligibleDBR?' ✓ ضمن الحد':' ✗ يتجاوز الحد'}.`);
+    if (rateMid <= allMin+1) why.push(`معدل الفائدة من الأدنى في السوق (${rateMin}%–${rateMax}%) — يوفّر عليك مقارنةً بالأعلى سعراً.`);
+    if (L.rate_fixed===true) why.push(`<svg class="mp-ic"><use href="/images/icons.svg#ic-lock"/></svg> ${L.rate_fixed_basis||'الفائدة/الربح ثابت طوال المدة'}.`);
+    else why.push('❔ نوع الفائدة (ثابتة/متغيرة) غير منشور رسمياً — اسأل البنك قبل التوقيع.');
+    if (!L.salary_transfer_required) why.push('لا يشترط نقل الراتب — مرونة أكبر إذا كان راتبك في بنك آخر.');
+    if (A.amount > maxAmt) why.push(`⚠️ سقف تمويله ${fmt(maxAmt)} د.أ — أقل من المبلغ المطلوب.`);
+
+    results.push({L, score, pay, totalInterest, dbrNew, dbrCap, eligibleDBR, rateMid, residual, stressPay, terms, why,
+      breakdown:{'الكلفة (40%)':Math.round(costScore),'الملاءمة لك (30%)':Math.round(fit),'الشروط (30%)':Math.round(terms)}});
+  });
+  results.sort((a,b)=> (b.eligibleDBR-a.eligibleDBR) || (b.score-a.score));
+  results.excluded = excluded;   // شفافية الاستبعاد للعرض
+  return results;
+}
+
+/* §8 (مواصفة 1.1): ثلاث زوايا مستقلة بدل درجة واحدة — الأقل تكلفة، الأقل قسطاً، الأقرب للشروط */
+function loanAngles(eligible){
+  if (!eligible.length) return [];
+  const byCost = [...eligible].sort((a,b)=>a.totalInterest-b.totalInterest)[0];
+  const byPay  = [...eligible].sort((a,b)=>a.pay-b.pay)[0];
+  const byTerms= [...eligible].sort((a,b)=>b.terms-a.terms || b.score-a.score)[0];
+  const roles=[[byCost,'<svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> الأقل تكلفة إجمالية'],[byPay,'<svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> الأقل قسطاً شهرياً'],[byTerms,'<svg class="mp-ic"><use href="/images/icons.svg#ic-check-circle"/></svg> الأقرب للشروط']];
+  const out=[], seen=new Set();
+  roles.forEach(([r,role])=>{
+    if(!seen.has(r.L.id)){ seen.add(r.L.id); r.role=role; out.push(r); }
+    else r.role += ' + ' + role.replace(/^[^\s]+ /,'');   // فاز بأكثر من زاوية — تُدمج الأدوار
+  });
+  // أكمل حتى 3 ببقية الأفضل درجة
+  eligible.forEach(r=>{ if(out.length<3 && !seen.has(r.L.id)){ seen.add(r.L.id); r.role=null; out.push(r);} });
+  return out;
+}
+
+/* §8.2: البديل عند عدم المطابقة — أقصى مبلغ يجتاز DBR (بأفضل معدل متاح) */
+function maxEligibleAmount(){
+  const loans=DATA.loans.filter(L=>(L.loan_type||'personal')==='personal'&&!(A.loanMode==='islamic'&&!L.is_islamic)&&!(A.loanMode==='conventional'&&L.is_islamic)&&A.salary>=num(L.min_salary_jod,0));
+  if(!loans.length) return 0;
+  let best=0;
+  loans.forEach(L=>{
+    const dbrCap=num(L.dbr_max_percent,50);
+    const payMax=(dbrCap/100)*A.salary - A.obligations;
+    if(payMax<=0) return;
+    const rateMin=num(L.interest_rate_min,9), rateMax=num(L.interest_rate_max,rateMin+2);
+    const r=((rateMin+rateMax)/2)/100/12, n=Math.min(A.tenor,num(L.max_tenor_years,A.tenor))*12;
+    const amt=r===0?payMax*n:payMax*(1-Math.pow(1+r,-n))/r;   // عكس معادلة القسط
+    best=Math.max(best,Math.min(amt,num(L.max_amount_jod,1e9)));
+  });
+  return Math.floor(best/100)*100;
+}
+
+/* ── تحليل المعدل الشهري من نص مثل "1.50%" / "0%" / null ── */
+function parseMonthlyRate(c){
+  const s = String(c.interest_rate_monthly||'').replace('%','').trim();
+  const r = parseFloat(s);
+  return isNaN(r) ? null : r; // نسبة مئوية شهرياً (null = غير منشور)
+}
+
+/* ═══════ محرك البطاقات — محرّك قرار: أهلية → تكلفة → قيمة صافية → ترتيب بحسب السلوك ═══════ */
+function engineCards(){
+  const annualSpend = A.spend*12;
+  const revolver = A.repay==='revolver';
+  const carried = revolver ? num(A.balance,0) : 0;
+  const credit = DATA.cards.filter(c=>c.type==='credit');
+  /* وسيط الرسوم المعروفة — للبطاقات ذات الرسوم غير المنشورة (المجهول ≠ صفر) */
+  const knownFees = credit.map(c=>c.annual_fee_jod).filter(v=>typeof v==='number').sort((a,b)=>a-b);
+  const medianFee = knownFees.length ? knownFees[Math.floor(knownFees.length/2)] : 50;
+
+  /* المرحلة 1: حساب المقاييس لكل بطاقة مؤهَّلة */
+  const items = [];
+  credit.forEach(c=>{
+    const isIslamicCard = c.sharia_compliant || c.is_islamic;
+    if (A.cardMode==='islamic' && !isIslamicCard) return;
+    if (A.cardMode==='conventional' && isIslamicCard) return;
+    if (A.exclSegment && c.segment) return; // استثناء البطاقات الفئوية بطلب المستخدم
+    // بطاقة الحسم الشهري تُسدَّد كاملة — لا تصلح بديلاً لمن يريد حمل رصيد
+    if (revolver && c.credit_mechanism==='charge') return;
+    const minSal = num(c.minimum_salary_jod, 0);
+    if (minSal && A.salary < minSal) return; // فشل قاعدة صارمة (راتب) → مستبعد
+    const feeKnown = typeof c.annual_fee_jod === 'number';
+    const isFree   = feeKnown && c.annual_fee_jod === 0;      // مجانية صراحةً فقط
+    const fee      = feeKnown ? c.annual_fee_jod : medianFee; // المجهول = الوسيط لا صفر
+    const rewardsJOD = cardAnnualRewards(c, annualSpend);
+    const mRate = parseMonthlyRate(c);            // % شهرياً أو null
+    /* تكلفة التمويل السنوية إن كان يحمل رصيداً (محرّك التكلفة) */
+    let financingCost = 0, financingKnown = true;
+    if (revolver && carried>0){
+      if (mRate===null){ financingKnown=false; financingCost = carried*0.015*12; } // تقدير متحفّظ 1.5%
+      else financingCost = carried*(mRate/100)*12;
+    }
+    const totalCost = fee + financingCost;
+    const netValue  = rewardsJOD - fee - financingCost;   // القيمة الصافية بالدينار
+    /* §10 (مواصفة البطاقات): قيمة السنة الأولى منفصلة — الموثَّق حسابياً فقط:
+       إعفاء الرسوم السنوية للسنة الأولى (قيمته = الرسوم المعروفة). النقاط الترحيبية بلا قيمة رسمية تبقى نصاً. */
+    const wtxt = String(c.welcome_offer||'');
+    const fyWaiver = feeKnown && fee>0 && /سنة الأولى|أول سنة|سنة أولى|first year/i.test(wtxt) && /مجان|إعفاء|معف|free/i.test(wtxt);
+    const firstYearNet = netValue + (fyWaiver ? fee : 0);
+    /* درجة التفضيل */
+    let prefScore = 40;
+    const rw = String(c.rewards||'').toLowerCase();
+    if (A.pref==='cashback' && rw==='cashback') prefScore = 95;
+    if (A.pref==='travel' && (rw==='miles'||rw==='travel'||c.travel_benefits)) prefScore = 95;
+    if (A.pref==='nofee' && isFree) prefScore = 100;
+    if (A.repay==='installment' && (rw==='installment' || /مقسّط|مقسطة|تقسيط|جعالة/.test(String(c.product_name)+String(c.note_ar||'')))) prefScore = Math.max(prefScore,92);
+    const accessScore = !minSal ? 90 : Math.min(100, (A.salary/minSal)*55);
+    items.push({c,isIslamicCard,minSal,fee,feeKnown,isFree,rewardsJOD,mRate,financingCost,financingKnown,totalCost,netValue,fyWaiver,firstYearNet,prefScore,accessScore});
+  });
+  if (!items.length) return [];
+
+  /* المرحلة 2: درجات نسبية + أوزان حسب سلوك السداد */
+  const nvs=items.map(x=>x.netValue), costs=items.map(x=>x.totalCost);
+  const nvMin=Math.min(...nvs), nvMax=Math.max(...nvs), cMin=Math.min(...costs), cMax=Math.max(...costs);
+  const norm=(v,lo,hi)=> hi===lo?70:((v-lo)/(hi-lo))*100;
+  const W = ({
+    full:       {value:0.40,cost:0.10,pref:0.30,access:0.20},
+    revolver:   {value:0.10,cost:0.55,pref:0.10,access:0.25},
+    installment:{value:0.20,cost:0.40,pref:0.20,access:0.20},
+  })[A.repay] || {value:0.30,cost:0.25,pref:0.25,access:0.20};
+
+  const results = items.map(x=>{
+    const valueScore = norm(x.netValue, nvMin, nvMax);              // أعلى صافٍ = أفضل
+    const costScore  = 100 - norm(x.totalCost, cMin, cMax);         // أقل كلفة = أفضل
+    const score = clampScore(valueScore*W.value + costScore*W.cost + x.prefScore*W.pref + x.accessScore*W.access);
+    const rr = cardRewardRate(x.c);
+    /* عرض الرسوم: مجانية صراحةً · معروفة · غير منشورة (تقدير بالوسيط) */
+    const feeTxt = x.isFree ? 'بدون رسوم' : (x.feeKnown ? `${fmt(x.fee)} د.أ` : `غير منشورة (قدّرناها ~${fmt(x.fee)} د.أ)`);
+    const why=[];
+    if (revolver && carried>0){
+      const rateTxt = x.mRate===null ? 'بفائدة غير منشورة (قدّرناها 1.5% تحفّظاً)' : (x.mRate===0?'بربح 0% (متوافقة مع الشريعة)':`بفائدة ${x.mRate}% شهرياً`);
+      why.push(`على رصيد محمول ${fmt(carried)} د.أ ${rateTxt} → تكلفة تمويل ~<strong>${fmt(x.financingCost)} د.أ/سنة</strong>${x.mRate===0?' — لا فوائد!':''}.`);
+      why.push(`${rr>0?`مكافآت ~${fmt(x.rewardsJOD)} د.أ و`:''}رسوم ${feeTxt} → <strong>صافيك ${x.netValue>=0?'+':''}${fmt(x.netValue)} د.أ/سنة</strong>.`);
+    } else {
+      if (rr>0) why.push(`على إنفاقك (${fmt(A.spend)} د.أ/شهر) تكسب نحو <strong>${fmt(x.rewardsJOD)} د.أ سنوياً</strong> ${x.isFree?'بدون رسوم سنوية':`مقابل رسوم ${feeTxt}`} → <strong>صافي ${x.netValue>=0?'+':''}${fmt(x.netValue)} د.أ/سنة</strong>.`);
+      else why.push(x.isFree ? 'بدون مكافآت لكن <strong>بدون رسوم سنوية</strong> — كلفتها صفر.' : `بدون برنامج مكافآت واضح مقابل رسوم ${feeTxt} — احسبها جيداً.`);
+    }
+    if (!x.feeKnown) why.push('ℹ️ رسومها السنوية غير منشورة رسمياً — استخدمنا وسيط السوق للتقدير؛ تحقّق من البنك.');
+    if (x.c.credit_mechanism==='charge') why.push('<svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> بطاقة حسم شهري: يُسدَّد رصيدها كاملاً كل شهر — مناسبة لمن يسدّد كاملاً، وليست بديلاً عن الحد المتجدد.');
+    else if (x.c.credit_mechanism==='installment') why.push('<svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> بطاقة تقسيط: تتيح سداداً مرناً/أقساطاً وفق صيغتها المعلنة.');
+    if (x.minSal) why.push(`حد الراتب الأدنى ${fmt(x.minSal)} د.أ — راتبك ${A.salary>=x.minSal*1.3?'يتجاوزه بارتياح':'يستوفيه'}.`);
+    if (A.pref==='travel' && x.c.lounge_access_details) why.push(`صالات مطارات: ${x.c.lounge_access_details}.`);
+    if (A.cardMode==='islamic' && x.isIslamicCard) why.push('✓ متوافقة مع أحكام الشريعة.');
+    const trust = rewardTrustNote(x.c); if (trust) why.push(trust);
+    let warn='';
+    if (revolver && carried>0 && x.mRate!==0 && x.financingCost > x.rewardsJOD)
+      warn = `⚠️ فائدتك المتوقعة (${fmt(x.financingCost)} د.أ) تفوق مكافآتك (${fmt(x.rewardsJOD)} د.أ) — الأولوية هنا لأقل كلفة تمويل، لا لأعلى مكافآت.`;
+    const segFlag = x.c.segment ? `<svg class="mp-ic"><use href="/images/icons.svg#ic-grad"/></svg> مخصّصة لفئة «${x.c.segment}»${x.c.age_min?` (${x.c.age_min}–${x.c.age_max} سنة)`:''} — تأكّد من انطباق الشرط عليك قبل التقديم.` : '';
+    if (x.fyWaiver) why.push(`<svg class="mp-ic"><use href="/images/icons.svg#ic-gift"/></svg> السنة الأولى معفاة الرسوم السنوية (${fmt(x.fee)} د.أ) → صافيك الأول ~<strong>${x.firstYearNet>=0?'+':''}${fmt(x.firstYearNet)} د.أ</strong>، ثم ${x.netValue>=0?'+':''}${fmt(x.netValue)} د.أ سنوياً.`);
+    return {c:x.c, score, netBenefit:x.netValue, rewardsJOD:x.rewardsJOD, fee:x.fee, feeKnown:x.feeKnown, isFree:x.isFree, feeTxt, segFlag, fyWaiver:x.fyWaiver, firstYearNet:x.firstYearNet,
+      financingCost:x.financingCost, totalCost:x.totalCost, revolver, mRate:x.mRate, warn, why,
+      breakdown: revolver
+        ? {'أقل كلفة (55%)':Math.round(costScore),'الأهلية (25%)':Math.round(x.accessScore),'القيمة (10%)':Math.round(valueScore),'تفضيلك (10%)':Math.round(x.prefScore)}
+        : {'القيمة الصافية (40%)':Math.round(valueScore),'تفضيلك (30%)':Math.round(x.prefScore),'الأهلية (20%)':Math.round(x.accessScore),'الكلفة (10%)':Math.round(costScore)}};
+  });
+  results.sort((a,b)=>b.score-a.score);
+  return results;
+}
+
+/* ═══════ محرك التوفير ═══════ */
+function engineSavings(){
+  const islamicOnly = A.saveMode === 'islamic';
+  const results = [];
+  DATA.savings.forEach(s=>{
+    if (islamicOnly && !s.sharia_compliant) return;
+    if (A.saveMode === 'conventional' && s.sharia_compliant) return;
+    const rate = num(s.annual_rate, 0);
+    const minBal = num(s.min_balance_jod, 0);
+    if (A.deposit && minBal > A.deposit) return; // لا يحقق الحد الأدنى
+    const yearly = A.deposit * rate/100;
+    const monthlyFee = num(s.monthly_fee_jod,0);
+    const netYearly = yearly - monthlyFee*12;
+
+    const allRates = DATA.savings.map(x=>num(x.annual_rate,0));
+    const maxR = Math.max(...allRates);
+    const rateScore = maxR ? rate/maxR*100 : 50;
+    let feat = 40;
+    if (s.auto_save) feat+=18; if (s.digital_access) feat+=14;
+    if (s.atm_access) feat+=12; if (s.withdrawal_limit==='غير محدود') feat+=16;
+    feat = Math.min(feat,100);
+    const feeScore = monthlyFee===0?100:Math.max(0,100-monthlyFee*10);
+    const score = clampScore(rateScore*0.45 + feat*0.30 + feeScore*0.25);
+
+    const why = [];
+    why.push(`على وديعة ${fmt(A.deposit)} د.أ يعطيك نحو <strong>${fmt(yearly)} د.أ سنوياً</strong> (${rate}%)${monthlyFee?` ناقص رسوم ${fmt(monthlyFee*12)} د.أ → صافي ${fmt(netYearly)} د.أ`:' بدون رسوم شهرية'}.`);
+    if (rate===maxR) why.push('أعلى عائد متاح في مقارنتنا حالياً.');
+    if (s.withdrawal_limit==='غير محدود') why.push('سحب غير محدود — سيولتك متاحة دائماً.');
+    if (minBal) why.push(`الحد الأدنى للرصيد ${fmt(minBal)} د.أ.`);
+
+    results.push({s, score, yearly, netYearly, why,
+      breakdown:{'العائد (45%)':Math.round(rateScore),'المزايا (30%)':Math.round(feat),'الرسوم (25%)':Math.round(feeScore)}});
+  });
+  results.sort((a,b)=>b.score-a.score);
+  return results;
+}
+
+/* ═══════ العرض ═══════ */
+function scoreColor(s){ return s>=85?'#047857':s>=70?'#1E40AF':s>=55?'#B45309':'#6B7280'; }
+function scoreLabel(s){ return s>=85?'ممتاز لك':s>=70?'جيد جداً لك':s>=55?'جيد':'مقبول'; }
+/* لون كل بُعد بحسب قوّته: أخضر=ممتاز · أزرق=جيد جداً · كهرماني=متوسط · رمادي=ضعيف */
+function barColor(v){ return v>=80?'#047857':v>=60?'#1E40AF':v>=45?'#B45309':'#9CA3AF'; }
+function barLabel(v){ return v>=80?'ممتاز':v>=60?'جيد جداً':v>=45?'متوسط':'ضعيف'; }
+function bdHTML(bd){
+  const hasElig = Object.keys(bd).some(k=>k.includes('الأهلية'));
+  const rows = Object.entries(bd).map(([k,v])=>{const col=barColor(v);return `
+    <div class="bd-row"><div class="k">${k}</div><div class="bar"><div style="width:${v}%;background:${col}"></div></div><div class="v" style="color:${col}" title="${barLabel(v)}">${v}/100</div></div>`;}).join('');
+  return `<details class="reco-calc"><summary>كيف احتسبنا التقييم؟</summary>
+    <div class="reco-breakdown">
+      <div class="bd-note">النسبة المئوية بجانب كل معيار هي <strong>وزنه في الدرجة</strong>، وليست نسبة عائد. وكل درجة من 100.</div>
+      ${rows}
+      <div class="bd-legend"><span><i style="background:#047857"></i>ممتاز</span><span><i style="background:#1E40AF"></i>جيد جداً</span><span><i style="background:#B45309"></i>متوسط</span><span><i style="background:#9CA3AF"></i>ضعيف</span></div>
+      ${hasElig?`<div class="bd-note">درجة الأهلية تقدير أوّلي بناءً على راتبك، <strong>ولا تضمن موافقة البنك</strong>.</div>`:''}
+    </div></details>`;
+}
+function dbrGaugeHTML(dbr){
+  const pos = Math.min(dbr,100);
+  const c = dbr<35?'#059669':dbr<50?'#D97706':'#DC2626';
+  const msg = dbr<35?'وضع مريح — هامش اقتراض جيد':dbr<50?'اقتربت من الحد — انتبه لأي التزام جديد':'تجاوزت حد الـ50% المعتمد لدى معظم البنوك';
+  return `<div class="dbr-gauge">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong style="font-size:.9rem"><svg class="mp-ic"><use href="/images/icons.svg#ic-percent"/></svg> نسبة الاقتطاع لديك (DBR)</strong>
+      <span style="font-weight:900;font-size:1.15rem;color:${c}">${dbr.toFixed(0)}%</span>
+    </div>
+    <div class="dbr-gauge-bar"><div class="dbr-marker" style="right:${pos}%"></div></div>
+    <div class="dbr-scale"><span>0%</span><span>40%</span><span>50%</span><span>100%</span></div>
+    <div style="font-size:.78rem;color:${c};font-weight:600;margin-top:.3rem">${msg}</div>
+  </div>`;
+}
+
+/* ═══════ العمود ١: شارة "آخر تحديث" ═══════ */
+function verifiedTag(p){
+  const v = p && p.last_verified;
+  if (!v) return '';
+  const [y,m] = String(v).split('-');
+  const months={'01':'يناير','02':'فبراير','03':'مارس','04':'أبريل','05':'مايو','06':'يونيو','07':'يوليو','08':'أغسطس','09':'سبتمبر','10':'أكتوبر','11':'نوفمبر','12':'ديسمبر'};
+  return `<div class="verified-tag">✓ بيانات محدّثة: ${months[m]||m} ${y}</div>`;
+}
+
+/* ═══════ العمود ٥: دولاب البيانات (feedback + history) ═══════ */
+/* حفظ إجابات المستشار كي يعود المستخدم لنتائجه من صفحة التفاصيل */
+function saveWizardState(){ try{ sessionStorage.setItem('mp_wizard_state', JSON.stringify(A)); }catch(e){} }
+function restoreWizardState(){
+  try{
+    const raw = sessionStorage.getItem('mp_wizard_state'); if(!raw) return false;
+    Object.assign(A, JSON.parse(raw)); return !!A.need;
+  }catch(e){ return false; }
+}
+function lsGet(k){ try{ return JSON.parse(localStorage.getItem(k)||'[]'); }catch(e){ return []; } }
+function lsSet(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+
+function saveHistory(topName, topScore, extra){
+  const h = lsGet('mp_history');
+  h.unshift({ ts: Date.now(), need: A.need, salary: A.salary, dbr: A.salary?Math.round(A.obligations/A.salary*100):null,
+              top: topName, score: topScore, extra: extra||'' });
+  lsSet('mp_history', h.slice(0,10));
+}
+
+function feedbackBarHTML(){
+  return `<div class="feedback-bar" id="fbBar">
+    <div class="q">هل ساعدتك هذه التوصية؟</div>
+    <button class="fb-btn" onclick="sendFeedback(1)">👍</button>
+    <button class="fb-btn" onclick="sendFeedback(0)">👎</button>
+  </div>`;
+}
+function sendFeedback(val, reason){
+  const fb = lsGet('mp_feedback');
+  fb.push({ ts: Date.now(), need: A.need, helpful: !!val, reason: reason||null,
+            salary: A.salary, dbr: A.salary?Math.round(A.obligations/A.salary*100):null });
+  lsSet('mp_feedback', fb);
+  const bar = document.getElementById('fbBar');
+  if (!bar) return;
+  if (val) bar.innerHTML = '<div class="fb-thanks">🙏 شكراً! ملاحظتك تحسّن التوصيات القادمة.</div>';
+  else if (!reason) bar.innerHTML = `<div class="q">ما الذي لم يعجبك؟</div>
+    <div class="fb-reasons">
+      <button class="chip" onclick="sendFeedback(0,'نتائج غير مناسبة')">نتائج غير مناسبة</button>
+      <button class="chip" onclick="sendFeedback(0,'أرقام غير دقيقة')">أرقام غير دقيقة</button>
+      <button class="chip" onclick="sendFeedback(0,'خيارات قليلة')">خيارات قليلة</button>
+      <button class="chip" onclick="sendFeedback(0,'أخرى')">أخرى</button>
+    </div>`;
+  else bar.innerHTML = '<div class="fb-thanks">🙏 وصلت ملاحظتك — سنعمل عليها.</div>';
+}
+
+function renderHistoryPanel(){
+  const h = lsGet('mp_history');
+  const host = document.getElementById('historyHost');
+  if (!host) return;
+  if (!h.length){ host.innerHTML=''; return; }
+  const needLbl = {spend:'<svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقة',cash:'<svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> قرض',save:'<svg class="mp-ic"><use href="/images/icons.svg#ic-bank"/></svg> ادخار',protect:'<svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> تأمين',project:'<svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> مشروع',car:'<svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> سيارة'};
+  host.innerHTML = `<div class="history-panel">
+    <div class="hp-title"><span><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> قراراتك السابقة (محفوظة على جهازك فقط)</span>
+      <button class="hp-clear" onclick="lsSet('mp_history',[]);renderHistoryPanel()">مسح</button></div>
+    ${h.slice(0,3).map(x=>`<div class="history-item">
+      <span>${needLbl[x.need]||x.need} · ${new Date(x.ts).toLocaleDateString('ar-JO')}</span>
+      <span>${x.top||''}</span>
+      ${x.score?`<span class="hi-score">${x.score}/100</span>`:''}
+    </div>`).join('')}
+  </div>`;
+}
+
+async function runEngine(){
+  await Promise.all([loadData('loans','loans/loans.json?v=20260827'),loadData('cards','cards/cards.json?v=20260827'),loadData('savings','savings/savings.json?v=20260827')]);
+  saveWizardState();   // يتيح العودة لهذه النتائج من صفحة التفاصيل
+  const box = document.getElementById('resultCard');
+  let html = '';
+
+  /* توجيه من لا دخل له / تأمين — مسارات لا يغطيها المحرك الرقمي */
+  if (A.need==='protect'){
+    html = `<div class="result-hero2"><h2><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين — قارن بالأرقام</h2>
+      <p>ضد الغير بسعر رسمي موحّد 92.15 د.أ، والشامل يتفاوت كثيراً بين الشركات. المقارنة التفصيلية في صفحة التأمين.</p></div>
+      <a class="reco-cta" href="insurance/insurance.html?type=car&top=3">أفضل 3 شركات تأمين ←</a>
+      <a class="reco-cta ghost" href="education/articles/تامين-السيارة-شامل-ام-ضد-الغير.html">شامل أم ضد الغير؟</a>`;
+    box.innerHTML = html; show('stepResult', totalSteps + 1); return;
+  }
+  if ((A.work==='none' || A.salary < 200) && ['cash','car','project'].includes(A.need)){
+    html = `<div class="result-hero2"><h2><svg class="mp-ic"><use href="/images/icons.svg#ic-users"/></svg> مسارك الأنسب: التمويل الأصغر</h2>
+      <p>بدون راتب ثابت (أو براتب أقل من 200 د.أ) لن تجتاز شروط البنوك. شركات التمويل الأصغر تقبل بشروط أخف وتموّل حتى 110,000 د.أ للمشاريع.</p></div>
+      ${A.salary?dbrGaugeHTML(A.obligations/A.salary*100):''}
+      <a class="reco-cta" href="microfinance/microfinance.html?audience=${A.work==='none'?'unemployed':'business'}&top=3">أفضل 3 شركات تناسبك ←</a>
+      <a class="reco-cta ghost" href="education/articles/التمويل-الاصغر-ما-هو.html">ما هو التمويل الأصغر؟</a>`;
+    box.innerHTML = html; show('stepResult', totalSteps + 1); return;
+  }
+
+  /* ── قروض / سيارة / مشروع ── */
+  if (['cash','car','project'].includes(A.need)){
+    const res = engineLoans();
+    const dbrNow = A.obligations/A.salary*100;
+    const eligible = res.filter(r=>r.eligibleDBR);
+    const top = eligible.length ? loanAngles(eligible) : res.slice(0,3);   // §8: زوايا مستقلة
+    const best = top[0], worst = res[res.length-1];
+    const saving = best && worst && res.length>1 ? worst.totalInterest - best.totalInterest : 0;
+    const ex = res.excluded || {salary:0,dbr:0,rateUnknown:0};
+    const exParts=[];
+    if(ex.salary) exParts.push(`${ex.salary} لشرط الراتب`);
+    if(ex.dbr) exParts.push(`${ex.dbr} لتجاوز نسبة الاقتطاع`);
+    if(ex.rateUnknown) exParts.push(`${ex.rateUnknown} لأن نوع فائدتها غير منشور (طلبت «ثابتة فقط»)`);
+    const exTxt = exParts.length ? ` استُبعد ${ex.salary+ex.dbr+ex.rateUnknown}: ${exParts.join('، ')}.` : '';
+
+    html += `<div class="result-hero2"><h2><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> خطة تمويلك — ${fmt(A.amount)} د.أ على ${A.tenor} سنوات</h2>
+      <p>حللنا ${DATA.loans.length} منتج تمويل. ${eligible.length} منها مؤهَّل لوضعك (راتب + DBR).${exTxt}${saving>50?` الفرق بين الأفضل والأغلى المتاح لك يصل إلى <strong>${fmt(saving)} د.أ</strong> فوائد على كامل المدة.`:''}</p></div>`;
+    html += dbrGaugeHTML(dbrNow);
+    if (!eligible.length){
+      const maxAmt = maxEligibleAmount();
+      html += `<div class="dbr-warning">⚠️ بالمبلغ والمدة الحاليين، قسطك المتوقع يرفع نسبة اقتطاعك فوق حدود البنوك (45–50%).
+      ${maxAmt>0?`<br><svg class="mp-ic"><use href="/images/icons.svg#ic-sparkle"/></svg> <strong>جرّب بدلاً:</strong> أقصى مبلغ يُتوقع أن يجتاز حدود الاقتطاع بوضعك الحالي نحو <strong>${fmt(maxAmt)} د.أ</strong> (تقديري) — أو مدة أطول تخفض القسط.`:'<br>💡 جرّب: مدة أطول، مبلغاً أقل، أو مسار التمويل الأصغر.'}
+      <br><a class="reco-cta ghost" style="margin-top:.5rem" href="microfinance/microfinance.html?audience=business&top=3">خيارات التمويل الأصغر ←</a></div>`;
+    }
+    top.forEach((r,i)=>{
+      const roleBadge = r.role ? `<span class="reco-top-badge">${r.role}</span>` : (i===0?'<span class="reco-top-badge"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> الأنسب لك</span>':'');
+      const residualLow = r.residual < A.salary*0.35;
+      html += `<div class="reco-card ${i===0?'top':''}">${roleBadge}
+        <div class="reco-head">
+          <img src="${r.L.logo}?v=20260827" alt="" onerror="this.style.display='none'">
+          <div><div class="reco-name">${r.L.product_name}</div><div class="reco-bank">${r.L.bank_ar}</div>${verifiedTag(r.L)}</div>
+          <div class="reco-score"><div class="num" style="color:${scoreColor(r.score)}">${r.score}</div><div class="lbl">${scoreLabel(r.score)} · من 100</div></div>
+        </div>
+        <div class="reco-benefit">
+          <span class="benefit-pill neutral"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> القسط ~${fmt(r.pay)} د.أ/شهر</span>
+          <span class="benefit-pill ${r.totalInterest===best.totalInterest?'':'neutral'}"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> إجمالي الفائدة ~${fmt(r.totalInterest)} د.أ</span>
+          <span class="benefit-pill ${r.eligibleDBR?'':'warn'}"><svg class="mp-ic"><use href="/images/icons.svg#ic-percent"/></svg> DBR بعد القرض: ${r.dbrNew.toFixed(0)}% / حد ${r.dbrCap}%</span>
+          <span class="benefit-pill ${residualLow?'warn':'neutral'}"><svg class="mp-ic"><use href="/images/icons.svg#ic-wallet"/></svg> يتبقى لك ~${fmt(r.residual)} د.أ/شهر</span>
+        </div>
+        ${residualLow?`<div style="background:#FFFBEB;border:1.5px solid #FDE68A;color:#92400E;border-radius:10px;padding:.55rem .8rem;font-size:.8rem;font-weight:600;margin:.2rem 0 .6rem">⚠️ دخلك المتبقي بعد القسط أقل من ثلث راتبك (مؤشر استرشادي) — تأكد أنه يكفي التزامات معيشتك قبل الالتزام.</div>`:''}
+        <div class="reco-why"><strong>لماذا ${r.role?'هذه الزاوية':'هذا الخيار'}؟</strong><br>• ${r.why.join('<br>• ')}
+        ${r.L.rate_fixed===true?'<br>• <svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> اختبار الضغط: لا ينطبق — القسط ثابت طوال المدة ✓':`<br>• <svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> اختبار الضغط: لو ارتفع المعدل +2% (إن كان متغيراً) يصبح قسطك ~<strong>${fmt(r.stressPay)} د.أ</strong>.`}</div>
+        ${bdHTML(r.breakdown)}
+        <a class="reco-cta" href="${r.L.apply_url||r.L.official_url}" target="_blank" rel="noopener" onclick="track('apply_clicked',{product:'loan',id:'${r.L.id}'})">تواصل مع البنك ←</a>
+        <a class="reco-cta ghost" href="calculators/calculators.html">جرّب الحاسبة</a>
+      </div>`;
+    });
+    html += `<p class="disclaimer">الأرقام تقديرية بمعدل الفائدة الوسطي المعلن لكل بنك وبصيغة القسط الثابت (annuity)؛ «الدخل المتبقي» و«اختبار الضغط» مؤشران استرشاديان وليسا قاعدة بنكية. العرض النهائي يعتمد على تقييم البنك الائتماني. مالي بلس منصة مقارنة مستقلة وليست وسيطاً مالياً.</p>`;
+  }
+
+  /* ── بطاقات ── */
+  if (A.need==='spend'){
+    const res = engineCards();
+    const top = res.slice(0,3);
+    const best = top[0];
+    const modeLabel = A.repay==='revolver' ? `تحمل رصيداً ~${fmt(A.balance)} د.أ` : A.repay==='installment' ? 'تستخدم التقسيط' : 'تسدّد كامل الرصيد شهرياً';
+    const repayTag = A.repay==='revolver' ? 'تحمل رصيداً شهرياً' : A.repay==='installment' ? 'سداد بالأقساط' : 'سداد كامل الرصيد';
+    const modeNote = A.repay==='revolver'
+      ? `<p>بما أنك <strong>${modeLabel}</strong>، رتّبنا حسب <strong>أقل كلفة تمويل</strong> لا أعلى مكافآت — لأن الفائدة تلتهم المكافآت.</p>`
+      : (best&&best.netBenefit>0?`<p>رتّبناها بأعلى <strong>قيمة صافية</strong> على وضعك — الأرقام بالتفصيل في كل بطاقة أدناه.</p>`:'');
+    html += `<div class="result-hero2"><h2><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> أفضل بطاقة لك</h2>
+      <div class="result-tags"><span class="rtag">إنفاق ${fmt(A.spend)} د.أ/شهر</span><span class="rtag">${repayTag}</span></div>
+      <p>أفضل بطاقة وفق بياناتك، من ${DATA.cards.filter(c=>c.type==='credit').length} بطاقة قيّمناها على راتبك وإنفاقك وسلوك سدادك.</p>${modeNote}</div>`;
+    if (!top.length){
+      html += `<div class="dbr-warning">لا توجد بطاقة ائتمانية تطابق راتبك وتفضيلك الحاليين. جرّب تفضيلاً آخر أو تصفح البطاقات مسبقة الدفع.
+      <br><a class="reco-cta ghost" style="margin-top:.5rem" href="cards/cards.html?type=prepaid">البطاقات مسبقة الدفع ←</a></div>`;
+    }
+    const cmpIds = top.map(r=>r.c.id).join(',');   // مقارنة البطاقات الموصى بها نفسها، لا الكل
+    top.forEach((r,i)=>{
+      // نحسب من قيم مقرّبة موحّدة كي تتطابق المعادلة بصرياً (مكافآت − رسوم − تمويل = صافي)
+      const rew = Math.round(r.rewardsJOD);
+      const feeN = r.isFree ? 0 : Math.round(r.fee);
+      const finN = r.revolver ? Math.round(r.financingCost) : 0;
+      const net = rew - feeN - finN;              // صافي السنوات التالية (المستقر)
+      const firstY = rew - finN;                  // السنة الأولى (الرسوم معفاة)
+      const sgn = n => (n>=0?'+':'−') + fmt(Math.abs(n));
+      const finPart = finN ? ` − ${fmt(finN)} د.أ تمويل` : '';
+      const feePart = r.isFree ? ' · بطاقة مجانية (بلا رسوم)' : ` − ${fmt(feeN)} د.أ رسوم`;
+      const formula = `${fmt(rew)} د.أ مكافآت${feePart}${finPart} = <strong>${sgn(net)} د.أ صافي</strong>`;
+      // كتلة القيمة: تفصل السنة الأولى (إعفاء) عن السنوات التالية
+      const valueBlock = (r.fyWaiver && !r.isFree)
+        ? `<div class="reco-value${net<0?' neg':''}">
+             <div class="rv-line rv-first">السنة الأولى: <b>${sgn(firstY)} د.أ</b> — الرسوم السنوية معفاة</div>
+             <div class="rv-line rv-steady">من السنة الثانية: <b>${sgn(net)} د.أ سنوياً</b></div>
+             <div class="rv-formula">${formula}</div>
+           </div>`
+        : `<div class="reco-value${net<0?' neg':''}">
+             <div class="rv-line rv-steady">القيمة الصافية المتوقعة: <b>${sgn(net)} د.أ سنوياً</b></div>
+             <div class="rv-formula">${formula}</div>
+           </div>`;
+      const feeTxt2 = r.isFree ? 'مجانية' : (r.feeKnown ? `${fmt(feeN)} د.أ` : `${fmt(feeN)} د.أ (غير منشورة — قدّرناها)`);
+      const detailLine = `<div class="reco-detail">القيمة التقديرية للمكافآت: <strong>${fmt(rew)} د.أ</strong> · الرسوم السنوية: <strong>${feeTxt2}</strong>${r.revolver?` · تكلفة التمويل: <strong>~${fmt(finN)} د.أ</strong>${r.mRate===0?' (0%)':''}`:''}</div>`;
+      html += `<div class="reco-card ${i===0?'top':''}">${i===0?'<span class="reco-top-badge"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> الأنسب لك</span>':''}
+        <div class="reco-head">
+          <img src="${r.c.logo}?v=20260827" alt="" onerror="this.style.display='none'">
+          <div><div class="reco-name">${r.c.product_name}</div><div class="reco-bank">${r.c.bank_ar}</div>${verifiedTag(r.c)}</div>
+          <div class="reco-score"><div class="lbl top">درجة التوافق</div><div class="num" style="color:${scoreColor(r.score)}">${r.score}<small>/100</small></div><div class="lbl">${scoreLabel(r.score)}</div></div>
+        </div>
+        ${valueBlock}
+        ${detailLine}
+        ${r.segFlag?`<div style="background:#EFF6FF;border:1.5px solid #BFDBFE;color:#1E40AF;border-radius:10px;padding:.55rem .8rem;font-size:.8rem;font-weight:600;margin:.2rem 0 .6rem">${r.segFlag}</div>`:''}
+        ${r.warn?`<div style="background:#FEF2F2;border:1.5px solid #FECACA;color:#991B1B;border-radius:10px;padding:.6rem .8rem;font-size:.8rem;font-weight:600;margin:.2rem 0 .6rem">${r.warn}</div>`:''}
+        <div class="reco-why"><strong>لماذا ${i===0?'هي الأنسب':'هذا الخيار'}؟</strong><br>• ${r.why.join('<br>• ')}</div>
+        ${bdHTML(r.breakdown)}
+        <a class="reco-cta" href="cards/details.html?id=${encodeURIComponent(r.c.id)}&from=wizard&spend=${A.spend}&net=${net}&first=${firstY}&back=1" onclick="track('apply_clicked',{product:'card',id:'${r.c.id}'})">التفاصيل الكاملة ←</a>
+        <a class="reco-cta ghost" href="compare/compare.html?ids=${encodeURIComponent(cmpIds)}&cat=cards" onclick="track('card_compared',{count:${top.length},source:'wizard'})"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> قارن مع أفضل البدائل</a>
+      </div>`;
+    });
+    html += `<p class="disclaimer">تكلفة التمويل تقديرية = الرصيد المحمول × المعدل الشهري المعلن × 12 (بلا مركّب أو فترة سماح). قيمة المكافآت متحفّظة عند غياب نسبة معلنة. القرار النهائي والحد الائتماني بيد البنك.</p>`;
+  }
+
+  /* ── توفير ── */
+  if (A.need==='save'){
+    const res = engineSavings();
+    const top = res.slice(0,3);
+    const best = top[0];
+    html += `<div class="result-hero2"><h2><svg class="mp-ic"><use href="/images/icons.svg#ic-bank"/></svg> أين تنمو ${fmt(A.deposit)} د.أ لديك؟</h2>
+      <p>قارنّا ${DATA.savings.length} حساب توفير${best?`. الأعلى عائداً لوديعتك يعطيك نحو <strong>${fmt(best.yearly)} د.أ سنوياً</strong>.`:'.'}</p></div>`;
+    top.forEach((r,i)=>{
+      html += `<div class="reco-card ${i===0?'top':''}">${i===0?'<span class="reco-top-badge"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> الأنسب لك</span>':''}
+        <div class="reco-head">
+          <img src="${r.s.logo}?v=20260827" alt="" onerror="this.style.display='none'">
+          <div><div class="reco-name">${r.s.product_name}</div><div class="reco-bank">${r.s.bank_ar}</div>${verifiedTag(r.s)}</div>
+          <div class="reco-score"><div class="num" style="color:${scoreColor(r.score)}">${r.score}</div><div class="lbl">${scoreLabel(r.score)} · من 100</div></div>
+        </div>
+        <div class="reco-benefit">
+          <span class="benefit-pill"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> عائد سنوي ~${fmt(r.yearly)} د.أ</span>
+          <span class="benefit-pill neutral"><svg class="mp-ic"><use href="/images/icons.svg#ic-percent"/></svg> ${num(r.s.annual_rate,0)}%</span>
+        </div>
+        <div class="reco-why"><strong>لماذا ${i===0?'هو الأنسب':'هذا الخيار'}؟</strong><br>• ${r.why.join('<br>• ')}</div>
+        ${bdHTML(r.breakdown)}
+        <a class="reco-cta" href="savings/savings.html">قارن كل الحسابات ←</a>
+      </div>`;
+    });
+    html += `<p class="disclaimer">العوائد قبل أي ضرائب أو شروط شرائح. الحسابات المتوافقة مع الشريعة عوائدها متوقعة وليست مضمونة.</p>`;
+  }
+
+  html += feedbackBarHTML();
+  /* حفظ القرار في سجل المستخدم المحلي */
+  try {
+    const topEl = /reco-name">([^<]+)/.exec(html);
+    const topScore = /class="num"[^>]*>(\d+)</.exec(html);
+    saveHistory(topEl?topEl[1]:null, topScore?+topScore[1]:null);
+  } catch(e){}
+  box.innerHTML = html;
+  show('stepResult', totalSteps + 1);
+  renderHistoryPanel();
+}
+
+function restart(){
+  Object.assign(A,{need:null,work:null,salary:0,obligations:0,amount:0,tenor:5,spend:0,deposit:0,pref:'cashback',loanMode:'all',cardMode:'all',saveMode:'all',rateMode:'all',repay:'full',balance:0,exclSegment:false});
+  const xs=document.getElementById('exclSegmentChk'); if(xs) xs.checked=false;
+  ['loan','card','save','rate'].forEach(k=>{
+    document.querySelectorAll('#'+k+'ModeChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.mode==='all'));
+  });
+  // إعادة ضبط أزرار التفضيل وسلوك السداد (تفادي تسرّب الحالة بين المحاولات)
+  document.querySelectorAll('#prefChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.pref==='cashback'));
+  document.querySelectorAll('#repayChips .chip').forEach(c=>c.classList.toggle('selected', c.dataset.repay==='full'));
+  const bw=document.getElementById('balanceWrap'); if(bw) bw.style.display='none';
+  const bi=document.getElementById('balanceInput'); if(bi) bi.value='';
+  document.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+  document.querySelectorAll('.btn-next').forEach(b=>b.disabled=true);
+  ['salaryInput','oblInput','amountInput','spendInput','depositInput'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  document.getElementById('dbrLive').textContent='';
+  show('step1',1);
+  document.getElementById('progressLabel').textContent='ابدأ الآن';
+  document.getElementById('progressFill').style.width='0%';
+}
+
+renderHistoryPanel();
+document.getElementById('nav-toggle')?.addEventListener('click',()=>{
+  document.getElementById('nav-menu')?.classList.toggle('open');
+});
+</script>
+<script src="scroll-top.js?v=20260827"></script>
+</body>
+</html>

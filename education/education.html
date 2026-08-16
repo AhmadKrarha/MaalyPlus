@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز المعرفة المالية | مالي بلس — تعلّم وقارن واتخذ قرارك</title>
+    <meta name="description" content="مركز المعرفة المالية من مالي بلس — أدلة مبسطة وشروحات عملية تساعدك على فهم البطاقات والقروض والادخار. <!--mp:stat articles_count-->52<!--/mp:stat--> مقالة عربية مجانية.">
+    <link rel="canonical" href="https://maalyplus.com/education/education.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <style>
+        body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+        .km-hero{background:linear-gradient(135deg,#1E2B3C 0%,#1E40AF 55%,#0E7490 100%);color:#fff;padding:4rem 0 5rem;position:relative;overflow:hidden}
+        .km-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+        .km-hero h1{font-family:var(--font-heading);font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;margin-bottom:.75rem;line-height:1.2}
+        .km-hero p{font-size:1.05rem;opacity:.96;max-width:600px;line-height:1.8;margin-bottom:2rem}
+        .km-hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2.5rem}
+        .km-hero-stat .n{font-size:1.8rem;font-weight:700;font-family:var(--font-heading)}
+        .km-hero-stat .l{font-size:.78rem;opacity:.95}
+        .km-search-wrap{margin:2rem 0 0}
+        .km-search{display:flex;background:#fff;border-radius:50px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.2);max-width:580px}
+        .km-search input{flex:1;border:none;outline:none;padding:14px 20px;font-family:var(--font-body);font-size:.95rem;color:#374151;background:transparent;direction:rtl}
+        .km-search button{background:linear-gradient(135deg,#047857,#065F46);color:#fff;border:none;padding:0 24px;cursor:pointer;font-weight:700;font-size:.9rem;font-family:var(--font-body);white-space:nowrap}
+        .km-quick{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+        .km-quick a{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.45);border-radius:50px;color:#fff;text-decoration:none;font-size:.8rem;font-weight:600;transition:background .2s}
+        .km-quick a:hover{background:rgba(255,255,255,.22)}
+        .km-body{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+        .km-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem}
+        .km-section-head h2{font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:#1E2B3C;margin:0}
+        .km-section-head a{font-size:.83rem;color:#1E40AF;text-decoration:none;font-weight:600}
+        .km-section-sub{font-size:.88rem;color:#6B7280;margin-top:2px}
+        .km-featured{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:3.5rem}
+        @media(max-width:700px){.km-featured{grid-template-columns:1fr}}
+        .km-feat-card{background:#fff;border-radius:16px;padding:1.75rem;border:1.5px solid #E5E7EB;text-decoration:none;display:flex;flex-direction:column;gap:.75rem;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+        .km-feat-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:var(--ac,#10B981)}
+        .km-feat-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(30,64,175,.12);border-color:var(--ac,#10B981)}
+        .km-feat-card.main{grid-row:span 2;background:linear-gradient(135deg,#1E2B3C,#1E40AF);color:#fff;border:none}
+        .km-feat-card.main::before{display:none}
+        .km-feat-label{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-block;background:#ECFDF5;color:#065F46}
+        .km-feat-card.main .km-feat-label{background:rgba(16,185,129,.2);color:#6EE7B7}
+        .km-feat-card.main h3{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:#fff;margin:0}
+        .km-feat-card:not(.main) h3{font-size:.98rem;font-weight:700;color:#1E2B3C;margin:0}
+        .km-feat-card.main p{font-size:.9rem;color:rgba(255,255,255,.78);margin:0;line-height:1.7}
+        .km-feat-card:not(.main) p{font-size:.82rem;color:#6B7280;margin:0;line-height:1.6}
+        .km-feat-cta{display:inline-flex;align-items:center;gap:6px;background:#10B981;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.85rem;width:fit-content;margin-top:.5rem}
+        .km-feat-time{font-size:.75rem;color:#6B7280}
+        .km-feat-card.main .km-feat-time{color:rgba(255,255,255,.82)}
+        .km-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:1.5rem}
+        .km-cat{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;cursor:pointer;transition:all .2s;text-align:center;text-decoration:none;display:block}
+        .km-cat:hover{border-color:var(--cc,#10B981);box-shadow:0 6px 18px rgba(0,0,0,.08);transform:translateY(-2px)}
+        .km-cat-icon{font-size:2rem;margin-bottom:.6rem;display:block}
+        .km-cat-label{font-size:.92rem;font-weight:700;color:#1E2B3C;display:block;margin-bottom:.25rem}
+        .km-cat-count{font-size:.75rem;color:#6B7280}
+        .km-cat-desc{font-size:.75rem;color:#6B7280;margin-top:.3rem}
+        .km-articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem;margin-bottom:1.5rem}
+        .km-article{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;text-decoration:none;display:flex;flex-direction:column;gap:.5rem;transition:all .2s}
+        .km-article:hover{border-color:#1E40AF;box-shadow:0 6px 18px rgba(30,64,175,.1);transform:translateY(-2px)}
+        .km-article-tag{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;background:#EFF6FF;color:#1E40AF;width:fit-content}
+        .km-article h4{font-size:.9rem;font-weight:700;color:#1E2B3C;margin:0;line-height:1.5}
+        .km-article p{font-size:.8rem;color:#6B7280;margin:0;line-height:1.5;flex:1}
+        .km-article-footer{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#6B7280;margin-top:.25rem}
+        .km-article-footer span{color:#047857;font-weight:600}
+        .km-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .km-filter-btn{padding:6px 14px;border-radius:50px;border:1.5px solid #E5E7EB;background:#fff;font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;color:#374151}
+        .km-filter-btn.active,.km-filter-btn:hover{background:#1E40AF;color:#fff;border-color:#1E40AF}
+        .km-stages{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin-bottom:3.5rem}
+        @media(max-width:800px){.km-stages{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:500px){.km-stages{grid-template-columns:1fr}}
+        .km-stage{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;text-align:center;text-decoration:none;display:block;transition:all .2s}
+        .km-stage:hover{border-color:#1E40AF;transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,64,175,.1)}
+        .km-stage-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1E3A8A,#047857);color:#fff;font-weight:900;font-size:.95rem;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem}
+        .km-stage-title{font-size:.88rem;font-weight:700;color:#1E2B3C;margin-bottom:.3rem}
+        .km-stage-desc{font-size:.75rem;color:#6B7280;line-height:1.5}
+        .km-picks{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;margin-bottom:3.5rem;scroll-snap-type:x mandatory}
+        .km-pick{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;min-width:220px;flex-shrink:0;text-decoration:none;scroll-snap-align:start;transition:all .2s;display:flex;flex-direction:column;gap:.5rem}
+        .km-pick:hover{border-color:#1E40AF;transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,64,175,.1)}
+        .km-pick-icon{font-size:1.5rem}
+        .km-pick h4{font-size:.88rem;font-weight:700;color:#1E2B3C;margin:0;line-height:1.4}
+        .km-pick span{font-size:.75rem;color:#047857;font-weight:600}
+        .km-method{background:linear-gradient(135deg,#F0F4FF,#ECFDF5);border-radius:16px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3.5rem;border:1.5px solid #E5E7EB}
+        @media(max-width:600px){.km-method{grid-template-columns:1fr}}
+        .km-method h3{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;margin-bottom:.5rem}
+        .km-method p{font-size:.85rem;color:#4B5563;line-height:1.7;margin:0 0 1rem}
+        .km-method-items{list-style:none;padding:0;margin:0}
+        .km-method-items li{font-size:.83rem;color:#374151;padding:.4rem 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;gap:.5rem}
+        .km-method-items li::before{content:'✓';color:#047857;font-weight:700;flex-shrink:0}
+        .km-cta{background:linear-gradient(135deg,#1E2B3C,#1E40AF);border-radius:16px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+        .km-cta h3{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+        .km-cta p{color:rgba(255,255,255,.78);font-size:.88rem;margin:0}
+        .km-cta-btns{display:flex;gap:.75rem;flex-shrink:0;flex-wrap:wrap}
+        .km-cta-btn{padding:10px 22px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
+        .km-cta-btn.primary{background:#10B981;color:#fff}
+        .km-cta-btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+        .km-divider{height:1px;background:#E5E7EB;margin:3rem 0}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <meta property="og:title" content="مركز المعرفة المالية — MaalyPlus">
+    <meta property="og:description" content="مقالات وأدلة مالية بالعربية لتفهم منتجات الادخار والاستثمار والقروض.">
+    <meta property="og:url" content="https://maalyplus.com/education/education.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مركز المعرفة المالية — MaalyPlus">
+    <meta name="twitter:description" content="مقالات وأدلة مالية بالعربية لتفهم منتجات الادخار والاستثمار والقروض.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<div class="km-hero">
+    <div class="container">
+        <div style="font-size:.8rem;opacity:.65;margin-bottom:.75rem;">
+            <a href="../index.html" style="color:#fff;text-decoration:none;">الرئيسية</a> ← مركز المعرفة
+        </div>
+        <h1>كل ما تحتاجه لاتخاذ<br>قرار مالي أذكى في الأردن</h1>
+        <p>أدلة مبسطة، شروحات عملية، ومقالات تساعدك على فهم البطاقات والقروض والتأمين والادخار — قبل أن تقارن أو تتقدم.</p>
+        <div class="km-search-wrap">
+            <div class="km-search">
+                <input type="text" id="km-search-input" aria-label="ابحث عن موضوع تعليمي" placeholder="ابحث عن موضوع: كاش باك، قرض، فائدة، ادخار...">
+                <button onclick="doSearch()">🔍 بحث</button>
+            </div>
+        </div>
+        <div class="km-quick">
+            <a href="#basics-section">📚 الأساسيات</a>
+            <a href="#articles-section">💳 المقالات</a>
+            <a href="#stages">🗺️ رحلة القرار</a>
+            <a href="#best">🏆 أفضل الخيارات</a>
+        </div>
+        <div class="km-hero-stats">
+            <div class="km-hero-stat"><div class="n"><!--mp:stat articles_count-->52<!--/mp:stat--></div><div class="l">مقالة مجانية</div></div>
+            <div class="km-hero-stat"><div class="n">8</div><div class="l">موضوع رئيسي</div></div>
+            <div class="km-hero-stat"><div class="n">مجاناً</div><div class="l">بدون تسجيل</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="km-body">
+
+    <!-- أبرز الأدلة -->
+    <div id="basics-section">
+        <div class="km-section-head">
+            <div><h2>📌 أبرز الأدلة</h2><div class="km-section-sub">ابدأ من هنا إذا كنت جديداً</div></div>
+        </div>
+        <div class="km-featured">
+            <a href="articles/دليل-القروض-الشخصية.html" class="km-feat-card main">
+                <span class="km-feat-label">دليل أساسي</span>
+                <h3>دليلك الشامل للقروض الشخصية في الأردن</h3>
+                <p>كيف تقارن بين قرضين بشكل صحيح، الفرق بين الفائدة الثابتة والمتناقصة، وكيف ترفع فرصة قبولك.</p>
+                <span class="km-feat-time">⏱ 8 دقائق قراءة</span>
+                <span class="km-feat-cta">اقرأ الدليل ←</span>
+            </a>
+            <a href="articles/شرح-البطاقات-الائتمانية.html" class="km-feat-card" style="--ac:#1E40AF">
+                <span class="km-feat-label">دليل أساسي</span>
+                <h3>شرح البطاقات الائتمانية — كل ما تحتاج معرفته</h3>
+                <p>الرسوم، الفائدة، الحد الائتماني، وكيف تختار البطاقة المناسبة لوضعك.</p>
+                <span class="km-feat-time">⏱ 7 دقائق</span>
+            </a>
+            <a href="articles/الميزانية-الشخصية.html" class="km-feat-card" style="--ac:#10B981">
+                <span class="km-feat-label">أساسيات</span>
+                <h3>فهم الميزانية الشخصية — خطوة بخطوة</h3>
+                <p>كيف توزع راتبك وتتحكم في إنفاقك بطريقة عملية.</p>
+                <span class="km-feat-time">⏱ 6 دقائق</span>
+            </a>
+            <a href="../cards/cards.html" class="km-feat-card" style="--ac:#F59E0B">
+                <span class="km-feat-label">أفضل الخيارات</span>
+                <h3>أفضل بطاقات الكاش باك في الأردن 2026</h3>
+                <p>مقارنة محدّثة لأفضل 4 بطاقات كاش باك مع توصية حسب راتبك.</p>
+                <span class="km-feat-time">⏱ 5 دقائق</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- تعلم حسب الموضوع -->
+    <div class="km-section-head">
+        <div><h2>📂 تعلّم حسب الموضوع</h2><div class="km-section-sub">اختر الموضوع الذي يهمك</div></div>
+    </div>
+    <div class="km-cats">
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('all');return false;" style="--cc:#10B981"><span class="km-cat-icon">🗂️</span><span class="km-cat-label">جميع المقالات</span><span class="km-cat-count"><!--mp:stat articles_count-->52<!--/mp:stat--> مقالة</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('basics');return false;" style="--cc:#1E40AF"><span class="km-cat-icon">📚</span><span class="km-cat-label">الأساسيات المالية</span><span class="km-cat-count">17 مقالة</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('products');return false;" style="--cc:#059669"><span class="km-cat-icon">💳</span><span class="km-cat-label">البطاقات والقروض</span><span class="km-cat-count">13 مقالة</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('microfinance');return false;" style="--cc:#7C3AED"><span class="km-cat-icon">🏦</span><span class="km-cat-label">التمويل الأصغر</span><span class="km-cat-count">6 مقالات</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('tools');return false;" style="--cc:#D97706"><span class="km-cat-icon">🧮</span><span class="km-cat-label">الأدوات والتخطيط</span><span class="km-cat-count">6 مقالات</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('investment');return false;" style="--cc:#0284C7"><span class="km-cat-icon">📈</span><span class="km-cat-label">الاستثمار والدخل</span><span class="km-cat-count">3 مقالات</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('islamic');return false;" style="--cc:#065F46"><span class="km-cat-icon">☪️</span><span class="km-cat-label">التمويل الإسلامي</span><span class="km-cat-count">2 مقالة</span></a>
+        <a href="#articles-section" class="km-cat" onclick="filterArticles('savings');return false;" style="--cc:#B45309"><span class="km-cat-icon">💰</span><span class="km-cat-label">الادخار والتضخم</span><span class="km-cat-count">2 مقالة</span></a>
+    </div>
+
+    <div id="articles-section">
+        <div class="km-filter" id="km-filter-bar">
+            <button class="km-filter-btn active" onclick="filterArticles('all')">الكل</button>
+            <button class="km-filter-btn" onclick="filterArticles('basics')">الأساسيات</button>
+            <button class="km-filter-btn" onclick="filterArticles('products')">البطاقات والقروض</button>
+            <button class="km-filter-btn" onclick="filterArticles('microfinance')">التمويل الأصغر</button>
+            <button class="km-filter-btn" onclick="filterArticles('tools')">الأدوات</button>
+            <button class="km-filter-btn" onclick="filterArticles('investment')">الاستثمار</button>
+            <button class="km-filter-btn" onclick="filterArticles('islamic')">إسلامي</button>
+        </div>
+        <div class="km-articles" id="km-articles-grid"></div>
+        <div style="text-align:center;margin-top:1rem;" id="show-more-wrap">
+            <button id="show-more-btn" onclick="showMoreArticles()" style="padding:10px 28px;border:1.5px solid #1E40AF;background:#fff;color:#1E40AF;border-radius:50px;font-weight:700;cursor:pointer;font-family:var(--font-body);font-size:.88rem;">عرض المزيد</button>
+        </div>
+    </div>
+
+    <div class="km-divider"></div>
+
+    <!-- رحلة القرار -->
+    <div id="stages">
+        <div class="km-section-head"><div><h2>🗺️ تعلّم حسب مرحلة قرارك</h2><div class="km-section-sub">من الفهم إلى التقديم والمتابعة</div></div></div>
+        <div class="km-stages">
+            <a href="articles/الميزانية-الشخصية.html" class="km-stage"><div class="km-stage-num">1</div><div class="km-stage-title">أفهم الأساسيات</div><div class="km-stage-desc">ما هي المنتجات وكيف تعمل</div></a>
+            <a href="../compare/compare.html" class="km-stage"><div class="km-stage-num">2</div><div class="km-stage-title">أقارن الخيارات</div><div class="km-stage-desc">أدوات المقارنة المباشرة</div></a>
+            <a href="articles/دليل-القروض-الشخصية.html" class="km-stage"><div class="km-stage-num">3</div><div class="km-stage-title">أتأكد من الأهلية</div><div class="km-stage-desc">الراتب والمتطلبات</div></a>
+            <a href="../start.html" class="km-stage"><div class="km-stage-num">4</div><div class="km-stage-title">أتقدم بثقة</div><div class="km-stage-desc">خطوات التقديم الصحيحة</div></a>
+            <a href="../calculators/calculators.html" class="km-stage"><div class="km-stage-num">5</div><div class="km-stage-title">أتابع وأحسّن</div><div class="km-stage-desc">إدارة المنتج بعد الحصول</div></a>
+        </div>
+    </div>
+
+    <!-- أفضل الخيارات -->
+    <div id="best">
+        <div class="km-section-head"><div><h2>🏆 أفضل الخيارات — مقارنات جاهزة</h2><div class="km-section-sub">توصيات حسب وضعك ومتطلباتك</div></div></div>
+        <div class="km-picks">
+            <a href="../cards/cards.html" class="km-pick"><span class="km-pick-icon">💳</span><h4>أفضل بطاقات الكاش باك 2026</h4><span>محدّث أبريل 2026 ←</span></a>
+            <a href="../cards/cards.html" class="km-pick"><span class="km-pick-icon">✈️</span><h4>أفضل بطاقات السفر وصالات المطار</h4><span>قارن الآن ←</span></a>
+            <a href="../loans/loans.html" class="km-pick"><span class="km-pick-icon">💰</span><h4>أفضل قرض شخصي حسب الراتب</h4><span>قارن الآن ←</span></a>
+            <a href="../savings/savings.html" class="km-pick"><span class="km-pick-icon">🏦</span><h4>أفضل حسابات التوفير بأعلى عائد</h4><span>قارن الآن ←</span></a>
+            <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+            <a href="../insurance/insurance.html" class="km-pick"><span class="km-pick-icon">🛡️</span><h4>أفضل تأمين سيارة شامل</h4><span>قارن الآن ←</span></a>
+            -->
+            <a href="../microfinance/microfinance.html" class="km-pick"><span class="km-pick-icon">🚀</span><h4>أفضل تمويل مشروع بدون ضمان</h4><span>قارن الآن ←</span></a>
+        </div>
+    </div>
+
+    <!-- المنهجية -->
+    <div class="km-method">
+        <div>
+            <h3>🔍 كيف نعمل</h3>
+            <p>مالي بلس منصة مقارنة مستقلة. لا نتلقى مدفوعات مقابل ترتيب المنتجات.</p>
+            <ul class="km-method-items">
+                <li>نجمع البيانات مباشرة من البنوك وشركات التأمين</li>
+                <li>نحدّث البيانات عند كل تغيير رسمي</li>
+                <li>نرتب النتائج حسب معايير موضوعية معلنة</li>
+                <li>نحذف المنتجات المصفّاة أو الملغاة فوراً</li>
+            </ul>
+        </div>
+        <div>
+            <h3>📅 آخر تحديث</h3>
+            <p>أبريل 2026 — البيانات تُراجع دورياً. للإبلاغ عن معلومة خاطئة:</p>
+            <a href="../contact.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#1E40AF;color:#fff;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">تواصل معنا</a>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="km-cta">
+        <div><h3>جاهز لاتخاذ قرارك؟</h3><p>قارن المنتجات واختر الأنسب لك — مجاناً ومن دون تسجيل.</p></div>
+        <div class="km-cta-btns">
+            <a href="../compare/compare.html" class="km-cta-btn primary">قارن الآن</a>
+            <a href="../calculators/calculators.html" class="km-cta-btn secondary">استخدم الحاسبات</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+
+<script>
+const ARTICLES = {
+    basics:[
+        {title:'ما هو الادخار وكيف تبدأ؟',summary:'تعرف على أساسيات الادخار وكيف تبدأ في بناء مستقبلك المالي.',link:'articles/ما-هو-الادخار.html',time:'7 دقائق'},
+        {title:'فهم الميزانية الشخصية',summary:'كيف توزع راتبك وتتحكم في إنفاقك بطريقة عملية.',link:'articles/الميزانية-الشخصية.html',time:'6 دقائق'},
+        {title:'ما هي الفائدة البنكية وكيف تحسبها؟',summary:'شرح مبسط للفائدة الثابتة والمتناقصة وأثرها على قرضك.',link:'articles/الفائدة-المتناقصة.html',time:'5 دقائق'},
+        {title:'كيف تبني صندوق طوارئ؟',summary:'الخطوات العملية لبناء احتياطي مالي يحميك من المفاجآت.',link:'articles/بناء-صندوق-طوارئ-مالي.html',time:'5 دقائق'},
+        {title:'كيف تتخلص من ديون البطاقة الائتمانية؟',summary:'استراتيجيات فعّالة لسداد ديون البطاقة وتحرير ميزانيتك.',link:'articles/التخلص-من-ديون-البطاقة-الائتمانية.html',time:'8 دقائق'},
+        {title:'الصحة المالية — كيف تقيّم وضعك؟',summary:'5 مؤشرات بسيطة تخبرك إن كنت على الطريق الصحيح.',link:'articles/الصحة-النفسية-والمال.html',time:'6 دقائق'},
+        {title:'كيف تحقق الاستقلال المالي؟',summary:'خطوات عملية نحو الحرية المالية في السياق الأردني.',link:'articles/الاستقلال-المالي-للمرأة-العربية.html',time:'8 دقائق'},
+        {title:'BNPL — الشراء الآن والدفع لاحقاً',summary:'ما خدمة «اشترِ الآن وادفع لاحقاً» (BNPL)، وهل تناسبك؟',link:'articles/الشراء-الآن-والدفع-لاحقاً-bnpl.html',time:'5 دقائق'},
+        {title:'الحديث عن المال مع شريك الحياة',summary:'كيف تتحدث عن الأموال مع زوجك/زوجتك بطريقة صحية.',link:'articles/الحديث-عن-المال-مع-شريك-الحياة.html',time:'7 دقائق'},
+    ],
+    products:[
+        {title:'شرح البطاقات الائتمانية',summary:'دليل شامل لفهم كيف تعمل البطاقة الائتمانية وما تكلفها الحقيقية.',link:'articles/شرح-البطاقات-الائتمانية.html',time:'7 دقائق'},
+        {title:'دليلك لفهم القروض الشخصية',summary:'كل ما تحتاج معرفته قبل التقديم على قرض شخصي.',link:'articles/دليل-القروض-الشخصية.html',time:'8 دقائق'},
+        {title:'الفرق بين الفائدة الثابتة والمتناقصة',summary:'أيهما أفضل لك؟ شرح عملي مع أمثلة.',link:'articles/الفائدة-المتناقصة.html',time:'5 دقائق'},
+        {title:'مقارنة مستويات البطاقات الائتمانية',summary:'ما الفرق بين البلاتينية والـSignature والـWorld؟',link:'articles/مستويات-البطاقات.html',time:'6 دقائق'},
+        {title:'ما هو الكاش باك؟',summary:'كيف يعمل الكاش باك وكيف تستفيد منه أكثر.',link:'articles/ما-هو-الكاش-باك.html',time:'4 دقائق'},
+        {title:'الأميال والنقاط — دليل المبتدئين',summary:'كيف تجمع الأميال وتستردها بذكاء.',link:'articles/الاميال-والنقاط.html',time:'6 دقائق'},
+    ],
+    microfinance:[
+        {title:'دليلك الشامل لتمويل مشروعك كسيدة أردنية',summary:'كل ما تحتاجه السيدة الأردنية لتمويل مشروعها الصغير.',link:'articles/تمويل-المشاريع-النسائية-الاردن.html',time:'9 دقائق'},
+        {title:'كيف تحصل على تمويل بدون راتب ثابت؟',summary:'خيارات التمويل المتاحة للعمل الحر وأصحاب المشاريع.',link:'articles/تمويل-المشاريع-الصغيرة-بدون-راتب.html',time:'7 دقائق'},
+        {title:'تمويل المشاريع الصغيرة في الأردن',summary:'دليل شركات التمويل الأصغر وكيف تتقدم.',link:'articles/تمويل-المشاريع-الصغيرة-الاردن-2026.html',time:'8 دقائق'},
+        {title:'رفض البنك طلبك؟ هذه خياراتك',summary:'ما العمل إذا رفض البنك طلب القرض وما البدائل المتاحة.',link:'articles/رفض-البنك-طلبي.html',time:'6 دقائق'},
+    ],
+    tools:[
+        {title:'كيف تساعدك الحاسبات المالية؟',summary:'دليل استخدام الحاسبات لاتخاذ قرارات مالية أفضل.',link:'articles/كيف-تستخدم-الحاسبات-المالية.html',time:'5 دقائق'},
+        {title:'خطة الإدارة المالية 30 يوماً',summary:'برنامج عملي لترتيب أوضاعك المالية خلال شهر واحد.',link:'articles/نصائح-ميزانية-شخصية-فعالة.html',time:'10 دقائق'},
+        {title:'التخطيط الضريبي للأفراد في الأردن',summary:'كيف تفهم التزاماتك الضريبية وتخطط لها.',link:'articles/التخطيط-الضريبي-للأفراد-الأردن.html',time:'7 دقائق'},
+        {title:'التخطيط المالي لتعليم الأبناء',summary:'كيف تبدأ الادخار المبكر لتعليم أطفالك.',link:'articles/التخطيط-المالي-لتعليم-الأبناء.html',time:'7 دقائق'},
+    ],
+    investment:[
+        {title:'قوة الوقت: استثمار بسيط لأطفالك',summary:'كيف يتحوّل مبلغ شهري صغير إلى مبلغ كبير خلال 18 عاماً — بالدينار الأردني.',link:'articles/قوة-الوقت-الاستثمار-لأطفالك.html',time:'6 دقائق'},
+        {title:'الدخل السلبي: خرافات وحقائق 2026',summary:'ما هي فرص الدخل السلبي الحقيقية وكيف تبدأ.',link:'articles/الدخل-السلبي-passive-income-2026.html',time:'8 دقائق'},
+        {title:'العمل الجانبي: كيف تبدأ؟',summary:'أفكار عملية للدخل الإضافي مناسبة للسوق الأردني.',link:'articles/اقتصاديات-العمل-الحر-gig-economy.html',time:'7 دقائق'},
+        {title:'الاستثمار في ETFs للمبتدئين',summary:'كيف تبدأ الاستثمار في صناديق المؤشرات بمبالغ صغيرة.',link:'articles/الاستثمار-في-etfs-للمبتدئين.html',time:'9 دقائق'},
+    ],
+    islamic:[
+        {title:'الفرق بين المرابحة والفائدة التقليدية',summary:'شرح واضح للفرق بين التمويل الإسلامي والتقليدي.',link:'articles/المرابحة-والفائدة.html',time:'6 دقائق'},
+        {title:'الفرق بين البنك الإسلامي والتقليدي',summary:'متى تختار كل منهما وما الفرق العملي.',link:'articles/بنك-اسلامي-vs-تقليدي.html',time:'5 دقائق'},
+    ],
+    savings:[
+        {title:'التضخم وتأثيره على مدخراتك',summary:'كيف يؤكل التضخم قيمة مدخراتك وكيف تحمي نفسك.',link:'articles/التضخم-وتأثيره-على-مدخراتك.html',time:'6 دقائق'},
+        {title:'أسرار الادخار للتقاعد',summary:'متى تبدأ وكيف تحسب ما تحتاجه للتقاعد المريح.',link:'articles/الادخار-للتقاعد.html',time:'8 دقائق'},
+    ]
+};
+
+
+/* عدّادات الفئات تُحسب آلياً من ARTICLES — لا تتقادم عند إضافة مقالة */
+function syncCatCounts(){
+  try{
+    var total=0; for(var k in ARTICLES) total+=ARTICLES[k].length;
+    document.querySelectorAll('.km-cat').forEach(function(el){
+      var m=/filterArticles\('([a-z]+)'\)/.exec(el.getAttribute('onclick')||'');
+      if(!m) return;
+      var key=m[1], n = key==='all' ? total : ((ARTICLES[key]||[]).length);
+      var c=el.querySelector('.km-cat-count');
+      if(c) c.textContent = n===1 ? 'مقالة واحدة' : (n===2 ? 'مقالتان' : (n<=10 ? n+' مقالات' : n+' مقالة'));
+    });
+  }catch(e){}
+}
+syncCatCounts();
+
+const TAG_LABELS={basics:'الأساسيات',products:'البطاقات والقروض',microfinance:'التمويل الأصغر',tools:'الأدوات',investment:'الاستثمار',islamic:'التمويل الإسلامي',savings:'الادخار'};
+const TAG_BG={basics:'#EFF6FF',products:'#ECFDF5',microfinance:'#F5F3FF',tools:'#FFFBEB',investment:'#F0F9FF',islamic:'#ECFDF5',savings:'#FEF3C7'};
+const TAG_COLOR={basics:'#1E40AF',products:'#065F46',microfinance:'#5B21B6',tools:'#92400E',investment:'#0369A1',islamic:'#065F46',savings:'#92400E'};
+
+let currentFilter='all',showCount=9;
+
+function getAllArticles(){let a=[];for(const[tab,arts] of Object.entries(ARTICLES))arts.forEach(x=>a.push({...x,tab}));return a;}
+
+function filterArticles(tab){
+    currentFilter=tab;showCount=9;
+    document.querySelectorAll('.km-filter-btn').forEach(b=>b.classList.toggle('active',
+        (tab==='all'&&b.textContent==='الكل')||(tab==='basics'&&b.textContent==='الأساسيات')||
+        (tab==='products'&&b.textContent==='البطاقات والقروض')||(tab==='microfinance'&&b.textContent==='التمويل الأصغر')||
+        (tab==='tools'&&b.textContent==='الأدوات')||(tab==='investment'&&b.textContent==='الاستثمار')||
+        (tab==='islamic'&&b.textContent==='إسلامي')
+    ));
+    renderArticles();
+    document.getElementById('articles-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderArticles(){
+    const all=getAllArticles();
+    const filtered=currentFilter==='all'?all:all.filter(a=>a.tab===currentFilter);
+    const visible=filtered.slice(0,showCount);
+    document.getElementById('km-articles-grid').innerHTML=visible.map(a=>`
+        <a href="${a.link}" class="km-article">
+            <span class="km-article-tag" style="background:${TAG_BG[a.tab]||'#EFF6FF'};color:${TAG_COLOR[a.tab]||'#1E40AF'}">${TAG_LABELS[a.tab]||''}</span>
+            <h4>${a.title}</h4>
+            <p>${a.summary}</p>
+            <div class="km-article-footer"><span style="color:#6B7280">⏱ ${a.time}</span><span>اقرأ المزيد ←</span></div>
+        </a>`).join('');
+    document.getElementById('show-more-wrap').style.display=filtered.length>showCount?'block':'none';
+}
+
+function showMoreArticles(){showCount+=9;renderArticles();}
+
+function doSearch(){
+    const q=document.getElementById('km-search-input').value.trim().toLowerCase();
+    if(!q)return;
+    const results=getAllArticles().filter(a=>a.title.toLowerCase().includes(q)||a.summary.toLowerCase().includes(q));
+    document.getElementById('km-articles-grid').innerHTML=results.length?results.map(a=>`
+        <a href="${a.link}" class="km-article">
+            <span class="km-article-tag" style="background:${TAG_BG[a.tab]||'#EFF6FF'};color:${TAG_COLOR[a.tab]||'#1E40AF'}">${TAG_LABELS[a.tab]||''}</span>
+            <h4>${a.title}</h4><p>${a.summary}</p>
+            <div class="km-article-footer"><span style="color:#6B7280">⏱ ${a.time}</span><span>اقرأ ←</span></div>
+        </a>`).join('')
+        :'<p style="grid-column:1/-1;text-align:center;color:#6B7280;padding:2rem;">لا توجد نتائج — جرب كلمة أخرى</p>';
+    document.getElementById('show-more-wrap').style.display='none';
+    document.getElementById('articles-section').scrollIntoView({behavior:'smooth'});
+}
+
+document.getElementById('km-search-input').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
+document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var timer;
+    dd.addEventListener('mouseenter',function(){clearTimeout(timer);var m=dd.querySelector('.nav-drop-menu');if(m)m.style.display='block';});
+    dd.addEventListener('mouseleave',function(){var m=dd.querySelector('.nav-drop-menu');timer=setTimeout(function(){if(m)m.style.display='';},150);});
+});
+
+renderArticles();
+</script>
+</body>
+</html>

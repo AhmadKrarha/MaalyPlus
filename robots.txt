@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /templates/
+Disallow: /graphify-out/
+
+Sitemap: https://maalyplus.com/sitemap.xml

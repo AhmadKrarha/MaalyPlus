@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفاصيل البطاقة — MaalyPlus</title>
+<meta name="description" content="تفاصيل كاملة عن البطاقة الائتمانية: الرسوم، الفوائد، المزايا، الراتب الأدنى، وشروط التقديم.">
+<link rel="canonical" href="https://maalyplus.com/cards/details.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تفاصيل البطاقة — MaalyPlus">
+<meta property="og:description" content="تفاصيل كاملة عن البطاقة الائتمانية في الأردن.">
+<meta property="og:locale" content="ar_JO">
+<meta property="og:site_name" content="MaalyPlus">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR2XEXKN8T');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-heading);background:#F8FAFF;color:#1F2937;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.top-nav{background:#1E40AF;color:#fff;padding:.85rem 1.25rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(30,64,175,.18)}
+.top-nav a{color:#fff;text-decoration:none;font-weight:700}
+.crumbs{padding:.75rem 0;color:#6B7280;font-size:.85rem}
+.crumbs a{color:#1E40AF;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.card-detail{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:1.5rem}
+.cd-head{display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cd-logo{width:70px;height:70px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #E5E7EB;padding:8px}
+.cd-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.cd-head-text{flex:1;min-width:200px}
+.cd-product-name{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.6rem;margin-bottom:.25rem}
+.cd-bank-name{color:#6B7280;font-size:1rem}
+.cd-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.cd-badge{display:inline-flex;align-items:center;gap:4px;border-radius:50px;padding:4px 12px;font-size:.78rem;font-weight:700}
+.cd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0;padding:1.25rem;background:#F8FAFF;border-radius:12px}
+.cd-stat{}
+.cd-stat-label{font-size:.78rem;color:#6B7280;margin-bottom:4px}
+.cd-stat-val{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.3rem}
+.cd-section{margin:1.5rem 0}
+.cd-section-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.15rem;margin-bottom:.75rem;border-bottom:2px solid #E5E7EB;padding-bottom:.5rem}
+.cd-list{list-style:none;padding:0}
+.cd-list li{padding:.5rem 0;color:#374151;display:flex;align-items:flex-start;gap:.5rem}
+.cd-list li::before{content:"✓";color:#047857;font-weight:bold;flex-shrink:0}
+.cd-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #E5E7EB}
+.cd-btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.5rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:.95rem;transition:all .2s;border:none;cursor:pointer;font-family:var(--font-heading)}
+.cd-btn-primary{background:linear-gradient(135deg,#1E40AF,#047857);color:#fff}
+.cd-btn-primary:hover{box-shadow:0 6px 16px rgba(16,185,129,.35);transform:translateY(-2px)}
+.cd-btn-secondary{background:#F3F4F6;color:#374151;border:1.5px solid #E5E7EB}
+.cd-verified{background:#ECFDF5;color:#065F46;padding:.6rem 1rem;border-radius:8px;font-size:.85rem;margin:1rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.score-card{background:linear-gradient(135deg,#1E40AF,#047857);color:#fff;padding:1.25rem;border-radius:12px;margin:1rem 0}
+.score-title{font-size:.85rem;font-weight:800;margin-bottom:.35rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.score-note{font-size:.72rem;opacity:.85;margin-top:.75rem;line-height:1.7}
+.score-note a{color:#fff;text-decoration:underline;font-weight:700}
+.conf-chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:2px 10px;border-radius:50px;font-size:.68rem;font-weight:700}
+.score-num{font-size:3rem;font-weight:700;font-family:var(--font-heading)}
+.score-label{opacity:.9;font-size:.95rem}
+.score-bars{margin-top:1rem}
+.score-bar{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.85rem}
+.score-bar-label{min-width:120px}
+.score-bar-track{flex:1;background:rgba(255,255,255,.25);height:6px;border-radius:50px;overflow:hidden}
+.score-bar-fill{background:#fff;height:100%;border-radius:50px;transition:width .6s}
+.error-state{padding:3rem 1rem;text-align:center;color:#6B7280}
+.loading{padding:3rem 1rem;text-align:center;color:#6B7280}
+/* ── إعادة تنظيم صفحة التفاصيل ── */
+.cd-context{border-radius:12px;padding:.8rem 1rem;margin-bottom:1.25rem;font-size:.9rem;line-height:1.7;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.cd-context.wiz{background:#F0FDF4;border:1px solid #BBF7D0;color:#14532D;justify-content:space-between}
+.cd-context-back{color:#047857;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.cd-context-back:hover{text-decoration:underline}
+.cd-context.wiz b{color:#047857}
+.cd-context.cmp{background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF;justify-content:space-between}
+.cd-context.cmp a{color:#1E40AF;font-weight:700;text-decoration:none}
+.cd-scorechip{display:inline-flex;align-items:center;gap:5px;background:#EFF6FF;color:#1E40AF;border:1px solid #BFDBFE;border-radius:50px;padding:4px 12px;font-size:.78rem;font-weight:700;cursor:help}
+.cd-rewardline{display:flex;align-items:center;gap:.5rem;font-family:var(--font-heading);font-weight:700;color:#065F46;font-size:1.05rem;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:.7rem 1rem;margin:1.1rem 0 .3rem}
+.cd-unk{color:#9CA3AF;font-style:italic;font-weight:700;font-size:.9em}
+.cd-substat{font-size:.72rem;color:#9CA3AF;margin-top:5px;line-height:1.5;font-weight:400;font-family:var(--font-body)}
+.cd-datanote{font-size:.78rem;color:#6B7280;line-height:1.7;margin:.5rem 0}
+.cd-calc{border:1px solid #E5E7EB;border-radius:12px;margin:1.25rem 0;background:#fff;overflow:hidden}
+.cd-calc>summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--font-heading);font-weight:700;color:#1E2B3C;list-style:none;display:flex;align-items:center;gap:8px;font-size:.95rem}
+.cd-calc>summary::-webkit-details-marker{display:none}
+.cd-calc>summary::after{content:'▾';margin-inline-start:auto;color:#9CA3AF;transition:transform .2s}
+.cd-calc[open]>summary::after{transform:rotate(180deg)}
+.cd-calc-body{padding:0 1rem 1rem}
+.cd-calc-note{font-size:.78rem;color:#6B7280;line-height:1.7;margin:.3rem 0 .7rem;background:#F8FAFF;border-radius:8px;padding:.5rem .7rem}
+.cd-calc .score-bar{color:#374151;margin-bottom:8px}
+.cd-calc .score-bar-track{background:#E5E7EB}
+.cd-calc .score-bar-fill{background:#1E40AF}
+.cd-calc .score-bar-v{font-weight:800;color:#1E2B3C;min-width:48px;text-align:end}
+.cd-scorechip svg,.cd-btn svg,.cd-rewardline svg,.cd-context svg{width:1em;height:1em;flex-shrink:0}
+@media(max-width:600px){.cd-product-name{font-size:1.3rem}.cd-grid{padding:1rem}.card-detail{padding:1.25rem}}
+</style>
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+<script src="card-engine.js?v=20260827"></script>
+</head>
+<body>
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+<nav class="top-nav">
+<a href="../index.html">← MaalyPlus</a>
+<a href="cards.html">جميع البطاقات</a>
+</nav>
+
+<div class="container">
+<div class="crumbs" id="crumbs"><a href="../index.html">الرئيسية</a> ← <a href="cards.html">البطاقات</a> ← <span id="crumbName">...</span></div>
+
+<div id="content" class="loading">جاري تحميل بيانات البطاقة...</div>
+</div>
+
+<script>
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function parseRate(v){if(!v||v==='None')return 2.0;try{return parseFloat(String(v).replace('%','').trim())}catch(e){return 2.0}}
+function formatVerifiedDate(d){
+const months={'01':'يناير','02':'فبراير','03':'مارس','04':'أبريل','05':'مايو','06':'يونيو','07':'يوليو','08':'أغسطس','09':'سبتمبر','10':'أكتوبر','11':'نوفمبر','12':'ديسمبر'};
+if(!d)return 'أبريل 2026';
+const m=String(d).match(/^(\d{4})-(\d{2})$/);
+return m?(months[m[2]]||m[2])+' '+m[1]:d;
+}
+function getScoreLabel(s){
+if(s>=85)return{text:'ممتاز',color:'#047857'};
+if(s>=72)return{text:'جيد جداً',color:'#1E40AF'};
+if(s>=58)return{text:'جيد',color:'#92400E'};
+return{text:'مقبول',color:'#4B5563'};
+}
+// درجة ثقة البيانات (كاملة/جزئية/بحاجة تحقق) من حقل confidence — تُعرض داخل بطاقة التقييم
+function confChip(card){
+const c=Number(card.confidence);
+if(c>=85)return'✓ البيانات مكتملة';
+if(c>=70)return'بيانات جزئية — تحقق من البنك';
+return'بحاجة تحقق من البنك';
+}
+// المستندات المطلوبة للتقديم — خاصة بكل بنك (للبطاقات الائتمانية فقط)؛ تعود لقائمة قياسية موسومة لحين توثيق البنك
+function renderRequirements(card){
+if(card.type!=='credit')return'';
+const reqs=window.BANK_REQS;if(!reqs)return'';
+let bank=(reqs.banks||{})[card.bank_ar];
+/* متطلبات منشورة لمنتج محدد فقط (applies_to)؟ تُعرض موثّقة على ذلك المنتج وحده،
+   وبقية بطاقات البنك تعود للقائمة القياسية — لا نعمّم مصدر منتجٍ على غيره */
+if(bank&&Array.isArray(bank.applies_to)&&bank.applies_to.length){
+  const match=bank.applies_to.some(p=>String(card.product_name||'').includes(p));
+  if(!match) bank=null;
+}
+const std=reqs._standard_fallback||{};
+const verified=bank&&bank.status==='published';
+const jor=(verified?bank.documents_jordanian:std.documents_jordanian)||[];
+const non=(verified?bank.documents_non_jordanian:std.documents_non_jordanian)||[];
+if(!jor.length&&!non.length)return'';
+const li=a=>a.map(d=>`<li>${esc(d)}</li>`).join('');
+const col=(t,a)=>a.length?`<div><div style="font-weight:700;color:#1E2B3C;font-size:.85rem;margin-bottom:.35rem">${t}</div><ul class="cd-list">${li(a)}</ul></div>`:'';
+const badge=verified
+?`<span style="background:#ECFDF5;color:#065F46;padding:2px 9px;border-radius:10px;font-size:.66rem;font-weight:700">✓ موثّق من ${esc(card.bank_ar)}</span>`
+:`<span style="background:#FEF3C7;color:#92400E;padding:2px 9px;border-radius:10px;font-size:.66rem;font-weight:700">قائمة قياسية — تحقّق من ${esc(card.bank_ar)}</span>`;
+const src=verified&&bank.source_url?` · <a href="${esc(bank.source_url)}" target="_blank" rel="noopener" style="color:#1E40AF">المصدر الرسمي</a>`:'';
+const bnote=verified&&bank.note?`<p style="font-size:.72rem;color:#6B7280;margin-top:.5rem">ℹ️ ${esc(bank.note)}</p>`:'';
+const nonNote=(verified&&!non.length)?`<p style="font-size:.72rem;color:#9CA3AF;margin-top:.4rem">🌍 لغير الأردنيين: يُضاف عادةً جواز سفر وإقامة عمل سارية — لم يفصّلها البنك رسمياً، تحقّق منه.</p>`:'';
+return`<div class="cd-section"><div class="cd-section-title"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> المستندات المطلوبة للتقديم</div>
+<div style="margin-bottom:.6rem">${badge}${src}</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">${col('🇯🇴 للأردنيين',jor)}${col('🌍 لغير الأردنيين',non)}</div>
+${bnote}${nonNote}
+<p style="font-size:.72rem;color:#9CA3AF;margin-top:.6rem">قد تطلب البنوك مستندات إضافية حسب الحالة — تحقّق من الجهة قبل التقديم.</p></div>`;
+}
+
+// خوارزمية التقييم — نفس app.js (مجهول الرسوم = وسيط الفئة، لا صفر)
+/* لا رياضيات هنا — المحرّك المشترك cards/card-engine.js هو المرجع الوحيد. */
+function computeScore(card,allCards){
+const i=allCards.indexOf(card);
+const R=MP_CARD_ENGINE.score(allCards)[i>=0?i:0];
+return {score:R.score,breakdown:R.breakdown,status:R.status,inputs:R.inputs,coverage:R.coverage};
+}
+
+/* كل شريط يعرض القيمة الخام التي أنتجت الدرجة — بلا ذلك يستحيل على القارئ
+   (أو علينا) كشف خطأ في المدخلة. «لا ينطبق» و«غير منشور» حالتان مختلفتان. */
+function axisBar(label,w,v,status,raw){
+if(status==='na')
+  return `<div class="score-bar"><div class="score-bar-label">${label}</div><div style="flex:1;font-size:.78rem;color:#6B7280">${esc(raw)} — رُفع وزنه من المقام</div></div>`;
+if(status==='missing')
+  return `<div class="score-bar"><div class="score-bar-label">${label}</div><div style="flex:1;font-size:.78rem;color:#B45309"><b>غير منشورة</b> — لا تأخذ درجة ولم تُستبدل برقم (رُفع وزنها من المقام)</div></div>`;
+return `<div class="score-bar" style="align-items:flex-start"><div class="score-bar-label">درجة ${label} (وزن ${w}%)</div>
+<div style="flex:1"><div style="display:flex;align-items:center;gap:8px"><div class="score-bar-track" style="flex:1"><div class="score-bar-fill" style="width:${v}%"></div></div><div class="score-bar-v">${v}/100</div></div>
+<div style="font-size:.72rem;color:#6B7280;margin-top:3px">${esc(raw)}</div></div></div>`;
+}
+
+function renderCard(card,allCards){
+const{score,breakdown,status:st,inputs:inp,coverage:cov}=computeScore(card,allCards);
+const lbl=getScoreLabel(score);
+const networksHTML=(card.networks||[]).map(n=>`<img src="../images/${esc(String(n).toLowerCase())}.png" alt="${esc(n)}" style="height:24px;margin-inline-end:6px" onerror="this.style.display='none'">`).join('');
+const features=(card.key_features||[]).filter(f=>f&&String(f).trim()).map(f=>`<li>${esc(f)}</li>`).join('');
+const tags=[];
+const rwd=(card.rewards||'').toLowerCase();
+const fee=(card.annual_fee_jod==null||card.annual_fee_jod==="")?null:card.annual_fee_jod;
+if(rwd==='cashback'&&fee===0)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> الأفضل بدون رسوم + استرداد نقدي',color:'#047857'});
+else if(rwd==='cashback')tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> استرداد نقدي',color:'#047857'});
+else if(rwd==='miles'||card.travel_benefits)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-plane"/></svg> الأفضل للسفر',color:'#1E40AF'});
+else if(rwd==='points')tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-gift"/></svg> نقاط ومكافآت',color:'#7C3AED'});
+if(card.sharia_compliant)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-crescent"/></svg> متوافقة مع الشريعة',color:'#92400E'});
+const tagsHTML=tags.map(t=>`<span class="cd-badge" style="background:${t.color}18;color:${t.color}">${t.text}</span>`).join(' ');
+
+document.title=`${card.product_name} — ${card.bank_ar} | MaalyPlus`;
+document.querySelector('meta[name="description"]').setAttribute('content',`تفاصيل ${card.product_name} من ${card.bank_ar}: رسوم ${fee===0?'مجانية':(fee==null?'غير منشورة':fee+' دينار')}، راتب أدنى ${card.minimum_salary_jod||0} د.أ، ${card.reward_summary||'لا يوجد مكافآت'}.`);
+document.getElementById('crumbName').textContent=card.product_name;
+
+const p=new URLSearchParams(location.search);
+const from=p.get('from'), spend=p.get('spend'), pnet=p.get('net'), pfirst=p.get('first'), pids=p.get('ids');
+const typeLabel={credit:'بطاقة ائتمانية',debit:'بطاقة خصم',prepaid:'بطاقة مسبقة الدفع'}[card.type]||'';
+const rewardLine=card.reward_summary||({cashback:'استرداد نقدي',points:'نقاط ومكافآت',miles:'أميال'}[rwd]||'لا يوجد برنامج مكافآت');
+const reqBank=(window.BANK_REQS&&window.BANK_REQS.banks)?window.BANK_REQS.banks[card.bank_ar]:null;
+const bankUrl=(reqBank&&reqBank.status==='published'&&reqBank.source_url)?reqBank.source_url:'';
+const conf=Number(card.confidence);
+/* «مكتملة» ادّعاء عن البيانات لا عن الثقة — فيُشتقّ من تغطية المحاور فعلياً.
+   كان يُشتقّ من confidence وحده، فظهرت «البيانات مكتملة» على بطاقة معيارها
+   الأول غير منشور أصلاً. و«البنك» تُستبدل حين يكون المُصدِر غير مصرفي. */
+const issuerWord=card.issuer_kind==='wallet'?'الجهة المُصدِرة':'البنك';
+const issuerL=card.issuer_kind==='wallet'?'للجهة المُصدِرة':'للبنك';
+const dataNote=cov.partial
+  ? `لم تُعلَن كل معايير التقييم لهذه البطاقة (${cov.counted} من ${cov.applicable}) — والمعيار غير المنشور لا يُستبدل برقم. تحقّق من الشروط النهائية مع ${issuerWord}.`
+  : (conf>=85
+      ? `كل معايير التقييم المنطبقة منشورة من المصادر الرسمية ${issuerL}.`
+      : `بعض الحقول لم تُعلَن رسمياً — تحقّق من الشروط النهائية مع ${issuerWord}.`);
+let ctxBar='';
+if(from==='wizard'&&pnet){ctxBar=`<div class="cd-context wiz"><span><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> بحسب إنفاقك${spend?` (${esc(spend)} د.أ/شهر)`:''}: صافي فائدتك المتوقعة <b>+${esc(pnet)} د.أ سنوياً</b>${pfirst?` — والسنة الأولى <b>+${esc(pfirst)} د.أ</b> (إعفاء الرسوم)`:''}.</span><a class="cd-context-back" href="../start.html?restore=1">← العودة إلى نتائجك</a></div>`;}
+else if(from==='compare'&&pids){ctxBar=`<div class="cd-context cmp"><span>جئت من صفحة المقارنة.</span><a href="../compare/compare.html?ids=${encodeURIComponent(pids)}&cat=cards">← العودة إلى المقارنة</a></div>`;}
+
+const html=`
+<div class="card-detail">
+${ctxBar}
+<div class="cd-head">
+<div class="cd-logo"><img src="../${esc(card.logo)}?v=20260827" alt="${esc(card.bank_ar)}" onerror="this.style.display='none'"></div>
+<div class="cd-head-text">
+<h1 class="cd-product-name">${esc(card.product_name)}</h1>
+<div class="cd-bank-name">${esc(card.bank_ar)}${typeLabel?` · ${typeLabel}`:''}${card.issuer_kind==='wallet'?` <span title="جهة غير مصرفية — البطاقة مرتبطة بمحفظة رقمية لا بحساب بنكي" style="background:#EEF2FF;color:#3730A3;border-radius:50px;padding:1px 8px;font-size:.7rem;font-weight:700">محفظة رقمية</span>`:''}</div>
+<div style="margin-top:8px">${networksHTML}</div>
+<div class="cd-badges">${tagsHTML}${score===null?`<span class="cd-scorechip" style="background:#F3F4F6;color:#4B5563;border-color:#E5E7EB" title="المنشور من معايير هذه البطاقة أقل من نصف الوزن — لا نمنحها درجة بدل تلفيق واحدة">لا درجة — بيانات غير كافية</span>`:`<span class="cd-scorechip" title="درجة جودة المنتج بمنهجية مالي بلس الموحّدة (تفاصيلها بالأسفل)">تقييم مالي بلس: ${score}/100</span>`}</div>
+</div>
+</div>
+
+<div class="cd-rewardline"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> ${esc(rewardLine)}</div>
+<div class="cd-grid">
+<div class="cd-stat"><div class="cd-stat-label">الرسوم السنوية</div><div class="cd-stat-val">${fee===0?'مجاناً':(fee==null?'<span class="cd-unk">غير منشورة</span>':fee+' د.أ')}</div></div>
+<div class="cd-stat"><div class="cd-stat-label">الكلفة الشهرية</div><div class="cd-stat-val" style="font-size:1.05rem;line-height:1.5">${st.rate==='scored'?esc(inp.rate.split(' — ')[0]):st.rate==='na'?'<span class="cd-unk">لا ينطبق</span>':'<span class="cd-unk">غير منشورة</span>'}</div>${st.rate==='scored'?`<div class="cd-substat">${esc(inp.rate.split(' — ').slice(1).join(' — '))}</div>`:st.rate==='na'?`<div class="cd-substat">${esc(inp.rate.replace(/^لا ينطبق — /,''))}</div>`:'<div class="cd-substat">لم تُعلَن الكلفة الشهرية — لا نستبدلها برقم.</div>'}</div>
+<div class="cd-stat"><div class="cd-stat-label">الحد الأدنى للراتب</div><div class="cd-stat-val">${card.minimum_salary_jod?card.minimum_salary_jod+' د.أ':'<span class="cd-unk">غير معلن</span>'}</div>${card.minimum_salary_jod?'':'<div class="cd-substat">لم يعلن البنك حدًّا محدداً؛ لا يعني ذلك عدم وجود شرط للراتب.</div>'}</div>
+<div class="cd-stat"><div class="cd-stat-label">رسوم العملات الأجنبية</div><div class="cd-stat-val">${card.foreign_transaction_fee_percent||'<span class="cd-unk">غير معلن</span>'}</div></div>
+</div>
+
+${card.reward_summary?`<div class="cd-section"><div class="cd-section-title">المكافآت وشروطها</div><p>${esc(card.reward_summary)}</p></div>`:''}
+${card.welcome_offer&&card.welcome_offer!=='لا يوجد'?`<div class="cd-section"><div class="cd-section-title">عرض ترحيبي</div><p><svg class="mp-ic"><use href="/images/icons.svg#ic-gift"/></svg> ${esc(card.welcome_offer)}</p></div>`:''}
+${card.lounge_access_details?`<div class="cd-section"><div class="cd-section-title">دخول صالات المطارات</div><p><svg class="mp-ic"><use href="/images/icons.svg#ic-plane"/></svg> ${esc(card.lounge_access_details)}</p></div>`:''}
+${features?`<div class="cd-section"><div class="cd-section-title">المزايا والميزات</div><ul class="cd-list">${features}</ul><p class="cd-datanote">بعض المزايا وصفية (مثل «حد مرتفع»)؛ تحقّق من الأرقام الفعلية مع البنك.</p></div>`:''}
+${renderRequirements(card)}
+
+<div class="cd-verified">
+<span>آخر مراجعة: ${formatVerifiedDate(card.last_verified)}</span>
+<a href="../methodology.html" target="_blank" rel="noopener" style="color:#065F46">منهجية التقييم</a>
+</div>
+<p class="cd-datanote">${dataNote}</p>
+
+<details class="cd-calc">
+<summary>كيف قيّمنا البطاقة؟ ${score===null?'— لماذا لا توجد درجة':`— الدرجة ${score}/100`}</summary>
+<div class="cd-calc-body">
+<div class="cd-calc-note">النِّسب بين القوسين هي <b>أوزان المعايير</b> في الدرجة، وليست نِسباً مالية. وكل درجة من 100.</div>
+${axisBar('الكلفة الشهرية',30,breakdown.rate,st.rate,inp.rate)}
+${axisBar('الرسوم',25,breakdown.fee,st.fee,inp.fee)}
+${axisBar('المزايا',25,breakdown.features,st.features,inp.features)}
+${axisBar('سهولة الوصول',20,breakdown.access,st.access,inp.access)}
+${score===null
+?`<p class="cd-calc-note" style="background:#F3F4F6;color:#374151"><b>لا درجة:</b> المعايير المحتسبة ${cov.counted} من ${cov.applicable} تنطبق على هذه البطاقة — أي أقل من نصف الوزن. نفضّل ألّا نمنح درجة على أن نمنح واحدة مبنيّة على فراغ.</p>`
+:cov.partial?`<p class="cd-calc-note" style="background:#FEF3C7;color:#92400E"><b>درجة جزئية:</b> المعايير المحتسبة ${cov.counted} من ${cov.applicable} تنطبق على هذه البطاقة. المعيار غير المنشور لا يأخذ درجة ولا يُستبدل برقم — يُرفع وزنه من المقام فقط.</p>`:''}
+<p class="cd-datanote">يقيس هذا التقييم جودة المنتج بمنهجية موحّدة، وهو مستقل عن ملاءمته لك. لمعرفة مطابقتها لوضعك والقيمة الصافية بالدينار، جرّب <a href="../start.html">المستشار المالي الذكي</a>.</p>
+</div>
+</details>
+
+<div class="cd-actions">
+${bankUrl?`<a href="${esc(bankUrl)}" target="_blank" rel="noopener" class="cd-btn cd-btn-primary" onclick="track('apply_clicked',{product:'card',id:'${card.id}'})">قدّم عبر موقع البنك ←</a>`:''}
+<a href="../compare/compare.html?ids=${encodeURIComponent(card.id)}&cat=cards" class="cd-btn ${bankUrl?'cd-btn-secondary':'cd-btn-primary'}"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> أضف للمقارنة</a>
+<a href="cards.html" class="cd-btn cd-btn-secondary">← رجوع للبطاقات</a>
+<button onclick="copyShareLink()" class="cd-btn cd-btn-secondary">شارك</button>
+</div>
+</div>
+
+<script type="application/ld+json">
+${JSON.stringify({'@context':'https://schema.org','@type':'FinancialProduct','name':card.product_name||'','description':card.reward_summary||'','provider':{'@type':'BankOrCreditUnion','name':card.bank_ar||''},'url':window.location.href,'feesAndCommissionsSpecification':(fee==null?'الرسوم السنوية غير منشورة':`رسوم سنوية: ${fee} دينار أردني`),'currency':'JOD'}).replace(/</g,'\\u003C')}
+<\/script>
+`;
+document.getElementById('content').innerHTML=html;
+document.getElementById('content').className='';
+}
+
+function copyShareLink(){
+const url=window.location.href;
+if(navigator.clipboard){navigator.clipboard.writeText(url).then(()=>alert('✅ تم نسخ الرابط!'))}
+else{prompt('انسخ الرابط:',url)}
+}
+
+const params=new URLSearchParams(window.location.search);
+const cardId=params.get('id');
+
+if(!cardId){
+document.getElementById('content').className='error-state';
+document.getElementById('content').innerHTML='<h2>لم يتم تحديد البطاقة</h2><p style="margin-top:1rem"><a href="cards.html" style="color:#1E40AF">عرض جميع البطاقات</a></p>';
+}else{
+Promise.all([
+fetch('cards.json?v=20260827').then(r=>r.json()),
+fetch('../data/bank_requirements.json?v=20260827').then(r=>r.json()).catch(()=>null)
+]).then(([cards,reqs])=>{
+window.BANK_REQS=reqs;
+const card=cards.find(c=>c.id===cardId);
+if(!card){
+document.getElementById('content').className='error-state';
+document.getElementById('content').innerHTML=`<h2>البطاقة غير موجودة</h2><p style="margin-top:1rem">رقم البطاقة المطلوب (<code>${esc(cardId)}</code>) غير موجود في قاعدة البيانات.</p><p style="margin-top:1rem"><a href="cards.html" style="color:#1E40AF">عرض جميع البطاقات</a></p>`;
+return;
+}
+renderCard(card,cards);
+}).catch(err=>{
+document.getElementById('content').className='error-state';
+document.getElementById('content').innerHTML='<h2>تعذّر تحميل البيانات</h2><p>الرجاء المحاولة لاحقاً.</p>';
+console.error(err);
+});
+}
+</script>
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+</body>
+</html>

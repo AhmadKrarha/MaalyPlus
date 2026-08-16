@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>بوابة الجهة المموّلة (بيئة تجريبية) | مالي بلس</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+
+/* شريط البيئة التجريبية — ثابت ولا يُغلق */
+.lp-banner{background:#92400E;color:#fff;padding:.65rem 1rem;text-align:center;font-size:.82rem;line-height:1.7;position:sticky;top:0;z-index:60}
+.lp-banner b{font-family:var(--font-heading)}
+
+.lp-hero{background:linear-gradient(135deg,#1E2B3C 0%,#334155 60%,#0F766E 100%);color:#fff;padding:2.25rem 0 3.25rem;position:relative;overflow:hidden}
+.lp-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:42px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+.lp-hero .container{position:relative;z-index:2}
+.lp-crumb{font-size:.78rem;opacity:.7;margin-bottom:.7rem}
+.lp-crumb a{color:#fff;text-decoration:none}
+.lp-hero h1{font-family:var(--font-heading);font-size:var(--h2);font-weight:700;margin:0 0 .4rem}
+.lp-hero p{font-size:.9rem;opacity:.88;margin:0;line-height:1.8;max-width:640px}
+
+.lp-body{max-width:1000px;margin:-1.75rem auto 0;padding:0 1.5rem 4rem;position:relative;z-index:3}
+.lp-card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);padding:1.5rem;margin-bottom:1.25rem}
+.lp-card h2{font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:#1E2B3C;margin:0 0 .3rem}
+.lp-card .sub{font-size:.83rem;color:#6B7280;line-height:1.85;margin:0 0 1.1rem}
+
+/* هوية الجهة */
+.lp-who{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;background:#F8FAFF;border:1px solid #DBEAFE;border-radius:11px;padding:.85rem 1rem;margin-bottom:1.25rem}
+.lp-who label{font-size:.8rem;font-weight:700;color:#1E3A8A}
+.lp-who select{flex:1;min-width:200px;padding:8px 12px;border:1.5px solid #DBEAFE;border-radius:9px;font-family:inherit;font-size:.85rem;background:#fff;color:#1E2B3C}
+
+/* طلب وارد */
+.lp-req{border:1.5px solid #E5E7EB;border-radius:14px;padding:1.1rem;margin-bottom:.9rem;background:#fff}
+.lp-req-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;padding-bottom:.75rem;border-bottom:1px solid #F3F4F6;margin-bottom:.85rem}
+.lp-req-ref{font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#1E40AF;letter-spacing:.4px}
+.lp-chip{border-radius:999px;padding:3px 11px;font-size:.72rem;font-weight:700;background:#EFF6FF;color:#1E40AF;border:1px solid #DBEAFE}
+.lp-chip.biz{background:#F5F3FF;color:#5B21B6;border-color:#E9D5FF}
+.lp-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem .9rem;margin-bottom:.85rem}
+.lp-f{font-size:.8rem;line-height:1.7}
+.lp-f span{color:#6B7280;display:block;font-size:.72rem}
+.lp-f b{color:#1E2B3C;font-weight:600}
+
+.lp-masked{background:#F9FAFB;border:1px dashed #D1D5DB;border-radius:10px;padding:.7rem .85rem;font-size:.78rem;color:#6B7280;line-height:1.8;margin-bottom:.85rem}
+.lp-masked b{color:#374151}
+
+.lp-toggle{background:#fff;border:1.5px solid #E5E7EB;border-radius:9px;padding:.55rem 1.1rem;font-family:var(--font-heading);font-size:.82rem;font-weight:700;color:#1E40AF;cursor:pointer;transition:.15s}
+.lp-toggle:hover{background:#F8FAFF}
+
+/* نموذج العرض */
+.lp-form{margin-top:.9rem;padding-top:.9rem;border-top:1px dashed #E5E7EB}
+.lp-form[hidden]{display:none}
+.lp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-bottom:.85rem}
+.lp-field{display:flex;flex-direction:column}
+.lp-field.wide{grid-column:1 / -1}
+.lp-field label{font-size:.76rem;font-weight:600;color:#374151;margin-bottom:5px}
+.lp-field input,.lp-field textarea{width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid #E5E7EB;border-radius:9px;font-family:inherit;font-size:.85rem;color:#1E2B3C;background:#fff}
+.lp-field input:focus,.lp-field textarea:focus{outline:none;border-color:#0F766E;box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+.lp-field input.err{border-color:#B91C1C;background:#FEF2F2}
+.lp-calc{background:#F0FDFA;border:1px solid #99F6E4;border-radius:10px;padding:.7rem .9rem;font-size:.84rem;color:#115E59;line-height:1.8;margin-bottom:.85rem}
+.lp-calc b{font-family:var(--font-heading);font-size:1rem}
+.lp-send{background:linear-gradient(135deg,#0F766E,#0891B2);color:#fff;border:none;border-radius:10px;padding:.7rem 1.6rem;font-family:var(--font-heading);font-size:.87rem;font-weight:700;cursor:pointer;transition:.18s}
+.lp-send:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(15,118,110,.28)}
+.lp-msg{font-size:.82rem;margin-top:.7rem;padding:.6rem .8rem;border-radius:9px;line-height:1.8}
+.lp-msg.ok{background:#F0FDF4;color:#047857;border:1px solid #BBF7D0}
+.lp-msg.err{background:#FEF2F2;color:#B91C1C;border:1px solid #FECACA}
+
+/* العروض المرسلة */
+.lp-sent{border:1.5px solid #DBEAFE;background:#F8FAFF;border-radius:12px;padding:.85rem 1rem;margin-bottom:.6rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.lp-sent-info{font-size:.82rem;color:#374151;line-height:1.8}
+.lp-sent-info b{font-family:var(--font-heading);color:#1E2B3C}
+.lp-del{background:#fff;border:1.5px solid #FECACA;color:#B91C1C;border-radius:9px;padding:.4rem 1rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:var(--font-heading)}
+.lp-del:hover{background:#FEF2F2}
+
+.lp-empty{text-align:center;padding:2rem 1.25rem;border:2px dashed #E5E7EB;border-radius:14px;background:#FCFCFD}
+.lp-empty .ic{width:52px;height:52px;border-radius:50%;background:#F3F4F6;color:#9CA3AF;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;font-size:1.5rem}
+.lp-empty h3{font-family:var(--font-heading);font-size:1rem;color:#1E2B3C;margin:0 0 .45rem}
+.lp-empty p{font-size:.84rem;color:#6B7280;line-height:1.9;max-width:480px;margin:0 auto 1rem}
+.lp-empty a{color:#1E40AF;font-weight:700;text-decoration:none}
+
+@media(max-width:640px){
+  .lp-body{padding:0 1rem 3rem}
+  .lp-card{padding:1.15rem}
+}
+</style>
+</head>
+<body>
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+<div class="lp-banner">
+  <b>بيئة تجريبية</b> — لا جهة تمويل حقيقية متصلة بهذه الشاشة. كل عرض تُدخله هنا يظهر للعميل موسوماً بأنه عرض تجريبي، ولا يُلزم أي بنك.
+</div>
+
+<section class="lp-hero">
+  <div class="container">
+    <nav class="lp-crumb" aria-label="مسار التصفح">
+      <a href="../index.html">الرئيسية</a> ‹ <a href="index.html">طلب تمويل</a> ‹ بوابة الجهة المموّلة
+    </nav>
+    <h1>بوابة الجهة المموّلة</h1>
+    <p>هكذا يرى الطرف الآخر من السوق: طلبات واردة بلا بيانات تواصل، وردّ بعرض تمويل محدّد. هذه الشاشة تُظهر آلية العمل كاملة قبل ربط أي جهة فعلية.</p>
+  </div>
+</section>
+
+<div class="lp-body">
+
+  <div class="lp-card">
+    <h2>هويتك في هذه الجلسة</h2>
+    <p class="sub">أسماء تجريبية عمداً — لا نستخدم اسم بنك حقيقي في بيئة تجربة، حتى لا يُقرأ عرض وهمي كأنه صادر عن جهة قائمة.</p>
+    <div class="lp-who">
+      <label for="lender">الجهة المموّلة</label>
+      <select id="lender">
+        <option>جهة تمويل تجريبية (أ)</option>
+        <option>جهة تمويل تجريبية (ب)</option>
+        <option>جهة تمويل تجريبية (ج)</option>
+      </select>
+    </div>
+
+    <h2>الطلبات الواردة</h2>
+    <p class="sub" id="lpCount"></p>
+    <div id="lpList"></div>
+  </div>
+
+  <div class="lp-card">
+    <h2>العروض التي أرسلتها</h2>
+    <p class="sub">تظهر فوراً للعميل في صفحة نتائجه. يمكنك سحب أي عرض.</p>
+    <div id="lpSent"></div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  if (typeof document === 'undefined') return;
+
+  function n(v){ var x = parseFloat(v); return isFinite(x) ? x : null; }
+  function fmt(v){ return Math.round(v).toLocaleString('en-US'); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function yrs(v){
+    var x = n(v);
+    if (x === null) return '—';
+    if (x === 1) return 'سنة';
+    if (x === 2) return 'سنتان';
+    if (x >= 3 && x <= 10) return x + ' سنوات';
+    return x + ' سنة';
+  }
+  function pmt(P, annualPct, months){
+    if (!P || !months) return null;
+    var r = annualPct / 100 / 12;
+    if (r <= 0) return P / months;
+    return P * r / (1 - Math.pow(1 + r, -months));
+  }
+  function read(k, d){ try { return JSON.parse(localStorage.getItem(k) || d); } catch(e){ return JSON.parse(d); } }
+  function write(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+
+  /* طلبان تجريبيان — بيانات مُصطنعة بوضوح (MP-DEMO) */
+  function seedDemo(){
+    var now = new Date().toISOString();
+    var ind = { ref:'MP-DEMO-1001', track:'فرد', at:now,
+      ind_product:'قرض شخصي', ind_amount:'10000', ind_tenor:'5', ind_sharia:'لا يهمّني',
+      ind_income:'800', ind_obligations:'100', ind_employment:'قطاع خاص',
+      ind_job_years:'أكثر من 5 سنوات', ind_transfer:'نعم',
+      full_name:'طلب تجريبي', phone:'0790000000', email:'demo@example.com', governorate:'عمّان' };
+    var biz = { ref:'MP-DEMO-1002', track:'منشأة', at:now,
+      biz_name:'منشأة تجريبية للتجارة', biz_legal:'شركة ذات مسؤولية محدودة',
+      biz_sector:'تجارة جملة وتجزئة', biz_age:'3 إلى 5 سنوات', biz_employees:'6 إلى 20',
+      biz_revenue:'150 إلى 500 ألف', biz_purpose:'رأس مال عامل وسيولة',
+      biz_amount:'40000', biz_tenor:'5', biz_sharia:'لا يهمّني',
+      doc_cr:'نعم', doc_license:'نعم', doc_bank:'نعم', doc_tax:'نعم',
+      full_name:'طلب تجريبي', phone:'0790000000', email:'demo@example.com',
+      governorate:'عمّان', contact_role:'المالك أو الشريك' };
+    write('mp_fr_req', ind); write('mp_fr_reqs', [ind, biz]);
+    try {
+      localStorage.setItem('mp_fr_ref',  ind.ref);
+      localStorage.setItem('mp_fr_type', ind.track);
+      localStorage.setItem('mp_fr_at',   now);
+    } catch(e){}
+    location.reload();
+  }
+
+  /* الطلبات: المصفوفة إن وُجدت، وإلا الطلب الأخير */
+  function allRequests(){
+    var arr = read('mp_fr_reqs', '[]');
+    if (!Array.isArray(arr) || !arr.length){
+      var one = read('mp_fr_req', 'null');
+      arr = one ? [one] : [];
+    }
+    return arr.filter(function(r){ return r && r.ref; });
+  }
+
+  var reqs = allRequests();
+
+  /* ─── عرض الطلبات ───────────────────────────────── */
+  function requestCard(rq){
+    var isBiz = rq.track === 'منشأة';
+    var amount = isBiz ? rq.biz_amount : rq.ind_amount;
+    var tenor  = isBiz ? rq.biz_tenor  : rq.ind_tenor;
+    var sharia = (isBiz ? rq.biz_sharia : rq.ind_sharia) || '—';
+
+    var fields = isBiz ? [
+      ['الغرض', rq.biz_purpose], ['القطاع', rq.biz_sector],
+      ['الشكل القانوني', rq.biz_legal], ['عمر النشاط', rq.biz_age],
+      ['عدد الموظفين', rq.biz_employees], ['الإيرادات السنوية', rq.biz_revenue]
+    ] : [
+      ['نوع التمويل', rq.ind_product], ['الدخل الشهري', rq.ind_income ? rq.ind_income + ' د.أ' : null],
+      ['الالتزامات', rq.ind_obligations ? rq.ind_obligations + ' د.أ' : '0 د.أ'],
+      ['جهة العمل', rq.ind_employment], ['مدة العمل', rq.ind_job_years],
+      ['تحويل الراتب', rq.ind_transfer]
+    ];
+
+    var docs = '';
+    if (isBiz){
+      var D = [['doc_cr','سجل تجاري'],['doc_license','رخصة مهن'],['doc_financials','قوائم مالية'],
+               ['doc_bank','كشف بنكي 12 شهراً'],['doc_tax','شهادة ضريبية'],['doc_collateral','ضمانات']];
+      var have = D.filter(function(d){ return rq[d[0]]; }).map(function(d){ return d[1]; });
+      docs = '<div class="lp-f" style="grid-column:1/-1"><span>المستندات المتوفّرة (' + have.length + ' من 6)</span><b>' +
+             (have.length ? esc(have.join(' · ')) : 'لم يحدّد أي مستند') + '</b></div>';
+    }
+
+    return '<div class="lp-req" data-ref="' + esc(rq.ref) + '">' +
+      '<div class="lp-req-head">' +
+        '<span class="lp-req-ref" dir="ltr">' + esc(rq.ref) + '</span>' +
+        '<span class="lp-chip' + (isBiz ? ' biz' : '') + '">' + esc(rq.track || '—') + '</span>' +
+      '</div>' +
+      '<div class="lp-fields">' +
+        '<div class="lp-f"><span>المبلغ المطلوب</span><b>' + (n(amount) ? fmt(amount) + ' د.أ' : '—') + '</b></div>' +
+        '<div class="lp-f"><span>المدة</span><b>' + yrs(tenor) + '</b></div>' +
+        '<div class="lp-f"><span>التفضيل</span><b>' + esc(sharia) + '</b></div>' +
+        '<div class="lp-f"><span>المحافظة</span><b>' + esc(rq.governorate || '—') + '</b></div>' +
+        fields.map(function(f){
+          return '<div class="lp-f"><span>' + esc(f[0]) + '</span><b>' + esc(f[1] || '—') + '</b></div>';
+        }).join('') + docs +
+      '</div>' +
+      '<div class="lp-masked">🔒 <b>بيانات التواصل محجوبة عنك.</b> الاسم والجوال والبريد لا تُكشف للجهة المموّلة إلا بعد أن يقبل العميل عرضك — حتى لا يتحوّل الطلب إلى قائمة أرقام للتسويق.</div>' +
+      '<button class="lp-toggle" data-open="' + esc(rq.ref) + '">أرسل عرضاً على هذا الطلب</button>' +
+      '<div class="lp-form" hidden data-form="' + esc(rq.ref) + '">' +
+        '<div class="lp-grid">' +
+          '<div class="lp-field"><label>المبلغ المعروض (د.أ)</label><input type="number" data-k="amount" min="100" step="100" value="' + esc(amount || '') + '"></div>' +
+          '<div class="lp-field"><label>المدة (سنوات)</label><input type="number" data-k="tenor" min="1" max="30" step="1" value="' + esc(tenor || '') + '"></div>' +
+          '<div class="lp-field"><label>النسبة السنوية (%)</label><input type="number" data-k="rate" min="0" max="40" step="0.05" placeholder="مثال: 8.25"></div>' +
+          '<div class="lp-field"><label>صالح حتى</label><input type="text" data-k="validUntil" placeholder="مثال: بعد 14 يوماً"></div>' +
+          '<div class="lp-field wide"><label>الرسوم</label><input type="text" data-k="fees" placeholder="مثال: رسوم إدارية 1% تُخصم عند الصرف"></div>' +
+          '<div class="lp-field wide"><label>الضمانات المطلوبة</label><input type="text" data-k="collateral" placeholder="مثال: كفالة شخصية + تحويل الراتب"></div>' +
+          '<div class="lp-field wide"><label>ملاحظات للعميل</label><textarea data-k="notes" rows="2" placeholder="أي شرط أو ميزة يجب أن يعرفها قبل القبول"></textarea></div>' +
+        '</div>' +
+        '<div class="lp-calc" data-calc>أدخل المبلغ والمدة والنسبة ليُحسب القسط.</div>' +
+        '<button class="lp-send" data-send="' + esc(rq.ref) + '">أرسل العرض للعميل</button>' +
+        '<div class="lp-msg" data-msg hidden></div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderRequests(){
+    var list = document.getElementById('lpList');
+    document.getElementById('lpCount').textContent =
+      reqs.length ? 'عدد الطلبات المتاحة في هذه الجلسة: ' + reqs.length + '.'
+                  : '';
+    if (!reqs.length){
+      list.innerHTML =
+        '<div class="lp-empty"><div class="ic">—</div>' +
+        '<h3>لا توجد طلبات واردة</h3>' +
+        '<p>هذه البيئة التجريبية تقرأ الطلبات المرسلة من هذا المتصفح. أرسل طلباً أولاً، أو حمّل طلبين تجريبيين لتجربة المسار فوراً.</p>' +
+        '<button type="button" id="lpSeed" style="background:#fff;border:1.5px solid #DBEAFE;color:#1E40AF;border-radius:9px;padding:.55rem 1.2rem;font-family:var(--font-heading);font-size:.82rem;font-weight:700;cursor:pointer;margin-bottom:.8rem">حمّل طلباً تجريبياً</button><br>' +
+        '<a href="index.html">افتح صفحة طلب التمويل ←</a></div>';
+      var sb = document.getElementById('lpSeed');
+      if (sb) sb.addEventListener('click', seedDemo);
+      return;
+    }
+    list.innerHTML = reqs.map(requestCard).join('');
+  }
+
+  /* ─── العروض المرسلة ────────────────────────────── */
+  function renderSent(){
+    var offers = read('mp_fr_offers', '[]');
+    var el = document.getElementById('lpSent');
+    if (!offers.length){
+      el.innerHTML = '<div class="lp-empty"><div class="ic">—</div><h3>لم ترسل أي عرض بعد</h3>' +
+        '<p>اختر طلباً أعلاه واضغط «أرسل عرضاً على هذا الطلب».</p></div>';
+      return;
+    }
+    el.innerHTML = offers.map(function(o, i){
+      var inst = n(o.installment);
+      return '<div class="lp-sent">' +
+        '<span class="lp-sent-info"><b>' + esc(o.lender) + '</b> ← <span dir="ltr">' + esc(o.ref) + '</span><br>' +
+          (n(o.amount) ? fmt(o.amount) + ' د.أ' : '—') + ' · ' +
+          yrs(o.tenor) + ' · ' +
+          (n(o.rate) !== null ? (+o.rate) + '%' : 'بلا نسبة') +
+          (inst ? ' · قسط ' + fmt(inst) + ' د.أ' : '') +
+        '</span>' +
+        '<button class="lp-del" data-del="' + i + '">اسحب العرض</button>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ─── التفاعل ───────────────────────────────────── */
+  document.addEventListener('click', function(ev){
+    var t = ev.target;
+
+    /* فتح/إغلاق نموذج العرض */
+    var openRef = t.getAttribute && t.getAttribute('data-open');
+    if (openRef){
+      var form = document.querySelector('[data-form="' + CSS.escape(openRef) + '"]');
+      if (form){
+        form.hidden = !form.hidden;
+        t.textContent = form.hidden ? 'أرسل عرضاً على هذا الطلب' : 'إغلاق نموذج العرض';
+      }
+      return;
+    }
+
+    /* سحب عرض */
+    var del = t.getAttribute && t.getAttribute('data-del');
+    if (del !== null && del !== undefined && del !== ''){
+      var offers = read('mp_fr_offers', '[]');
+      offers.splice(+del, 1);
+      write('mp_fr_offers', offers);
+      renderSent();
+      return;
+    }
+
+    /* إرسال العرض */
+    var sendRef = t.getAttribute && t.getAttribute('data-send');
+    if (sendRef){
+      var f = document.querySelector('[data-form="' + CSS.escape(sendRef) + '"]');
+      var msg = f.querySelector('[data-msg]');
+      var val = {};
+      f.querySelectorAll('[data-k]').forEach(function(el){
+        val[el.getAttribute('data-k')] = el.value.trim();
+        el.classList.remove('err');
+      });
+
+      var bad = [];
+      ['amount','tenor','rate'].forEach(function(k){
+        if (n(val[k]) === null){
+          bad.push(k);
+          var el = f.querySelector('[data-k="' + k + '"]');
+          if (el) el.classList.add('err');
+        }
+      });
+      if (bad.length){
+        msg.hidden = false;
+        msg.className = 'lp-msg err';
+        msg.textContent = 'العرض يحتاج المبلغ والمدة والنسبة على الأقل — بدونها لا يستطيع العميل المقارنة.';
+        return;
+      }
+
+      var inst = pmt(n(val.amount), n(val.rate), n(val.tenor) * 12);
+      var offers2 = read('mp_fr_offers', '[]');
+      offers2.push({
+        ref: sendRef,
+        lender: document.getElementById('lender').value,
+        amount: n(val.amount), tenor: n(val.tenor), rate: n(val.rate),
+        installment: inst,
+        fees: val.fees, collateral: val.collateral,
+        validUntil: val.validUntil, notes: val.notes,
+        demo: true, at: new Date().toISOString()
+      });
+      write('mp_fr_offers', offers2);
+
+      msg.hidden = false;
+      msg.className = 'lp-msg ok';
+      msg.innerHTML = 'أُرسل العرض — القسط المحسوب ' + fmt(inst) + ' د.أ شهرياً. ' +
+        'يظهر الآن في <a href="offers.html" style="color:inherit;font-weight:700;text-decoration:underline">صفحة نتائج العميل</a>.';
+      renderSent();
+      return;
+    }
+  });
+
+  /* حساب القسط أثناء الكتابة */
+  document.addEventListener('input', function(ev){
+    var f = ev.target.closest && ev.target.closest('.lp-form');
+    if (!f) return;
+    var g = function(k){ var el = f.querySelector('[data-k="' + k + '"]'); return el ? n(el.value) : null; };
+    var a = g('amount'), t = g('tenor'), r = g('rate');
+    var box = f.querySelector('[data-calc]');
+    if (a === null || t === null || r === null){
+      box.textContent = 'أدخل المبلغ والمدة والنسبة ليُحسب القسط.';
+      return;
+    }
+    var inst = pmt(a, r, t * 12);
+    box.innerHTML = 'القسط الشهري <b>' + fmt(inst) + '</b> د.أ · إجمالي السداد <b>' + fmt(inst * t * 12) +
+      '</b> د.أ · كلفة التمويل <b>' + fmt(inst * t * 12 - a) + '</b> د.أ';
+  });
+
+  renderRequests();
+  renderSent();
+})();
+</script>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+</body>
+</html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابدأ من هنا — مسارات مالية مخصصة لوضعك | مالي بلس</title>
+    <meta name="description" content="مسارات مالية مخصصة حسب وضعك: طالب، موظف جديد، رائد أعمال، ربة منزل، أو متقاعد. اكتشف المنتجات والمقالات الأنسب لك مباشرة.">
+    <link rel="canonical" href="https://maalyplus.com/paths/index.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <style>
+        body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+
+        /* Hero */
+        .ph-hero{background:linear-gradient(135deg,#1E2B3C 0%,#1E40AF 60%,#047857 100%);padding:4rem 0 3rem;color:#fff;text-align:center;position:relative;overflow:hidden}
+        .ph-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+        .ph-hero h1{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:.75rem;position:relative}
+        .ph-hero p{font-size:1rem;opacity:.85;max-width:550px;margin:0 auto;line-height:1.8;position:relative}
+        .ph-breadcrumb{font-size:.8rem;opacity:.65;margin-bottom:1rem;position:relative}
+        .ph-breadcrumb a{color:#fff;text-decoration:none}
+
+        /* Persona selector */
+        .ph-selector{max-width:900px;margin:-2rem auto 0;padding:0 1.5rem;position:relative;z-index:10}
+        .ph-personas{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem}
+        @media(max-width:800px){.ph-personas{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:500px){.ph-personas{grid-template-columns:repeat(2,1fr)}}
+        .ph-persona-btn{background:#fff;border-radius:14px;padding:1.25rem .75rem;border:2px solid #E5E7EB;cursor:pointer;text-align:center;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+        .ph-persona-btn:hover{border-color:var(--pc,#10B981);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+        .ph-persona-btn.active{border-color:var(--pc,#10B981);background:var(--pb,#ECFDF5);box-shadow:0 4px 16px rgba(16,185,129,.2)}
+        .ph-persona-icon{font-size:2rem;line-height:1}
+        .ph-persona-label{font-size:.82rem;font-weight:700;color:#1E2B3C}
+        .ph-persona-sub{font-size:.7rem;color:#6B7280}
+
+        /* Content area */
+        .ph-body{max-width:1100px;margin:3rem auto;padding:0 1.5rem 5rem}
+
+        /* Path card */
+        .ph-path{display:none}
+        .ph-path.active{display:block}
+
+        /* Hero card for persona */
+        .ph-persona-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:2.5rem;color:#fff;margin-bottom:2rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+        .ph-persona-hero h2{font-family:var(--font-heading);font-size:1.6rem;font-weight:700;margin-bottom:.5rem}
+        .ph-persona-hero p{opacity:.85;font-size:.95rem;line-height:1.8;margin:0;max-width:520px}
+        .ph-persona-emoji{font-size:5rem;flex-shrink:0;opacity:.9}
+
+        /* Quick stats */
+        .ph-stats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem}
+        .ph-stat{background:rgba(255,255,255,.15);border-radius:10px;padding:.6rem 1rem;font-size:.82rem}
+        .ph-stat strong{display:block;font-size:1rem;font-weight:900}
+
+        /* Sections */
+        .ph-section{margin-bottom:2.5rem}
+        .ph-section-title{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:#1E2B3C;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+
+        /* Priority steps */
+        /* شريط تقدم المسار + زر «تم» */
+        .ph-progress{background:#fff;border:1.5px solid #E5E7EB;border-radius:14px;padding:.9rem 1.1rem;margin-bottom:.9rem}
+        .ph-progress-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.5rem}
+        .ph-progress-label{font-size:.8rem;font-weight:700;color:#374151}
+        .ph-progress-count{font-size:.8rem;font-weight:700;color:#047857}
+        .ph-progress-track{background:#E5E7EB;border-radius:50px;height:8px;overflow:hidden}
+        .ph-progress-fill{background:linear-gradient(90deg,#1E40AF,#10B981);height:100%;border-radius:50px;width:0;transition:width .4s ease}
+        .ph-done-btn{margin-inline-start:auto;flex-shrink:0;align-self:center;background:#fff;border:1.5px solid #E5E7EB;
+          border-radius:50px;padding:.35rem .8rem;font-family:inherit;font-size:.74rem;font-weight:700;color:#4B5563;cursor:pointer;transition:all .15s}
+        .ph-done-btn:hover{border-color:#047857;color:#047857}
+        .ph-done-btn[aria-pressed="true"]{background:#ECFDF5;border-color:#A7F3D0;color:#047857}
+        .ph-step.is-done{opacity:.72}
+        .ph-step.is-done .ph-step-content h4{text-decoration:line-through;text-decoration-thickness:1px}
+
+        .ph-steps{display:flex;flex-direction:column;gap:.75rem}
+        .ph-step{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;display:flex;gap:1rem;align-items:flex-start;text-decoration:none;transition:all .2s}
+        .ph-step:hover{border-color:#1E40AF;box-shadow:0 4px 16px rgba(30,64,175,.1);transform:translateY(-1px)}
+        .ph-step-num{width:32px;height:32px;border-radius:50%;background:var(--sc,linear-gradient(135deg,#1E40AF,#10B981));color:#fff;font-weight:900;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .ph-step-content h4{font-size:.92rem;font-weight:700;color:#1E2B3C;margin:0 0 3px}
+        .ph-step-content p{font-size:.8rem;color:#6B7280;margin:0;line-height:1.5}
+        .ph-step-tag{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;margin-top:4px}
+
+        /* Products grid */
+        .ph-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+        .ph-product{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;text-decoration:none;display:flex;flex-direction:column;gap:.5rem;transition:all .2s}
+        .ph-product:hover{border-color:#10B981;box-shadow:0 4px 16px rgba(16,185,129,.12);transform:translateY(-2px)}
+        .ph-product-icon{font-size:1.5rem}
+        .ph-product h4{font-size:.9rem;font-weight:700;color:#1E2B3C;margin:0}
+        .ph-product p{font-size:.78rem;color:#6B7280;margin:0;line-height:1.5;flex:1}
+        .ph-product-cta{font-size:.78rem;color:#047857;font-weight:700;margin-top:.25rem}
+
+        /* Articles */
+        .ph-articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+        .ph-article{background:#fff;border-radius:14px;padding:1.25rem;border:1.5px solid #E5E7EB;text-decoration:none;transition:all .2s}
+        .ph-article:hover{border-color:#1E40AF;box-shadow:0 4px 16px rgba(30,64,175,.1)}
+        .ph-article h4{font-size:.88rem;font-weight:700;color:#1E2B3C;margin:0 0 4px}
+        .ph-article p{font-size:.78rem;color:#6B7280;margin:0;line-height:1.5}
+        .ph-article-footer{display:flex;justify-content:space-between;font-size:.72rem;color:#6B7280;margin-top:.75rem}
+        .ph-article-footer span{color:#047857;font-weight:600}
+
+        /* Warning/tip box */
+        .ph-tip{background:#FFFBEB;border:1.5px solid #FDE68A;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.85rem;color:#92400E;line-height:1.7}
+        .ph-tip strong{color:#78350F}
+
+        /* CTA */
+        .ph-cta{background:linear-gradient(135deg,#1E2B3C,#1E40AF);border-radius:16px;padding:2rem;text-align:center;color:#fff;margin-top:2rem}
+        .ph-cta h3{font-family:var(--font-heading);font-weight:700;font-size:1.2rem;margin-bottom:.5rem}
+        .ph-cta p{opacity:.8;font-size:.88rem;margin-bottom:1.25rem}
+        .ph-cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+        .ph-cta-btn{padding:10px 22px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none}
+        .ph-cta-btn.primary{background:#10B981;color:#fff}
+        .ph-cta-btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+
+        /* Divider */
+        .ph-divider{height:1px;background:#E5E7EB;margin:2rem 0}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <meta property="og:title" content="المسارات المالية — MaalyPlus">
+    <meta property="og:description" content="ابدأ رحلتك المالية. مسارات مخصصة لكل مرحلة عمرية.">
+    <meta property="og:url" content="https://maalyplus.com/paths/index.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="المسارات المالية — MaalyPlus">
+    <meta name="twitter:description" content="ابدأ رحلتك المالية. مسارات مخصصة لكل مرحلة عمرية.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- Header -->
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<!-- Hero -->
+<div class="ph-hero">
+    <div class="container">
+        <div class="ph-breadcrumb"><a href="../index.html">الرئيسية</a> ← ابدأ من هنا</div>
+        <h1>ما الذي يصف وضعك الآن؟</h1>
+        <p>اختر فئتك ونوصّلك بالمنتجات والمقالات الأنسب لوضعك المالي مباشرة — بدون تضييع وقت.</p>
+    </div>
+</div>
+
+<!-- Persona Selector -->
+<div class="ph-selector">
+    <div class="ph-personas">
+        <button class="ph-persona-btn" style="--pc:#3B82F6;--pb:#EFF6FF" onclick="selectPersona('student')" id="btn-student">
+            <span class="ph-persona-icon">🎓</span>
+            <span class="ph-persona-label">طالب</span>
+            <span class="ph-persona-sub">دخل محدود / لا راتب</span>
+        </button>
+        <button class="ph-persona-btn" style="--pc:#10B981;--pb:#ECFDF5" onclick="selectPersona('newjob')" id="btn-newjob">
+            <span class="ph-persona-icon">💼</span>
+            <span class="ph-persona-label">موظف جديد</span>
+            <span class="ph-persona-sub">أول راتب / أقل من سنة</span>
+        </button>
+        <button class="ph-persona-btn" style="--pc:#F59E0B;--pb:#FFFBEB" onclick="selectPersona('entrepreneur')" id="btn-entrepreneur">
+            <span class="ph-persona-icon">🚀</span>
+            <span class="ph-persona-label">رائد أعمال</span>
+            <span class="ph-persona-sub">مشروع / عمل حر</span>
+        </button>
+        <button class="ph-persona-btn" style="--pc:#EC4899;--pb:#FDF2F8" onclick="selectPersona('homemaker')" id="btn-homemaker">
+            <span class="ph-persona-icon">🏠</span>
+            <span class="ph-persona-label">ربة منزل</span>
+            <span class="ph-persona-sub">إدارة ميزانية الأسرة</span>
+        </button>
+        <button class="ph-persona-btn" style="--pc:#7C3AED;--pb:#F5F3FF" onclick="selectPersona('retiree')" id="btn-retiree">
+            <span class="ph-persona-icon">🌅</span>
+            <span class="ph-persona-label">متقاعد</span>
+            <span class="ph-persona-sub">راتب تقاعدي / مدخرات</span>
+        </button>
+    </div>
+</div>
+
+<div class="ph-body">
+
+    <!-- Default state -->
+    <div id="ph-default" style="text-align:center;padding:4rem 0;color:#6B7280">
+        <div style="font-size:3rem;margin-bottom:1rem">👆</div>
+        <p style="font-size:1rem;font-weight:600;color:#6B7280">اختر وضعك أعلاه لتظهر توصياتك المخصصة</p>
+    </div>
+
+    <!-- ═══ مسار الطالب ═══ -->
+    <div class="ph-path" id="path-student">
+        <div class="ph-persona-hero" style="--g1:#1E3A5F;--g2:#2563EB">
+            <div>
+                <h2>مرحباً أيها الطالب 🎓</h2>
+                <p>لا راتب ثابت؟ لا مشكلة. نساعدك تبني عادات مالية صحيحة من الآن، وتعرف الخيارات المتاحة لك حتى بدون دخل ثابت.</p>
+                <div class="ph-stats">
+                    <div class="ph-stat"><strong>بدون راتب</strong>خيارات متاحة</div>
+                    <div class="ph-stat"><strong>0 دينار</strong>رسوم سنوية ممكنة</div>
+                    <div class="ph-stat"><strong>الآن</strong>ابدأ تبني تاريخك الائتماني</div>
+                </div>
+            </div>
+            <div class="ph-persona-emoji">🎓</div>
+        </div>
+
+        <div class="ph-tip">
+            💡 <strong>نصيحة البداية:</strong> أهم قرار مالي تتخذه كطالب هو بناء عادة الادخار — حتى لو 10 دنانير شهرياً. والثاني هو تجنب الديون غير الضرورية.
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">📋 مسارك خطوة بخطوة</div>
+            <div class="ph-steps">
+                <a href="../education/articles/الميزانية-الشخصية.html" class="ph-step">
+                    <div class="ph-step-num">1</div>
+                    <div class="ph-step-content">
+                        <h4>تعلّم إدارة الميزانية أولاً</h4>
+                        <p>قبل أي منتج — افهم كيف توزع ما عندك. قاعدة 50/30/20 مناسبة حتى للمصروف الشهري.</p>
+                        <span class="ph-step-tag" style="background:#EFF6FF;color:#1E40AF">مقالة • 6 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/ما-هو-الادخار.html" class="ph-step">
+                    <div class="ph-step-num">2</div>
+                    <div class="ph-step-content">
+                        <h4>ابدأ الادخار الآن — مهما كان المبلغ</h4>
+                        <p>الادخار عادة وليس رقماً. 5-10% من أي دخل تحصل عليه يبني عادة تدوم.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/بناء-صندوق-طوارئ-مالي.html" class="ph-step">
+                    <div class="ph-step-num">3</div>
+                    <div class="ph-step-content">
+                        <h4>احتياطي بسيط يحميك من المفاجآت</h4>
+                        <p>حتى 100-200 دينار موفّرة تغيّر حياتك عند الأزمات البسيطة.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 5 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/ما-هو-الكاش-باك.html" class="ph-step">
+                    <div class="ph-step-num">4</div>
+                    <div class="ph-step-content">
+                        <h4>افهم الكاش باك قبل أول بطاقة</h4>
+                        <p>بعض البطاقات بدون راتب شرط — لكن اقرأ الشروط أولاً قبل التقديم.</p>
+                        <span class="ph-step-tag" style="background:#FEF3C7;color:#92400E">مقالة • 4 دقائق</span>
+                    </div>
+                </a>
+                <a href="../cards/cards.html" class="ph-step">
+                    <div class="ph-step-num">5</div>
+                    <div class="ph-step-content">
+                        <h4>قارن البطاقات المتاحة بدون شرط راتب</h4>
+                        <p>استخدم فلتر "بدون رسوم سنوية" وابدأ ببطاقة مسبقة الدفع لبناء تاريخك الائتماني.</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">أداة مقارنة</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">🛠️ الأدوات الأنسب لك</div>
+            <div class="ph-products">
+                <a href="../cards/cards.html" class="ph-product">
+                    <span class="ph-product-icon">💳</span>
+                    <h4>بطاقات بدون رسوم سنوية</h4>
+                    <p>ابدأ ببطاقة مجانية تساعدك تبني سجلك الائتماني بدون تكلفة.</p>
+                    <span class="ph-product-cta">استعرض البطاقات ←</span>
+                </a>
+                <a href="../calculators/calculators.html" class="ph-product">
+                    <span class="ph-product-icon">🧮</span>
+                    <h4>حاسبة الادخار</h4>
+                    <p>كم تحتاج تدّخر شهرياً لتحقيق هدف معين؟ احسب الآن.</p>
+                    <span class="ph-product-cta">استخدم الحاسبة ←</span>
+                </a>
+                <a href="../microfinance/microfinance.html" class="ph-product">
+                    <span class="ph-product-icon">🏦</span>
+                    <h4>تمويل مشاريع الطلاب</h4>
+                    <p>لديك فكرة مشروع؟ بعض شركات التمويل الأصغر تقبل بدون راتب ثابت.</p>
+                    <span class="ph-product-cta">اكتشف الخيارات ←</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-section">
+            <div class="ph-section-title">📚 اقرأ هذا أولاً</div>
+            <div class="ph-articles">
+                <a href="../education/articles/الميزانية-الشخصية.html" class="ph-article">
+                    <h4>فهم الميزانية الشخصية</h4>
+                    <p>كيف توزع ما عندك بطريقة ذكية حتى مع دخل محدود.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 6 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/الشراء-الآن-والدفع-لاحقاً-bnpl.html" class="ph-article">
+                    <h4>تحذير: BNPL والشراء الآن</h4>
+                    <p>لماذا التقسيط السهل قد يضرك؟ اقرأ قبل أن تستخدمه.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 5 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/الدخل-السلبي-passive-income-2026.html" class="ph-article">
+                    <h4>الدخل السلبي: حقائق لا خرافات</h4>
+                    <p>ما هو ممكن فعلاً وما هو وهم في موضوع الدخل الإضافي.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 8 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ مسار الموظف الجديد ═══ -->
+    <div class="ph-path" id="path-newjob">
+        <div class="ph-persona-hero" style="--g1:#065F46;--g2:#10B981">
+            <div>
+                <h2>أهلاً بك في عالم الراتب 💼</h2>
+                <p>أول راتب فرصة ذهبية لتبدأ صح. القرارات التي تتخذها الآن ستحدد وضعك المالي بعد 5 سنوات.</p>
+                <div class="ph-stats">
+                    <div class="ph-stat"><strong>الآن</strong>ابدأ صندوق الطوارئ</div>
+                    <div class="ph-stat"><strong>3-6 أشهر</strong>راتب + تاريخ ائتماني</div>
+                    <div class="ph-stat"><strong>سنة أولى</strong>لا تقترض بتهور</div>
+                </div>
+            </div>
+            <div class="ph-persona-emoji">💼</div>
+        </div>
+
+        <div class="ph-tip">
+            💡 <strong>القاعدة الذهبية:</strong> قبل أي قرض أو بطاقة — ادّخر ما يعادل 3 رواتب كاحتياطي طوارئ. هذا يحميك من الاقتراض بشروط سيئة عند الأزمات.
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">📋 مسارك خطوة بخطوة</div>
+            <div class="ph-steps">
+                <a href="../education/articles/اول-راتب-كيف-تتعامل-معه.html" class="ph-step">
+                    <div class="ph-step-num">1</div>
+                    <div class="ph-step-content">
+                        <h4>أول راتب — كيف تتعامل معه بذكاء</h4>
+                        <p>التوزيع الصحيح للراتب من اليوم الأول يوفر عليك سنوات من الضغط المالي.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/بناء-صندوق-طوارئ-مالي.html" class="ph-step">
+                    <div class="ph-step-num">2</div>
+                    <div class="ph-step-content">
+                        <h4>ابنِ صندوق الطوارئ قبل أي شيء</h4>
+                        <p>3 رواتب موفّرة = حرية ومرونة في القرارات المالية.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 5 دقائق</span>
+                    </div>
+                </a>
+                <a href="../cards/cards.html" class="ph-step">
+                    <div class="ph-step-num">3</div>
+                    <div class="ph-step-content">
+                        <h4>اختر بطاقتك الأولى بعناية</h4>
+                        <p>بعد 3-6 أشهر من العمل — ابدأ ببطاقة بدون رسوم سنوية وكاش باك بسيط.</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">مقارنة بطاقات</span>
+                    </div>
+                </a>
+                <a href="../savings/savings.html" class="ph-step">
+                    <div class="ph-step-num">4</div>
+                    <div class="ph-step-content">
+                        <h4>افتح حساب توفير بعائد جيد</h4>
+                        <p>راتبك يجب أن "يعمل" حتى وهو في البنك — قارن الفوائد الآن.</p>
+                        <span class="ph-step-tag" style="background:#EFF6FF;color:#1E40AF">مقارنة حسابات</span>
+                    </div>
+                </a>
+                <a href="../loans/loans.html" class="ph-step">
+                    <div class="ph-step-num">5</div>
+                    <div class="ph-step-content">
+                        <h4>قرض؟ فقط إذا احتجت — وبشروط صحيحة</h4>
+                        <p>بعد سنة من العمل قد تحتاج قرض سيارة أو شخصي — قارن الشروط مسبقاً.</p>
+                        <span class="ph-step-tag" style="background:#FEF3C7;color:#92400E">مقارنة قروض</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">🛠️ الأدوات الأنسب لك</div>
+            <div class="ph-products">
+                <a href="../cards/cards.html" class="ph-product">
+                    <span class="ph-product-icon">💳</span>
+                    <h4>بطاقات براتب 350-700 دينار</h4>
+                    <p>فلتر البطاقات المناسبة لراتبك الأول مع أفضل المزايا.</p>
+                    <span class="ph-product-cta">قارن الآن ←</span>
+                </a>
+                <a href="../savings/savings.html" class="ph-product">
+                    <span class="ph-product-icon">💰</span>
+                    <h4>أعلى فوائد حسابات التوفير</h4>
+                    <p>ادّخر راتبك في الحساب الصحيح واكسب أكثر.</p>
+                    <span class="ph-product-cta">قارن الحسابات ←</span>
+                </a>
+                <a href="../calculators/calculators.html" class="ph-product">
+                    <span class="ph-product-icon">🧮</span>
+                    <h4>حاسبة توزيع الراتب</h4>
+                    <p>كم ادّخر؟ كم أنفق؟ كم للطوارئ؟ احسب خطتك.</p>
+                    <span class="ph-product-cta">ابدأ الحساب ←</span>
+                </a>
+                <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                <a href="../insurance/insurance.html" class="ph-product">
+                    <span class="ph-product-icon">🛡️</span>
+                    <h4>تأمين سيارتك بأفضل سعر</h4>
+                    <p>إذا اشتريت سيارة — قارن شركات التأمين الآن.</p>
+                    <span class="ph-product-cta">قارن التأمين ←</span>
+                </a>
+                -->
+            </div>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-section">
+            <div class="ph-section-title">📚 اقرأ هذا أولاً</div>
+            <div class="ph-articles">
+                <a href="../education/articles/التخلص-من-ديون-البطاقة-الائتمانية.html" class="ph-article">
+                    <h4>لا تقع في فخ ديون البطاقة</h4>
+                    <p>كيف تستخدم البطاقة بذكاء بدون أن تتراكم عليك الديون.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 8 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/الادخار-للتقاعد.html" class="ph-article">
+                    <h4>الادخار للتقاعد يبدأ الآن</h4>
+                    <p>لماذا البداية المبكرة تعني الفرق بين راحة ومشقة.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 8 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/الاستثمار-في-etfs-للمبتدئين.html" class="ph-article">
+                    <h4>الاستثمار للمبتدئين</h4>
+                    <p>عندما يكبر صندوق الطوارئ — ماذا تفعل بالباقي؟</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 9 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ مسار رائد الأعمال ═══ -->
+    <div class="ph-path" id="path-entrepreneur">
+        <div class="ph-persona-hero" style="--g1:#78350F;--g2:#F59E0B">
+            <div>
+                <h2>رائد الأعمال والعمل الحر 🚀</h2>
+                <p>دخلك غير منتظم والبنوك لا تتعامل معك بنفس الطريقة. نساعدك تجد الحلول المالية المناسبة لوضعك الفعلي.</p>
+                <div class="ph-stats">
+                    <div class="ph-stat"><strong>بدون راتب ثابت</strong>تمويل متاح</div>
+                    <div class="ph-stat"><strong>9 شركات</strong>تمويل أصغر في الأردن</div>
+                    <div class="ph-stat"><strong>بدون ضمانات</strong>خيارات موجودة</div>
+                </div>
+            </div>
+            <div class="ph-persona-emoji">🚀</div>
+        </div>
+
+        <div class="ph-tip">
+            ⚠️ <strong>تنبيه مهم:</strong> البنوك التقليدية تطلب 6-12 شهر من الكشوفات المنتظمة. إذا كنت في البداية — شركات التمويل الأصغر هي الخيار الأواقعي لك أولاً.
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">📋 مسارك خطوة بخطوة</div>
+            <div class="ph-steps">
+                <a href="../education/articles/تمويل-المشاريع-الصغيرة-الاردن-2026.html" class="ph-step">
+                    <div class="ph-step-num">1</div>
+                    <div class="ph-step-content">
+                        <h4>تعرّف على خيارات التمويل المتاحة</h4>
+                        <p>من البنوك لشركات التمويل الأصغر لصناديق الدعم الحكومي — كل الخيارات في مكان واحد.</p>
+                        <span class="ph-step-tag" style="background:#FEF3C7;color:#92400E">مقالة • 8 دقائق</span>
+                    </div>
+                </a>
+                <a href="../microfinance/microfinance.html" class="ph-step">
+                    <div class="ph-step-num">2</div>
+                    <div class="ph-step-content">
+                        <h4>قارن شركات التمويل الأصغر</h4>
+                        <p>9 شركات في الأردن — الوطني، تمويلكم، دار التمويل، صندوق المرأة وأكثر.</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">مقارنة</span>
+                    </div>
+                </a>
+                <a href="../education/articles/تمويل-المشاريع-الصغيرة-بدون-راتب.html" class="ph-step">
+                    <div class="ph-step-num">3</div>
+                    <div class="ph-step-content">
+                        <h4>تمويل بدون راتب ثابت — خطوة بخطوة</h4>
+                        <p>ما الوثائق المطلوبة وكيف تقوّي ملفك أمام شركات التمويل.</p>
+                        <span class="ph-step-tag" style="background:#FEF3C7;color:#92400E">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/اقتصاديات-العمل-الحر-gig-economy.html" class="ph-step">
+                    <div class="ph-step-num">4</div>
+                    <div class="ph-step-content">
+                        <h4>إدارة المال مع دخل غير منتظم</h4>
+                        <p>كيف تخطط للأشهر الجيدة والصعبة بطريقة تحميك مالياً.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+                <a href="../cards/cards.html" class="ph-step">
+                    <div class="ph-step-num">5</div>
+                    <div class="ph-step-content">
+                        <h4>بطاقة مسبقة الدفع لمصاريف المشروع</h4>
+                        <p>فصل مصاريف العمل عن الشخصية يساعدك في المحاسبة والضرائب.</p>
+                        <span class="ph-step-tag" style="background:#EFF6FF;color:#1E40AF">أداة</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">🛠️ الأدوات الأنسب لك</div>
+            <div class="ph-products">
+                <a href="../microfinance/microfinance.html" class="ph-product">
+                    <span class="ph-product-icon">🏦</span>
+                    <h4>التمويل الأصغر للمشاريع</h4>
+                    <p>100 دينار لـ 200,000 دينار — بدون ضمانات في كثير من الحالات.</p>
+                    <span class="ph-product-cta">قارن الشركات ←</span>
+                </a>
+                <a href="../calculators/calculators.html" class="ph-product">
+                    <span class="ph-product-icon">🧮</span>
+                    <h4>حاسبة القسط والفائدة</h4>
+                    <p>قبل أي تمويل — احسب القسط الشهري وأثره على تدفقك النقدي.</p>
+                    <span class="ph-product-cta">احسب الآن ←</span>
+                </a>
+                <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                <a href="../insurance/insurance.html" class="ph-product">
+                    <span class="ph-product-icon">🛡️</span>
+                    <h4>تأمين المركبة التجارية</h4>
+                    <p>إذا تستخدم سيارتك للعمل — قارن التأمين الشامل.</p>
+                    <span class="ph-product-cta">قارن التأمين ←</span>
+                </a>
+                -->
+                <a href="../savings/savings.html" class="ph-product">
+                    <span class="ph-product-icon">💰</span>
+                    <h4>حساب توفير لأشهر الشُّح</h4>
+                    <p>وفّر في الأشهر الجيدة لتعيش بهدوء في الأشهر الصعبة.</p>
+                    <span class="ph-product-cta">قارن الحسابات ←</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-section">
+            <div class="ph-section-title">📚 اقرأ هذا أولاً</div>
+            <div class="ph-articles">
+                <a href="../education/articles/الاستقلال-المالي-للمرأة-العربية.html" class="ph-article">
+                    <h4>الاستقلال المالي — الطريق العملي</h4>
+                    <p>كيف تبني استقلالاً مالياً حقيقياً من عملك الخاص.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 8 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/التخطيط-الضريبي-للأفراد-الأردن.html" class="ph-article">
+                    <h4>التخطيط الضريبي لأصحاب المشاريع</h4>
+                    <p>ما التزاماتك الضريبية كعامل حر أو صاحب مشروع.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 7 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/رفض-البنك-طلبي.html" class="ph-article">
+                    <h4>البنك رفض طلبك؟ هذه خياراتك</h4>
+                    <p>ماذا تفعل وما البدائل المتاحة إذا رفض البنك.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 6 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ مسار ربة المنزل ═══ -->
+    <div class="ph-path" id="path-homemaker">
+        <div class="ph-persona-hero" style="--g1:#831843;--g2:#EC4899">
+            <div>
+                <h2>إدارة ميزانية الأسرة بذكاء 🏠</h2>
+                <p>إدارة ميزانية الأسرة مهارة حقيقية. نساعدك تتحكمي في الإنفاق، تدّخري، وتعرفي الخيارات المتاحة لك حتى بدون دخل مستقل.</p>
+                <div class="ph-stats">
+                    <div class="ph-stat"><strong>ميزانية ذكية</strong>توفير فعلي</div>
+                    <div class="ph-stat"><strong>خيارات</strong>بدون دخل مستقل</div>
+                    <div class="ph-stat"><strong>تمويل</strong>للمرأة خصيصاً</div>
+                </div>
+            </div>
+            <div class="ph-persona-emoji">🏠</div>
+        </div>
+
+        <div class="ph-tip">
+            💡 <strong>نصيحة:</strong> حتى بدون دخل مستقل — يحق لك فتح حساب توفير باسمك، والتقدم لبرامج تمويل المرأة. استقلالك المالي يحميكِ ويحمي عائلتك.
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">📋 مسارك خطوة بخطوة</div>
+            <div class="ph-steps">
+                <a href="../education/articles/الميزانية-الشخصية.html" class="ph-step">
+                    <div class="ph-step-num">1</div>
+                    <div class="ph-step-content">
+                        <h4>ميزانية الأسرة — النظام الفعّال</h4>
+                        <p>كيف تتبعي الإنفاق وتوفّري بطريقة واقعية تناسب الحياة اليومية.</p>
+                        <span class="ph-step-tag" style="background:#FDF2F8;color:#BE185D">مقالة • 6 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/الاستقلال-المالي-للمرأة-العربية.html" class="ph-step">
+                    <div class="ph-step-num">2</div>
+                    <div class="ph-step-content">
+                        <h4>استقلالك المالي — حقك وضرورتك</h4>
+                        <p>لماذا يجب أن يكون لك حساب ومدخرات مستقلة وكيف تبدئين.</p>
+                        <span class="ph-step-tag" style="background:#FDF2F8;color:#BE185D">مقالة • 8 دقائق</span>
+                    </div>
+                </a>
+                <a href="../savings/savings.html" class="ph-step">
+                    <div class="ph-step-num">3</div>
+                    <div class="ph-step-content">
+                        <h4>حساب توفير باسمكِ</h4>
+                        <p>قارني حسابات التوفير وابدئي بمبلغ صغير — حتى 20 دينار شهرياً يفرق.</p>
+                        <span class="ph-step-tag" style="background:#EFF6FF;color:#1E40AF">مقارنة</span>
+                    </div>
+                </a>
+                <a href="../microfinance/microfinance.html" class="ph-step">
+                    <div class="ph-step-num">4</div>
+                    <div class="ph-step-content">
+                        <h4>تمويل مشروع منزلي؟ خيارات للمرأة</h4>
+                        <p>صندوق المرأة للتمويل الأصغر ومبادرات أخرى مصممة خصيصاً.</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">تمويل</span>
+                    </div>
+                </a>
+                <a href="../education/articles/الحديث-عن-المال-مع-شريك-الحياة.html" class="ph-step">
+                    <div class="ph-step-num">5</div>
+                    <div class="ph-step-content">
+                        <h4>التخطيط المالي مع الزوج</h4>
+                        <p>كيف تتفقان على الميزانية والأهداف المشتركة بطريقة صحية.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">🛠️ الأدوات الأنسب لك</div>
+            <div class="ph-products">
+                <a href="../savings/savings.html" class="ph-product">
+                    <span class="ph-product-icon">💰</span>
+                    <h4>حسابات التوفير للمرأة</h4>
+                    <p>بعض البنوك لها حسابات خاصة بالمرأة بمزايا إضافية.</p>
+                    <span class="ph-product-cta">قارني الآن ←</span>
+                </a>
+                <a href="../microfinance/microfinance.html" class="ph-product">
+                    <span class="ph-product-icon">🏦</span>
+                    <h4>تمويل المشاريع النسائية</h4>
+                    <p>صندوق المرأة + برامج أخرى مخصصة لدعم المرأة الأردنية.</p>
+                    <span class="ph-product-cta">اكتشفي الخيارات ←</span>
+                </a>
+                <a href="../calculators/calculators.html" class="ph-product">
+                    <span class="ph-product-icon">🧮</span>
+                    <h4>حاسبة ميزانية الأسرة</h4>
+                    <p>وزّعي الراتب بطريقة ذكية تضمن الادخار والإنفاق المتوازن.</p>
+                    <span class="ph-product-cta">ابدئي الحساب ←</span>
+                </a>
+                <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                <a href="../insurance/insurance.html" class="ph-product">
+                    <span class="ph-product-icon">🛡️</span>
+                    <h4>تأمين الأسرة والسيارة</h4>
+                    <p>قارني شركات التأمين واختاري الأنسب لاحتياجات عائلتك.</p>
+                    <span class="ph-product-cta">قارني الأسعار ←</span>
+                </a>
+                -->
+            </div>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-section">
+            <div class="ph-section-title">📚 اقرأ هذا أولاً</div>
+            <div class="ph-articles">
+                <a href="../education/articles/تمويل-المشاريع-النسائية-الاردن.html" class="ph-article">
+                    <h4>دليل تمويل مشروعك كسيدة أردنية</h4>
+                    <p>كل الخيارات المتاحة لدعم مشاريع المرأة في الأردن.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 9 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/التخطيط-المالي-لتعليم-الأبناء.html" class="ph-article">
+                    <h4>الادخار لتعليم الأبناء</h4>
+                    <p>متى تبدئين وكم تحتاجين وأفضل طريقة للادخار.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 7 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/التضخم-وتأثيره-على-مدخراتك.html" class="ph-article">
+                    <h4>التضخم وميزانية الأسرة</h4>
+                    <p>كيف تحمي قدرتك الشرائية مع ارتفاع الأسعار.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 6 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ مسار المتقاعد ═══ -->
+    <div class="ph-path" id="path-retiree">
+        <div class="ph-persona-hero" style="--g1:#3730A3;--g2:#7C3AED">
+            <div>
+                <h2>مرحلة التقاعد — استثمر بحكمة 🌅</h2>
+                <p>الراتب التقاعدي ثابت والمدخرات موجودة. التحدي الآن هو كيف تحافظ على قيمتها وتستفيد منها بأمان.</p>
+                <div class="ph-stats">
+                    <div class="ph-stat"><strong>الحفاظ</strong>على القيمة أولاً</div>
+                    <div class="ph-stat"><strong>مخاطر</strong>منخفضة فقط</div>
+                    <div class="ph-stat"><strong>دخل</strong>إضافي آمن</div>
+                </div>
+            </div>
+            <div class="ph-persona-emoji">🌅</div>
+        </div>
+
+        <div class="ph-tip">
+            ⚠️ <strong>تحذير مهم:</strong> في مرحلة التقاعد — تجنب أي استثمار يعدك بعوائد غير عادية. الأولوية: الحفاظ على رأس المال وليس تنميته بمخاطرة عالية.
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">📋 مسارك خطوة بخطوة</div>
+            <div class="ph-steps">
+                <a href="../education/articles/التضخم-وتأثيره-على-مدخراتك.html" class="ph-step">
+                    <div class="ph-step-num">1</div>
+                    <div class="ph-step-content">
+                        <h4>افهم كيف التضخم يأكل مدخراتك</h4>
+                        <p>100 دينار اليوم ليست 100 دينار بعد 10 سنوات. كيف تحمي نفسك؟</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">مقالة • 6 دقائق</span>
+                    </div>
+                </a>
+                <a href="../savings/savings.html" class="ph-step">
+                    <div class="ph-step-num">2</div>
+                    <div class="ph-step-content">
+                        <h4>اختر حساب توفير بأعلى عائد آمن</h4>
+                        <p>قارن فوائد حسابات التوفير والودائع الثابتة — أمان مع عائد جيد.</p>
+                        <span class="ph-step-tag" style="background:#EFF6FF;color:#1E40AF">مقارنة</span>
+                    </div>
+                </a>
+                <a href="../education/articles/الاستثمار-في-etfs-للمبتدئين.html" class="ph-step">
+                    <div class="ph-step-num">3</div>
+                    <div class="ph-step-content">
+                        <h4>استثمار منخفض المخاطر للتقاعد</h4>
+                        <p>الودائع والصناديق المتحفظة — ليس كل الأموال في مكان واحد.</p>
+                        <span class="ph-step-tag" style="background:#EDE9FE;color:#5B21B6">مقالة • 9 دقائق</span>
+                    </div>
+                </a>
+                <a href="../education/articles/تامين-السيارة-شامل-ام-ضد-الغير.html" class="ph-step">
+                    <div class="ph-step-num">4</div>
+                    <div class="ph-step-content">
+                        <h4>راجع تأمينك الصحي والسيارة</h4>
+                        <p>في مرحلة التقاعد التأمين الصحي أهم ما تملك — قارن الشركات.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقارنة</span>
+                    </div>
+                </a>
+                <a href="../education/articles/الحديث-عن-المال-مع-شريك-الحياة.html" class="ph-step">
+                    <div class="ph-step-num">5</div>
+                    <div class="ph-step-content">
+                        <h4>التخطيط المالي مع الزوج/الزوجة</h4>
+                        <p>توزيع المسؤوليات وتخطيط الميراث — موضوع ضروري في هذه المرحلة.</p>
+                        <span class="ph-step-tag" style="background:#ECFDF5;color:#065F46">مقالة • 7 دقائق</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-section">
+            <div class="ph-section-title">🛠️ الأدوات الأنسب لك</div>
+            <div class="ph-products">
+                <a href="../savings/savings.html" class="ph-product">
+                    <span class="ph-product-icon">💰</span>
+                    <h4>أعلى فوائد الودائع الثابتة</h4>
+                    <p>أمّن مدخراتك مع أفضل عائد متاح من البنوك الأردنية.</p>
+                    <span class="ph-product-cta">قارن الآن ←</span>
+                </a>
+                <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                <a href="../insurance/insurance.html" class="ph-product">
+                    <span class="ph-product-icon">🛡️</span>
+                    <h4>أفضل تأمين صحي للمتقاعدين</h4>
+                    <p>قارن شركات التأمين حسب شبكة المستشفيات والتغطية.</p>
+                    <span class="ph-product-cta">قارن التأمين ←</span>
+                </a>
+                -->
+                <a href="../calculators/calculators.html" class="ph-product">
+                    <span class="ph-product-icon">🧮</span>
+                    <h4>حاسبة العائد على الادخار</h4>
+                    <p>كم ستصبح مدخراتك بعد 5 أو 10 سنوات مع الفائدة المركبة؟</p>
+                    <span class="ph-product-cta">احسب الآن ←</span>
+                </a>
+                <a href="../cards/cards.html" class="ph-product">
+                    <span class="ph-product-icon">💳</span>
+                    <h4>بطاقة كاش باك بدون رسوم</h4>
+                    <p>استرد نسبة من مصاريفك الشهرية تلقائياً.</p>
+                    <span class="ph-product-cta">قارن البطاقات ←</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-section">
+            <div class="ph-section-title">📚 اقرأ هذا أولاً</div>
+            <div class="ph-articles">
+                <a href="../education/articles/الادخار-للتقاعد.html" class="ph-article">
+                    <h4>كيف تدير مدخرات التقاعد</h4>
+                    <p>استراتيجيات السحب الآمن وحماية رأس المال في التقاعد.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 8 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/المرابحة-والفائدة.html" class="ph-article">
+                    <h4>المنتجات الإسلامية للمتقاعدين</h4>
+                    <p>خيارات التوفير والاستثمار المتوافقة مع الشريعة.</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 6 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+                <a href="../education/articles/التخطيط-الضريبي-للأفراد-الأردن.html" class="ph-article">
+                    <h4>الضرائب في مرحلة التقاعد</h4>
+                    <p>هل الراتب التقاعدي خاضع للضريبة؟ ما الإعفاءات المتاحة؟</p>
+                    <div class="ph-article-footer"><span style="color:#6B7280">⏱ 7 دقائق</span><span>اقرأ ←</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA مشترك -->
+    <div class="ph-cta" id="ph-cta" style="display:none">
+        <h3>هل أنت جاهز للخطوة التالية؟</h3>
+        <p>قارن المنتجات واستخدم الحاسبات — مجاناً وبدون تسجيل.</p>
+        <div class="ph-cta-btns">
+            <a href="../compare/compare.html" class="ph-cta-btn primary">قارن الآن</a>
+            <a href="../education/education.html" class="ph-cta-btn secondary">مركز المعرفة</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+
+<script>
+function selectPersona(id) {
+    // تجاهل أي persona غير معروفة (مثلاً من رابط خارجي معدّل)
+    if (!document.getElementById('btn-' + id) || !document.getElementById('path-' + id)) return;
+    // Reset all buttons
+    document.querySelectorAll('.ph-persona-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-' + id).classList.add('active');
+
+    // Hide all paths
+    document.querySelectorAll('.ph-path').forEach(p => p.style.display = 'none');
+    document.getElementById('ph-default').style.display = 'none';
+
+    // Show selected
+    document.getElementById('path-' + id).style.display = 'block';
+    document.getElementById('ph-cta').style.display = 'block';
+
+    // Scroll to content
+    document.querySelector('.ph-body').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+// Check URL param
+const params = new URLSearchParams(window.location.search);
+const persona = params.get('persona');
+if (persona) selectPersona(persona);
+
+// Dropdown fix
+document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    var timer;
+    dd.addEventListener('mouseenter', function() { clearTimeout(timer); var m = dd.querySelector('.nav-drop-menu'); if(m) m.style.display = 'block'; });
+    dd.addEventListener('mouseleave', function() { var m = dd.querySelector('.nav-drop-menu'); timer = setTimeout(function() { if(m) m.style.display = ''; }, 150); });
+});
+</script>
+
+<script>
+/* تتبّع تقدم المسار: زر «تم» لكل خطوة + شريط تقدم لكل مسار — يُحفظ محليًا على جهاز المستخدم */
+(function(){
+  function key(pid){ return 'mp_path_' + pid; }
+  function load(pid){ try{ return JSON.parse(localStorage.getItem(key(pid))||'[]'); }catch(e){ return []; } }
+  function save(pid,arr){ try{ localStorage.setItem(key(pid), JSON.stringify(arr)); }catch(e){} }
+
+  document.querySelectorAll('.ph-path').forEach(function(panel){
+    var pid=(panel.id||'').replace('path-',''); if(!pid) return;
+    var stepsWrap=panel.querySelector('.ph-steps'); if(!stepsWrap) return;
+    var steps=[].slice.call(stepsWrap.querySelectorAll('.ph-step'));
+    if(!steps.length) return;
+
+    /* شريط التقدم قبل قائمة الخطوات */
+    var bar=document.createElement('div');
+    bar.className='ph-progress';
+    bar.innerHTML='<div class="ph-progress-top"><span class="ph-progress-label">تقدمك في هذا المسار</span>'+
+      '<span class="ph-progress-count" aria-live="polite"></span></div>'+
+      '<div class="ph-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="'+steps.length+'">'+
+      '<div class="ph-progress-fill"></div></div>';
+    stepsWrap.parentNode.insertBefore(bar, stepsWrap);
+
+    var done=load(pid).slice(0, steps.length);
+    function refresh(){
+      var n=done.filter(Boolean).length;
+      bar.querySelector('.ph-progress-count').textContent = n + ' من ' + steps.length +
+        (n===steps.length ? ' — أنجزت المسار كاملاً 🎉' : '');
+      var track=bar.querySelector('.ph-progress-track');
+      track.setAttribute('aria-valuenow', n);
+      bar.querySelector('.ph-progress-fill').style.width = (n/steps.length*100) + '%';
+    }
+    steps.forEach(function(step,i){
+      var btn=document.createElement('button');
+      btn.type='button'; btn.className='ph-done-btn';
+      btn.setAttribute('aria-pressed', String(!!done[i]));
+      btn.setAttribute('aria-label','وضع علامة إتمام على هذه الخطوة');
+      btn.textContent = done[i] ? '✓ تم' : 'تم؟';
+      if(done[i]) step.classList.add('is-done');
+      btn.addEventListener('click', function(ev){
+        ev.preventDefault(); ev.stopPropagation();   /* الخطوة رابط — لا نتبعه عند التعليم */
+        done[i]=!done[i];
+        btn.textContent = done[i] ? '✓ تم' : 'تم؟';
+        btn.setAttribute('aria-pressed', String(!!done[i]));
+        step.classList.toggle('is-done', !!done[i]);
+        save(pid, done); refresh();
+      });
+      step.appendChild(btn);
+    });
+    refresh();
+  });
+})();
+</script>
+</body>
+</html>

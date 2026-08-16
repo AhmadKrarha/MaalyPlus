@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قارن القروض الشخصية والسكنية في الأردن 2026 | مالي بلس</title>
+<meta name="description" content="قارن 29 قرضاً شخصياً وسكنياً من 16 بنكاً أردنياً. الفائدة، المدة، الشروط، وحاسبة DBR لمعرفة أهليتك قبل التقديم.">
+<link rel="canonical" href="https://maalyplus.com/loans/loans.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+.ln-hero{background:linear-gradient(135deg,#1E2B3C 0%,#1E40AF 60%,#0891B2 100%);color:#fff;padding:3rem 0 4rem;position:relative;overflow:hidden}
+.ln-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+.ln-hero h1{font-family:var(--font-heading);font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;margin-bottom:.5rem;line-height:1.25}
+.ln-hero p{font-size:.95rem;opacity:.85;max-width:600px;line-height:1.8;margin:0}
+.ln-breadcrumb{font-size:.78rem;opacity:.65;margin-bottom:.75rem}
+.ln-breadcrumb a{color:#fff;text-decoration:none}
+.ln-body{max-width:1100px;margin:-2rem auto 0;padding:0 1.5rem 5rem;position:relative;z-index:2}
+.ln-request{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;background:linear-gradient(135deg,#1E2B3C,#1E40AF);color:#fff;border-radius:16px;padding:1.5rem 1.75rem;margin-top:2rem}
+.ln-request-txt{flex:1;min-width:260px}
+.ln-request h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin:0 0 .4rem;color:#fff}
+.ln-request p{font-size:.85rem;line-height:1.85;opacity:.88;margin:0;max-width:640px}
+.ln-request-btn{flex-shrink:0;background:#fff;color:#1E40AF;text-decoration:none;border-radius:10px;padding:.75rem 1.6rem;font-family:var(--font-heading);font-size:.9rem;font-weight:700;transition:.18s;white-space:nowrap}
+.ln-request-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.ln-filter{background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid #E5E7EB;margin-bottom:1.5rem}
+.ln-filter-head{margin-bottom:1rem}
+.ln-filter-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.05rem;margin:0}
+.ln-filter-sub{font-size:.82rem;color:#6B7280;margin-top:3px}
+.ln-filter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.85rem;margin-bottom:1rem}
+.ln-field label{display:block;font-size:.76rem;font-weight:600;color:#4B5563;margin-bottom:5px}
+.ln-field input,.ln-field select{width:100%;padding:9px 12px;border:1.5px solid #E5E7EB;border-radius:10px;font-family:var(--font-body);font-size:.88rem;background:#fff;color:#111827}
+.ln-field input:focus,.ln-field select:focus{outline:none;border-color:#1E40AF}
+.ln-filter-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.ln-btn{padding:9px 20px;border:none;border-radius:50px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:var(--font-body)}
+.ln-btn-primary{background:linear-gradient(135deg,#1E40AF,#10B981);color:#fff}
+.ln-btn-secondary{background:#F3F4F6;color:#374151;border:1.5px solid #E5E7EB}
+.ln-result-count{font-size:.8rem;color:#047857;font-weight:700;margin-top:.5rem}
+.ln-dbr{background:linear-gradient(135deg,#ECFDF5,#F0F4FF);border:1.5px solid #D1FAE5;border-radius:16px;padding:1.5rem;margin-bottom:1.5rem}
+.ln-dbr-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.ln-dbr-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#047857,#065F46);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0}
+.ln-dbr-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1rem;margin:0}
+.ln-dbr-sub{font-size:.78rem;color:#6B7280}
+.ln-dbr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-bottom:.9rem}
+.ln-dbr-result{background:#fff;border-radius:12px;padding:1rem 1.25rem;border:1.5px solid #E5E7EB;display:none;margin-top:.75rem}
+.ln-dbr-result.show{display:block}
+.ln-dbr-num{font-family:var(--font-heading);font-size:1.9rem;font-weight:700;margin-bottom:4px}
+.ln-dbr-bar{height:9px;background:#E5E7EB;border-radius:5px;overflow:hidden;margin:.65rem 0}
+.ln-dbr-fill{height:100%;border-radius:5px;transition:width .4s}
+.ln-dbr-msg{font-size:.83rem;font-weight:600;padding:.65rem .9rem;border-radius:8px;margin-top:.5rem}
+.ln-section-title{font-family:var(--font-heading);font-weight:700;color:#1E2B3C;font-size:1.15rem;margin:0 0 1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+.ln-sort{padding:7px 14px;border:1.5px solid #E5E7EB;border-radius:50px;font-size:.78rem;font-family:var(--font-body);background:#fff;cursor:pointer}
+.ln-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.1rem}
+.ln-card{background:#fff;border-radius:16px;padding:1.3rem;border:1.5px solid #E5E7EB;transition:all .2s;position:relative;display:flex;flex-direction:column;gap:.85rem}
+.ln-card:hover{border-color:#1E40AF;box-shadow:0 8px 24px rgba(30,64,175,.1);transform:translateY(-2px)}
+.ln-card.recommended{border:2px solid #10B981}
+.ln-card.recommended::before{content:none;position:absolute;top:-10px;right:1.2rem;background:#10B981;color:#fff;padding:3px 10px;border-radius:20px;font-size:.68rem;font-weight:700}
+.ln-card.unqualified{opacity:.5;border:1.5px dashed #E5E7EB}
+.ln-card-head{display:flex;align-items:center;gap:.65rem}
+.ln-card-logo{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.72rem;flex-shrink:0}
+.ln-card-bank{font-size:.88rem;font-weight:700;color:#1E2B3C;margin:0;line-height:1.3}
+.ln-card-product{font-size:.76rem;color:#6B7280}
+.ln-card-badge{font-size:.68rem;padding:3px 9px;border-radius:20px;font-weight:700;display:inline-block;background:#EFF6FF;color:#1E40AF}
+.ln-card-badge.islamic{background:#ECFDF5;color:#065F46}
+.ln-card-badge.etihad{background:#FEF3C7;color:#92400E}
+.ln-card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;background:#F9FAFB;border-radius:10px;padding:.75rem .4rem}
+.ln-stat{text-align:center}
+.ln-stat-val{font-family:var(--font-heading);font-size:.95rem;font-weight:700;color:#1E40AF;display:block;line-height:1.2}
+.ln-stat-label{font-size:.62rem;color:#6B7280;margin-top:2px}
+.ln-card-details{font-size:.74rem;color:#4B5563;display:flex;flex-wrap:wrap;gap:.25rem .65rem}
+.ln-card-details strong{color:#1E2B3C}
+.ln-card-features{list-style:none;padding:0;margin:0}
+.ln-card-features li{font-size:.76rem;color:#4B5563;padding:2px 0;display:flex;gap:5px;align-items:baseline}
+.ln-card-features li::before{content:'✓';color:#047857;font-weight:700;flex-shrink:0;font-size:.72rem}
+.ln-card-verified{display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px dashed #E5E7EB;font-size:.68rem;color:#6B7280}
+.ln-verified-badge{background:#ECFDF5;color:#065F46;padding:2px 8px;border-radius:10px;font-size:.64rem;font-weight:700}
+.ln-card-actions{display:flex;gap:.5rem}
+.ln-card-actions a{flex:1;text-align:center;padding:8px 12px;border-radius:50px;font-size:.78rem;font-weight:700;text-decoration:none}
+.ln-apply{background:linear-gradient(135deg,#1E40AF,#10B981);color:#fff}
+.ln-details{background:#F3F4F6;color:#374151;border:1.5px solid #E5E7EB}
+.ln-empty{background:#fff;border-radius:16px;padding:2.5rem 1.5rem;text-align:center;border:1.5px dashed #E5E7EB}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+
+/* ── حالة الأهلية الثلاثية + الأرقام التقديرية ── */
+.ln-status{border:1.5px solid;border-radius:10px;padding:.5rem .75rem;font-size:.78rem;font-weight:700;margin-bottom:.6rem;line-height:1.6}
+.ln-est{background:#F8FAFF;border:1px solid #E0E7FF;border-radius:10px;padding:.65rem .8rem;margin:.6rem 0}
+.ln-est-row{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.82rem;color:#374151;padding:2px 0}
+.ln-est-row b{font-family:var(--fh,'Alexandria',sans-serif);font-size:.92rem;color:#1E2B3C}
+.ln-est-note{font-size:.68rem;color:#9CA3AF;margin-top:.35rem;line-height:1.5}
+.ln-unk{color:#6B7280;font-style:italic;font-weight:600;font-size:.9em}
+</style>
+    <meta property="og:title" content="قارن القروض الشخصية في الأردن — MaalyPlus">
+    <meta property="og:description" content="قارن القروض الشخصية والسكنية من 16 بنكاً أردنياً. اعثر على أفضل قرض شخصي يناسبك.">
+    <meta property="og:url" content="https://maalyplus.com/loans/loans.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-loans.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="قارن القروض الشخصية في الأردن — MaalyPlus">
+    <meta name="twitter:description" content="قارن القروض الشخصية والسكنية من 16 بنكاً أردنياً. اعثر على أفضل قرض شخصي يناسبك.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-loans.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "مقارنة القروض الشخصية والسكنية في الأردن", "description": "مقارنة 29 قرضاً شخصياً وسكنياً من بنوك الأردن", "numberOfItems": 29, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — البنك العربي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — البنك الأهلي الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "LoanOrCredit", "name": "القرض الشخصي — بنك الإسكان للتجارة والتمويل (HBTF)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — بنك الاتحاد", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — بنك القاهرة عمان", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — البنك التجاري الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — بنك الاستثمار العربي الأردني (AJIB)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "LoanOrCredit", "name": "تمويل شخصي مرابحة — البنك الإسلامي الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — البنك الأردني الكويتي (JKB)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "LoanOrCredit", "name": "قرض شخصي — كابيتال بنك", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 11, "item": {"@type": "LoanOrCredit", "name": "منافع شخصية (تمويل مرابحة/جعالة) — البنك العربي الإسلامي الدولي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 12, "item": {"@type": "LoanOrCredit", "name": "القرض الشخصي (قرضي) — بنك لبنان والمهجر - الأردن", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 13, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — بنك الإسكان للتجارة والتمويل (HBTF)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 14, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — البنك العربي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 15, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — بنك الاتحاد", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 16, "item": {"@type": "LoanOrCredit", "name": "القرض العقاري — بنك القاهرة عمان", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 17, "item": {"@type": "LoanOrCredit", "name": "قرض الإسكان — البنك الأردني الكويتي (JKB)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 18, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — كابيتال بنك", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 19, "item": {"@type": "LoanOrCredit", "name": "القرض السكني (بيت أهلي) — البنك الأهلي الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 20, "item": {"@type": "LoanOrCredit", "name": "تمويل المرابحة الشخصي — مصرف الراجحي - الأردن", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 21, "item": {"@type": "LoanOrCredit", "name": "التمويل الشخصي (مرابحة) — بنك صفوة الاسلامي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 22, "item": {"@type": "LoanOrCredit", "name": "القرض الشخصي مقابل تحويل الراتب — بنك ABC الأردن (ila Bank)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 23, "item": {"@type": "LoanOrCredit", "name": "التمويل المنزلي (مرابحة/إجارة) — البنك الإسلامي الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 24, "item": {"@type": "LoanOrCredit", "name": "تمويل المنازل (مرابحة/إجارة) — البنك العربي الإسلامي الدولي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 25, "item": {"@type": "LoanOrCredit", "name": "التمويل السكني بعائد ثابت — بنك صفوة الاسلامي", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 26, "item": {"@type": "LoanOrCredit", "name": "التمويل السكني (مرابحة) — مصرف الراجحي - الأردن", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 27, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — البنك التجاري الأردني", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 28, "item": {"@type": "LoanOrCredit", "name": "القرض السكني (بيتنا / 40-60) — بنك الأردن", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}, {"@type": "ListItem", "position": 29, "item": {"@type": "LoanOrCredit", "name": "القرض السكني — بنك الاستثمار العربي الأردني (AJIB)", "url": "https://maalyplus.com/loans/loans.html", "currency": "JOD"}}]}</script>
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<div class="ln-hero">
+<div class="container">
+<div class="ln-breadcrumb"><a href="../index.html">الرئيسية</a> ← القروض الشخصية</div>
+<h1>قارن أفضل القروض الشخصية في الأردن</h1>
+<p>قارن عروضاً من 12 بنكاً أردنياً. أدخل راتبك والتزاماتك لمعرفة القروض المؤهّل لها فعلياً، واستخدم حاسبة نسبة عبء الدين (DBR) لتقدير قدرتك على السداد.</p>
+</div>
+</div>
+
+<div class="ln-body">
+
+<div class="ln-dbr">
+<div class="ln-dbr-head">
+<div class="ln-dbr-icon"><svg class="mp-ic" style="width:1.5em;height:1.5em"><use href="/images/icons.svg#ic-percent"/></svg></div>
+<div>
+<div class="ln-dbr-title">حاسبة نسبة الدين إلى الدخل (DBR)</div>
+<div class="ln-dbr-sub">تعتمد معظم البنوك الأردنية سقفاً يقارب 50% وفق تعليمات البنك المركزي، وقد تختلف النسبة بحسب البنك ونوع التمويل وفئة العميل. <a href="https://www.cbj.gov.jo/" target="_blank" rel="noopener" style="color:#1E40AF">البنك المركزي الأردني</a></div>
+</div>
+</div>
+<div class="ln-dbr-grid">
+<div class="ln-field"><label for="dbrSalary">راتبك الشهري (د.أ.)</label><input type="number" id="dbrSalary" aria-label="راتبك الشهري بالدينار" placeholder="مثال: 700" min="0"></div>
+<div class="ln-field"><label for="dbrDebt">الالتزامات الشهرية الحالية (د.أ.)</label><input type="number" id="dbrDebt" aria-label="مجموع أقساطك الشهرية الحالية بالدينار" placeholder="مثال: 150" min="0"></div>
+<div class="ln-field"><label for="dbrNew">القسط الجديد المتوقع (د.أ.) <span style="font-weight:400;color:#6B7280;font-size:.75rem">— أو اتركه فارغاً واستخدم البحث أدناه ليحسبه لك</span></label><input type="number" id="dbrNew" aria-label="قسط القرض الجديد المتوقع بالدينار" placeholder="مثال: 200" min="0"></div>
+</div>
+<button class="ln-btn ln-btn-primary" onclick="calcDBR()">احسب نسبة عبء الدين (DBR)</button>
+<div class="ln-dbr-result" id="dbrResult">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+<div><div style="font-size:.78rem;color:#6B7280">نسبة الدين إلى الدخل</div><div class="ln-dbr-num" id="dbrNum">0%</div></div>
+<div style="font-size:.78rem;color:#6B7280" id="dbrDetail"></div>
+</div>
+<div class="ln-dbr-bar"><div class="ln-dbr-fill" id="dbrFill" style="width:0%;background:#10B981"></div></div>
+<div class="ln-dbr-msg" id="dbrMsg"></div>
+</div>
+</div>
+
+<div class="ln-filter">
+<div class="ln-filter-head">
+<h2 class="ln-filter-title"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> اعثر على القرض الأنسب لك</h2>
+<div class="ln-filter-sub">أدخل بياناتك لنقدّر مدى مطابقة القروض <strong>للشروط المنشورة</strong>، ونحسب لك القسط التقديري ونسبة عبء الدين. الموافقة النهائية تبقى قرار البنك.</div>
+</div>
+<div class="ln-filter-grid">
+<div class="ln-field"><label for="fSalary">راتبك الشهري (د.أ.)</label><input type="number" id="fSalary" aria-label="راتبك الشهري بالدينار" placeholder="مثال: 700" min="0"></div>
+<div class="ln-field"><label for="fObligations">التزاماتك الشهرية الحالية (د.أ.)</label><input type="number" id="fObligations" aria-label="مجموع أقساطك الشهرية الحالية بالدينار" placeholder="مثال: 150" min="0"></div>
+<div class="ln-field"><label for="fAge">عمرك</label><input type="number" id="fAge" aria-label="عمرك بالسنوات" placeholder="مثال: 30" min="18" max="75"></div>
+<div class="ln-field"><label for="fAmount">المبلغ المطلوب (د.أ.)</label><input type="number" id="fAmount" aria-label="مبلغ القرض المطلوب بالدينار" placeholder="مثال: 20000" min="0"></div>
+<div class="ln-field"><label for="fTenor">مدة السداد (سنوات)</label><input type="number" id="fTenor" aria-label="مدة السداد بالسنوات" placeholder="مثال: 5" min="1" max="30"></div>
+<div class="ln-field"><label for="fType">النوع</label><select id="fType" aria-label="نوع التمويل"><option value="all">الكل</option><option value="conventional">تقليدي</option><option value="islamic">متوافق مع الشريعة</option></select></div>
+<div class="ln-field"><label for="fLoanType">غرض القرض</label><select id="fLoanType" aria-label="غرض القرض" onchange="renderCards()"><option value="all">الكل</option><option value="personal">شخصي</option><option value="housing">سكني</option></select></div>
+</div>
+<div class="ln-filter-actions">
+<button class="ln-btn ln-btn-primary" onclick="applyFilters()">اعرض المناسب</button>
+<button class="ln-btn ln-btn-secondary" onclick="resetFilters()">إعادة ضبط</button>
+</div>
+<div class="ln-result-count" id="resultCount"></div>
+</div>
+
+<div id="recBanner" style="display:none;background:linear-gradient(to left,#1E40AF,#10B981);color:#fff;padding:1rem 1.25rem;border-radius:12px;margin-bottom:1rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+<div style="display:flex;align-items:center;gap:.75rem"><span style="display:inline-flex"><svg class="mp-ic" style="width:1.75rem;height:1.75rem"><use href="/images/icons.svg#ic-compass"/></svg></span><div><div style="font-weight:700;font-size:1rem">نتائج موصاة بناءً على وضعك</div><div style="font-size:.85rem;opacity:.9">عرض أفضل <span id="recCount">3</span> قروض<span id="recTotal"></span> من أداة "من يموّلني؟"</div></div></div>
+<button onclick="clearRecommendation()" style="background:rgba(255,255,255,.2);color:#fff;border:none;padding:.5rem 1rem;border-radius:50px;cursor:pointer;font-weight:600;font-size:.85rem;white-space:nowrap">عرض كل القروض المطابقة</button>
+</div>
+
+<h2 class="ln-section-title">
+<span id="resultsTitle">جميع القروض</span>
+<select class="ln-sort" id="sortBy" aria-label="ترتيب النتائج" onchange="renderCards()">
+<option value="score" selected>تقييم مالي بلس</option>
+<option value="rate">الأقل فائدة</option>
+<option value="amount">الأعلى قيمة تمويل</option>
+<option value="salary">الأقل في الحد الأدنى للراتب</option>
+</select>
+</h2>
+
+<div class="ln-grid" id="loansGrid"></div>
+
+<div class="ln-request">
+<div class="ln-request-txt">
+<h3>لا تريد المرور على كل بنك بنفسك؟</h3>
+<p>أرسل طلباً واحداً — للأفراد أو للمنشآت — ونطابقه مع هذه القروض المنشورة ونرسل لك قائمة مرتّبة بما تنطبق شروطه عليك فعلاً. مالي بلس ليست جهة تمويل ولا تصدر قرارات ائتمانية.</p>
+</div>
+<a href="../finance-request/" class="ln-request-btn">اطلب تمويلاً ←</a>
+</div>
+
+</div>
+
+<script>
+let LOANS=[],userFilters=null,topLimit=null;
+
+function formatVerifiedDate(d){
+const months={'01':'يناير','02':'فبراير','03':'مارس','04':'أبريل','05':'مايو','06':'يونيو','07':'يوليو','08':'أغسطس','09':'سبتمبر','10':'أكتوبر','11':'نوفمبر','12':'ديسمبر'};
+if(!d)return 'أبريل 2026';
+const m=String(d).match(/^(\d{4})-(\d{2})$/);
+return m?(months[m[2]]||m[2])+' '+m[1]:d;
+}
+
+function scoreLoans(loans){
+if(!loans||!loans.length)return loans;
+const rates=loans.map(l=>l.interest_rate_min||10);
+const amounts=loans.map(l=>l.max_amount_jod||0);
+const tenors=loans.map(l=>l.max_tenor_years||0);
+const sals=loans.map(l=>l.min_salary_jod||500);
+const minR=Math.min(...rates),maxR=Math.max(...rates);
+const minA=Math.min(...amounts),maxA=Math.max(...amounts);
+const minT=Math.min(...tenors),maxT=Math.max(...tenors);
+const minS=Math.min(...sals),maxS=Math.max(...sals);
+const norm=(v,mn,mx,hb)=>mx===mn?50:((hb?(v-mn)/(mx-mn):1-(v-mn)/(mx-mn))*100);
+return loans.map(l=>{
+const rateS=norm(l.interest_rate_min||10,minR,maxR,false);
+const amtS=norm(l.max_amount_jod||0,minA,maxA,true);
+const tenS=norm(l.max_tenor_years||0,minT,maxT,true);
+const accS=norm(l.min_salary_jod||500,minS,maxS,false);
+let feat=40;
+if(!l.salary_transfer_required)feat+=20;
+if((l.dbr_max_percent||40)>=45)feat+=10;
+if(l.is_islamic)feat+=8;
+if((l.features||[]).length>=3)feat+=12;
+if((l.confidence||75)>=85)feat+=10;
+feat=Math.min(feat,100);
+const total=Math.max(30,Math.min(97,Math.round(
+rateS*0.35+(amtS*0.6+tenS*0.4)*0.25+accS*0.20+feat*0.20
+)));
+const tags=[];
+if((l.interest_rate_min||99)<=5.5)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> الأفضل فائدة',color:'#059669'});
+else if((l.interest_rate_min||99)<6.5)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> فائدة منخفضة',color:'#059669'});
+if(l.is_islamic)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-crescent"/></svg> إسلامي',color:'#D97706'});
+if(!l.salary_transfer_required&&tags.length<2)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-check-circle"/></svg> بدون نقل راتب',color:'#0369A1'});
+if((l.min_salary_jod||9999)<=400&&tags.length<2)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-grad"/></svg> حدّ راتب أدنى منخفض',color:'#0891B2'});
+if((l.max_amount_jod||0)>=100000&&tags.length<2)tags.push({text:'<svg class="mp-ic"><use href="/images/icons.svg#ic-wallet"/></svg> مبالغ كبيرة',color:'#7C3AED'});
+return {...l,maalyplus_score:total,maalyplus_tags:tags};
+});
+}
+
+function applyURLParams(){
+const params=new URLSearchParams(window.location.search);
+if(![...params.keys()].length)return;
+const s=params.get('salary');
+if(s&&!isNaN(parseInt(s,10))){document.getElementById('fSalary').value=s;}
+const a=params.get('age');
+if(a&&!isNaN(parseInt(a,10))){document.getElementById('fAge').value=a;}
+const m=params.get('amount');
+if(m&&!isNaN(parseInt(m,10))){document.getElementById('fAmount').value=m;}
+const t=params.get('type');
+if(t&&['conventional','islamic'].includes(t)){document.getElementById('fType').value=t;}
+const top=parseInt(params.get('top'),10);
+if(top&&top>0&&top<=20)topLimit=top;
+const maxRate=parseFloat(params.get('maxRate'));
+if(!isNaN(maxRate))window._maxRate=maxRate;
+if(s||a||m||(t&&t!=='all')){
+userFilters={salary:parseFloat(s)||0,age:parseInt(a)||0,amount:parseFloat(m)||0,type:t||'all'};
+document.getElementById('resultsTitle').textContent='القروض المناسبة لوضعك';
+}
+}
+
+function updateRecBanner(totalMatching){
+const b=document.getElementById('recBanner');
+if(!b)return;
+if(topLimit){
+b.style.display='flex';
+const shown=Math.min(topLimit,totalMatching||topLimit);
+document.getElementById('recCount').textContent=shown;
+const rt=document.getElementById('recTotal');
+if(rt)rt.textContent=totalMatching&&totalMatching>shown?` من أصل ${totalMatching} قرض مطابق`:'';
+}else{b.style.display='none';}
+}
+
+function clearRecommendation(){
+topLimit=null;
+if(window.history&&window.history.replaceState){
+const u=new URL(window.location.href);u.searchParams.delete('top');
+window.history.replaceState(null,'',u.pathname+(u.search||''));
+}
+renderCards();
+}
+
+fetch('loans.json?v=20260827').then(r=>{if(!r.ok)throw 0;return r.json();}).then(d=>{
+LOANS=scoreLoans(d);
+applyURLParams();
+renderCards();
+}).catch(e=>{const g=document.querySelector('.ln-grid');if(g)g.innerHTML='<div class="ln-empty" style="grid-column:1/-1"><h3>تعذّر تحميل البيانات</h3><p>تحقّق من اتصالك ثم أعد تحميل الصفحة.</p></div>';console.error('loans load',e);});
+
+function calcDBR(){
+const s=parseFloat(document.getElementById('dbrSalary').value)||0;
+const d=parseFloat(document.getElementById('dbrDebt').value)||0;
+const n=parseFloat(document.getElementById('dbrNew').value)||0;
+if(s<=0){alert('أدخل راتبك');return;}
+const total=d+n;
+const dbr=total/s*100;
+const dbrR=Math.round(dbr*10)/10;
+document.getElementById('dbrNum').textContent=dbrR+'%';
+document.getElementById('dbrDetail').innerHTML=`الالتزامات الكلية: <strong>${total.toLocaleString()} د.أ</strong> من راتب <strong>${s.toLocaleString()} د.أ</strong>`;
+document.getElementById('dbrFill').style.width=Math.min(dbr,100)+'%';
+const num=document.getElementById('dbrNum'),fill=document.getElementById('dbrFill'),msg=document.getElementById('dbrMsg');
+if(dbr<=35){num.style.color='#10B981';fill.style.background='#10B981';msg.style.background='#ECFDF5';msg.style.color='#065F46';msg.innerHTML='✅ <strong>ممتاز</strong> — وضعك المالي مريح، يمكنك التقدم بثقة لأي قرض.';}
+else if(dbr<=50){num.style.color='#F59E0B';fill.style.background='#F59E0B';msg.style.background='#FFFBEB';msg.style.color='#92400E';msg.innerHTML='⚠️ <strong>مقبول</strong> — ضمن الحد الأعلى المسموح (50%)، لكن خيارات البنوك قد تكون محدودة.';}
+else{num.style.color='#EF4444';fill.style.background='#EF4444';msg.style.background='#FEF2F2';msg.style.color='#991B1B';msg.innerHTML='❌ <strong>مرتفع جداً</strong> — تجاوزت الحد الأعلى (50%). البنوك ترفض القرض غالباً.';}
+document.getElementById('dbrResult').classList.add('show');
+}
+
+function applyFilters(){
+const s=parseFloat(document.getElementById('fSalary').value)||0;
+const o=parseFloat(document.getElementById('fObligations').value)||0;
+const a=parseInt(document.getElementById('fAge').value)||0;
+const m=parseFloat(document.getElementById('fAmount').value)||0;
+const y=parseFloat(document.getElementById('fTenor').value)||0;
+const t=document.getElementById('fType').value;
+if(!s&&!a&&!m&&t==='all'){alert('أدخل معلومة واحدة على الأقل');return;}
+userFilters={salary:s,obligations:o,age:a,amount:m,tenor:y,type:t};
+renderCards();
+document.getElementById('resultsTitle').textContent='القروض المناسبة لوضعك';
+}
+
+function resetFilters(){
+userFilters=null;topLimit=null;window._maxRate=null;
+['fSalary','fObligations','fAge','fAmount','fTenor'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+document.getElementById('fType').value='all';
+document.getElementById('resultCount').textContent='';
+document.getElementById('resultsTitle').textContent='جميع القروض الشخصية';
+renderCards();
+}
+
+/* ── محرك الأهلية: ثلاث حالات صريحة ──
+   match   = مطابق للشروط المنشورة (كل شرط قابل للفحص متوفّر ومُجتاز)
+   unknown = تعذّر التحقق (لم يخالف شيئاً، لكن البنك لم ينشر شرطاً أو أكثر)
+   nomatch = غير مطابق (خالف شرطاً منشوراً)
+   القاعدة الحاكمة: البيانات الناقصة ليست اجتيازاً. */
+function evalLoan(l,f){
+  const missing=[], failed=[];
+  if(!f) return {status:'none',missing,failed};
+  // النوع والغرض فلاتر قاطعة (من بيانات مؤكّدة)
+  if(f.type==='islamic'&&!l.is_islamic) failed.push('ليس تمويلاً متوافقاً مع الشريعة');
+  if(f.type==='conventional'&&l.is_islamic) failed.push('تمويل متوافق مع الشريعة لا تقليدي');
+  // الراتب
+  if(f.salary){
+    if(l.min_salary_jod==null||l.min_salary_jod==='') missing.push('الحد الأدنى للراتب غير معلن');
+    else if(f.salary<l.min_salary_jod) failed.push(`الحد الأدنى للراتب ${l.min_salary_jod} د.أ. أعلى من راتبك`);
+  }
+  // العمر
+  if(f.age){
+    if(l.age_min==null&&l.age_max==null) missing.push('شروط العمر غير معلنة');
+    else{
+      if(l.age_min&&f.age<l.age_min) failed.push(`العمر الأدنى ${l.age_min} سنة`);
+      if(l.age_max&&f.age>l.age_max) failed.push(`العمر الأقصى ${l.age_max} سنة`);
+    }
+  }
+  // المبلغ
+  if(f.amount){
+    if(l.max_amount_jod==null||l.max_amount_jod==='') missing.push('سقف التمويل غير معلن');
+    else if(f.amount>l.max_amount_jod) failed.push(`سقف التمويل ${Number(l.max_amount_jod).toLocaleString()} د.أ. أقل من المطلوب`);
+  }
+  // المدة
+  if(f.tenor&&l.max_tenor_years&&f.tenor>l.max_tenor_years) failed.push(`أقصى مدة سداد ${l.max_tenor_years} سنة`);
+  // نسبة عبء الدين بعد القرض
+  const calc=loanCalc(l,f);
+  if(calc.dbrNew!=null){
+    const cap=l.dbr_max_percent||50;
+    if(calc.dbrNew>cap) failed.push(`نسبة عبء الدين بعد القرض ${calc.dbrNew.toFixed(0)}% تتجاوز حدّ ${cap}%`);
+  }
+  if(window._maxRate&&l.interest_rate_min&&l.interest_rate_min>window._maxRate) failed.push('أعلى من سقف الفائدة المحدد');
+  if(failed.length) return {status:'nomatch',missing,failed};
+  if(missing.length) return {status:'unknown',missing,failed};
+  return {status:'match',missing,failed};
+}
+
+/* حساب القسط والتكلفة — بصيغة القسط الثابت (annuity) على المعدل المعلن.
+   لا نخترع رقماً: إن لم يُنشر معدل، لا نعرض قسطاً. */
+function loanCalc(l,f){
+  const out={pay:null,total:null,dbrNew:null,rateUsed:null};
+  if(!f||!f.amount||!f.tenor) return out;
+  const r=l.interest_rate_min;
+  if(r==null||r===''||isNaN(r)) return out;   // معدل غير منشور → لا تقدير
+  const n=f.tenor*12, i=(Number(r)/100)/12;
+  const pay = i>0 ? (f.amount*i)/(1-Math.pow(1+i,-n)) : f.amount/n;
+  out.pay=pay; out.total=pay*n; out.rateUsed=Number(r);
+  if(f.salary) out.dbrNew=((f.obligations||0)+pay)/f.salary*100;
+  return out;
+}
+function isQualified(l,f){ return evalLoan(l,f).status!=='nomatch'; }
+
+/* جمع عربي صحيح: قرض واحد / قرضان / 3–10 قروض / 11+ قرضاً */
+function plLoans(n){
+  if(n===1) return 'قرض واحد';
+  if(n===2) return 'قرضان';
+  return (n>=3&&n<=10) ? `${n} قروض` : `${n} قرضاً`;
+}
+const STATUS_META={
+  match:{t:'مطابق للشروط المنشورة',c:'#047857',bg:'#ECFDF5',b:'#A7F3D0'},
+  unknown:{t:'تعذّر التحقق — بيانات البنك غير مكتملة',c:'#92400E',bg:'#FFFBEB',b:'#FDE68A'},
+  nomatch:{t:'غير مطابق لبياناتك',c:'#991B1B',bg:'#FEF2F2',b:'#FECACA'}
+};
+function getScoreLabel(s){
+if(s>=85)return{text:'ممتاز',color:'#059669',bg:'#D1FAE5'};
+if(s>=72)return{text:'جيد جداً',color:'#1E40AF',bg:'#DBEAFE'};
+if(s>=58)return{text:'جيد',color:'#D97706',bg:'#FEF3C7'};
+return{text:'مقبول',color:'#6B7280',bg:'#F3F4F6'};
+}
+
+/* القروض غير المطابقة تُطوى خلف زر — لا تُحذف (الشفافية) ولا تُزاحم النتائج */
+function applyNoMatchCollapse(){
+  const grid=document.getElementById('loansGrid');
+  const gc=window._groupCounts;
+  if(!grid||!userFilters||!gc||!gc.nomatch) return;
+  const cards=[...grid.querySelectorAll('.ln-card')];
+  const hidden=cards.slice(gc.match+gc.unknown);
+  if(!hidden.length) return;
+  hidden.forEach(c=>{c.style.display='none';c.dataset.nomatch='1';});
+  const bar=document.createElement('div');
+  bar.style.cssText='grid-column:1/-1;text-align:center;padding:.5rem 0';
+  bar.innerHTML=`<button type="button" id="showNoMatch" style="background:#fff;border:1.5px solid #CBD5E1;color:#475569;border-radius:50px;padding:.65rem 1.6rem;font-family:inherit;font-weight:700;font-size:.86rem;cursor:pointer">عرض القروض غير المطابقة (${gc.nomatch}) ↓</button>`;
+  grid.insertBefore(bar, hidden[0]);
+  bar.querySelector('button').onclick=function(){
+    hidden.forEach(c=>c.style.display='');
+    bar.remove();
+  };
+}
+function renderCards(){
+const sortBy=document.getElementById('sortBy').value;
+let list=[...LOANS];
+/* فلتر غرض القرض (شخصي/سكني) — الافتراضي عرض الكل */
+const lt=document.getElementById('fLoanType');
+if(lt&&lt.value!=='all') list=list.filter(l=>(l.loan_type||'personal')===lt.value);
+list.sort((a,b)=>{
+if(sortBy==='score')return(b.maalyplus_score||0)-(a.maalyplus_score||0);
+if(sortBy==='rate'){
+  const ra=(a.interest_rate_min==null||a.interest_rate_min==='')?Infinity:Number(a.interest_rate_min);
+  const rb=(b.interest_rate_min==null||b.interest_rate_min==='')?Infinity:Number(b.interest_rate_min);
+  if(ra===rb) return 0;
+  return ra-rb;   // غير المنشور (Infinity) يذهب لآخر القائمة دائماً
+}
+if(sortBy==='amount')return(b.max_amount_jod||0)-(a.max_amount_jod||0);
+if(sortBy==='salary')return(a.min_salary_jod||9999)-(b.min_salary_jod||9999);
+return 0;
+});
+
+let totalMatching=list.length;
+if(userFilters){
+const ev=list.map(l=>{const e=evalLoan(l,userFilters);return {...l,_status:e.status,_missing:e.missing,_failed:e.failed,_calc:loanCalc(l,userFilters)};});
+const match=ev.filter(l=>l._status==='match');
+const unknown=ev.filter(l=>l._status==='unknown');
+const nomatch=ev.filter(l=>l._status==='nomatch');
+totalMatching=match.length+unknown.length;
+list=[...match,...unknown,...nomatch];
+window._groupCounts={match:match.length,unknown:unknown.length,nomatch:nomatch.length};
+const parts=[];
+if(match.length) parts.push(`<b style="color:#047857">${plLoans(match.length)}</b> مطابقة للشروط المنشورة`);
+if(unknown.length) parts.push(`<b style="color:#B45309">${plLoans(unknown.length)}</b> تعذّر التحقق منها`);
+document.getElementById('resultCount').innerHTML = (match.length+unknown.length)>0
+  ? `${parts.join(' · ')} — من أصل ${LOANS.length} قرضاً. <span style="color:#6B7280">الموافقة النهائية قرار البنك.</span>`
+  : `<span style="color:#991B1B">لا يوجد قرض مطابق لبياناتك — جرّب تعديل المبلغ أو المدة أو الراتب.</span>`;
+}
+
+if(topLimit&&topLimit>0){
+if(userFilters){list=list.filter(l=>l._status==='qualified').slice(0,topLimit);}
+else{list=list.slice(0,topLimit);}
+}
+updateRecBanner(totalMatching);
+
+const h=list.map(l=>{
+const q=l._status==='qualified'?' recommended':(l._status==='unqualified'?' unqualified':'');
+const logoBg=l.logo_color||'#1E40AF';
+const logoText=(l.bank_ar||'').substring(0,3);
+/* عرض موحّد للفائدة: الرقم أولاً (قابل للمقارنة)، ونوعه/تفصيله تحته.
+   كلمات مبهمة مثل «تنافسي» لا تُعرض كأنها معدل — إن وُجد رقم نعرضه، وإلا نقول «غير منشور». */
+const rd=String(l.interest_rate_display||'').trim();
+const vague=/^(تنافسي|منافس|غير منشور)/.test(rd)||rd==='';
+const hasNum=l.interest_rate_min!=null&&l.interest_rate_min!=='';
+const rate = hasNum ? `من ${l.interest_rate_min}%` : '<span class="ln-unk">غير منشور</span>';
+const rateSub = (rd && !(vague&&hasNum)) ? rd : (hasNum?'':'راجع البنك');
+const UNKV='<span class="ln-unk">غير معلن</span>';
+const amount=l.max_amount_jod?(typeof l.max_amount_jod==='number'?l.max_amount_jod.toLocaleString():l.max_amount_jod):UNKV;
+const years=l.max_tenor_years||UNKV;
+// شارة الحالة الثلاثية + صندوق الأرقام التقديرية
+const sm=STATUS_META[l._status];
+const statusChip = sm ? `<div class="ln-status" style="background:${sm.bg};border-color:${sm.b};color:${sm.c}">${sm.t}${l._status==='unknown'&&l._missing&&l._missing.length?` <span style="font-weight:400">(${l._missing.join('، ')})</span>`:''}${l._status==='nomatch'&&l._failed&&l._failed.length?` <span style="font-weight:400">(${l._failed[0]})</span>`:''}</div>` : '';
+const cc=l._calc||{};
+const estBox = (cc.pay!=null) ? `<div class="ln-est">
+  <div class="ln-est-row"><span>القسط التقديري</span><b>${Math.round(cc.pay).toLocaleString()} د.أ./شهر</b></div>
+  ${cc.dbrNew!=null?`<div class="ln-est-row"><span>نسبة عبء الدين بعد القرض</span><b style="color:${cc.dbrNew>(l.dbr_max_percent||50)?'#991B1B':'#047857'}">${cc.dbrNew.toFixed(0)}%</b></div>`:''}
+  <div class="ln-est-row"><span>إجمالي ما ستسدّده</span><b>${Math.round(cc.total).toLocaleString()} د.أ.</b></div>
+  <div class="ln-est-note">تقدير بصيغة القسط الثابت على المعدل المعلن (${cc.rateUsed}%)، قبل الرسوم والتأمين.</div>
+</div>` : (userFilters&&userFilters.amount&&userFilters.tenor ? `<div class="ln-est"><div class="ln-est-note">لم يَنشر البنك معدلاً محدداً، فلا يمكننا تقدير القسط بصدق — راجع البنك.</div></div>` : '');
+const islamic=l.is_islamic?'<span class="ln-card-badge islamic">متوافق مع الشريعة</span>':'';
+const housingBadge=(l.loan_type==='housing')?'<span class="ln-card-badge" style="background:#FEF3C7;color:#92400E"><svg class="mp-ic"><use href="/images/icons.svg#ic-home"/></svg> سكني</span>':'';
+const fixedBadge=(l.rate_fixed===true)?'<span class="ln-card-badge" style="background:#EFF6FF;color:#1E40AF" title="'+(l.rate_fixed_basis||'')+'"><svg class="mp-ic"><use href="/images/icons.svg#ic-lock"/></svg> فائدة/ربح ثابت</span>':'';
+const etihad=l.id==='bank-etihad-loan'?'<span class="ln-card-badge etihad">★ استحوذ على العقاري 2026</span>':'';
+const mpTags=(l.maalyplus_tags||[]).map(t=>`<span style="display:inline-block;background:${t.color}18;color:${t.color};border-radius:50px;padding:2px 9px;font-size:.7rem;font-weight:700;">${t.text}</span>`).join(' ');
+const lbl=getScoreLabel(l.maalyplus_score||60);
+const scoreBadge=`<span style="display:inline-flex;align-items:center;gap:4px;background:${lbl.bg};border-radius:50px;padding:3px 9px;font-size:.76rem;font-weight:700;color:${lbl.color};" title="نقاط مالي بلس: ${l.maalyplus_score}/100"><svg width="10" height="10" viewBox="0 0 24 24" fill="${lbl.color}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${l.maalyplus_score} — ${lbl.text}</span>`;
+const details=[];
+details.push(l.min_salary_jod?`راتب أدنى: <strong>${l.min_salary_jod} د.أ.</strong>`:`راتب أدنى: ${UNKV}`);
+if(l.age_min)details.push(`العمر: <strong>${l.age_min}–${l.age_max||65}</strong>`);
+if(l.dbr_max_percent)details.push(`DBR: <strong>${l.dbr_max_percent}%</strong>`);
+if(l.salary_transfer_required)details.push(`نقل راتب: <strong>مطلوب</strong>`);
+const features=(l.features||[]).slice(0,3).map(f=>`<li>${f}</li>`).join('');
+const vLabel=formatVerifiedDate(l.last_verified);
+return `<div class="ln-card${q}">
+${statusChip}
+<div class="ln-card-head">
+${l.logo?`<img src="${l.logo}?v=20260827" alt="${l.bank_ar}" class="ln-card-logo" style="object-fit:contain;background:#fff;border:1px solid #E5E7EB;padding:3px" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ln-card-logo" style="background:${logoBg};display:none">${logoText}</div>`:`<div class="ln-card-logo" style="background:${logoBg}">${logoText}</div>`}
+<div style="flex:1"><div class="ln-card-bank">${l.bank_ar}</div><div class="ln-card-product">${l.product_name}</div>
+<div style="margin-top:5px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;">${scoreBadge}${mpTags}</div></div>
+</div>
+<div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:6px">${housingBadge}${islamic}${fixedBadge}${etihad}${l.badge&&!etihad?`<span class="ln-card-badge">${l.badge}</span>`:''}</div>
+<div class="ln-card-stats">
+<div class="ln-stat"><span class="ln-stat-val">${rate}</span><span class="ln-stat-label" title="${String(rateSub).replace(/"/g,'&quot;')}">${rateSub?String(rateSub).slice(0,34)+(String(rateSub).length>34?'…':''):'الفائدة'}</span></div>
+<div class="ln-stat"><span class="ln-stat-val">${amount}</span><span class="ln-stat-label">الحد الأقصى</span></div>
+<div class="ln-stat"><span class="ln-stat-val">${years}</span><span class="ln-stat-label">سنة</span></div>
+</div>
+${estBox}
+${details.length?`<div class="ln-card-details">${details.join(' • ')}</div>`:''}
+${features?`<ul class="ln-card-features">${features}</ul>`:''}
+<div class="ln-card-verified">
+<span class="ln-verified-badge">✓ محدّث ${vLabel}</span>
+<a href="../methodology.html" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:underline;font-size:.7rem">منهجية التقييم</a>
+</div>
+<div class="ln-card-actions">
+${(function(){
+  /* «تقدم الآن» تُستخدم فقط عند وجود رابط تقديم مخصّص فعلاً.
+     إن كان الرابط هو الصفحة العامة/الرئيسية للبنك، فالتسمية الصادقة «زيارة موقع البنك». */
+  const ap=String(l.apply_url||''), of=String(l.official_url||'');
+  const bare=/^https?:\/\/[^\/]+\/?$/.test(ap);           // نطاق فقط بلا مسار
+  const generic = !ap || ap===of || bare;
+  const href = ap || of;
+  return generic
+    ? `<a href="${href}" target="_blank" rel="noopener" class="ln-apply">زيارة موقع البنك ←</a>`
+    : `<a href="${href}" target="_blank" rel="noopener" class="ln-apply">تقدّم عبر موقع البنك ←</a>`;
+})()}
+${l.official_url&&l.official_url!==l.apply_url?`<a href="${l.official_url}" target="_blank" rel="noopener" class="ln-details">صفحة القرض لدى البنك</a>`:''}
+</div>
+</div>`;
+}).join('');
+
+document.getElementById('loansGrid').innerHTML=h||'<div class="ln-empty" style="grid-column:1/-1"><h3>لا توجد نتائج</h3><p>جرب تعديل معايير البحث</p></div>';
+applyNoMatchCollapse();
+}
+</script>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المقارنة المباشرة — بطاقات، توفير، تأمين | MaalyPlus</title>
+    <meta name="description" content="قارن بين المنتجات المالية الأردنية جنباً إلى جنب — بطاقات ائتمان، حسابات توفير، تأمين سيارة وصحي.">
+    <link rel="canonical" href="https://maalyplus.com/compare/compare.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR2XEXKN8T');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <style>
+:root{--pb:#1E40AF;--pbd:#1E2B3C;--pg:#10B981;--pgd:#059669;--so:#F59E0B;--red:#DC2626;--ng1:#F3F4F6;--ng2:#E5E7EB;--nd1:#374151;--nd2:#1F2937;--fh:'IBM Plex Sans Arabic','Alexandria',sans-serif;--fb:'IBM Plex Sans Arabic',sans-serif;--rm:12px;--rl:16px;--sm:0 4px 12px rgba(0,0,0,0.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--fb);background:var(--ng1);color:var(--nd1);}
+.page-hero{background:linear-gradient(135deg,var(--pbd),var(--pb) 60%,#047857);color:#fff;padding:2.5rem 1.5rem;text-align:center;}
+.page-hero h1{font-family:var(--fh);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:700;margin-bottom:.5rem;}
+.page-hero p{opacity:.9;font-size:.95rem;max-width:520px;margin:0 auto;}
+.cat-tabs{background:#fff;padding:1rem 0;box-shadow:0 2px 8px rgba(0,0,0,.06);position:sticky;top:65px;z-index:100;}
+.cat-inner{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;}
+.cat-tab{display:flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;border:1.5px solid var(--ng2);background:transparent;font-family:var(--fb);font-size:.88rem;font-weight:600;cursor:pointer;color:var(--nd1);white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.cat-tab:hover{border-color:var(--pb);color:var(--pb);}
+.cat-tab.active{background:var(--pb);border-color:var(--pb);color:#fff;}
+.cat-tab .count{background:rgba(255,255,255,.25);border-radius:50px;padding:1px 7px;font-size:.75rem;}
+.cat-tab:not(.active) .count{background:var(--ng1);color:#6B7280;}
+.main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+.select-panel{background:#fff;border-radius:var(--rl);box-shadow:var(--sm);padding:1.5rem;margin-bottom:1.5rem;}
+.select-title{font-family:var(--fh);font-size:1.1rem;color:var(--nd2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.select-title span{background:var(--pb);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;}
+.product-item{border:1.5px solid var(--ng2);border-radius:var(--rm);padding:.85rem 1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.75rem;position:relative;}
+.product-item:hover{border-color:var(--pb);background:#EFF6FF;}
+.product-item.selected{border-color:var(--pg);background:#F0FDF4;}
+.product-item.disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
+.prod-logo{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:#fff;flex-shrink:0;}
+.prod-info{flex:1;min-width:0;}
+.prod-name{font-size:.82rem;font-weight:600;color:var(--nd2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.prod-sub{font-size:.72rem;color:#6B7280;margin-top:1px;}
+.prod-check{position:absolute;top:6px;left:6px;width:18px;height:18px;border-radius:50%;background:var(--pg);color:#fff;display:none;align-items:center;justify-content:center;font-size:.65rem;}
+.product-item.selected .prod-check{display:flex;}
+.selection-bar{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ng2);}
+.sel-hint{color:#1E40AF;font-weight:600;font-size:.86rem;line-height:1.7}
+
+.selection-info{font-size:.85rem;color:#6B7280;}
+.selection-info b{color:var(--pb);}
+.compare-btn{padding:.7rem 2rem;background:linear-gradient(135deg,var(--pb),var(--pg));color:#fff;border:none;border-radius:50px;font-family:var(--fh);font-size:.95rem;font-weight:700;cursor:pointer;transition:opacity .2s;}
+.compare-btn:disabled{opacity:.4;cursor:not-allowed;}
+.compare-btn:not(:disabled):hover{opacity:.88;}
+.clear-btn{padding:.7rem 1rem;border:1.5px solid var(--ng2);border-radius:50px;background:transparent;font-family:var(--fb);font-size:.85rem;cursor:pointer;color:var(--nd1);}
+.compare-section{display:none;}
+.compare-header-bar{background:#fff;border-radius:var(--rl);box-shadow:var(--sm);padding:1.25rem 1.5rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;}
+.compare-header-bar h2{font-family:var(--fh);font-size:1.1rem;color:var(--nd2);}
+.back-btn{padding:.5rem 1rem;border:1.5px solid var(--ng2);border-radius:50px;background:transparent;cursor:pointer;font-family:var(--fb);font-size:.85rem;color:var(--nd1);}
+.compare-table-wrap{overflow-x:auto;}
+.compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--rl);overflow:hidden;box-shadow:var(--sm);}
+.compare-table th{background:var(--pbd);color:#fff;padding:.9rem 1.1rem;text-align:right;font-family:var(--fh);font-size:.88rem;min-width:200px;}
+.compare-table th.lc{background:#1a2744;min-width:160px;position:sticky;right:0;z-index:2;}
+.compare-table td{padding:.8rem 1.1rem;border-bottom:1px solid var(--ng2);font-size:.875rem;vertical-align:middle;}
+.compare-table td.lc{background:#F8FAFC;font-weight:600;color:var(--nd2);font-size:.82rem;position:sticky;right:0;z-index:1;border-left:2px solid var(--ng2);}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr:nth-child(even) td:not(.lc){background:#FAFAFA;}
+.compare-table .sr td{background:var(--ng1);font-family:var(--fh);font-size:.75rem;color:#6B7280;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.5rem 1.1rem;}
+.ph{text-align:center;padding:1.1rem;}
+.ph .logo{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;color:#fff;margin:0 auto .5rem;}
+.ph .nm{font-family:var(--fh);font-size:.88rem;font-weight:700;color:#fff;}
+.ph .sb{font-size:.72rem;opacity:.8;margin-top:2px;}
+.vg{color:#047857;font-weight:600;}
+.vb{color:var(--red);}
+.bt{display:inline-block;background:#FEF3C7;color:#92400E;font-size:.68rem;padding:2px 6px;border-radius:4px;margin-left:4px;}
+.ac{text-align:center;padding:.75rem;}
+/* ── تحسينات تجربة المقارنة ── */
+/* (#4) غلاف علوي أصغر + تبويبات نصّية */
+.page-hero{padding:1.4rem 1.5rem .3rem !important;}
+.page-hero h1{font-size:1.5rem !important;}
+.page-hero p{font-size:.9rem !important;}
+.cat-tab .count,.cat-tab #cnt-cards,.cat-tab #cnt-savings{background:none !important;color:inherit !important;padding:0 !important;font-size:inherit !important;}
+.compare-header-bar{padding:.85rem 1.2rem;}
+/* (#4) نص جدول أكبر قليلاً */
+.compare-table td{font-size:.92rem;}
+.compare-table th{font-size:.92rem;}
+/* (#5) طبقات اسم البطاقة */
+.ph .sb2{font-size:.68rem;color:#fff;opacity:.62;margin-top:1px;}
+/* (#3) القيم المجهولة: رمادية ومائلة ومتّسقة */
+.unk{color:#9CA3AF;font-style:italic;font-size:.86em;}
+/* (#3) عمود المعيار المثبّت: ظل خفيف يوضّح الفصل عند السحب */
+.compare-table td.lc,.compare-table th.lc{box-shadow:-6px 0 8px -6px rgba(0,0,0,.12);}
+/* (#2) خلاصة القرار */
+.cmp-summary{background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:var(--sm);padding:1rem 1.2rem;margin-bottom:1rem;}
+.cs-title{font-family:var(--fh);font-weight:700;font-size:1rem;color:var(--nd2);margin-bottom:.7rem;}
+.cs-chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.7rem;}
+.cs-chip{flex:1;min-width:170px;background:#F8FAFC;border:1px solid #E5E7EB;border-radius:10px;padding:.55rem .7rem;}
+.cs-k{display:block;font-size:.72rem;color:#6B7280;}
+.cs-who{display:block;font-weight:700;color:var(--nd2);font-size:.9rem;margin:1px 0;}
+.cs-v{display:block;font-size:.78rem;color:#047857;font-weight:700;}
+.cs-overall{font-size:.85rem;color:#334155;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:.6rem .8rem;line-height:1.7;}
+.cs-overall b{color:#047857;}
+.cs-hint{display:block;font-size:.76rem;color:#6B7280;margin-top:.2rem;}
+.cs-hint a{color:#1E40AF;}
+/* (#6) الخطوة التالية: تفاصيل أساسي + تقديم ثانوي + إفصاح */
+.ac-details{display:inline-block;padding:.5rem 1.2rem;background:var(--pb);color:#fff;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;}
+.ac-apply{display:block;margin-top:.45rem;color:#1E40AF;font-size:.78rem;text-decoration:underline;}
+.ac-note{font-size:.66rem;color:#9CA3AF;margin-top:.4rem;line-height:1.45;max-width:180px;margin-inline:auto;}
+@media(max-width:640px){.products-grid{grid-template-columns:1fr 1fr;}.compare-table th,.compare-table td{padding:.6rem .75rem;font-size:.82rem;}.cs-chip{min-width:100%;}}
+    
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.75rem 0 !important; }
+        .header .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1.5rem !important; }
+        .logo-img img { height: 52px !important; width: auto !important; display: block !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+        
+        .nav-link:hover, 
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563; font-weight: 500; font-size: 12px; padding: 5px 7px; border-radius: 8px; white-space: nowrap; background: none; border: none; cursor: pointer; font-family: var(--font-body); }
+        .nav-drop-btn:hover { color: #10B981; background: rgba(16,185,129,0.06); }
+        .nav-drop-menu { display: none; position: absolute; top: calc(100% + 10px); right: 0; background: #fff; border-radius: 14px; box-shadow: 0 8px 30px rgba(30,64,175,0.12); padding: 8px; min-width: 210px; z-index: 999; border: 1px solid rgba(0,0,0,0.06); }
+        .nav-dropdown:hover .nav-drop-menu, .nav-dropdown:focus-within .nav-drop-menu { display: block; }
+        .nav-drop-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 8px; color: #374151; text-decoration: none; font-size: 13px; font-weight: 500; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06); color: #1E40AF; }
+        .btn-cta-header { display: inline-flex; align-items: center; padding: 8px 16px; background: linear-gradient(135deg,#047857,#065F46); color: #fff !important; font-size: 12px; font-weight: 700; border-radius: 50px; text-decoration: none; white-space: nowrap; box-shadow: 0 3px 12px rgba(16,185,129,0.28); font-family: var(--font-body); flex-shrink: 0; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+        /* ── Header Full CSS ── */
+        .header { background: rgba(255,255,255,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.06),0 4px 20px rgba(30,64,175,0.05) !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.6rem 0 !important; }
+        .header .container { max-width: 1280px !important; margin: 0 auto !important; padding: 0 1.5rem !important; width: 100% !important; }
+        .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 1rem !important; width: 100% !important; }
+        .logo-img { flex-shrink: 0 !important; }
+        .logo-img img { height: 48px !important; width: auto !important; display: block !important; max-width: 180px !important; }
+        .nav { display: flex !important; gap: 0 !important; align-items: center !important; flex: 1 !important; justify-content: center !important; flex-wrap: nowrap !important; overflow: visible !important; }
+
+        .nav-dropdown { position: relative !important; }
+        .nav-drop-btn { color: #4B5563 !important; font-weight: 500 !important; font-size: 12.5px !important; padding: 5px 8px !important; border-radius: 8px !important; white-space: nowrap !important; background: none !important; border: none !important; cursor: pointer !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-drop-btn:hover { color: #10B981 !important; background: rgba(16,185,129,0.06) !important; }
+        .nav-drop-menu { display: none !important; position: absolute !important; top: calc(100% + 8px) !important; right: 0 !important; background: #fff !important; border-radius: 14px !important; box-shadow: 0 8px 30px rgba(30,64,175,0.15) !important; padding: 8px !important; min-width: 200px !important; z-index: 9999 !important; border: 1px solid rgba(0,0,0,0.08) !important; }
+        .nav-dropdown:hover .nav-drop-menu { display: block !important; }
+        .nav-drop-item { display: flex !important; align-items: center !important; gap: 8px !important; padding: 9px 12px !important; border-radius: 8px !important; color: #374151 !important; text-decoration: none !important; font-size: 12.5px !important; font-weight: 500 !important; white-space: nowrap !important; }
+        .nav-drop-item:hover { background: rgba(30,64,175,0.06) !important; color: #1E40AF !important; }
+        .btn-cta-header { display: inline-flex !important; align-items: center !important; padding: 8px 18px !important; background: linear-gradient(135deg,#047857,#065F46) !important; color: #fff !important; font-size: 12.5px !important; font-weight: 700 !important; border-radius: 50px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; font-family: var(--font-body, 'Cairo', sans-serif) !important; }
+        .nav-toggle { display: none !important; }
+        @media (max-width: 960px) { .nav { display: none !important; } .nav.open { display: flex !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; left: 0 !important; background: #fff !important; padding: 1rem !important; box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; } .nav-toggle { display: flex !important; } }
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="صفحة المقارنة — MaalyPlus">
+    <meta property="og:description" content="قارن منتجات MaalyPlus جنباً إلى جنب.">
+    <meta property="og:url" content="https://maalyplus.com/compare/compare.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="صفحة المقارنة — MaalyPlus">
+    <meta name="twitter:description" content="قارن منتجات MaalyPlus جنباً إلى جنب.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<section class="page-hero">
+  <h1>المقارنة المباشرة</h1>
+  <p>اختر منتجين أو أكثر من أي فئة وقارنهم جنباً إلى جنب في ثوانٍ</p>
+</section>
+
+<div class="cat-tabs">
+  <div class="container">
+    <div class="cat-inner">
+      <button class="cat-tab active" onclick="setCategory('cards')">البطاقات (<span id="cnt-cards">155</span>)</button>
+      <button class="cat-tab" onclick="setCategory('savings')">حسابات التوفير (<span id="cnt-savings">28</span>)</button>
+      <!-- التأمين مخفي مؤقتاً — لإعادته احذف style="display:none" من الزرين -->
+      <button class="cat-tab" style="display:none" onclick="setCategory('car-ins')">🚗 تأمين السيارة <span class="count" id="cnt-car-ins">5</span></button>
+      <button class="cat-tab" style="display:none" onclick="setCategory('health-ins')">🏥 التأمين الصحي <span class="count" id="cnt-health-ins">4</span></button>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+  <div id="selectPanel">
+    <div class="select-panel">
+      <div class="select-title"><span>1</span> اختر المنتجات <small style="color:#6B7280;font-size:.8rem;font-weight:400;">(2 إلى 3)</small></div>
+      <div class="products-grid" id="productsGrid"><div style="padding:2rem;text-align:center;color:#6B7280;grid-column:1/-1;">جارٍ التحميل...</div></div>
+      <div class="selection-bar">
+        <div class="selection-info"><span id="selHint" class="sel-hint">👆 اضغط على بطاقتين أو ثلاث من الأعلى لتبدأ المقارنة — ستظهر جنبًا إلى جنب</span><span id="selCountWrap" hidden>اخترت <b id="selectedCount">0</b> منتج</span></div>
+        <div style="display:flex;gap:.5rem;">
+          <button class="clear-btn" onclick="clearSel()">مسح</button>
+          <button class="compare-btn" id="compareBtn" disabled onclick="showCmp()">قارن الآن ←</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-section" id="cmpSection">
+    <div class="compare-header-bar">
+      <h2 id="cmpTitle">مقارنة المنتجات</h2>
+      <button class="back-btn" onclick="backToSel()">→ تغيير الاختيار</button>
+    </div>
+    <div id="cmpSummary"></div>
+    <div class="compare-table-wrap"><table class="compare-table" id="cmpTable"></table></div>
+  </div>
+</main>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+<script>
+let cat='cards',all={cards:[],savings:[],'car-ins':[],'health-ins':[]},sel=[],MAX=3;
+
+async function loadData(){
+  try{
+    const[cr,sr,ir]=await Promise.all([fetch('../cards/cards.json?v=20260827'),fetch('../savings/savings.json?v=20260827'),fetch('../insurance/insurance.json?v=20260827')]);
+    const cards=await cr.json(),savings=await sr.json(),ins=await ir.json();
+    all.cards=cards; all.savings=savings; all['car-ins']=ins.car_insurance; all['health-ins']=ins.health_insurance;
+    document.getElementById('cnt-cards').textContent=cards.length;
+    document.getElementById('cnt-savings').textContent=savings.length;
+    document.getElementById('cnt-car-ins').textContent=ins.car_insurance.length;
+    document.getElementById('cnt-health-ins').textContent=ins.health_insurance.length;
+    renderGrid();
+  }catch(e){console.error(e);}
+}
+
+function setCategory(c){
+  cat=c; sel=[];
+  document.querySelectorAll('.cat-tab').forEach((t,i)=>t.classList.toggle('active',['cards','savings','car-ins','health-ins'][i]===c));
+  renderGrid(); updateBar();
+}
+
+function getLogo(item){
+  if(item.logo_color&&item.logo_fallback)return{c:item.logo_color,t:item.logo_fallback};
+  const cols=['#1E40AF','#059669','#DC2626','#7C3AED','#D97706','#0369A1','#BE185D'];
+  const n=item.bank_ar||item.company_ar||'';
+  return{c:cols[n.charCodeAt(0)%cols.length],t:n.substring(0,3)};
+}
+// الشعار الفعلي (صورة) مع بديل ملوّن عند غياب الملف أو فشل تحميله
+function logoHTML(item,cls){
+  const l=getLogo(item);
+  const name=(item.bank_ar||item.company_ar||'').replace(/"/g,'&quot;');
+  const fb=`<div class="${cls}" style="background:${l.c};display:${item.logo?'none':'flex'}">${l.t}</div>`;
+  const img=item.logo?`<img class="${cls}" src="../${item.logo}?v=20260827" alt="${name}" style="display:block;object-fit:contain;background:#fff;padding:3px;box-sizing:border-box" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'';
+  return img+fb;
+}
+
+function getSub(item){
+  if(cat==='cards')return item.product_name||'';
+  if(cat==='savings')return item.rate_display?(item.rate_display+' سنوياً'):'';
+  if(cat==='car-ins')return item.comprehensive_from_jod?('شامل من '+item.comprehensive_from_jod+' د.أ'):'';
+  if(cat==='health-ins')return item.individual_from_jod?('أفراد من '+item.individual_from_jod+' د.أ'):'';
+  return'';
+}
+
+function renderGrid(){
+  const g=document.getElementById('productsGrid');
+  const items=all[cat];
+  if(!items||!items.length){g.innerHTML='<div style="padding:2rem;text-align:center;color:#6B7280;grid-column:1/-1;">جارٍ التحميل...</div>';return;}
+  g.innerHTML=items.map((item,idx)=>{
+    const id=item.id||String(idx);
+    const isSel=sel.includes(String(id));
+    const isDis=!isSel&&sel.length>=MAX;
+    const name=item.bank_ar||item.company_ar||'—';
+    const sub=getSub(item);
+    return `<div class="product-item${isSel?' selected':''}${isDis?' disabled':''}" data-id="${id}" data-dis="${isDis}">
+      <div class="prod-check">✓</div>
+      ${logoHTML(item,'prod-logo')}
+      <div class="prod-info"><div class="prod-name">${name}</div><div class="prod-sub">${sub}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function toggleSel(id){
+  const sid=String(id);
+  const i=sel.indexOf(sid);
+  if(i>-1)sel.splice(i,1); else if(sel.length<MAX)sel.push(sid);
+  renderGrid(); updateBar();
+}
+
+function clearSel(){sel=[];renderGrid();updateBar();}
+
+function updateBar(){
+  document.getElementById('selectedCount').textContent=sel.length;
+  document.getElementById('compareBtn').disabled=sel.length<2;
+  /* حالة الفراغ: إرشاد واضح عند 0 اختيار بدل عدّاد صامت */
+  var hint=document.getElementById('selHint'), wrap=document.getElementById('selCountWrap');
+  if(hint&&wrap){ hint.hidden=sel.length>0; wrap.hidden=sel.length===0; }
+}
+
+function summaryHTML(items){
+  if(cat!=='cards')return'';
+  const nm=i=>`<b>${i.product_name||i.bank_ar}</b>`;
+  const wins={}; const mark=arr=>arr.forEach(i=>{wins[i.id]=(wins[i.id]||0)+1;});
+  const minFee=Math.min(...items.map(c=>c.annual_fee_jod??Infinity));
+  const feeWin=items.filter(c=>(c.annual_fee_jod??Infinity)===minFee&&minFee!==Infinity);
+  const minRate=Math.min(...items.map(c=>rateNum(c.interest_rate_monthly)));
+  const rateWin=items.filter(c=>rateNum(c.interest_rate_monthly)===minRate&&minRate!==Infinity);
+  const minSal=Math.min(...items.map(c=>c.minimum_salary_jod||0));
+  const salWin=items.filter(c=>(c.minimum_salary_jod||0)===minSal);
+  mark(feeWin);mark(rateWin);mark(salWin);
+  const overall=items.slice().sort((a,b)=>(wins[b.id]||0)-(wins[a.id]||0))[0];
+  const chips=[];
+  if(feeWin.length)chips.push(['الأقل رسوماً سنوية',feeWin.map(nm).join(' و'),minFee===0?'مجاني':minFee+' د.أ']);
+  if(rateWin.length)chips.push(['الأقل فائدة شهرية',rateWin.map(nm).join(' و'),minRate+'%']);
+  chips.push(['الأقل حدًّا أدنى للراتب',salWin.map(nm).join(' و'),minSal===0?'بدون حدّ':minSal+' د.أ']);
+  return `<div class="cmp-summary">
+    <div class="cs-title">خلاصة سريعة — من يتفوّق في ماذا؟</div>
+    <div class="cs-chips">${chips.map(([k,who,val])=>`<div class="cs-chip"><span class="cs-k">${k}</span><span class="cs-who">${who}</span><span class="cs-v">${val}</span></div>`).join('')}</div>
+    <div class="cs-overall">الأكثر تفوّقاً في هذه المقارنة (وفق المعايير أعلاه): <b>${overall.product_name||overall.bank_ar}</b> — <span style="opacity:.85">${overall.bank_ar}</span>. <span class="cs-hint">هذه مقارنة موضوعية بين الثلاثة؛ للأنسب لوضعك الشخصي استخدم <a href="../start.html">المستشار المالي</a>.</span></div>
+  </div>`;
+}
+function showCmp(){
+  const items=sel.map(id=>all[cat].find(x=>(x.id||String(all[cat].indexOf(x)))===id)).filter(Boolean);
+  if(items.length<2)return;
+  document.getElementById('selectPanel').style.display='none';
+  document.getElementById('cmpSection').style.display='block';
+  const titles={cards:'مقارنة البطاقات الائتمانية',savings:'مقارنة حسابات التوفير','car-ins':'مقارنة تأمين السيارة','health-ins':'مقارنة التأمين الصحي'};
+  document.getElementById('cmpTitle').textContent=titles[cat];
+  document.getElementById('cmpSummary').innerHTML=summaryHTML(items);
+  document.getElementById('cmpTable').innerHTML=buildTable(items);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function backToSel(){document.getElementById('cmpSection').style.display='none';document.getElementById('selectPanel').style.display='block';}
+
+// Table builders
+function hdr(items){
+  return'<thead><tr><th class="lc">المعيار</th>'+items.map(item=>{
+    const primary = cat==='cards' ? (item.product_name||item.bank_ar||'—') : (item.bank_ar||item.company_ar||'—');
+    const secondary = cat==='cards' ? (item.bank_ar||'') : (item.rate_display||(item.founded?'تأسست '+item.founded:''));
+    const tertiary = cat==='cards' ? ({credit:'بطاقة ائتمانية',debit:'بطاقة خصم',prepaid:'بطاقة مسبقة الدفع'}[item.type]||'') : '';
+    return`<th><div class="ph">${logoHTML(item,'logo')}<div class="nm">${primary}</div>${secondary?`<div class="sb">${secondary}</div>`:''}${tertiary?`<div class="sb2">${tertiary}</div>`:''}</div></th>`;
+  }).join('')+'</tr></thead>';
+}
+
+function rateNum(x){const m=String(x==null?'':x).match(/[\d.]+/);return m?parseFloat(m[0]):Infinity;}
+function r(lbl,vals,opts={}){
+  const best=opts.best;
+  const cells=vals.map(v=>{
+    const known=v!==undefined&&v!==null&&v!==''&&v!=='—'&&v!==Infinity;   // قيمة معروفة فعلاً
+    const isBest=best!==undefined&&known&&v===best;                        // لا «أفضل» على المجهول
+    const display=opts.fmt?opts.fmt(v):String(v??'—');
+    const cls=isBest?'vg':(opts.bad&&opts.bad(v)?'vb':'');
+    return`<td class="${cls}">${isBest?'<span class="bt" title="الأفضل بين المنتجات المقارَنة في هذا المعيار">الأفضل</span>':''}${display}</td>`;
+  }).join('');
+  return`<tr><td class="lc">${lbl}</td>${cells}</tr>`;
+}
+
+function sr(lbl,n){return`<tr class="sr"><td class="lc" colspan="${n+1}">${lbl}</td></tr>`;}
+function br(lbl,vals){
+  return`<tr><td class="lc">${lbl}</td>${vals.map(v=>`<td>${v?'<span style="color:#047857;font-size:1rem">✅</span>':'<span style="color:#D1D5DB">—</span>'}</td>`).join('')}</tr>`;
+}
+function applyR(items){
+  return`<tr><td class="lc">الخطوة التالية</td>${items.map(item=>{
+    const details = cat==='cards' ? `<a class="ac-details" href="../cards/details.html?id=${encodeURIComponent(item.id)}&from=compare&ids=${encodeURIComponent(sel.join(','))}">عرض التفاصيل</a>` : '';
+    const url = item.apply_url||item.website||'';
+    const apply = url ? `<a class="ac-apply" href="${url}" target="_blank" rel="noopener">تقدّم عبر موقع الجهة ←</a>` : '<span class="unk">غير متاح</span>';
+    return `<td class="ac">${details}${apply}<div class="ac-note">راجع الرسوم والشروط أولاً. قد يكون الرابط تسويقياً يقود إلى الجهة المالية مباشرة.</div></td>`;
+  }).join('')}</tr>`;
+}
+
+function buildTable(items){
+  const n=items.length;
+  if(cat==='cards'){
+    const minFee=Math.min(...items.map(c=>c.annual_fee_jod||0));
+    const minSal=Math.min(...items.map(c=>c.minimum_salary_jod||0));
+    const minRate=Math.min(...items.map(c=>rateNum(c.interest_rate_monthly)));
+    return hdr(items)+'<tbody>'+
+      sr('الرسوم والشروط',n)+
+      r('الرسوم السنوية',items.map(c=>c.annual_fee_jod||0),{best:minFee,fmt:v=>v===0?'<span class="vg">مجاني</span>':v+' د.أ'})+
+      r('الحد الأدنى للراتب',items.map(c=>c.minimum_salary_jod||0),{best:minSal,fmt:v=>v?v+' د.أ':'<span class="vg">بدون حدّ أدنى</span>'})+
+      r('نسبة الفائدة الشهرية',items.map(c=>rateNum(c.interest_rate_monthly)),{best:minRate,fmt:v=>v===Infinity?'<span class="unk">غير معلن</span>':v+'%'})+
+      r('رسوم العملات الأجنبية',items.map(c=>c.foreign_transaction_fee_percent||'<span class="unk">غير معلن</span>'))+
+      sr('نوع البطاقة',n)+
+      r('النوع',items.map(c=>({credit:'ائتمانية',debit:'مدينة',prepaid:'مسبقة الدفع'})[c.type]||c.type))+
+      r('شبكات الدفع',items.map(c=>(c.networks||[]).join('، ')||'<span class="unk">غير معلن</span>'))+
+      br('متوافق مع الشريعة',items.map(c=>c.sharia_compliant))+
+      sr('المكافآت',n)+
+      r('نوع المكافآت',items.map(c=>({cashback:'استرداد نقدي',points:'نقاط',miles:'أميال'})[c.rewards]||'<span class="unk">لا يوجد</span>'))+
+      r('ملخص المكافآت',items.map(c=>c.reward_summary||'<span class="unk">لا يوجد</span>'))+
+      br('دخول صالات المطار',items.map(c=>c.travel_benefits))+
+      r('العرض الترحيبي',items.map(c=>c.welcome_offer||'<span class="unk">لا يوجد</span>'))+
+      applyR(items)+'</tbody>';
+  }
+  if(cat==='savings'){
+    const maxR=Math.max(...items.map(c=>c.annual_rate||0));
+    const minB=Math.min(...items.map(c=>c.min_balance_jod||0));
+    return hdr(items)+'<tbody>'+
+      sr('العائد والشروط',n)+
+      r('العائد السنوي',items.map(c=>c.annual_rate||0),{best:maxR,fmt:v=>v+'%'})+
+      r('نوع العائد',items.map(c=>c.rate_type||'—'))+
+      r('الرصيد الأدنى',items.map(c=>c.min_balance_jod||0),{best:minB,fmt:v=>v===0?'<span class="vg">بدون حد أدنى</span>':v+' د.أ'})+
+      r('رسوم شهرية',items.map(c=>c.monthly_fee_jod===0?'<span class="vg">مجاني</span>':(c.monthly_fee_jod||'—')+' د.أ'))+
+      r('حد السحب',items.map(c=>c.withdrawal_limit||'—'))+
+      sr('الميزات',n)+
+      br('ادخار تلقائي',items.map(c=>c.auto_save))+
+      br('وصول رقمي',items.map(c=>c.digital_access))+
+      br('صراف آلي',items.map(c=>c.atm_access))+
+      br('متوافق مع الشريعة',items.map(c=>c.sharia_compliant))+
+      r('التقييم',items.map(c=>c.rating?'⭐ '+c.rating:'—'))+
+      applyR(items)+'</tbody>';
+  }
+  if(cat==='car-ins'){
+    const minC=Math.min(...items.map(c=>c.comprehensive_from_jod||9999));
+    const minD=Math.min(...items.map(c=>c.deductible_jod||9999));
+    return hdr(items)+'<tbody>'+
+      sr('الأسعار',n)+
+      r('تأمين شامل (من)',items.map(c=>c.comprehensive_from_jod||'—'),{best:minC,fmt:v=>v+'+ د.أ'})+
+      r('ضد الغير (رسمي)',items.map(()=>'92.15 د.أ'))+
+      r('الاستهلاك عند الحادث',items.map(c=>c.deductible_jod||'—'),{best:minD,fmt:v=>v+' د.أ'})+
+      sr('التغطية',n)+
+      br('الكوارث الطبيعية',items.map(c=>c.covers_natural))+
+      br('السرقة',items.map(c=>c.covers_theft))+
+      br('الزجاج',items.map(c=>c.covers_glass))+
+      br('مساعدة طريق',items.map(c=>c.roadside_assistance))+
+      br('مطالبات رقمية',items.map(c=>c.digital_claims))+
+      sr('الشركة',n)+
+      r('شبكة الإصلاح',items.map(c=>c.repair_network||'—'))+
+      r('مدة التعويض',items.map(c=>c.claim_days?c.claim_days+' أيام':'—'))+
+      r('الفروع',items.map(c=>c.branches_note||(c.branches+' فرع')||'—'))+
+      br('متوافق مع الشريعة',items.map(c=>c.sharia_compliant))+
+      r('التقييم',items.map(c=>c.rating?'⭐ '+c.rating:'—'))+
+      applyR(items)+'</tbody>';
+  }
+  if(cat==='health-ins'){
+    const minI=Math.min(...items.map(c=>c.individual_from_jod||9999));
+    return hdr(items)+'<tbody>'+
+      sr('الأسعار',n)+
+      r('قسط أفراد (من)',items.map(c=>c.individual_from_jod||'—'),{best:minI,fmt:v=>v+' د.أ/سنة'})+
+      r('قسط عائلة (من)',items.map(c=>c.family_from_jod?c.family_from_jod+' د.أ/سنة':'—'))+
+      r('نسبة المشاركة',items.map(c=>c.copay_percent?c.copay_percent+'%':'—'))+
+      sr('التغطية',n)+
+      br('أسنان',items.map(c=>c.has_dental))+
+      br('نظارات وبصريات',items.map(c=>c.has_optical))+
+      br('أمومة وولادة',items.map(c=>c.maternity_covered))+
+      br('تغطية خارج الأردن',items.map(c=>c.covers_outside_jordan))+
+      r('الحد الأقصى للتغطية',items.map(c=>c.max_coverage_jod?c.max_coverage_jod.toLocaleString()+' د.أ':'—'))+
+      sr('الشبكة والخدمات',n)+
+      r('الشبكة الطبية',items.map(c=>c.network_note||(c.network_hospitals&&c.network_hospitals+' مزود')||'—'))+
+      br('فاتورة مباشرة',items.map(c=>c.direct_billing))+
+      br('بطاقة رقمية',items.map(c=>c.digital_card))+
+      br('متوافق مع الشريعة',items.map(c=>c.sharia_compliant))+
+      r('التقييم',items.map(c=>c.rating?'⭐ '+c.rating:'—'))+
+      applyR(items)+'</tbody>';
+  }
+  return'';
+}
+
+// Event delegation for product items
+document.getElementById('productsGrid').addEventListener('click', function(e) {
+    const item = e.target.closest('.product-item');
+    if (!item) return;
+    if (item.dataset.dis === 'true') return;
+    toggleSel(item.dataset.id);
+});
+
+document.getElementById('nav-toggle')?.addEventListener('click',()=>document.getElementById('nav-menu')?.classList.toggle('open'));
+loadData().then(() => {
+  // قراءة البطاقات المختارة من cards.html
+  const params = new URLSearchParams(window.location.search);
+  const idsParam = params.get('ids');
+  let catParam = params.get('cat') || 'cards';
+  // فئتا التأمين مخفيتان مؤقتاً — أعدهما للقائمة عند إعادة تفعيل القسم
+  if(!['cards','savings'].includes(catParam)) catParam = 'cards';
+  if (idsParam) {
+    const ids = idsParam.split(',').filter(Boolean);
+    if (ids.length >= 2) {
+      // اختر الفئة الصحيحة
+      setCategory(catParam);
+      // اختر البطاقات تلقائياً
+      sel = ids.slice(0, MAX);
+      updateBar();
+      // اعرض المقارنة مباشرة
+      setTimeout(() => showCmp(), 100);
+    }
+  }
+});
+</script>
+<script src="../scroll-top.js?v=20260827"></script>
+</body>
+</html>

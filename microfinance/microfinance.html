@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التمويل الأصغر والتمويل المتخصص - MaalyPlus | قارن شركات التمويل في الأردن</title>
+    <meta name="description" content="قارن بين أفضل شركات التمويل الأصغر والتمويل المتخصص في الأردن. الوطني، تمويلكم، صندوق المرأة، دار التمويل الإسلامي وأكثر. تمويل بدون ضمانات وبدون حساب بنكي.">
+    <meta name="keywords" content="تمويل أصغر الأردن، قرض بدون ضمانات، تمويل مشاريع صغيرة، شركات التمويل الأردن، تمويل إسلامي">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260827">
+    <link rel="stylesheet" href="../product-common.css?v=20260827">
+
+    <style>
+        /* ── Page-Specific Hero Gradient ── */
+        .page-hero {
+            background: linear-gradient(135deg, #1E2B3C 0%, #1E40AF 60%, #047857 100%);
+        }
+
+        /* ── Card Padding Override ── */
+        .company-card { padding: 1.5rem; gap: 1rem; }
+
+        /* ── Card Header Styles ── */
+        .card-header { display: flex; gap: 1rem; align-items: flex-start; }
+        .logo-wrap {
+            width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0;
+            border: 1.5px solid; display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .logo-wrap .logo-img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+        .logo-fallback {
+            width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-heading); font-weight:700; font-size: 0.8rem;
+            border-radius: 8px;
+        }
+        .card-title-wrap { flex: 1; }
+        .company-name { font-family: var(--font-heading); font-size: 1rem; font-weight:700; color: #1F2937; margin-bottom: 0.2rem; }
+        .company-tagline { font-size: 0.8rem; color: #6B7280; line-height: 1.4; margin-bottom: 0.4rem; }
+        .stars-row { display: flex; align-items: center; gap: 0.25rem; }
+        .star-filled { color: #F59E0B; font-size: 0.95rem; }
+        .star-empty { color: #D1D5DB; font-size: 0.95rem; }
+        .rating-val { font-size: 0.8rem; color: #6B7280; font-weight: 700; margin-right: 0.25rem; }
+
+        /* ── Badges ── */
+        .badges-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .badge-islamic { background: #D1FAE5; color: #065F46; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.75rem; font-weight: 700; }
+        .badge-no-collateral { background: #EDE9FE; color: #5B21B6; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.75rem; font-weight: 700; }
+        .badge-digital { background: #DBEAFE; color: #1E40AF; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.75rem; font-weight: 700; }
+        .badge-category { background: #F3F4F6; color: #374151; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.75rem; }
+
+        /* ── Stats ── */
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5rem; }
+        .stat-box { background: #F3F4F6; border-radius: 8px; padding: 0.6rem 0.5rem; text-align: center; }
+        .stat-label { display: block; font-size: 0.7rem; color: #6B7280; margin-bottom: 0.2rem; }
+        .stat-value { display: block; font-family: var(--font-heading); font-size: 0.9rem; font-weight:700; color: #1E40AF; }
+        .stat-value.small { font-size: 0.75rem; }
+
+        /* ── Features ── */
+        .features-list { list-style: none; display: flex; flex-direction: column; flex-wrap: nowrap; gap: 0.35rem; flex: 1; padding: 0; }
+        .feature-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #374151; }
+        .feature-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; flex-shrink: 0; }
+
+        /* ── Card Footer ── */
+        .disclaimer-note {
+            background: #FFF7ED;
+            border: 1px solid #FED7AA;
+            border-radius: 8px;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.78rem;
+            color: #9A3412;
+            margin: 0.75rem 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .card-footer { display: flex; gap: 0.75rem; margin-top: auto; }
+        .btn-details {
+            flex: 1; padding: 0.6rem; border: 1.5px solid #E5E7EB; border-radius: 8px;
+            background: transparent; cursor: pointer; font-family: var(--font-heading); font-size: 0.9rem;
+            color: #374151; transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-details:hover { border-color: #1E40AF; color: #1E40AF; background: #EFF6FF; }
+        .btn-apply {
+            flex: 1; padding: 0.6rem; border-radius: 8px; text-align: center;
+            background: linear-gradient(135deg, #1E40AF, #10B981);
+            color: #fff; font-size: 0.9rem; font-weight: 700; text-decoration: none;
+            transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+        }
+        .btn-apply:hover { opacity: 0.9; }
+
+        /* ── Skeletons ── */
+        .skeleton-card { background: #FFFFFF; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 1rem; }
+        .sk { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 8px; }
+        .sk-logo { width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0; }
+        .sk-title { height: 18px; width: 70%; }
+        .sk-text { height: 14px; width: 90%; }
+        .sk-text.short { width: 60%; }
+        .sk-stats { height: 60px; }
+        @keyframes shimmer { to { background-position: -200% 0; } }
+
+        /* ── Empty State ── */
+        .empty-state { text-align: center; padding: 4rem 1.5rem; }
+        .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .empty-state h3 { font-family: var(--font-heading); font-size: 1.3rem; color: #1F2937; margin-bottom: 0.5rem; }
+        .empty-state p { color: #6B7280; margin-bottom: 1.5rem; }
+        .btn-reset-empty { padding: 0.6rem 1.5rem; background: #1E40AF; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: var(--font-heading); font-size: 0.9rem; }
+
+        /* ── SEO Content Section ── */
+        .seo-section { background: #FFFFFF; border-radius: 16px; padding: 2rem; margin-top: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .seo-section h2 { font-family: var(--font-heading); font-size: 1.4rem; color: #1F2937; margin-bottom: 1rem; }
+        .seo-section h3 { font-family: var(--font-heading); font-size: 1.1rem; color: #1E40AF; margin: 1.25rem 0 0.5rem; }
+        .seo-section p, .seo-section li { font-size: 0.95rem; color: #374151; line-height: 1.8; }
+        .seo-section ul { padding-right: 1.5rem; margin-bottom: 0.5rem; }
+        .faq-item { border-bottom: 1px solid #E5E7EB; padding: 1rem 0; cursor: pointer; }
+        .faq-question { font-weight: 700; color: #1F2937; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+        .faq-answer { font-size: 0.9rem; color: #374151; margin-top: 0.75rem; line-height: 1.7; display: none; }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); font-size: 1.1rem; color: #6B7280; }
+
+        /* ── Modal ── */
+        #companyModal {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000;
+            display: flex; align-items: center; justify-content: center; padding: 1rem;
+        }
+        #companyModal.hidden { display: none; }
+        .modal-box {
+            background: #FFFFFF; border-radius: 16px;
+            max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2rem;
+            position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+        .modal-close {
+            position: absolute; top: 1rem; left: 1rem; background: #F3F4F6;
+            border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+            font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+            color: #374151; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .modal-close:hover { background: #E5E7EB; }
+        .modal-logo-row { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
+        .modal-logo { width: 72px; height: 72px; border-radius: 12px; border: 1.5px solid; flex-shrink: 0; overflow: hidden; }
+        .modal-logo img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+        .modal-company-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight:700; color: #1F2937; }
+        .modal-company-en { color: #6B7280; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .modal-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .modal-desc { font-size: 0.92rem; color: #374151; line-height: 1.7; margin-bottom: 1rem; background: #F3F4F6; padding: 1rem; border-radius: 8px; }
+        .modal-audience { font-size: 0.88rem; color: #374151; margin-bottom: 1rem; }
+        .audience-pill { display: inline-block; background: #EFF6FF; color: #1E40AF; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.78rem; margin: 0.2rem 0.2rem 0 0; }
+        .modal-section-title { font-family: var(--font-heading); font-size: 1rem; font-weight:700; color: #1E40AF; margin: 1.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid #BFDBFE; }
+        .product-row { background: #F3F4F6; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
+        .product-name { font-weight: 700; color: #1F2937; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .product-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.82rem; color: #374151; margin-bottom: 0.4rem; }
+        .product-target { font-size: 0.8rem; color: #6B7280; font-style: italic; }
+        .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .pro-item, .con-item { font-size: 0.85rem; padding: 0.3rem 0; line-height: 1.5; }
+        .pro-item { color: #065F46; }
+        .con-item { color: #991B1B; }
+        .pro-item::marker, .con-item::marker { color: transparent; }
+        .modal-footer-btns { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+        .btn-website { flex: 1; padding: 0.7rem; border: 1.5px solid #1E40AF; border-radius: 8px; text-align: center; color: #1E40AF; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-website:hover { background: #EFF6FF; }
+
+        /* ── Footer ── */
+        .footer { background: #1F2937; color: #fff; padding: 3rem 1.5rem 1.5rem; margin-top: 3rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { font-family: var(--font-heading); font-size: 1rem; margin-bottom: 1rem; color: #fff; }
+        .footer-col p { font-size: 0.9rem; color:#6B7280; line-height: 1.6; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color:#6B7280; text-decoration: none; font-size: 0.9rem; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .footer-links a:hover { color: #10B981; }
+        .footer-bottom { border-top: 1px solid #374151; padding-top: 1.5rem; text-align: center; font-size: 0.85rem; color: #6B7280; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } .stats-grid { grid-template-columns: 1fr 1fr; } .pros-cons-grid { grid-template-columns: 1fr; } }
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MR2XEXKN8T');
+</script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ItemList","name":"مقارنة شركات التمويل الأصغر في الأردن 2026","description":"قارن 9 شركات تمويل أصغر مرخصة من البنك المركزي الأردني — قروض تبدأ من 50 دينار وتصل إلى 110,000 دينار.","url":"https://maalyplus.com/microfinance/microfinance.html","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#nmb","name":"الوطني للتمويل الأصغر","description":"مؤسسة تمويل أصغر أردنية مسجلة كشركة مساهمة خاصة ومرخصة من البنك المركزي، تقدم خدماتها لأكثر من 90 ألف عميل من خلال شبكة 35 فرعاً. تأسست لتوظيف الشمول المالي لتوفير الحلول المثلى لعملائها.","provider":{"@type":"Organization","name":"الوطني للتمويل الأصغر","url":"https://www.nmb.com.jo"},"amount":{"@type":"MonetaryAmount","minValue":400,"maxValue":15000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"35"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":2,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#tamweelcom","name":"تمويلكم","description":"شركة تمويل متخصصة تقدم تمويلات أعمال تصل لـ75,000 دينار وتمويلات أفراد للتعليم والمنزل والمركبات والزواج. تطبيق رقمي متاح. 39 فرعاً في المملكة.","provider":{"@type":"Organization","name":"تمويلكم","url":"https://tamweelcom.org"},"amount":{"@type":"MonetaryAmount","minValue":100,"maxValue":75000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"39"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":3,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#mfw","name":"صندوق المرأة للتمويل الأصغر","description":"أكبر شركة تمويل أصغر متخصصة في دعم المرأة في الأردن. تقدم تمويل \"مشروعك معنا\" من 1,000 إلى 25,000 دينار، وتمويل تضامن بدون ضمان، وتمويل تعليمي وأمومة وتحسين منزل. 55 فرعاً.","provider":{"@type":"Organization","name":"صندوق المرأة للتمويل الأصغر","url":"https://www.microfund.org.jo"},"amount":{"@type":"MonetaryAmount","minValue":1000,"maxValue":25000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"55"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":4,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#ahli-micro","name":"أهلي للتمويل الأصغر","description":"أول شركة تمويل متخصص للمشاريع الصغرى في القطاع الخاص بالأردن، تأسست 1999 ومملوكة للبنك الأهلي الأردني. قدّمت أكثر من 273 مليون دينار لأكثر من 326,000 عميل عبر 24 فرعاً.","provider":{"@type":"Organization","name":"أهلي للتمويل الأصغر","url":"https://amc.com.jo"},"amount":{"@type":"MonetaryAmount","minValue":100,"maxValue":25000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"24"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":5,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#mifm","name":"النموذجية الإسلامية للتمويل الأصغر","description":"ذراع التمويل الأصغر للصندوق الأردني الهاشمي. إسلامية 100% وغير ربحية. تقدم 11 منتجاً متخصصاً: أعمالي، انطلاقتي، مشروعي المنزلي، مزرعتي، سيارتي، ورشتي، عيادتي، طاقتي، صحتي، تطوير منزل، احتياجاتي.","provider":{"@type":"Organization","name":"النموذجية الإسلامية للتمويل الأصغر","url":"https://www.mifm.org.jo"},"amount":{"@type":"MonetaryAmount","minValue":200,"maxValue":20000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"10"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"True"}]}},{"@type":"ListItem","position":6,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#ifh","name":"دار التمويل الإسلامي","description":"شركة دار التمويل الإسلامي متخصصة في تمويل المركبات الخصوصية والعمومية والعقارات والأراضي ومواد البناء وتمويل الشركات. مدد من 12 حتى 72 شهراً. 3 فروع: الدوار الثامن، الشميساني، إربد.","provider":{"@type":"Organization","name":"دار التمويل الإسلامي","url":"https://www.ifhc.com.jo"},"amount":{"@type":"MonetaryAmount","minValue":1000,"maxValue":50000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"3"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"True"}]}},{"@type":"ListItem","position":7,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#vitas","name":"فيتاس الأردن","description":"شركة فيتاس الأردن للتمويل الأصغر. تقدم قروض تطوير أعمال حتى 110,000 دينار، قروض مزرعة حتى 100,000 دينار، قروض بيتي حتى 14,000 دينار، وقروض شفاء وتعليم حتى 10,000 دينار. رصيد قروض أعمال 48 مليون دينار.","provider":{"@type":"Organization","name":"فيتاس الأردن","url":"https://www.vitasjordan.com"},"amount":{"@type":"MonetaryAmount","minValue":500,"maxValue":110000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"13"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":8,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#alameen","name":"الأمين للتمويل الأصغر","description":"شركة أردنية ذات مسؤولية محدودة تأسست عام 2009، متخصصة في تمويل الأسر لأغراض المستهلك والتعليم وتمويل المشاريع المرخصة وغير المرخصة. تقدم خدماتها عبر 8 فروع وتخدم أكثر من 25,000 عميل.',","provider":{"@type":"Organization","name":"الأمين للتمويل الأصغر","url":"https://www.alameenjo.com"},"amount":{"@type":"MonetaryAmount","minValue":50,"maxValue":15000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"8"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}},{"@type":"ListItem","position":9,"item":{"@type":"LoanOrCredit","@id":"https://maalyplus.com/microfinance/microfinance.html#shuraka","name":"الشركاء للتمويل الأصغر","description":"شركة الشركاء للتمويل الأصغر مرخصة من البنك المركزي الأردني. تقدم خدمات التمويل الأصغر للأفراد وأصحاب المشاريع الصغيرة.","provider":{"@type":"Organization","name":"الشركاء للتمويل الأصغر","url":""},"amount":{"@type":"MonetaryAmount","minValue":100,"maxValue":10000,"currency":"JOD"},"currency":"JOD","additionalProperty":[{"@type":"PropertyValue","name":"عدد الفروع","value":"0"},{"@type":"PropertyValue","name":"متوافق مع الشريعة","value":"False"}]}}]}
+    </script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://maalyplus.com/microfinance/microfinance.html">
+    <meta property="og:title" content="قارن شركات التمويل الأصغر في الأردن — MaalyPlus">
+    <meta property="og:description" content="9 شركات تمويل أصغر في الأردن — للعمل الحر، النساء، والمشاريع الصغيرة.">
+    <meta property="og:url" content="https://maalyplus.com/microfinance/microfinance.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-microfinance.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="قارن شركات التمويل الأصغر في الأردن — MaalyPlus">
+    <meta name="twitter:description" content="9 شركات تمويل أصغر في الأردن — للعمل الحر، النساء، والمشاريع الصغيرة.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-microfinance.png">
+    <link rel="stylesheet" href="../mobile.css?v=20260827">
+    <script defer src="../mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- ── Header ── -->
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<!-- ملاحظة: فينكا أُزيلت بعد إشهار إعسارها رسمياً -->
+<!-- ── Hero ── -->
+<section class="page-hero">
+    <h1>التمويل الأصغر والتمويل المتخصص في الأردن</h1>
+    <p>هل رفض البنك طلبك؟ لا تقلق — هناك بديل. قارن بين أفضل شركات التمويل الأصغر والتمويل المتخصص واختر ما يناسب وضعك.</p>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-val">8+</div>
+            <div class="hero-stat-label">شركة تمويل</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-val">100 د.أ</div>
+            <div class="hero-stat-label">أدنى مبلغ متاح</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-val">200,000 د.أ</div>
+            <div class="hero-stat-label">أعلى مبلغ متاح</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-val">بدون</div>
+            <div class="hero-stat-label">ضمانات في كثير من المنتجات</div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Info Banner ── -->
+<div class="info-banner" style="margin: -1.5rem 1.5rem 0; max-width: calc(1200px - 3rem);">
+    <span class="info-banner-icon">📌</span>
+    <p>
+        <strong>تنبيه مهم:</strong> الأرقام الواردة استرشادية وقد تتغير. تحقق دائماً من الأسعار الحالية مع الشركة مباشرة قبل التقديم.
+        آخر تحديث: مارس 2026.
+    </p>
+</div>
+
+<!-- ── Filters ── -->
+<div class="filters-bar">
+  <div class="filters-inner">
+        <div class="filter-group filter-search">
+            <label class="filter-label" for="searchFilter">🔍 بحث</label>
+            <input type="text" id="searchFilter" class="filter-input" placeholder="ابحث عن شركة أو خدمة...">
+        </div>
+        <div class="filter-group">
+            <label class="filter-label" for="typeFilter">نوع المؤسسة</label>
+            <select id="typeFilter" class="filter-select">
+                <option value="all">الكل</option>
+                <option value="microfinance">تمويل أصغر</option>
+                <option value="specialized_finance">تمويل متخصص</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label class="filter-label" for="shariaFilter">النوع الشرعي</label>
+            <select id="shariaFilter" class="filter-select">
+                <option value="all">الكل</option>
+                <option value="yes">متوافق مع الشريعة</option>
+                <option value="no">تقليدي فقط</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label class="filter-label" for="collateralFilter">الضمانات</label>
+            <select id="collateralFilter" class="filter-select">
+                <option value="all">الكل</option>
+                <option value="no">بدون ضمانات فقط</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label class="filter-label" for="maxAmountFilter">أحتاج مبلغاً (د.أ)</label>
+            <input type="number" id="maxAmountFilter" class="filter-input" placeholder="مثال: 2000" min="100" style="min-width:130px">
+        </div>
+        <div class="filter-group">
+            <label class="filter-label" for="sortBy">ترتيب حسب</label>
+            <select id="sortBy" class="filter-select">
+                <option value="rating">التقييم</option>
+                <option value="min_loan_asc">أدنى مبلغ (الأقل أولاً)</option>
+                <option value="max_loan_desc">أعلى مبلغ (الأكثر أولاً)</option>
+                <option value="branches">عدد الفروع</option>
+            </select>
+        </div>
+        <div class="filter-group" style="justify-content:flex-end">
+            <label class="filter-label">&nbsp;</label>
+            <button id="resetFilters" class="btn-reset">↺ إعادة تعيين</button>
+        </div>
+  </div>
+</div>
+
+<!-- ── Main ── -->
+<main class="content-wrap">
+
+    <!-- Results Header -->
+    <div class="results-header">
+        <h2>نتائج البحث — <span id="resultsCount" class="results-count">...</span></h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="companies-grid" id="companiesGrid">
+        <!-- Populated by app.js -->
+    </div>
+
+    <!-- SEO Content Section -->
+    <section class="seo-section">
+        <h2>دليلك الكامل للتمويل الأصغر في الأردن</h2>
+        <p>
+            يعاني كثير من الأردنيين من رفض طلبات القروض البنكية بسبب عدم وجود ضمانات أو راتب كافٍ أو ملف ائتماني ضعيف.
+            هنا يأتي دور شركات التمويل الأصغر والتمويل المتخصص كبديل حقيقي وفعّال.
+        </p>
+
+        <h3>ما الفرق بين التمويل الأصغر والبنوك؟</h3>
+        <ul>
+            <li><strong>التمويل الأصغر:</strong> مبالغ أصغر (100 – 15,000 دينار)، شروط أسهل، لا يشترط حساباً بنكياً، يستهدف أصحاب المشاريع وذوي الدخل المحدود.</li>
+            <li><strong>البنوك:</strong> مبالغ أكبر، تشترط دخلاً ثابتاً وملفاً ائتمانياً نظيفاً، إجراءات أطول.</li>
+        </ul>
+
+        <h3>من يستفيد من التمويل الأصغر؟</h3>
+        <ul>
+            <li>أصحاب المشاريع الصغيرة والمنزلية</li>
+            <li>السيدات الراغبات في بدء مشاريعهن</li>
+            <li>الأفراد الذين رُفض طلب قرضهم في البنك</li>
+            <li>الطلاب المحتاجون لتمويل تعليمي</li>
+            <li>من يريدون تمويل طاقة شمسية أو مركبة بمبالغ صغيرة</li>
+        </ul>
+
+        <h3>الأسئلة الشائعة</h3>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-question">هل يمكنني الحصول على تمويل بدون راتب ثابت؟ <span class="faq-icon">▼</span></div>
+            <div class="faq-answer">نعم! معظم شركات التمويل الأصغر مثل الوطني وتمويلكم تمنح تمويلاً لأصحاب المشاريع الصغيرة حتى بدون راتب ثابت، اعتماداً على طبيعة المشروع وكفيل أو ضامن.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-question">ما الفرق بين الكفيل والضمانة؟ <span class="faq-icon">▼</span></div>
+            <div class="faq-answer">الكفيل هو شخص يوافق على تحمّل المسؤولية إذا لم تسدد، أما الضمانة (الرهن) فهي أصل مادي كسيارة أو عقار يُسجّل لصالح الجهة الممولة. كثير من شركات التمويل الأصغر تقبل الكفيل فقط دون الحاجة لرهن أصول.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-question">هل التمويل الأصغر حلال؟ <span class="faq-icon">▼</span></div>
+            <div class="faq-answer">يتوفر خياران: شركات التمويل التقليدية التي تتعامل بفوائد، وشركات التمويل الإسلامي مثل النموذجية الإسلامية ودار التمويل الإسلامي التي تعمل بصيغ المرابحة والمشاركة المتوافقة مع الشريعة.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-question">ما هو التمويل المتخصص؟ <span class="faq-icon">▼</span></div>
+            <div class="faq-answer">شركات التمويل المتخصص تركز على نوع محدد من التمويل كالسيارات أو العقارات، وغالباً تتيح مبالغ أكبر من التمويل الأصغر (تصل إلى 200,000 دينار) مقابل ضمانة من الأصل الممول نفسه.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-question">كيف أختار الشركة المناسبة؟ <span class="faq-icon">▼</span></div>
+            <div class="faq-answer">حدد أولاً: المبلغ الذي تحتاجه، الغرض (مشروع / شخصي / سيارة / تعليم)، هل تفضل إسلامي أم تقليدي، وهل لديك كفيل. ثم استخدم الفلاتر أعلاه للوصول للخيارات المناسبة لك.</div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ── Modal ── -->
+<div id="companyModal" class="hidden">
+    <div class="modal-box">
+        <button id="closeModal" class="modal-close" title="إغلاق">✕</button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<!-- ── Footer ── -->
+<div style="background:#FFF7ED;border-top:2px solid #FED7AA;padding:0.85rem 0;text-align:center;">
+  <div class="container">
+    <p style="font-size:0.82rem;color:#9A3412;margin:0;">
+      ⚠️ <strong>تنبيه:</strong> الأسعار والشروط وأعداد الفروع المعروضة مستقاة من المواقع الرسمية لشركات التمويل الأصغر (مارس 2026) وقد تتغير في أي وقت. 
+      تحقق دائماً من الموقع الرسمي أو تواصل مع الشركة قبل التقديم. MaalyPlus لا تتحمل مسؤولية أي تغييرات لاحقة.
+    </p>
+  </div>
+</div>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+
+<script src="app.js?v=20260827"></script>
+<script src="../scroll-top.js?v=20260827"></script>
+<script>
+// Nav toggle
+document.getElementById('nav-toggle')?.addEventListener('click', () => {
+  document.getElementById('nav-toggle')?.classList.toggle('active');
+  document.getElementById('nav-menu')?.classList.toggle('open');
+});
+</script>
+</body>
+</html>

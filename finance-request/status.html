@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>متابعة طلب التمويل | مالي بلس</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260827">
+<style>
+body{font-family:var(--font-body);background:#F9FAFB;color:#374151;margin:0}
+.st-hero{background:linear-gradient(135deg,#1E2B3C 0%,#1E40AF 60%,#0891B2 100%);color:#fff;padding:2.5rem 0 3.5rem;position:relative;overflow:hidden}
+.st-hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:44px;background:#F9FAFB;clip-path:ellipse(55% 100% at 50% 100%)}
+.st-hero .container{position:relative;z-index:2}
+.st-crumb{font-size:.78rem;opacity:.7;margin-bottom:.7rem}
+.st-crumb a{color:#fff;text-decoration:none}
+.st-hero h1{font-family:var(--font-heading);font-size:var(--h2);font-weight:700;margin:0 0 .4rem}
+.st-hero p{font-size:.9rem;opacity:.85;margin:0;line-height:1.8;max-width:600px}
+
+.st-body{max-width:820px;margin:-1.75rem auto 0;padding:0 1.5rem 4rem;position:relative;z-index:3}
+.st-card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);padding:1.5rem;margin-bottom:1.25rem}
+
+/* شريط النموذج التجريبي */
+.st-proto{background:#FFFBEB;border:1px solid #FDE68A;border-right:4px solid #D97706;border-radius:12px;padding:1rem 1.15rem;margin-bottom:1.25rem}
+.st-proto h2{font-family:var(--font-heading);font-size:.95rem;color:#92400E;margin:0 0 .4rem;display:flex;align-items:center;gap:7px}
+.st-proto p{font-size:.83rem;color:#78350F;line-height:1.85;margin:0}
+
+/* بطاقة الطلب */
+.st-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid #F3F4F6;margin-bottom:1.25rem}
+.st-ref-lbl{font-size:.75rem;color:#6B7280;display:block;margin-bottom:3px}
+.st-ref{font-family:var(--font-heading);font-size:1.3rem;font-weight:800;color:#1E40AF;letter-spacing:.5px}
+.st-meta{text-align:left;font-size:.78rem;color:#6B7280;line-height:1.9}
+.st-meta b{color:#1E2B3C}
+.st-badge{display:inline-block;background:#EFF6FF;color:#1E40AF;border:1px solid #DBEAFE;border-radius:999px;padding:3px 11px;font-size:.75rem;font-weight:700}
+
+/* الخط الزمني */
+.st-time{list-style:none;margin:0;padding:0;position:relative}
+.st-time::before{content:'';position:absolute;top:14px;bottom:14px;right:13px;width:2px;background:#E5E7EB}
+.st-time li{position:relative;padding:0 2.4rem .1rem 0;margin-bottom:1.4rem}
+.st-time li:last-child{margin-bottom:0}
+.st-dot{position:absolute;right:0;top:1px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;border:2px solid #E5E7EB;background:#fff;color:#9CA3AF;z-index:1}
+.st-time li.done .st-dot{background:#047857;border-color:#047857;color:#fff}
+.st-time li.now .st-dot{background:#1E40AF;border-color:#1E40AF;color:#fff;box-shadow:0 0 0 4px rgba(30,64,175,.14)}
+.st-time h3{font-family:var(--font-heading);font-size:.93rem;color:#1E2B3C;margin:0 0 .25rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.st-time li.pending h3{color:#9CA3AF}
+.st-time p{font-size:.82rem;color:#6B7280;line-height:1.85;margin:0}
+.st-tag{border-radius:999px;padding:2px 9px;font-size:.68rem;font-weight:700}
+.st-tag.ok{background:#F0FDF4;color:#047857}
+.st-tag.now{background:#EFF6FF;color:#1E40AF}
+.st-tag.wait{background:#F3F4F6;color:#6B7280}
+
+/* معاينة العروض */
+.st-preview{opacity:.97}
+.st-preview h2{font-family:var(--font-heading);font-size:1.05rem;color:#1E2B3C;margin:0 0 .3rem}
+.st-preview > p{font-size:.83rem;color:#6B7280;line-height:1.85;margin:0 0 1.1rem}
+.st-mock{border:2px dashed #D1D5DB;border-radius:13px;padding:1rem;background:#FCFCFD;position:relative}
+.st-mock-tag{position:absolute;top:-11px;right:1rem;background:#6B7280;color:#fff;border-radius:999px;padding:3px 12px;font-size:.7rem;font-weight:700}
+.st-offer{display:flex;align-items:center;gap:.9rem;padding:.85rem 0;border-bottom:1px solid #F3F4F6}
+.st-offer:last-child{border-bottom:none}
+.st-offer-logo{width:44px;height:44px;border-radius:10px;background:#E5E7EB;color:#9CA3AF;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:.9rem;flex-shrink:0}
+.st-offer-info{flex:1;min-width:0}
+.st-offer-info b{display:block;font-family:var(--font-heading);font-size:.9rem;color:#6B7280;margin-bottom:2px}
+.st-offer-info span{font-size:.76rem;color:#9CA3AF}
+.st-offer-num{text-align:left;flex-shrink:0}
+.st-offer-num .v{font-family:var(--font-heading);font-size:1.05rem;font-weight:800;color:#9CA3AF;display:block;line-height:1.3}
+.st-offer-num .u{font-size:.7rem;color:#9CA3AF}
+.st-mock-note{font-size:.76rem;color:#6B7280;line-height:1.85;margin:1rem 0 0;padding-top:.85rem;border-top:1px solid #E5E7EB}
+
+/* لا يوجد طلب */
+.st-empty{text-align:center;padding:2.5rem 1.5rem}
+.st-empty .em-ic{width:56px;height:56px;border-radius:50%;background:#F3F4F6;color:#9CA3AF;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.6rem}
+.st-empty h2{font-family:var(--font-heading);font-size:1.15rem;color:#1E2B3C;margin:0 0 .5rem}
+.st-empty p{font-size:.86rem;color:#6B7280;line-height:1.9;max-width:440px;margin:0 auto 1.25rem}
+
+.st-acts{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+.st-acts a{text-decoration:none;border-radius:10px;padding:.7rem 1.4rem;font-family:var(--font-heading);font-size:.87rem;font-weight:700;transition:.18s}
+.st-a1{background:linear-gradient(135deg,#1E40AF,#0891B2);color:#fff;box-shadow:0 4px 14px rgba(30,64,175,.28)}
+.st-a1:hover{transform:translateY(-2px)}
+.st-a2{background:#fff;color:#1E40AF;border:1.5px solid #DBEAFE}
+.st-a2:hover{background:#F8FAFF}
+
+@media(max-width:640px){
+  .st-body{padding:0 1rem 3rem}
+  .st-card{padding:1.15rem}
+  .st-meta{text-align:right}
+  .st-offer{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="../index.html" class="logo logo-img">
+                <img src="../images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="../loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="../car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="../microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="../savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="../insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="../compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="../calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="../paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="../tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="../education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="../methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="../investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="../brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="../community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="../start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+<section class="st-hero">
+  <div class="container">
+    <nav class="st-crumb" aria-label="مسار التصفح">
+      <a href="../index.html">الرئيسية</a> ‹ <a href="index.html">طلب تمويل</a> ‹ متابعة الطلب
+    </nav>
+    <h1>متابعة طلب التمويل</h1>
+    <p>حالة طلبك، وما اكتمل منه فعلاً، وما لم يُفعّل بعد — دون تجميل.</p>
+  </div>
+</section>
+
+<div class="st-body">
+
+  <!-- طلب موجود -->
+  <div id="stFound" hidden>
+    <div class="st-card">
+      <div class="st-head">
+        <div>
+          <span class="st-ref-lbl">الرقم المرجعي</span>
+          <span class="st-ref" id="stRef" dir="ltr">—</span>
+        </div>
+        <div class="st-meta">
+          <div>نوع الطلب: <b id="stType">—</b></div>
+          <div>تاريخ الإرسال: <b id="stDate">—</b></div>
+          <div style="margin-top:.35rem"><a href="offers.html" class="st-badge" style="text-decoration:none">افتح نتائجك ←</a></div>
+        </div>
+      </div>
+
+      <ol class="st-time">
+        <li class="done">
+          <span class="st-dot">✓</span>
+          <h3>وصل الطلب <span class="st-tag ok">تمّ</span></h3>
+          <p>استُلم طلبك وسُجّل بالرقم المرجعي أعلاه. تصلك نسخة على بريدك.</p>
+        </li>
+        <li class="done">
+          <span class="st-dot">✓</span>
+          <h3>المطابقة مع قاعدتنا <span class="st-tag ok">تمّ</span></h3>
+          <p>قارن المحرّك وضعك ببنود كل منتج في قاعدتنا: الحد الأدنى للدخل، حدّ الاقتطاع، السقف، المدة، وشرط تحويل الراتب.</p>
+        </li>
+        <li class="done">
+          <span class="st-dot">✓</span>
+          <h3>قائمتك جاهزة <span class="st-tag ok">تمّ</span></h3>
+          <p>القائمة مرتّبة بالمطابق أولاً، ومعها قسط تقديري لكل منتج وسبب استبعاد ما لا تنطبق شروطه.
+             <a href="offers.html" style="color:#1E40AF;font-weight:700">افتح نتائجك ←</a></p>
+        </li>
+        <li class="now">
+          <span class="st-dot">4</span>
+          <h3>عروض مخصّصة على طلبك <span class="st-tag now">مفتوح</span></h3>
+          <p>طلبك مفتوح لعروض الجهات المموّلة، وتظهر في صفحة نتائجك حال وصولها. بيانات تواصلك محجوبة عن أي جهة حتى تقبل عرضاً بنفسك.
+             <br><span style="color:#B45309;font-weight:600">ملاحظة:</span> لم تُربط جهات فعلية بعد — ربطها يحتاج اتفاقيات وترخيصاً، وحتى ذلك الحين كل عرض يظهر موسوماً بأنه تجريبي.</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- معاينة الشكل المستقبلي -->
+    <div class="st-card st-preview">
+      <h2>معاينة: كيف ستبدو الخطوة الرابعة عند تفعيلها</h2>
+      <p>هذه واجهة تصميمية لغرض العرض فقط. الأسماء والأرقام فيها غير حقيقية ولا تخصّ أي بنك — تركنا الخانات مبهمة عمداً حتى لا يُقرأ الشكل كأنه عرض قائم.</p>
+      <div class="st-mock" aria-label="معاينة تصميمية غير حقيقية">
+        <span class="st-mock-tag">شكل توضيحي — بيانات غير حقيقية</span>
+        <div class="st-offer">
+          <div class="st-offer-logo">؟</div>
+          <div class="st-offer-info"><b>جهة مموّلة (١)</b><span>اسم المنتج · مدة السداد</span></div>
+          <div class="st-offer-num"><span class="v">—</span><span class="u">قسط شهري</span></div>
+        </div>
+        <div class="st-offer">
+          <div class="st-offer-logo">؟</div>
+          <div class="st-offer-info"><b>جهة مموّلة (٢)</b><span>اسم المنتج · مدة السداد</span></div>
+          <div class="st-offer-num"><span class="v">—</span><span class="u">قسط شهري</span></div>
+        </div>
+        <div class="st-offer">
+          <div class="st-offer-logo">؟</div>
+          <div class="st-offer-info"><b>جهة مموّلة (٣)</b><span>اسم المنتج · مدة السداد</span></div>
+          <div class="st-offer-num"><span class="v">—</span><span class="u">قسط شهري</span></div>
+        </div>
+        <p class="st-mock-note">حتى ذلك الحين، ما نرسله لك هو قائمة مرشّحة من المنتجات <b>المنشورة علناً</b> — وهي معلومات متاحة للجميع ونعرض مصدر كل رقم فيها، لا عروض خاصة باسمك.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- لا يوجد طلب -->
+  <div id="stEmpty" hidden>
+    <div class="st-proto">
+      <h2>هذه صفحة متابعة، لا صفحة بحث</h2>
+      <p>نعرض حالة الطلب الذي أُرسل من هذا المتصفح، أو الطلب الذي يحمل الرقم المرجعي في الرابط. لا نتيح البحث برقم مرجعي وحده لأن ذلك يكشف بيانات طلب لأي شخص يخمّن الرقم.</p>
+    </div>
+    <div class="st-card st-empty">
+      <div class="em-ic">؟</div>
+      <h2>لا نجد طلباً مرتبطاً بهذا المتصفح</h2>
+      <p>إمّا أنك لم ترسل طلباً بعد، أو أرسلته من جهاز أو متصفح آخر، أو مُسحت بيانات التصفح. إن كان لديك رقم مرجعي وتريد متابعته، راسلنا وسنرد عليك يدوياً.</p>
+      <div class="st-acts">
+        <a class="st-a1" href="index.html">قدّم طلب تمويل</a>
+        <a class="st-a2" href="mailto:info@maalyplus.com?subject=%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D8%B7%D9%84%D8%A8%20%D8%AA%D9%85%D9%88%D9%8A%D9%84">راسلنا برقمك المرجعي</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-img">
+                    <img src="../images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="../cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="../loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="../car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="../microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="../savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="../insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="../best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="../finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="../calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="../tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="../about-us.html">من نحن</a></li>
+                    <li><a href="../contact.html">تواصل معنا</a></li>
+                    <li><a href="../education/education.html">مركز المعرفة</a></li>
+                    <li><a href="../community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="../index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="../legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="../legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="../sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="../methodology.html">منهجية التقييم</a></li>
+                    <li><a href="../for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="../legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="../legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="../layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+<script>
+(function(){
+  'use strict';
+  if (typeof document === 'undefined') return;
+
+  function get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+
+  var stored = get('mp_fr_ref');
+  var urlRef = '';
+  try {
+    urlRef = new URLSearchParams(location.search).get('ref') || '';
+  } catch(e){}
+
+  /* نعرض الطلب فقط إن كان مُرسلاً من هذا المتصفح.
+     رقم مرجعي في الرابط وحده لا يكفي — وإلا كشفنا حالة أي طلب لمن يخمّن الرقم. */
+  var show = stored && (!urlRef || urlRef === stored);
+
+  if (!show){
+    document.getElementById('stEmpty').hidden = false;
+    return;
+  }
+
+  document.getElementById('stFound').hidden = false;
+  document.getElementById('stRef').textContent  = stored;
+  document.getElementById('stType').textContent = get('mp_fr_type') || 'غير محدّد';
+
+  var at = get('mp_fr_at');
+  var d  = at ? new Date(at) : null;
+  document.getElementById('stDate').textContent =
+    (d && !isNaN(d.getTime()))
+      ? d.toLocaleDateString('ar-JO', { year:'numeric', month:'long', day:'numeric' })
+      : 'غير معروف';
+})();
+</script>
+
+</body>
+</html>

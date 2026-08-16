@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منهجية التقييم — كيف نحسب نقاط مالي بلس؟</title>
+    <meta name="description" content="اكتشف كيف تحسب MaalyPlus نقاط التقييم للبطاقات والقروض والتوفير والتأمين — منهجية شفافة وموضوعية 100%.">
+    <link rel="canonical" href="https://maalyplus.com/methodology.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR2XEXKN8T"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR2XEXKN8T');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260827">
+    <style>
+        :root{--pb:#1E40AF;--pbd:#1E2B3C;--pg:#10B981;--pgd:#059669;--so:#F59E0B;--ng1:#F3F4F6;--ng2:#E5E7EB;--nd1:#374151;--nd2:#1F2937;--fh:'IBM Plex Sans Arabic','Alexandria',sans-serif;--fb:'IBM Plex Sans Arabic',sans-serif;--rm:12px;--rl:16px;--sm:0 4px 12px rgba(0,0,0,0.08);}
+        body{font-family:var(--fb);background:var(--ng1);color:var(--nd1);}
+        .page-hero{background:linear-gradient(135deg,var(--pbd),var(--pb) 60%,#047857);color:#fff;padding:3rem 1.5rem;text-align:center;}
+        .page-hero h1{font-family:var(--fh);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:700;margin-bottom:.5rem;}
+        .page-hero p{opacity:.9;font-size:.95rem;max-width:550px;margin:0 auto;}
+        .wrap{max-width:860px;margin:2rem auto;padding:0 1.5rem 4rem;}
+        .card{background:#fff;border-radius:var(--rl);box-shadow:var(--sm);padding:2rem;margin-bottom:1.5rem;}
+        h2{font-family:var(--fh);font-size:1.25rem;color:var(--pbd);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;}
+        h2 .ic{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+        p{font-size:.92rem;line-height:1.85;color:var(--nd1);margin-bottom:.85rem;}
+        p:last-child{margin-bottom:0;}
+
+        /* Criteria Grid */
+        .criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:1.25rem 0;}
+        .criterion{border-radius:var(--rm);padding:1.1rem;border-right:3px solid;}
+        .criterion .weight{font-size:1.6rem;font-weight:700;font-family:var(--fh);line-height:1;}
+        .criterion .name{font-size:.88rem;font-weight:600;margin:.3rem 0 .3rem;}
+        .criterion .desc{font-size:.8rem;color:#6B7280;line-height:1.5;}
+
+        /* Score Scale */
+        .scale{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.6rem;margin:1rem 0;}
+        .scale-item{border-radius:var(--rm);padding:.85rem;text-align:center;}
+        .scale-item .num{font-family:var(--fh);font-size:1.3rem;font-weight:700;}
+        .scale-item .lbl{font-size:.78rem;font-weight:600;margin-top:.3rem;}
+        .scale-item .stars{font-size:1rem;margin-top:.2rem;}
+
+        /* Steps */
+        .steps{counter-reset:step;}
+        .step{display:flex;gap:1rem;padding:1rem 0;border-bottom:.5px solid var(--ng2);}
+        .step:last-child{border-bottom:none;}
+        .step-num{width:32px;height:32px;border-radius:50%;background:var(--pb);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.85rem;font-weight:700;flex-shrink:0;}
+        .step-body{flex:1;}
+        .step-title{font-weight:600;font-size:.92rem;color:var(--nd2);margin-bottom:.25rem;}
+        .step-desc{font-size:.84rem;color:#6B7280;line-height:1.6;}
+
+        /* Disclaimer */
+        .disclaimer{background:#FFF7ED;border:1px solid #FED7AA;border-radius:var(--rm);padding:1.1rem 1.25rem;font-size:.87rem;color:#92400E;line-height:1.7;}
+
+        /* CTA */
+        .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem;}
+        .cta-btn{display:inline-flex;align-items:center;padding:.65rem 1.4rem;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;transition:opacity .2s;}
+        .cta-btn:hover{opacity:.85;}
+        .cta-primary{background:var(--pb);color:#fff;}
+        .cta-outline{background:transparent;border:1.5px solid var(--ng2);color:var(--nd1);}
+
+        @media(max-width:580px){.criteria-grid{grid-template-columns:1fr;}.scale{grid-template-columns:1fr 1fr;}}
+
+
+.nav-link{color:#1E2B3C !important;text-decoration:none !important;font-weight:600 !important;font-size:13.5px !important;padding:5px 8px !important;border-radius:8px !important;white-space:nowrap !important;background:none !important;border:none !important;cursor:pointer !important;font-family:var(--font-body,'Cairo',sans-serif) !important;transition:all .2s ease !important}
+.nav-link:hover{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important}
+.nav-link.active{color:#1E40AF !important;background:rgba(30,64,175,0.07) !important;font-weight:700 !important}
+</style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:title" content="منهجية التقييم — MaalyPlus">
+    <meta property="og:description" content="كيف نقيّم ونقارن المنتجات المالية في MaalyPlus. شفافية كاملة في خوارزمية التقييم.">
+    <meta property="og:url" content="https://maalyplus.com/methodology.html">
+    <meta property="og:image" content="https://maalyplus.com/images/og-default.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="MaalyPlus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منهجية التقييم — MaalyPlus">
+    <meta name="twitter:description" content="كيف نقيّم ونقارن المنتجات المالية في MaalyPlus. شفافية كاملة في خوارزمية التقييم.">
+    <meta name="twitter:image" content="https://maalyplus.com/images/og-default.png">
+    <link rel="stylesheet" href="mobile.css?v=20260827">
+    <script defer src="mobile-menu.js?v=20260827"></script>
+
+
+</head>
+<body>
+
+<!-- mp:header (auto-generated — عدّل templates/header.html ثم شغّل: python3 sync_layout.py) -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo logo-img">
+                <img src="images/logo.png" alt="MaalyPlus" loading="eager" width="1200" height="400" style="height:46px;width:auto;">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">المنتجات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="cards/cards.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-card"/></svg> بطاقات الائتمان والخصم</a>
+                        <a href="loans/loans.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-cash"/></svg> القروض الشخصية</a>
+                        <a href="car-financing/car-financing.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-car"/></svg> تمويل السيارات</a>
+                        <a href="microfinance/microfinance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> التمويل الأصغر</a>
+                        <a href="savings/savings.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-safe"/></svg> حسابات التوفير</a>
+                        <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                        <a href="insurance/insurance.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-shield"/></svg> التأمين</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الأدوات ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="finance-request/" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-receipt"/></svg> اطلب تمويلاً — أفراد ومنشآت</a>
+                        <a href="compare/compare.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-target"/></svg> المقارنة الذكية</a>
+                        <a href="calculators/calculators.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calc"/></svg> الحاسبات المالية</a>
+                        <a href="paths/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-compass"/></svg> ابدأ من هنا</a>
+                        <a href="tools/financial-plan.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-calendar"/></svg> خطة مالية 30 يوماً</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">تعلّم ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="best/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a>
+                        <a href="education/education.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-book"/></svg> مركز المعرفة</a>
+                        <a href="methodology.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-scale"/></svg> منهجية التقييم</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-drop-btn" type="button" aria-haspopup="true">الاستثمار ▾</button>
+                    <div class="nav-drop-menu">
+                        <a href="investment/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> خيارات الاستثمار</a>
+                        <a href="brokers/index.html" class="nav-drop-item"><svg class="mp-ic"><use href="/images/icons.svg#ic-trend"/></svg> شركات التداول</a>
+                    </div>
+                </div>
+                <a href="community/index.html" class="nav-link nav-link-soon">المجتمع<span class="soon-badge">قريباً</span></a>
+            </nav>
+            <div class="header-actions">
+                <a href="start.html" class="btn-cta-header">ابدأ الآن</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" aria-expanded="false"><span class="hamburger"></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /mp:header -->
+
+
+
+<section class="page-hero">
+  <h1>⭐ منهجية التقييم</h1>
+  <p>كيف تحسب مالي بلس نقاط كل منتج مالي؟ شفافية كاملة — لا أسرار</p>
+</section>
+
+<main class="wrap">
+
+  <!-- المبدأ العام -->
+  <div class="card">
+    <h2><span class="ic" style="background:#EFF6FF">📋</span>المبدأ العام</h2>
+    <p>
+      كل منتج مالي في مالي بلس يحصل على <strong>نقاط من 100</strong> تُحسب بشكل تلقائي باستخدام معادلة موضوعية. النقاط تعكس مدى ملاءمة المنتج للمستخدم العادي بناءً على عوامل مالية قابلة للقياس — وليس رأياً شخصياً أو ترتيباً مدفوعاً.
+    </p>
+    <p>
+      البيانات مأخوذة من المواقع الرسمية للبنوك وشركات التأمين والتمويل في الأردن، ونحدّثها بشكل دوري لضمان دقتها.
+    </p>
+
+    <!-- مقياس النقاط -->
+    <div class="scale">
+      <div class="scale-item" style="background:#D1FAE5;">
+        <div class="num" style="color:#047857">85–97</div>
+        <div class="lbl" style="color:#047857">ممتاز</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="scale-item" style="background:#DBEAFE;">
+        <div class="num" style="color:#1E40AF">72–84</div>
+        <div class="lbl" style="color:#1E40AF">جيد جداً</div>
+        <div class="stars">⭐⭐⭐⭐</div>
+      </div>
+      <div class="scale-item" style="background:#FEF3C7;">
+        <div class="num" style="color:#92400E">58–71</div>
+        <div class="lbl" style="color:#92400E">جيد</div>
+        <div class="stars">⭐⭐⭐</div>
+      </div>
+      <div class="scale-item" style="background:#F3F4F6;">
+        <div class="num" style="color:#6B7280">30–57</div>
+        <div class="lbl" style="color:#6B7280">مقبول</div>
+        <div class="stars">⭐⭐</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- البطاقات -->
+  <div class="card">
+    <h2><span class="ic" style="background:#EFF6FF">💳</span>معايير تقييم البطاقات الائتمانية</h2>
+    <p>تُقيَّم أكثر من <!--mp:stat cards_count-->156<!--/mp:stat--> بطاقة من أكثر من 23 بنكاً ومؤسسة أردنية بناءً على أربعة معايير رئيسية:</p>
+    <div class="criteria-grid">
+      <div class="criterion" style="background:#EFF6FF;border-color:#1E40AF;">
+        <div class="weight" style="color:#1E40AF">30%</div>
+        <div class="name">الكلفة الشهرية</div>
+        <div class="desc">أقل كلفة = نقاط أعلى. نقيسها <b>بالدينار على رصيد مرجعي واحد قدره 500 د.أ</b> محمولٍ شهراً، فتدخل كل البنى المقياس نفسه: <b>الفائدة</b> التقليدية و<b>ربح المرابحة</b> و<b>رسم الإدارة الثابت</b> — لأن الثلاثة كلفةُ حملِ رصيدٍ شهراً، والاختلاف في العقد والمسمّى لا في القياس. البطاقة التي لا تنشر كلفتها <b>لا تأخذ درجة في هذا المعيار</b>.</div>
+      </div>
+      <div class="criterion" style="background:#F0FDF4;border-color:#10B981;">
+        <div class="weight" style="color:#047857">25%</div>
+        <div class="name">الرسوم السنوية</div>
+        <div class="desc">أقل رسم سنوي = نقاط أعلى، بالمقارنة مع بطاقات نوعها نفسه. المدى الحالي 0 إلى 500 د.أ، والأعلى في نوعه يأخذ صفراً والأدنى 100. الرسم غير المنشور لا يأخذ درجة ولا يُعامَل صفراً.</div>
+      </div>
+      <div class="criterion" style="background:#FEF3C7;border-color:#F59E0B;">
+        <div class="weight" style="color:#92400E">25%</div>
+        <div class="name">المزايا والمكافآت</div>
+        <div class="desc">كاش باك يحصل على أعلى نقاط، ثم أميال السفر، ثم نقاط المكافآت. مزايا السفر وبرامج الترحيب تُضيف نقاطاً. هذا المعيار <b>يُحتسب دائماً</b>: خلوّ البطاقة من مكافأة حقيقة منشورة لا نقص بيانات، بخلاف المعايير الثلاثة الأخرى.</div>
+      </div>
+      <div class="criterion" style="background:#F5F3FF;border-color:#7C3AED;">
+        <div class="weight" style="color:#7C3AED">20%</div>
+        <div class="name">سهولة الوصول</div>
+        <div class="desc">الحد الأدنى للراتب الأقل = نقاط أعلى، لأنها متاحة لشريحة أوسع. بطاقات الخصم والمدفوعة مسبقاً لا تشترط راتباً أصلاً فلا ينطبق عليها هذا المعيار. البطاقة الائتمانية التي لا تنشر حدّها لا تأخذ درجة فيه.</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">نجمع البيانات</div>
+          <div class="step-desc">نزور المواقع الرسمية لكل جهة مُصدِرة — بنكاً كانت أو محفظة رقمية — ونسجّل الكلفة الشهرية (فائدةً أو ربح مرابحة أو رسماً ثابتاً)، والرسوم، والراتب المطلوب، والمزايا.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">نطبّع القيم</div>
+          <div class="step-desc">نحوّل كل قيمة إلى 0–100 مقارنةً ببطاقات <b>النوع نفسه فقط</b> (ائتمانية مع ائتمانية، خصم مع خصم، مسبقة مع مسبقة) — فلا تُقاس بطاقة خصم بمقياس بطاقة ائتمانية. الأدنى كلفةً في نوعه يأخذ 100 والأعلى صفراً. والمدى يُبنى من القيم <b>المنشورة وحدها</b>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">نطبّق الأوزان</div>
+          <div class="step-desc">نجمع النقاط بالأوزان: الكلفة الشهرية×30% + رسوم×25% + مزايا×25% + وصول×20%. كل معيار لا مدخلة منشورة له يخرج وزنه من المقام، فتُقسَّم النقاط على الأوزان المحتسبة وحدها. وإذا نزل المحتسب دون <b>نصف الوزن</b> فلا نمنح درجة إطلاقاً. الدرجة النهائية محصورة بين <b>30 و97</b> — لا نمنح 100 ولا صفراً لمنتج قائم.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">نضيف التصنيف النصي</div>
+          <div class="step-desc">كل بطاقة تحصل على وسم يصف ميزتها الرئيسية: "الأفضل للكاش باك"، "الأفضل للسفر"، "بدون رسوم سنوية"، إلخ.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="ic" style="background:#F0FDF4">⚖️</span>ماذا نفعل حين لا يُنشر رقم؟</h2>
+    <p><strong>لا نستبدل الغياب برقم — لا صفراً ولا وسيطاً ولا افتراضاً.</strong> المعيار الذي لا مدخلة منشورة له لا يأخذ درجة، ويخرج وزنه من المقام، وتُوسم البطاقة «درجة جزئية» مع عدد المعايير المحتسبة. وإذا كان المنشور أقل من نصف الوزن فلا درجة أصلاً — ونقولها صراحةً: «لا درجة — بيانات غير كافية».</p>
+    <p>ونميّز بين حالتين لا يصحّ خلطهما: <strong>«لا ينطبق»</strong> — كسعر الفائدة على بطاقة خصم، أو الحد الأدنى للراتب على بطاقة مدفوعة مسبقاً؛ فهذه ليست نقصاً في بياناتنا بل معيار لا يخصّ المنتج، ولا تُوسم به البطاقة. و<strong>«غير منشور»</strong> — حين تنشر بطاقاتُ الفئة هذا المعيار وتسكت عنه بطاقةٌ بعينها؛ وهذه وحدها تُوسم.</p>
+    <p style="background:#FEF3C7;border-radius:10px;padding:.8rem 1rem;font-size:.92rem;line-height:1.9"><strong>تصحيح آب 2026:</strong> حتى تموز 2026 كان المحرّك يستبدل الكلفة الشهرية غير المنشورة بـ2.0% شهرياً — وهي أعلى من أعلى سعر منشور في السوق (1.99%). فكانت ثلاث عشرة بطاقة تُسجَّل صفراً في هذا المعيار لأنها لم تنشر رقماً، وأكثرها إسلامية لا تنشر نسبةً لأن بنيتها ليست نسبةً أصلاً. صُحّح ذلك وأُعيد احتساب الدرجات.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="ic" style="background:#EFF6FF">🧮</span>الفائدة والمرابحة والرسم الثابت — محور واحد</h2>
+    <p>ثلاث بنى مختلفة تعبّر عن الشيء نفسه اقتصادياً: كلفة أن تحمل رصيداً شهراً. <strong>الفائدة</strong> نسبةٌ على الرصيد، و<strong>ربح المرابحة</strong> نسبةٌ على الرصيد بعقد بيع لا بعقد إقراض، و<strong>رسم الإدارة الشهري</strong> مبلغٌ ثابت بالدينار. اختلاف العقد والمسمّى حقيقي ونذكره لكل بطاقة، لكنه لا يبرّر إخراج المرابحة من المقارنة — فمن يقارن يريد أن يعرف كم يدفع.</p>
+    <p>لذلك يقيس المحور <strong>ديناراتٍ في الشهر على رصيد مرجعي موحّد = 500 د.أ</strong>:</p>
+    <ul style="font-size:.92rem;line-height:2;margin:0 0 .85rem;padding-inline-start:1.2rem">
+      <li>فائدة أو ربح مرابحة 1.50% ⟶ <strong>7.50 د.أ</strong> شهرياً</li>
+      <li>رسم إدارة ثابت 6.5 د.أ ⟶ <strong>6.5 د.أ</strong> شهرياً (لا يتغيّر بالرصيد)</li>
+    </ul>
+    <p><strong>ولماذا رصيد بالدينار لا «نسبة من سقف البطاقة»؟</strong> لأن النسبة من السقف تقلب الترتيب رأساً على عقب. بطاقة برسم 40 د.أ على سقف 5,000 تبدو <em>الأرخص</em> عند استغلال نصف سقفها (1.60%) و<em>الأغلى</em> عند رصيد ثابت 250 د.أ (16%). أي مقياس ينقلب بتغيّر مرساته لا يصلح أساساً للترتيب — والمرساة الموحّدة تزيل ذلك.</p>
+    <p style="background:#F8FAFF;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;line-height:1.9"><strong>حدود المقياس، ونقولها:</strong> الرسم الثابت انحداري — يغلو نسبةً على الرصيد الصغير ويرخص على الكبير. فبطاقةٌ تبدو غالية عند 500 د.أ قد تكون مناسبة لمن يحمل آلافاً. ولذلك درجة المنتج <em>ليست</em> ملاءمتك: للملاءمة استخدم المستشار المالي الذكي الذي يحسب كلفتك أنت. وكذلك تُعفى بعض رسوم الإدارة كاملةً لمن يسدّد رصيده شهرياً — وهذا مذكور في صفحة كل بطاقة.</p>
+  </div>
+
+  <!-- التوفير -->
+  <div class="card">
+    <h2><span class="ic" style="background:#F0FDF4">🏦</span>معايير تقييم حسابات التوفير</h2>
+    <div class="criteria-grid">
+      <div class="criterion" style="background:#F0FDF4;border-color:#10B981;">
+        <div class="weight" style="color:#047857">35%</div>
+        <div class="name">العائد السنوي</div>
+        <div class="desc">أعلى عائد = أعلى نقاط. حسابات التوفير عادةً أقل من 1.5%، والودائع لأجل تصل إلى نحو 4.75% سنوياً.</div>
+      </div>
+      <div class="criterion" style="background:#FEF3C7;border-color:#F59E0B;">
+        <div class="weight" style="color:#92400E">20%</div>
+        <div class="name">الرسوم الشهرية</div>
+        <div class="desc">حسابات بدون رسوم شهرية = 100 نقطة في هذا المعيار.</div>
+      </div>
+      <div class="criterion" style="background:#EFF6FF;border-color:#1E40AF;">
+        <div class="weight" style="color:#1E40AF">25%</div>
+        <div class="name">الميزات الرقمية</div>
+        <div class="desc">ادخار تلقائي، وصول رقمي، صراف آلي، سحب غير محدود — كل ميزة تضيف نقاطاً.</div>
+      </div>
+      <div class="criterion" style="background:#F5F3FF;border-color:#7C3AED;">
+        <div class="weight" style="color:#7C3AED">20%</div>
+        <div class="name">الرصيد الأدنى المطلوب</div>
+        <div class="desc">رصيد أدنى أقل = أفضل إمكانية الوصول = نقاط أعلى.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- التأمين -->
+  <div class="card">
+    <h2><span class="ic" style="background:#FFF7ED">🛡️</span>معايير تقييم تأمين السيارات</h2>
+    <div class="criteria-grid">
+      <div class="criterion" style="background:#FEF2F2;border-color:#DC2626;">
+        <div class="weight" style="color:#DC2626">25%</div>
+        <div class="name">سعر التأمين الشامل</div>
+        <div class="desc">أقل سعر شامل = نقاط أعلى. تأمين ضد الغير سعره موحّد (92.15 دينار) لجميع الشركات.</div>
+      </div>
+      <div class="criterion" style="background:#FEF3C7;border-color:#F59E0B;">
+        <div class="weight" style="color:#92400E">30%</div>
+        <div class="name">الاستهلاك عند الحادث</div>
+        <div class="desc">أقل استهلاك تدفعه عند الحادث = نقاط أعلى. هذا أهم عامل عملياً.</div>
+      </div>
+      <div class="criterion" style="background:#F0FDF4;border-color:#10B981;">
+        <div class="weight" style="color:#047857">30%</div>
+        <div class="name">التغطية والمزايا</div>
+        <div class="desc">الكوارث الطبيعية + السرقة + الزجاج + مساعدة الطريق + مطالبات رقمية — كل واحدة تضيف نقاطاً.</div>
+      </div>
+      <div class="criterion" style="background:#EFF6FF;border-color:#1E40AF;">
+        <div class="weight" style="color:#1E40AF">15%</div>
+        <div class="name">سرعة التعويض</div>
+        <div class="desc">أقل أيام للتعويض = نقاط أعلى.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- محدّث تموز 2026 — منظومة التحقق (مخفي مؤقتاً؛ لإظهاره احذف سطر الفتح هذا وسطر الإغلاق أسفل البلوك)
+  <div class="card">
+    <h2><span class="ic" style="background:#ECFDF5">🛡️</span>منظومة التحقق من دقة البيانات</h2>
+    <p>النقاط لا قيمة لها إن كانت البيانات خاطئة، لذلك نعتمد منظومة تحقق صارمة الإنسان فيها هو المرجع الأخير:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">سجل المصادر الرسمية</div><div class="step-desc">لكل بطاقة رابط رسمي مسجّل (صفحة المنتج وجدول العمولات المعتمد) نرجع إليه عند كل تحقق.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">الجلب والمقارنة</div><div class="step-desc">أداة تجلب الصفحات وجداول الرسوم الرسمية وتقارنها بالحالي فتُنتج «ورشة فروقات» دون الكتابة في قاعدة البيانات آلياً.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">التحكيم بالأدلة</div><div class="step-desc">لا نعتمد أي تغيير إلا باقتباس حرفي من المصدر الرسمي؛ وأي رقم غير منشور يُترك فارغاً ولا يُخمَّن.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">الثقة وتاريخ التحقق</div><div class="step-desc">كل بطاقة تحمل درجة ثقة وتاريخ آخر تحقق ظاهرين كشارة «تم التحقق».</div></div></div>
+    </div>
+    <div class="disclaimer" style="background:#F0FDF4">
+      <p style="margin-bottom:0"><strong>مؤشرات الجودة (محسوبة من البيانات، آب 2026):</strong> من أصل <!--mp:stat cards_count-->156<!--/mp:stat--> بطاقة، <b>106</b> تُحتسب لها كل المعايير المنطبقة، و<b>39</b> تحمل «درجة جزئية» لأن معياراً أو أكثر غير منشور، و<b>11</b> لا تُمنح درجة إطلاقاً لأن المنشور عنها أقل من نصف الوزن. و<b>153</b> بطاقة جرى التحقق منها خلال تموز–آب 2026. والأرقام غير المنشورة تُعرض «غير منشورة» ولا تُستبدل برقم في أي موضع.</p>
+    </div>
+  </div>
+  -->
+
+  <!-- الإفصاح -->
+  <div class="card">
+    <h2><span class="ic" style="background:#FFF7ED">⚠️</span>إفصاح مهم</h2>
+    <div class="disclaimer">
+      <p><strong>استقلالية التقييم:</strong> نقاط مالي بلس محسوبة بمعادلة رياضية موضوعية بالكامل. لا تستطيع أي جهة مالية الدفع لتحسين ترتيبها في نتائجنا.</p>
+      <p><strong>محدودية البيانات:</strong> بعض البنوك لا تنشر جميع تفاصيل منتجاتها علناً. في هذه الحالات نستخدم القيم المتاحة فقط أو نشير إلى أن البيانات غير متاحة.</p>
+      <p><strong>التحديث الدوري:</strong> أسعار الفوائد والرسوم قابلة للتغيير. نسعى لتحديث البيانات بشكل ربع سنوي على الأقل. تحقق دائماً من الموقع الرسمي للبنك قبل اتخاذ قرارك.</p>
+      <p style="margin-bottom:0"><strong>ليست استشارة مالية:</strong> التقييمات لأغراض مقارنة ومعلوماتية فقط. قرارك المالي النهائي يجب أن يعتمد على وضعك الخاص واحتياجاتك.</p>
+    </div>
+
+    <div class="cta-row">
+      <a href="cards/cards.html" class="cta-btn cta-primary">شاهد نقاط البطاقات ←</a>
+      <a href="savings/savings.html" class="cta-btn cta-outline">نقاط حسابات التوفير ←</a>
+      <a href="about-us.html" class="cta-btn cta-outline">من نحن ←</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- mp:footer (auto-generated — عدّل templates/footer.html ثم شغّل: python3 sync_layout.py) -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo logo-img">
+                    <img src="images/logo.png" alt="MaalyPlus" width="1200" height="400" loading="lazy" style="height:48px;width:auto;">
+                </a>
+                <p>منصة المقارنة المالية الذكية في الأردن.</p>
+                <h4 class="footer-newsletter-title">اشترك في نشرتنا</h4>
+                <p>كن أول من يعرف عن آخر العروض والنصائح المالية.</p>
+                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" id="newsletter-email" name="email" aria-label="بريدك الإلكتروني للاشتراك في النشرة" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="cards/cards.html">بطاقات الائتمان والخصم</a></li>
+                    <li><a href="loans/loans.html">القروض الشخصية</a></li>
+                    <li><a href="car-financing/car-financing.html">تمويل السيارات</a></li>
+                    <li><a href="microfinance/microfinance.html">التمويل الأصغر</a></li>
+                    <li><a href="savings/savings.html">حسابات التوفير</a></li>
+                    <!-- التأمين مخفي مؤقتاً — لإعادته أزل هذا التعليق
+                    <li><a href="insurance/insurance.html">التأمين</a></li>
+                    -->
+                    <li><a href="best/index.html"><svg class="mp-ic"><use href="/images/icons.svg#ic-star"/></svg> أدلة الأفضل 2026</a></li>
+                    <li><a href="finance-request/">اطلب تمويلاً (أفراد ومنشآت)</a></li>
+                    <li><a href="calculators/calculators.html">الحاسبات المالية</a></li>
+                    <li><a href="tools/financial-plan.html">خطة مالية 30 يوماً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="education/education.html">مركز المعرفة</a></li>
+                    <li><a href="community/index.html">المجتمع (قريباً)</a></li>
+                    <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>قانوني</h4>
+                <ul class="footer-links">
+                    <li><a href="legal/privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="legal/legal.html">الشروط والأحكام</a></li>
+                    <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    <li><a href="methodology.html">منهجية التقييم</a></li>
+                    <li><a href="for-issuers.html">للجهات المُصدِرة</a></li>
+                    <li><a href="legal/disclosure.html">الإفصاح عن العمولات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaalyPlus — مالي بلس. جميع الحقوق محفوظة.</p>
+            <p style="font-size:.72rem;opacity:.75;margin-top:.5rem;line-height:1.8">مالي بلس منصة مقارنة مالية مستقلة وغير تابعة لأي بنك أو مؤسسة مالية معروضة على المنصة. الأرقام والشروط الواردة لأغراض المقارنة فقط وقد تتغير — تحقق دائماً من الجهة المالية مباشرة قبل أي قرار. جميع العلامات التجارية والشعارات ملك لأصحابها ولا يعني عرضها أي تأييد أو شراكة ما لم يُذكر خلاف ذلك في <a href="legal/disclosure.html" style="color:inherit;text-decoration:underline">صفحة الإفصاح</a>.</p>
+        </div>
+    </div>
+</footer>
+<script src="layout.js?v=20260827" defer></script>
+<!-- /mp:footer -->
+
+
+<script>document.getElementById('nav-toggle')?.addEventListener('click',()=>document.getElementById('nav-menu')?.classList.toggle('open'));</script>
+<script src="scroll-top.js?v=20260827"></script>
+</body>
+</html>
